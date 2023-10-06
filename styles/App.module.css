@@ -1,0 +1,287 @@
+/*slider*/
+.main_container {
+    width: 100%;
+    display: flex;
+    height: 70vh;
+}
+
+.containLeft {
+    flex: 6;
+    background-color: gray;
+}
+
+.containLeft img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.containRight {
+    flex: 8;
+    background-color: rgb(216, 215, 215);
+    padding: 60px;
+}
+
+/*slider*/
+
+@media(max-width:500px) {
+    #navbar {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .right,
+    .center {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.numberList .list {
+    list-style-type: none;
+}
+
+.numberList .list a {
+    text-decoration: none;
+    color: #000;
+}
+
+#navbar {
+    display: flex;
+    height: 90px;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.centerList {
+    display: flex;
+    gap: 10px;
+}
+
+.rightList {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+
+.numberList .h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.numberList .h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -1px;
+}
+
+.numberList p {
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 1px;
+}
+
+.sectionTwo {
+    background-color: #39B248;
+    color: #fff;
+}
+
+.containerNumber {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 19vh;
+    padding-top: 40px;
+}
+
+.numberList {
+    display: flex;
+    flex: 6;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.numberList li {
+    width: 16%;
+}
+
+.numberList li h1 {
+    font-size: 40px;
+    letter-spacing: 0px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    line-height: .5em;
+}
+
+/*Slider bottom*/
+
+/*Card*/
+
+.cardArea {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    padding: 30px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+@media screen and (max-width: 600px) {
+    .cardArea {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.cardRight {
+    flex: 6;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.cardLeft {
+    flex: 6;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+
+figure.snip1192 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    width: 100%;
+    color: #333;
+    text-align: left;
+    box-shadow: none !important;
+}
+
+figure.snip1192 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+figure.snip1192 img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+}
+
+figure.snip1192 p {
+    text-align: center;
+    margin: 0;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    font-size: 0.8em;
+    line-height: 1.6em;
+    color: #848484;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+figure.snip1192 blockquote:before,
+figure.snip1192 blockquote:after {
+    font-family: 'FontAwesome';
+    content: "\201C";
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.3;
+    font-style: normal;
+}
+
+figure.snip1192 blockquote:before {
+    top: 35px;
+    left: 20px;
+}
+
+figure.snip1192 blockquote:after {
+    content: "\201D";
+    right: 20px;
+    bottom: 35px;
+}
+
+.author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+figure.snip1192 .author {
+
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+}
+
+figure.snip1192 .author .h5 {
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 800;
+    color: #000;
+    font-size: 1rem;
+}
+
+figure.snip1192 .author .h5 .span {
+    font-weight: 400;
+    text-transform: none;
+    display: block;
+    color: #46a5e5;
+    font-size: 0.9rem;
+    margin: 7px;
+}
+
+.linkedinArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.linkedinArea a {
+    text-decoration: none;
+}
+
+/*Card*/

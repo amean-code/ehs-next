@@ -1,0 +1,162 @@
+.site_header{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.header_top {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.9px solid;
+    border-color: rgba(201, 201, 201, 0.689);
+}
+
+.header_top_left {
+    width: 100%;
+    height: 100%;
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-left: 200px;
+}
+
+.header_top_left .whatsapp {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.whatsapp p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.header_top-_left .whatsapp .whatsapp_logo {
+    height: 23px;
+    width: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.header_top_left {
+    width: 100%;
+    height: 100%;
+    flex: 2;
+    margin-left: 20px;
+}
+
+.header_top_left .email {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.email p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    gap: 8px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.header_top_left .email .email_logo {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.header_top_right {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.header_top_right .languages {
+    width: 60%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    border-right: 1px solid;
+    border-color: rgba(201, 201, 201, 0.689);
+}
+
+.header_top_right .languages img {
+    height: 23px;
+    width: 35px;
+    object-fit: cover;
+}
+
+.header_top_right .social_media {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.header_top_right .social_media img {
+    height: 27px;
+    width: auto;
+}
+
+.header_container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.header_left {
+    width: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_logo {
+    width: 170px;
+    height: auto;
+    margin-bottom: 45px;
+}
+
+.header_logo img {
+    width: 100%;
+}
+
+.header_right {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_right a {
+    text-decoration: none;
+    color: rgb(77, 77, 77);
+    font-weight: 300;
+}
