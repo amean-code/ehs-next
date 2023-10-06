@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* İnter */
+@font-face {
+  font-family: Inter-Black;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Black.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Black.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-BlackItalic;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-BlackItalic.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-BlackItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-Bold;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Bold.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Bold.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-BoldItalic;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-BoldItalic.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-BoldItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-ExtraBold;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraBold.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraBold.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-ExtraBoldItalic;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraBoldItalic.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraBoldItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-ExtraLight;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraLight.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraLight.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-ExtraLightItalic;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraLightItalic.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ExtraLightItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-Medium;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Medium.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Medium.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-MediumItalic;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-MediumItalic.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-MediumItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-SemiBold;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-SemiBold.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-SemiBold.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-SemiBoldItalic;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-SemiBoldItalic.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-SemiBoldItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-Thin;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Thin.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-Thin.woff)
+      format("woff");
+}
+@font-face {
+  font-family: Inter-ThinItalic;
+  src: local(
+      "https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ThinItalic.woff"
+    ),
+    url(https://unpkg.com/aks-fonts@1.0.0/%C4%B0nter/Inter-ThinItalic.woff)
+      format("woff");
+}
+
+*:root{
+  --primary: #2ca2f1;
+  --primary-dark: #077fcf;
+  --primary-dark-opacity-2e: #077fcf2e;
+  --primary-light: #59bbfd;
+  --secondary: #2cc5a2;
+  --secondary-dark: #06ad6f;
+  --secondary-dark-opacity-2e: #07be7f2e;
+  --secondary-light: #44ddbb;
+  --third: #8d2cc5;
+  --third-dark: #7b07be;
+  --third-dark-opacity-2e: #7b07be2e;
+  --third-light: #b045ee;
+}
+
+.rs-slider-color-primary{
+  --rs-slider-progress:  var(--primary) !important;
+  --rs-slider-thumb-border:  var(--primary) !important;
+}
+
+.rs-slider-color-primary-light{
+  --rs-slider-progress:  var(--primary-light) !important;
+  --rs-slider-thumb-border:  var(--primary-light) !important;
+}
+
+.rs-slider-color-primary-dark{
+  --rs-slider-progress:  var(--primary-dark) !important;
+  --rs-slider-thumb-border:  var(--primary-dark) !important;
+}
+
+.rs-slider-color-secondary{
+  --rs-slider-progress:  var(--secondary) !important;
+  --rs-slider-thumb-border:  var(--secondary) !important;
+}
+
+.rs-slider-color-secondary-light{
+  --rs-slider-progress:  var(--secondary-light) !important;
+  --rs-slider-thumb-border:  var(--secondary-light) !important;
+}
+
+.rs-slider-color-secondary-dark{
+  --rs-slider-progress:  var(--secondary-dark) !important;
+  --rs-slider-thumb-border:  var(--secondary-dark) !important;
+}
+
+
+.rs-slider-color-third{
+  --rs-slider-progress:  var(--third) !important;
+  --rs-slider-thumb-border:  var(--third) !important;
+}
+
+.rs-slider-color-third-light{
+  --rs-slider-progress:  var(--third-light) !important;
+  --rs-slider-thumb-border:  var(--third-light) !important;
+}
+
+.rs-slider-color-third-dark{
+  --rs-slider-progress:  var(--third-dark) !important;
+  --rs-slider-thumb-border:  var(--third-dark) !important;
+}
+
+html,
+body {
+  font-family: Inter-Medium
+}
+
+*{
+  line-height: 150%;
+}
+
+
+.instagram-bg{
+  background: radial-gradient(circle at 30% 107%, #ffef3b 0%, #fff266 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%) !important;
+}
+
+*::selection{
+  color: var(--primary-dark);
+  background-color: var(--primary-dark-opacity-2e);
+}
+
+.selection-primary::selection{
+  color: var(--primary-dark);
+  background-color: var(--primary-dark-opacity-2e);
+}
+
+.selection-secondary::selection{
+  color: var(--secondary-dark);
+  background-color: var(--secondary-dark-opacity-2e);
+}
+
+.selection-third::selection{
+  color: var(--third-dark);
+  background-color: var(--third-dark-opacity-2e);
+}
+
+
+.app-menu::-webkit-scrollbar {
+  width: 5px;
+  position: fixed;
+}
+
+.app-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-menu::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0.75rem;
+  transition: all ease-in-out 0.5s;
+}
+.app-menu:hover::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 0.75rem;
+  transition: all ease-in-out 0.5s;
+
+}
+
+.app-menu::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+  transition: all ease-in-out 0.5s;
+
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 0.75rem;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
