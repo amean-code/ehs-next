@@ -1,0 +1,197 @@
+.footer_section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.ul {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.footer_section {
+    background: #151414 !important;
+    position: relative !important;
+}
+
+.footer_cta {
+    border-bottom: 1px solid #373636 !important;
+}
+
+.single_cta i {
+    color: #ff5e14 !important;
+    font-size: 30px !important;
+    float: left !important;
+    margin-top: 8px !important;
+}
+
+.cta_text {
+    padding-left: 15px !important;
+    display: inline-block !important;
+}
+
+.cta_text .h4 {
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-bottom: 2px !important;
+}
+
+.cta_text .span {
+    color: #757575 !important;
+    font-size: 15px !important;
+}
+
+.footer_content {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.footer_pattern .img_fluid {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 330px !important;
+    background-size: cover !important;
+    background-position: 100% 100% !important;
+}
+
+.footer_logo {
+    margin-bottom: 30px !important;
+}
+
+.footer_logo .img_fluid {
+    max-width: 180px !important;
+}
+
+.footer_text .p {
+    margin-bottom: 14px !important;
+    font-size: 14px !important;
+    color: #7e7e7e !important;
+    line-height: 28px !important;
+}
+
+.footer_social_icon .span {
+    color: #fff !important;
+    display: block !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    font-family: 'Poppins', sans-serif !important;
+    margin-bottom: 20px !important;
+}
+
+.footer_social_icon .a {
+    color: #fff !important;
+    font-size: 16px !important;
+    margin-right: 15px !important;
+}
+
+.footer_social_icon i {
+    height: 40px !important;
+    width: 40px !important;
+    text-align: center !important;
+    line-height: 38px !important;
+    border-radius: 50% !important;
+}
+
+.facebook_bg {
+    background: #3B5998 !important;
+}
+
+.twitter_bg {
+    background: #55ACEE !important;
+}
+
+.google_bg {
+    background: #DD4B39 !important;
+}
+
+.footer_widget_heading .h3 {
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-bottom: 40px !important;
+    position: relative !important;
+}
+
+.footer_widget_heading .h3::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: -15px !important;
+    height: 2px !important;
+    width: 50px !important;
+    background: #ff5e14 !important;
+}
+
+.footer_widget .ul .li {
+    display: inline-block !important;
+    float: left !important;
+    width: 50% !important;
+    margin-bottom: 12px !important;
+}
+
+.footer_widget .ul .li .a:hover {
+    color: #ff5e14 !important;
+}
+
+.footer_widget .ul .li .a {
+    color: #878787 !important;
+    text-transform: capitalize !important;
+}
+
+.subscribe_form {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.subscribe_form .input {
+    width: 100% !important;
+    padding: 14px 28px !important;
+    background: #2E2E2E !important;
+    border: 1px solid #2E2E2E !important;
+    color: #fff !important;
+}
+
+.subscribe_form .button {
+    position: absolute !important;
+    right: 0 !important;
+    background: #ff5e14 !important;
+    padding: 13px 20px !important;
+    border: 1px solid #ff5e14 !important;
+    top: 0 !important;
+}
+
+.subscribe_form .button i {
+    color: #fff !important;
+    font-size: 22px !important;
+    transform: rotate(-6deg) !important;
+}
+
+.copyright_area {
+    background: #202020 !important;
+    padding: 25px 0 !important;
+}
+
+.copyright_text .p {
+    margin: 0 !important;
+    font-size: 14px !important;
+    color: #878787 !important;
+}
+
+.copyright_text .p .a {
+    color: #ff5e14 !important;
+}
+
+.footer_menu .li {
+    display: inline-block !important;
+    margin-left: 20px !important;
+}
+
+.footer_menu .li:hover .a {
+    color: #ff5e14 !important;
+}
+
+.footer_menu .li .a {
+    font-size: 14px !important;
+    color: #878787 !important;
+}
