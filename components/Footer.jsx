@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Arrow_down } from "../icons";
 import footerStyle from "../styles/footer.module.css";
 
-function Header() {
+function Footer() {
     const [activeNav, setActiveNav] = useState("");
 
     return (
@@ -108,4 +108,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Footer;

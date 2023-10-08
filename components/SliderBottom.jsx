@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/App.module.css";
 
-function Header() {
+function SliderBottom() {
   const [activeNav, setActiveNav] = useState("");
 
   return (
@@ -40,4 +40,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default SliderBottom;

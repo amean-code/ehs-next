@@ -6,6 +6,7 @@ import SliderBottom from "../components/SliderBottom";
 import Team from "../components/Team";
 export default function Home() {
   return (
+    
     <>
       <Header />
       <Slider />
