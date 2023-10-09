@@ -138,6 +138,10 @@
     color: #878787 !important;
     text-transform: capitalize !important;
 }
+.footer_widget .p {
+    color: rgb(132, 132, 132) !important;
+    text-transform: capitalize !important;
+}
 
 .subscribe_form {
     position: relative !important;

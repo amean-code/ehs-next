@@ -193,10 +193,6 @@ body {
   background: radial-gradient(circle at 30% 107%, #ffef3b 0%, #fff266 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%) !important;
 }
 
-*::selection{
-  color: var(--primary-dark);
-  background-color: var(--primary-dark-opacity-2e);
-}
 
 .selection-primary::selection{
   color: var(--primary-dark);

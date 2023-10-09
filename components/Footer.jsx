@@ -34,7 +34,7 @@ function Footer() {
                             <div className={footerStyle.single_cta}>
                                 <i className="far fa_envelope_open"></i>
                                 <div className={footerStyle.cta_text}>
-                                    <h4 className={footerStyle.h4}>E_mail</h4>
+                                    <h4 className={footerStyle.h4}>E-mail</h4>
                                     <span className={footerStyle.span}>ehs@info.com</span>
                                 </div>
                             </div>
@@ -52,12 +52,12 @@ function Footer() {
                                     <p className={footerStyle.p}>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
                                         elit,Lorem ipsum dolor sit amet.</p>
                                 </div>
-                                <div className={footerStyle.footer_social_icon}>
+                                {/* <div className={footerStyle.footer_social_icon}>
                                     <span className={footerStyle.span}>Sosyal Medya</span>
                                     <a href="app/public/uploads/linkedin.svg"><i className="fab fa_facebook_f facebook_bg"></i></a>
                                     <a href="app/public/uploads/twitter.svg"><i className="fab fa_twitter twitter_bg"></i></a>
                                     <a href="app/public/uploads/youtube.svg"><i className="fab fa_google_plus_g google_bg"></i></a>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col_xl_4 col_lg_4 col_md_6 mb_30">

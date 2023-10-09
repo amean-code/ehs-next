@@ -19,7 +19,7 @@ function Team() {
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
                 <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
               </div>
             </figure>
           </div>
@@ -32,7 +32,7 @@ function Team() {
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
                 <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
               </div>
             </figure>
           </div>
@@ -47,7 +47,7 @@ function Team() {
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
                 <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
               </div>
             </figure>
           </div>
@@ -60,7 +60,7 @@ function Team() {
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
                 <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
               </div>
             </figure>
           </div>
