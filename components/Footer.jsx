@@ -10,9 +10,9 @@ function Footer() {
         <footer className={footerStyle.footer_section}>
             <link rel="stylesheet" href="styles/footer.module.css" />
             <div className={footerStyle.footer_container}>
-                <div className="footer_cta pt_5 pb_5">
+                <div className={footerStyle.footer_cta} style={{paddingBottom: "3rem",paddingTop: "3rem"}}>
                     <div className={footerStyle.row}>
-                        <div className="col_xl_4 col_md_4 mb_30">
+                        <div className={footerStyle.col_xl_4+" "+footerStyle.col_md_4+" "+footerStyle.mb_30}>
                             <div className={footerStyle.single_cta}>
                                 <i className="fas fa_map_marker_alt"></i>
                                 <div className={footerStyle.cta_text}>
@@ -21,7 +21,7 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col_xl_4 col_md_4 mb_30">
+                        <div className={footerStyle.col_xl_4+" "+footerStyle.col_md_4+" "+footerStyle.mb_30}>
                             <div className={footerStyle.single_cta}>
                                 <i className="fas fa_phone"></i>
                                 <div className={footerStyle.cta_text}>
@@ -30,7 +30,7 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col_xl_4 col_md_4 mb_30">
+                        <div className={footerStyle.col_xl_4+" "+footerStyle.col_md_4+" "+footerStyle.mb_30}>
                             <div className={footerStyle.single_cta}>
                                 <i className="far fa_envelope_open"></i>
                                 <div className={footerStyle.cta_text}>
@@ -41,12 +41,12 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="footer_content pt_5 pb_5">
+                <div className="footer_content" style={{paddingBottom: "3rem",paddingTop: "3rem"}}>
                     <div className={footerStyle.row}>
                         <div className="col_xl_4 col_lg_4 mb_50">
                             <div className={footerStyle.footer_widget}>
                                 <div className={footerStyle.footer_logo}>
-                                    <a className={footerStyle.a} href="index.jsx"><img src="public/images/logo.png" className={footerStyle.img_fluid} alt="logo" /></a>
+                                    <a className={footerStyle.a} href="index.jsx"><img src="/images/logo.png" className={footerStyle.img_fluid} alt="logo" /></a>
                                 </div>
                                 <div className={footerStyle.footer_text}>
                                     <p className={footerStyle.p}>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing

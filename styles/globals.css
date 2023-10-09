@@ -179,7 +179,9 @@
 
 html,
 body {
-  font-family: Inter-Medium
+  font-family: Inter-Medium;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 *{
