@@ -5,6 +5,7 @@ import Slider from "../components/Slider";
 import SliderBottom from "../components/SliderBottom";
 import Team from "../components/Team";
 import TimeLine from "../components/TimeLine";
+import NotFoundPage from "./404";
 export default function Home() {
   return (
     
@@ -16,7 +17,6 @@ export default function Home() {
       <TimeLine />
       <Contact />
       <Footer />
-
     </div>
   );
 }
