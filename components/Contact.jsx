@@ -1,54 +1,77 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Arrow_down } from "../icons";
-import styles from "../styles/App.module.css";
+import styles from "../styles/contact.module.css";
 
 function Contact() {
   const [activeNav, setActiveNav] = useState("");
 
   return (
-
-
-    <section className={styles.contact_section}>
-      <div className={styles.contact_block}>
-        <h2 className={styles.contact_mainTitle}>Let’s meet together and discuss your beautiful future</h2>
-        <div className={styles.contact_container}>
-
-          <div className={styles.contact_containLeft}>
-            <h2 className={styles.contact_h2}>Contact Me via Form</h2>
-            <form className={styles.contact_form}>
-              <input className={styles.contact_input} type="text" name="name" placeholder="Your Name" />
-              <input className={styles.contact_input} type="mail" name="mail" placeholder="Your E-mail" />
-              <input className={styles.contact_input} type="text" name="about" placeholder="Choose about" />
-              <textarea className={styles.contact_text} name="message" placeholder="Your message"></textarea>
-              <a className={styles.contact_a} href="#" target="_blank" rel="noopener noreferrer">Contact Me</a>
-            </form>
+    <div class="flex w-full p-[24px] justify-center items-center">
+      <div class="flex flex-col md:flex-row md:space-y-0 bg-green-600  p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
+        <div class="flex flex-col space-y-8 justify-between">
+          <div>
+            <h1 class="font-bold text-4xl tracking-wide">Contact Us</h1>
+            <p class="pt-2 text-green-100 text-sm">For all your non-existant company needs Fake Corp are here to help, do not hesitate to contact us!</p>
           </div>
-
-          <div className={styles.col_lg_5}>
-            <div className={styles.contact_one__info}>
-              <div className={styles.block_title+" "+styles.text_left}>
-                <h3 className={styles.block_title__text+" "+styles.text_capitalize}>Büromuz</h3>
-                <p className={styles.block_title__text_two}>Bizlere büromuza gelerek veya telefon veya mail ile ulaşabilirsiniz.</p>
-              </div>
-              <div className={styles.contact_one__info_single}>
-                <h3 className={styles.contact_one__info_title}>Adresimiz</h3>
-                <p className={styles.contact_one__info_text}>Üsküdar İçerenköy Yolu Cad. Bodur İş Merkezi No:8 K:9 D: 38 Ataşehir/İstanbul</p>
-              </div>
-              <div className={styles.contact_one__info_single}>
-                <h3 className={styles.contact_one__info_title}>Telefon Numaramız</h3>
-                <p className={styles.contact_one__info_text}>İletişim Hattı <a className={styles.contact_a} href="tel:+90 216 577 75 70"><strong className={styles.contact_strong}>+90 123 123 12 12</strong></a></p>
-              </div>
-              <div className={styles.contact_one__info_single}>
-                <h3 className={styles.contact_one__info_title}>Email</h3>
-                <p className={styles.contact_one__info_text}><span className={styles.contact_a} href="mailto:support@the-law-firm.org">support@ehs.com</span></p>
-              </div>
+          <div class="flex flex-col space-y-6">
+            <div class="inline-flex space-x-2 items-center w-60">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+111 345 214 213</span>
+            </div>
+            <div class="inline-flex space-x-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>hello@fakecorp.com</span>
+            </div>
+            <div class="inline-flex space-x-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>111 Fake Boulevard, Fakesville, FYC</span>
             </div>
           </div>
-
+          <div class="flex space-x-4">
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute z-0 w-40 h-40 bg-green-400 rounded-full -right-28 -top-28"></div>
+          <div class="absolute z-0 w-40 h-40 bg-green-400 rounded-full -left-28 -bottom-16"></div>
+          <div class="relative z-10 bg-white rounded-xl shadow-lg p-8 text-gray-600 md:w-80">
+            <form class="flex flex-col space-y-4" action="">
+              <div>
+                <label for="" class="text-sm">Name</label>
+                <input type="text"
+                  placeholder="Name"
+                  class="ring-1 ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-300" />
+              </div>
+              <div>
+                <label for="" class="text-sm">Email</label>
+                <input type="email"
+                  placeholder="Email"
+                  class="ring-1 ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-300" />
+              </div>
+              <div>
+                <label for="" class="text-sm">Message</label>
+                <textarea placeholder="Message"
+                  rows="4"
+                  class="ring-1 ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-300"></textarea>
+              </div>
+              <button class="inline-block self-end bg-green-600 font-bold rounded-lg px-6 py-4 uppercase text-sm text-white">Send Message</button>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

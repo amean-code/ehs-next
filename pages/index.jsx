@@ -6,6 +6,8 @@ import SliderBottom from "../components/SliderBottom";
 import Team from "../components/Team";
 import TimeLine from "../components/TimeLine";
 import NotFoundPage from "./404";
+import Vision from "../components/Vision";
+import News from "../components/News";
 export default function Home() {
   return (
     
@@ -13,6 +15,8 @@ export default function Home() {
       <Header />
       <Slider />
       <SliderBottom />
+      <Vision/>
+      <News/>
       <Team />
       <TimeLine />
       <Contact />
