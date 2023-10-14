@@ -122,7 +122,7 @@ element.style {
     background-size: cover;
 }
 @media (min-width: 992px){
-.col-lg-12 {
+.col_lg_12 {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
@@ -151,7 +151,7 @@ element.style {
 .mb30 {
     margin-bottom: 30px;
 }
-.col-lg-4{
+.col_lg_4{
     background-size: cover;
 }
 @media (min-width: 992px){
@@ -166,7 +166,7 @@ element.style {
     flex: 0 0 50%;
     max-width: 50%;
 }}
-.col-4, .col-6{
+.col_4, .col_6{
     position: relative;
     width: 100%;
     padding-right: 15px;

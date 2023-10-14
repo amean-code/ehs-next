@@ -6,7 +6,7 @@
 }
 
 .containLeft {
-    flex: 6;
+    flex: 8;
     background-color: gray;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .containRight {
-    flex: 8;
+    flex: 7;
     background-color: rgb(216, 215, 215);
     padding: 60px;
 }
