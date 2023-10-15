@@ -170,6 +170,7 @@
 }
 /*MOBİLE MENU*/
 .mobile_menu{
+    z-index: 10000;
     display: none;
     position: absolute;
     right: 2rem;

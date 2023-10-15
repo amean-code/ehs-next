@@ -2,11 +2,14 @@
 .main_container {
     width: 100%;
     display: flex;
-    min-height: 70vh;
+    align-items: stretch;
+    min-height: 20vh;
+    position: relative;
 }
 
 .containLeft {
-    flex: 8;
+    flex: 5;
+    height: auto;
     background-color: rgb(214, 214, 214);
 }
 
@@ -19,7 +22,7 @@
 .containRight {
     flex: 7;
     background-color: rgb(214, 214, 214);
-    padding: 60px;
+    padding: 20px 60px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -403,6 +406,7 @@ figure.snip1192 .author .h5 .span {
     border-radius: 10px;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-height: 500px;
 }
 
 .contact_containRight {
@@ -518,7 +522,23 @@ figure.snip1192 .author .h5 .span {
 
 @media(max-width: 992px){
     .main_container{
-        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+
+    .containRight{
+        padding: 20px;
+    }
+
+    .containRight .buttons{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .containRight h4,
+    .containRight h2,
+    .containRight p{
+        width: 100%;
+        text-align: center;
     }
     .containerNumber{
         min-height: 19vh;
