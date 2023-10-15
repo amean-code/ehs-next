@@ -1,9 +1,8 @@
 .container_experience{
     width: 100%;
-    height: 700px;
+    min-height: 700px;
     display: flex;
     flex-direction: row;
-
     padding: 2rem 6rem;
 
     
@@ -11,7 +10,6 @@
 
 .row_experience{
     display: flex;
-    flex-wrap: wrap;
     min-height: 200px;
     width: 100%;
     padding: 12px;
@@ -124,3 +122,18 @@
     line-height: 26px;
     font-weight: 400;
 }
+/*RESPONSİVE*/
+@media(max-width: 992px){
+    .container_experience{
+        padding: 1rem;
+        flex-direction: column;
+    }
+    .row_experience{
+        flex-direction: column;
+    }
+    .col_md_6{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/*RESPONSİVE*/

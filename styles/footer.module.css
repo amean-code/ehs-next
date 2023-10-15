@@ -68,6 +68,7 @@
     font-size: 14px !important;
     color: #7e7e7e !important;
     line-height: 28px !important;
+    text-align: center;
 }
 
 .footer_social_icon .span {
@@ -222,3 +223,9 @@
         width: 33.33333333%;
     }
 }
+@media screen and (max-width:992px) {
+    .row{
+        flex-direction: column;
+    }
+}
+
