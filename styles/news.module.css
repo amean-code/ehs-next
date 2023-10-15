@@ -259,7 +259,7 @@ element.style {
     -webkit-box-shadow: 5px 5px 40px 0px rgba(0, 0, 0, .1);
     -moz-box-shadow: 5px 5px 40px 0px rgba(0, 0, 0, .1);
     box-shadow: 5px 5px 40px 0px rgba(0, 0, 0, .1);
-    background-color: #39b248;
+    background-color: var(--primary);
 
 }
 
@@ -295,7 +295,7 @@ element.style {
 }
 
 .p_tagline {
-    color: #39b248;
+    color: var(--primary);
     display: inline-block;
     font-size: 10px;
     font-weight: bold;

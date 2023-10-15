@@ -117,18 +117,8 @@
 }
 
 *:root{
-  --primary: #2ca2f1;
-  --primary-dark: #077fcf;
-  --primary-dark-opacity-2e: #077fcf2e;
-  --primary-light: #59bbfd;
-  --secondary: #2cc5a2;
-  --secondary-dark: #06ad6f;
-  --secondary-dark-opacity-2e: #07be7f2e;
-  --secondary-light: #44ddbb;
-  --third: #8d2cc5;
-  --third-dark: #7b07be;
-  --third-dark-opacity-2e: #7b07be2e;
-  --third-light: #b045ee;
+  --primary: #39B248;
+  --text-color: rgba(80,80,80);
 }
 
 .rs-slider-color-primary{
