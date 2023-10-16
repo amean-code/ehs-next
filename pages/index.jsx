@@ -9,10 +9,11 @@ import NotFoundPage from "./404";
 import Vision from "../components/Vision";
 import News from "../components/News";
 import Mentoring from "../components/Mentoring";
+import styles from "../styles/App.module.css"
 export default function Home() {
   return (
     
-    <div>
+    <div className={styles.main_body}>
       <Header />
       <Slider />
       <SliderBottom />

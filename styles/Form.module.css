@@ -1,0 +1,186 @@
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_wrapper{
+    border-radius: 10px;
+    background-color: white;
+    width: 80%;
+    min-width: 900px;
+    max-width: 1000px;
+    min-height: 80vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+.form_wrapper > div{
+    height: 80vh;
+}
+
+.form_wrapper .sidebar{
+    background-color: var(--primary);
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 40px;
+    position: relative;
+}
+
+.logo_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+.logo_container .image{
+    width: 150px;
+}
+
+.title{
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+    font-family: Inter-Bold;
+    color: white;
+    margin: 20px 0px 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title p{
+    width: 100%;
+}
+
+.title .icon{
+    width: 20px;
+    height: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.title .icon:not(.active){
+    transform: rotate(90deg);
+}
+
+.progress{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.progress .item{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.progress .item:not(:last-child)::after{
+    content: "";
+    width: 100%;
+    height: 25px;
+    border-left: 5px solid #d0d0d0;
+    left: 7.5px;
+    position: absolute;
+    top: calc(100% + 2.5px);
+}
+
+.progress .item.active:not(:last-child)::after{
+    border-color: white;
+}
+
+.progress .item .icon{
+    width: 20px;
+    height: 20px;
+}
+
+.progress .item .icon svg{
+    width: 100%;
+    height: 100%;
+}
+
+.progress .item .icon svg * {
+    fill: #d0d0d0;
+}
+
+.progress .item.active .icon svg * {
+    fill: white;
+}
+
+.progress .item .name{
+    font-size: 14px;
+    font-family: Inter-Bold;
+    color: #d0d0d0
+}
+
+.progress .item.active .name{
+    color: white;
+    font-size: 20px;
+}
+
+.form_wrapper .form_body{
+    background-color: transparent;
+    flex: 8;
+}
+
+@media screen and (max-width: 992px) {
+    .form_wrapper{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+        border-width: 0px;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+
+    .form_wrapper .sidebar{
+        flex: 1;
+    }
+    
+    .form_wrapper .form_body{
+        flex: 8;
+    }
+
+    .logo_container{
+        display: none;
+    }
+
+    .progress{
+        display: none;
+    }
+
+    .progress.mobile_active{
+        display: flex;
+    }
+
+    .title .icon{
+        display: flex;
+    }
+
+}

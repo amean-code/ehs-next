@@ -1,0 +1,402 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+.login_container{
+    flex:7;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login_container .login_body{
+    min-width: 400px;
+    max-width: 600px;
+    width: 50%;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* gap: 20px; */
+}
+
+.login_body .logo_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.login_body .logo_container img{
+    width: 40%;
+}
+
+.login_body .form{
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login_body .form label{
+    width: 100%;
+    text-align: left;
+    color: rgb(17, 17, 17);
+    font-size: 15px;
+    letter-spacing: -0.5px;
+}
+
+.login_body .form input{
+    width: 100%;
+    outline-width: 0px;
+    border-width: 0px;
+    border-radius: 20px;
+    font-size: 16px;
+    padding:10px 20px;
+    box-shadow: #3c40434d 0px 1px 2px 0px, #3c404326 0px 2px 6px 2px;
+    margin-bottom: 20px;
+    transition: all ease-in-out .3s;
+}
+
+.login_body .form input:hover,
+.login_body .form input:focus{
+    color: var(--primary);
+    box-shadow: #39a3884d 0px 1px 2px 0px, #39a38826 0px 2px 6px 2px;
+
+}
+
+.login_body .form .password_input{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+.login_body .form .forgot_password{
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-align: right;
+    color: var(--primary)
+}
+
+.login_body .form .password_input input{
+    margin-bottom: 0px;
+    padding-right: 50px;
+}
+
+.login_body .form .password_input .eye_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.login_body .form .password_input .eye_icon svg{
+    width: 25px;
+    height: 25px;
+    stroke: var(--text-color);
+    transition: all ease-in-out 0.3s;
+}
+
+.login_body .form .password_input .eye_icon:hover svg{
+    stroke: var(--primary);
+    strokeWidth: 2px;
+}
+
+.login_body .form button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+    outline-width: 0px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+}
+
+.login_body .form button:hover,
+.login_body .form button:focus{
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary)
+}
+
+.login_body .form .button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+    outline-width: 0px;
+    background-color: transparent;
+    color: var(--primary);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+}
+
+.login_body .form .button:hover,
+.login_body .form .button:focus{
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    color: var(--background-color)
+}
+
+.login_body .form .error{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.login_body .form .info{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.login_body .or{
+    margin: 0;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.login_body .other_auths{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap:5px;
+    flex-direction: row;
+    width: 100%;
+    padding:0px 10%;
+}
+
+.login_body .other_auths .item{
+    background-color: white;
+    padding:10px 20px;
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(235, 235, 235, 0.5) -3px -3px 6px 1px inset;
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+}
+
+.login_body .other_auths .item:hover{
+    box-shadow: none;
+}
+
+.login_body .other_auths .item svg{
+    width: 25px;
+    height: 25px;
+}
+
+
+
+.login_body .language{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.login_body .language select{
+    outline-width: 0px;
+    border: 2px solid var(--primary);
+    background-color: var(--background-color);
+    color: var(--primary);
+    padding: 10px 15px;
+    font-family: Inter-Bold;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.login_body .language:hover select{
+    color: white;
+    background-color: var(--primary);
+    border: 2px solid white;
+}
+
+
+.img_container{
+    flex:6;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img_container .img_body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 20px;
+    position: relative;
+    background: url("/images/login_image.svg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.img_body .titles{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 10%
+}
+
+.titles h1{
+    color: white;
+    font-family: Inter-Bold;
+    font-size: 50px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.titles p{
+    color: rgb(240, 240, 240);
+    font-family: Inter-Bold;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+.img_container .img_body .language{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_container .img_body .language select{
+    outline-width: 0px;
+    border: 2px solid var(--primary);
+    background-color: var(--background-color);
+    color: var(--primary);
+    padding: 10px 15px;
+    font-family: Inter-Bold;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.img_container .img_body .language:hover select{
+    color: white;
+    background-color: var(--primary);
+    border: 2px solid white;
+}
+
+.img_container .img_body .world_container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -35%;
+}
+
+.world_container .world_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.world_container .world_body .world{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.world_container .world_body .world svg{
+    width: 100%;
+    height: 100%;
+    animation: spin 60s linear 0s infinite;
+}
+
+/* .world_container .world_body .car .spin{
+    animation: spin 1s linear 0s infinite;
+} */
+
+@media screen and (max-width:1050px) {
+    .img_container{
+        display: none;
+    }
+
+    .login_body .language{
+        display: flex;
+    }
+
+    .login_container{
+        width: 100%;
+    }
+}
+
+@keyframes spin {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotateZ(-360deg);
+      -moz-transform: rotateZ(-360deg);
+      -webkit-transform: rotateZ(-360deg);
+      -o-transform: rotateZ(-360deg);
+      transform: rotateZ(-360deg);
+    }
+}

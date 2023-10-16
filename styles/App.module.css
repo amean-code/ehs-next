@@ -1,3 +1,9 @@
+
+
+.main_body{
+    padding-top: 160px;
+}
+
 /*slider*/
 .main_container {
     width: 100%;
@@ -548,6 +554,10 @@ figure.snip1192 .author .h5 .span {
     }
     .numberList .list{
         min-width: 120px;
+    }
+
+    .main_body{
+        padding-top: 100px;
     }
 
 }
