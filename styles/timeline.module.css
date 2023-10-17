@@ -178,3 +178,9 @@
         opacity: 1;
     }
 }
+
+@media screen and (max-width: 992px) {
+    .progress_bar_container .li .step_inner{
+        font-size: 8px;
+    }
+}

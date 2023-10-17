@@ -187,22 +187,6 @@ body {
 }
 
 
-.selection-primary::selection{
-  color: var(--primary-dark);
-  background-color: var(--primary-dark-opacity-2e);
-}
-
-.selection-secondary::selection{
-  color: var(--secondary-dark);
-  background-color: var(--secondary-dark-opacity-2e);
-}
-
-.selection-third::selection{
-  color: var(--third-dark);
-  background-color: var(--third-dark-opacity-2e);
-}
-
-
 .app-menu::-webkit-scrollbar {
   width: 5px;
   position: fixed;
