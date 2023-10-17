@@ -40,9 +40,9 @@ export default function SignUp () {
             if(data.success){
                 router.push("/verify-code?email="+register.email,"/verify-code");
             }else if(data.message=="min_pass_length_6"){
-            
+                set_error("Şifre minimum 6 karakterli olmalıdır")
             }else if(data.message=="email_already_used"){
-            
+                set_error("Emaile ait kullanıcı zaten mevcut")
             }
         })
         
