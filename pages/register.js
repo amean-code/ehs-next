@@ -5,6 +5,7 @@ import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import Head from 'next/head';
+import AuthService from '../services/Auth';
 
 export default function SignUp () {
 
@@ -14,7 +15,9 @@ export default function SignUp () {
         name:"",
         surname:"",
         email: "",
-        password :""
+        password :"",
+        phone: " ",
+        linkedin:" "
     })
 
     const [show_pass,set_show_pass] = useState(false);
@@ -29,19 +32,19 @@ export default function SignUp () {
 
         set_error("");
         set_info("");
-        // AuthService.register({
-        //     body: JSON.stringify(register)
-        // }).then((res)=>res.json()).then((data)=>{
-        //     ////console.log(data);
+        AuthService.register({
+            body: JSON.stringify(register)
+        }).then((res)=>res.json()).then((data)=>{
+            console.log(data);
 
-        //     if(data.success){
+            if(data.success){
+                router.push("/verify-code?email="+register.email,"/verify-code");
+            }else if(data.message=="min_pass_length_6"){
             
-        //     }else if(data.message=="min_pass_length_6"){
+            }else if(data.message=="email_already_used"){
             
-        //     }else if(data.message=="email_already_used"){
-            
-        //     }
-        // })
+            }
+        })
         
     }
 

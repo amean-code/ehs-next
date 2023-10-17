@@ -5,6 +5,8 @@ import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import Head from 'next/head';
+import AuthService from '../services/Auth';
+import Cookies from "js-cookie";
 
 export default function Login () {
 
@@ -34,23 +36,24 @@ export default function Login () {
 
         set_error("");
         set_info("");
-        // AuthService.login({
-        //     body: JSON.stringify({
-        //         ...login_form
-        //     })
-        // }).then(res=>res.json()).then(data=>{
-        //     //console.log(data);
+        AuthService.login({
+            body: JSON.stringify({
+                ...login_form
+            })
+        }).then(res=>res.json()).then(data=>{
+            console.log(data);
 
-        //     if(data.success){
-        //         router.push("/verify-code?email="+login_form.email,"/verify-code");
-        //     }else if(data.message=="auth_failed"){
+            if(data.success){
+                Cookies.set("ehs_user_token",data.accessToken);
+                router.push("/");
+            }else if(data.message=="auth_failed"){
+                set_error("Email veya Şifre Yanlış");
+            }else if(data.message=="user_not_found"){
+                set_error("Email veya Şifre Yanlış");
+            }else if(data.message=="not_accepted"){
             
-        //     }else if(data.message=="user_not_found"){
-            
-        //     }else if(data.message=="not_accepted"){
-            
-        //     }
-        // })
+            }
+        })
     }
 
     return (
