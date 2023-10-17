@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../../styles/Form.module.css"
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Form(){
 
@@ -113,6 +114,12 @@ export default function Form(){
     }
 
     return (
+        <>
+        <Head>
+            <title>
+                Form || EHS
+            </title>
+        </Head>
         <div className={styles.main}>
             <div className={styles.form_wrapper}>
                 <div className={styles.sidebar}>
@@ -781,5 +788,6 @@ export default function Form(){
                 </div>
             </div>
         </div>
+        </>
     )
 }
