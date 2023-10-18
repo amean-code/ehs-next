@@ -113,6 +113,91 @@ export default function Form(){
         }
     }
 
+    const [mentorluk_sureci_form,set_mentorluk_sureci_form] = useState([
+        {
+            name: "Lisans ve Lisansüstü Tez Mentörlüğü",
+            checked: false,
+            questions:[
+                {
+                    question: "Tez konunuz hakkında kısa bir açıklama yapar mısınız?",
+                    answer: ""
+                },
+                {
+                    question: "Hangi aşamadasınız? (Konu belirleme, literatür tarama, veri toplama vb.)",
+                    answer: ""
+                },
+                {
+                    question: "Hangi konularda yardım arıyorsunuz?",
+                    answer: ""
+                }
+            ]
+        },
+        {
+            name: "Proje Mentörlüğü",
+            checked: false,
+            questions:[
+                {
+                    question: "Projenizin kısa bir özeti nedir?",
+                    answer: ""
+                },
+                {
+                    question: "Projenizin şuanki aşaması nedir?",
+                    answer: ""
+                },
+                {
+                    question: "Hangi konularda danışmanlık arıyorsunuz?",
+                    answer: ""
+                }
+            ]
+        },
+        {
+            name: "Akademik ve Kariyer Mentörlüğü",
+            checked: false,
+            questions:[
+                {
+                    question: "Şuanki kariyer hedefiniz nedir?",
+                    answer: ""
+                },
+                {
+                    question: "Hangi alanlarda rehberlik arıyorsunuz? (Örneğin: iş başvurusu, CV hazırlığı vb.)",
+                    answer: ""
+                }
+            ]
+        },
+        {
+            name: "Girişimcilik Mentörlüğü",
+            checked: false,
+            questions:[
+                {
+                    question: "Girişim fikriniz nedir?",
+                    answer: ""
+                },
+                {
+                    question: "Şuanda hangi aşamadasınız?",
+                    answer: ""
+                },
+                {
+                    question: "Hangi konularda rehberlik arıyorsunuz?",
+                    answer: ""
+                }
+            ]
+        },
+        {
+            name: "Akran Mentörlüğü",
+            checked: false,
+            questions:[
+                {
+                    question: "Hangi deneyimleri veya bilgileri paylaşmak istersiniz?",
+                    answer: ""
+                },
+                {
+                    question: "Hangi konularda akran rehberliği arıyorsunuz?",
+                    answer: ""
+                }
+            ]
+        },
+    ])
+
     return (
         <>
         <Head>
@@ -734,9 +819,107 @@ export default function Form(){
                                                     </>:
                                                     index==2?
                                                     <>
+                                                    <div className={styles.item}>
+                                                        <div className={styles.question}>
+                                                            1.  EHS ile nasıl tanıştınız?
+                                                        </div>
+                                                        <textarea placeholder="Cevabınız..." required />
+                                                    </div>
+                                                    <div className={styles.item}>
+                                                        <div className={styles.question}>
+                                                            2.  Mentörlük Başvuru Türü:
+                                                        </div>
+                                                        <div className={styles.options}>
+                                                            {
+                                                                mentorluk_sureci_form.map((option,index)=>{
+                                                                    return (
+                                                                        <div className={styles.option} onClick={()=>{
+                                                                            set_mentorluk_sureci_form(mentorluk_sureci_form.map((a,map_index)=>{
+                                                                                if(index==map_index){
+                                                                                    return {
+                                                                                        ...a,
+                                                                                        checked: !a.checked
+                                                                                    }
+                                                                                }return a
+                                                                            }))
+                                                                        }}>
+                                                                            <div className={styles.checkbox_item} name="lisans-ve-lisansüst-tez">
+                                                                                <input type="checkbox" checked={option.checked} />
+                                                                                <span className={styles.checkmark}></span>
+                                                                            </div>
+                                                                            <label for="lisans-ve-lisansüst-tez">
+                                                                                {option.name}
+                                                                            </label>
+                                                                        </div>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                    <div className={styles.item}>
+                                                        <div className={styles.question}>
+                                                            3.  Bu mentörlükten beklentileriniz nelerdir?
+                                                        </div>
+                                                        <textarea placeholder="Cevabınız..." required />
+                                                    </div>
+                                                    <div className={styles.item}>
+                                                        <div className={styles.question}>
+                                                            4.  EHS'den almayı umduğunuz mentörlüğün süresi hakkında bir tahmininiz var mı? (Örnek: 3 ay, 6 ay, 1 yıl vb.)
+                                                        </div>
+                                                        <textarea placeholder="Cevabınız..." required />
+                                                    </div>
+                                                    <div className={styles.item}>
+                                                        <div className={styles.question}>
+                                                            5.  Mentörlük sürecinde ne sıklıkla mentörünüzle buluşmayı planlıyorsunuz? (Örnek: haftada bir, ayda bir vb.)
+                                                        </div>
+                                                        <textarea placeholder="Cevabınız..." required />
+                                                    </div>
                                                     </>:
                                                     index==3?
                                                     <>
+                                                    {
+                                                        mentorluk_sureci_form.map((option,option_index)=>{
+                                                            if(option.checked){
+                                                                return (
+                                                                    <>
+                                                                    <div className={styles.form_name}>
+                                                                        {option.name}
+                                                                    </div>
+                                                                    {
+                                                                        option.questions.map((question,question_index)=>{
+                                                                            return (
+                                                                                <>
+                                                                                <div className={styles.item}>
+                                                                                    <label>
+                                                                                        {question_index+1})  {question.question}
+                                                                                    </label>
+                                                                                    <textarea value={question.answer} onInput={(e)=>{
+                                                                                        set_mentorluk_sureci_form(mentorluk_sureci_form.map((a,map_index)=>{
+                                                                                            if(option_index==map_index){
+                                                                                                return {
+                                                                                                    ...a,
+                                                                                                    questions: a.questions.map((b,b_index)=>{
+                                                                                                        if(b_index==question_index){
+                                                                                                            return {
+                                                                                                                ...b,
+                                                                                                                answer: e.target.value
+                                                                                                            }
+                                                                                                        }return b
+                                                                                                    })
+                                                                                                }
+                                                                                            }return a
+                                                                                        }))
+                                                                                    }} required placeholder="Cevabınız..." />
+                                                                                </div>
+                                                                                </>
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                    </>
+                                                                )
+                                                            }
+                                                        })
+                                                    }
                                                     </>:
                                                     index==4?
                                                     <>

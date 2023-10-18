@@ -1,433 +1,525 @@
-.main{
-    width: 100vw;
-    height: 100vh;
-    background-color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.form_wrapper{
-    border-radius: 10px;
-    background-color: white;
-    width: 80%;
-    min-width: 900px;
-    max-width: 1200px;
-    min-height: 90vh;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: 2px solid var(--primary);
-    display: flex;
-    align-items: stretch;
-    position: relative;
-    overflow: hidden;
+.form_wrapper {
+  border-radius: 10px;
+  background-color: white;
+  width: 80%;
+  min-width: 900px;
+  max-width: 1200px;
+  min-height: 90vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
 }
 
-.form_wrapper > div{
-    height: 90vh;
+.form_wrapper > div {
+  height: 90vh;
 }
 
-.form_wrapper .sidebar{
-    background-color: var(--primary);
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 30px 40px;
-    position: relative;
+.form_wrapper .sidebar {
+  background-color: var(--primary);
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px 40px;
+  position: relative;
 }
 
-.logo_container{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
+.logo_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
 }
 
-.logo_container .image{
-    width: 150px;
+.logo_container .image {
+  width: 150px;
 }
 
-.title{
-    width: 100%;
-    text-align: left;
-    font-size: 25px;
-    font-family: Inter-Bold;
-    color: white;
-    margin: 20px 0px 30px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.title {
+  width: 100%;
+  text-align: left;
+  font-size: 25px;
+  font-family: Inter-Bold;
+  color: white;
+  margin: 20px 0px 30px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.title p{
-    width: 100%;
+.title p {
+  width: 100%;
 }
 
-.title .icon{
-    width: 20px;
-    height: 20px;
-    display: none;
-    justify-content: center;
-    align-items: center;
+.title .icon {
+  width: 20px;
+  height: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
-.title .icon:not(.active){
-    transform: rotate(90deg);
+.title .icon:not(.active) {
+  transform: rotate(90deg);
 }
 
-.progress{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+.progress {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.progress .item{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    margin-bottom: 30px;
-    cursor: pointer;
+.progress .item {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 
-.progress .item:not(:last-child)::after{
-    content: "";
-    width: 100%;
-    height: 25px;
-    border-left: 5px dashed #d0d0d0;
-    left: 7.5px;
-    position: absolute;
-    top: calc(100% + 2.5px);
+.progress .item:not(:last-child)::after {
+  content: '';
+  width: 100%;
+  height: 25px;
+  border-left: 5px dashed #d0d0d0;
+  left: 7.5px;
+  position: absolute;
+  top: calc(100% + 2.5px);
 }
 
-.progress .item.active:not(:last-child):not(.focus)::after{
-    border-left-style: solid;
+.progress .item.active:not(:last-child):not(.focus)::after {
+  border-left-style: solid;
 }
 
-.progress .item.active:not(:last-child)::after{
-    border-color: white;
+.progress .item.active:not(:last-child)::after {
+  border-color: white;
 }
 
-.progress .item .icon{
-    width: 20px;
-    height: 20px;
+.progress .item .icon {
+  width: 20px;
+  height: 20px;
 }
 
-.progress .item .icon svg{
-    width: 100%;
-    height: 100%;
+.progress .item .icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .progress .item .icon svg * {
-    fill: #d0d0d0;
+  fill: #d0d0d0;
 }
 
 .progress .item.active .icon svg * {
-    fill: white;
+  fill: white;
 }
 
-.progress .item .name{
-    font-size: 14px;
-    font-family: Inter-Bold;
-    color: #d0d0d0
+.progress .item .name {
+  font-size: 14px;
+  font-family: Inter-Bold;
+  color: #d0d0d0;
 }
 
-.progress .item.active .name{
-    color: white;
-    font-size: 14px;
+.progress .item.active .name {
+  color: white;
+  font-size: 14px;
 }
 
-.form_wrapper .form_body{
-    background-color: transparent;
-    flex: 8;
-    overflow: hidden;
-    position: relative;
+.form_wrapper .form_body {
+  background-color: transparent;
+  flex: 8;
+  overflow: hidden;
+  position: relative;
 }
 
-.form_container{
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    position: relative;
-    width: 100%;
-    height: 95%;
+.form_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  position: relative;
+  width: 100%;
+  height: 95%;
 }
 
-.section_slider{
-    min-width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    transition: all ease-in-out 0.5s;
+.section_slider {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: all ease-in-out 0.5s;
 }
 
-.form_body .section{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 30px;
-    padding-top: 50px;
-    position: relative;
+.form_body .section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 30px;
+  padding-top: 50px;
+  position: relative;
 }
 
-.section .step_name{
-    width: 100%;
-    text-align: left;
-    color: var(--text-color);
-    font-size: 30px;
-    font-family: Inter-Bold;
+.section .step_name {
+  width: 100%;
+  text-align: left;
+  color: var(--text-color);
+  font-size: 30px;
+  font-family: Inter-Bold;
 }
 
-.form{
-    width: 100%;
-    flex: 1;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
-    padding: 0px 20px 70px 20px;
+.form {
+  width: 100%;
+  flex: 1;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  padding: 0px 20px 70px 20px;
+  margin-top: 30px;
 }
 
 .form::-webkit-scrollbar {
-    display: none; 
+  display: none;
 }
 
-.buttons{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 15px;
-    background-color: white;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    z-index: 1001;
+.buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  z-index: 1001;
 }
 
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-color);
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-family: Inter-Medium;
-    color: var(--text-color);
-    gap: 10px;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-family: Inter-Medium;
+  color: var(--text-color);
+  gap: 10px;
 }
 
-.button:hover{
-    filter: brightness(0.8);
+.button:hover {
+  filter: brightness(0.8);
 }
 
-.button .icon{
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button .icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button .icon svg{
-    width: 100%;
-    height: 100%;
+.button .icon svg {
+  width: 100%;
+  height: 100%;
 }
 
-.button.next{
-    background-color: var(--primary);
-    color: white;
+.button.next {
+  background-color: var(--primary);
+  color: white;
 }
 
-.row{
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+.row {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
-.form .item{
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-bottom: 5px;
+.form .item {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 5px;
 }
 
-.form label{
-    width: 100%;
-    font-size: 14px;
-    text-align: left;
-    font-family: Inter-Bold;
-    color: rgb(104, 104, 104);
+.form label {
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  font-family: Inter-Bold;
+  color: rgb(104, 104, 104);
 }
 
-.form .form_name{
-    font-size: 20px;
-    color: black;
-    font-family: Inter-Bold;
-    margin-bottom: 10px;
-    position: sticky;
-    top: 0px;
-    background-color: white;
-    padding: 10px 0px 10px 0px;
-    width: 102%;
-    margin-left: -1%;
-    z-index: 100;
+.form .question {
+  font-size: 20px;
+  font-family: Inter-Bold;
+  margin-bottom: 5px;
+  color: var(--text-color);
 }
 
-.card{
-    width: 100%;
-    padding: 20px;
-    border: 1px solid var(--background-color);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    margin-bottom: 10px;
-    position: relative;
+.form .form_name {
+  font-size: 20px;
+  color: black;
+  font-family: Inter-Bold;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  padding: 10px 0px 10px 0px;
+  width: 102%;
+  margin-left: -1%;
+  z-index: 100;
 }
 
-.card .delete_icon{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgb(240, 41, 41);
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    border-radius: 10px;
+.card {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid var(--background-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  margin-bottom: 10px;
+  position: relative;
 }
 
-.card .delete_icon:hover{
-    filter: brightness(0.8)
+.card .delete_icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(240, 41, 41);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-.card .delete_icon svg *{
-    width: 100%;
-    height: 100%;
-    stroke: white;
+.card .delete_icon:hover {
+  filter: brightness(0.8);
+}
+
+.card .delete_icon svg * {
+  width: 100%;
+  height: 100%;
+  stroke: white;
 }
 
 .form input,
 .form textarea,
-.form select{
-    width: 100%;
-    padding: 3px 10px;
-    text-align: left;
-    border: 2px solid rgb(204, 204, 204);
-    border-radius: 10px;
-    outline-color: black ;
-    font-size: 14px;
-    margin-bottom: 5px;
+.form select {
+  width: 100%;
+  padding: 3px 10px;
+  text-align: left;
+  border: 2px solid rgb(204, 204, 204);
+  border-radius: 10px;
+  outline-color: black;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-.form select{
-    padding: 5px;
+.form select {
+  padding: 5px;
 }
 
 .form input:focus,
 .form textarea:focus,
-.form select:focus{
-    border: 2px solid var(--primary);
-    outline-color: vaR(--primary) ;
-    color: var(--primary)
+.form select:focus {
+  border: 2px solid var(--primary);
+  outline-color: vaR(--primary);
+  color: var(--primary);
 }
 
-.form .add_button{
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: rgb(65, 120, 223);
-    color: white;
-    text-align: center;
+.form .add_button {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: rgb(65, 120, 223);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.options{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 10px;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px 10px 10px 30px;
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    cursor: pointer !important;
+    width: 100%;
+}
+
+.checkbox_item {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox_item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox_item label{
+    cursor: pointer !important;
+}
+
+.checkbox_item .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+}
+
+.checkbox_item:hover input ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.checkbox_item input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.checkbox_item .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox_item input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox_item .checkmark:after {
+  left: 3.5px;
+  top: 1.5px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 @media screen and (max-width: 992px) {
-    .form_wrapper{
-        position: fixed;
-        left: 0px;
-        top: 0px;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        border-radius: 0px;
-        border-width: 0px;
-        min-width: 100vw;
-        min-height: 100vh;
-    }
+  .form_wrapper {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+    border-width: 0px;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
 
-    .form_wrapper .sidebar{
-        flex: 0.1;
-    }
-    
-    .form_wrapper .form_body{
-        flex: 8;
-    }
+  .form_wrapper .sidebar {
+    flex: 0.1;
+  }
 
-    .logo_container{
-        display: none;
-    }
+  .form_wrapper .form_body {
+    flex: 8;
+  }
 
-    .progress{
-        display: none;
-    }
+  .logo_container {
+    display: none;
+  }
 
-    .progress.mobile_active{
-        display: flex;
-    }
+  .progress {
+    display: none;
+  }
 
-    .title .icon{
-        display: flex;
-    }
+  .progress.mobile_active {
+    display: flex;
+  }
 
-    .sidebar{
-        padding: 20px !important;
-    }
+  .title .icon {
+    display: flex;
+  }
 
-    .title{
-        margin: 10px 0px !important;
-    }
+  .sidebar {
+    padding: 20px !important;
+  }
 
-    .button p{
-        font-size: 12px;
-    }
+  .title {
+    margin: 10px 0px !important;
+  }
 
-    .row{
-        flex-direction: column;
-    }
+  .button p {
+    font-size: 12px;
+  }
 
-    .form{
-        padding: 0px 0px 70px 0px;
-    }
+  .row {
+    flex-direction: column;
+  }
 
-    .form_name{
-        padding-left: 10px !important;
-    }
+  .form {
+    padding: 0px 0px 70px 0px;
+  }
 
+  .form_name {
+    padding-left: 10px !important;
+  }
 }
