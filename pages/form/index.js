@@ -127,6 +127,26 @@ export default function Form(){
         hobi_form_structure
     ]);
 
+    const bilgisayar_becerisi_form_structure = {
+        name:"",
+        star:"",
+        star_show: ""
+    }
+
+    const [bilgisayar_becerisi_forms,set_bilgisayar_becerisi_forms] = useState([
+        bilgisayar_becerisi_form_structure
+    ]);
+
+    const dil_form_structure = {
+        name:"",
+        star:"",
+        star_show: ""
+    }
+
+    const [dil_forms,set_dil_forms] = useState([
+        dil_form_structure
+    ]);
+
 
     let handle_phone_oninput = (e) => {
 
@@ -373,7 +393,7 @@ export default function Form(){
                                                                                     }return true
                                                                                 }))
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -580,7 +600,7 @@ export default function Form(){
                                                                                     }return true
                                                                                 }))
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -759,7 +779,7 @@ export default function Form(){
                                                                                     }return true
                                                                                 }))
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -898,7 +918,7 @@ export default function Form(){
                                                                                     }return true
                                                                                 }))
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1076,6 +1096,196 @@ export default function Form(){
                                                         </button>
                                                     </div>
 
+                                                    <div className={styles.item}>
+                                                        <div className={styles.form_name}>
+                                                            Dil
+                                                        </div>
+                                                        <div className={styles.card}>
+                                                            {
+                                                                dil_forms.map((dil_form,index)=>{
+                                                                    return (
+                                                                        <div className={styles.input_with_stars}>
+                                                                            <div className={styles.input_container}>
+                                                                                {
+                                                                                    dil_forms.length>1?
+                                                                                    <button onClick={(e)=>{
+                                                                                        e.stopPropagation();
+                                                                                        e.preventDefault();
+                                                                                        set_dil_forms(dil_forms.filter((a,map_index)=>{
+                                                                                            if(map_index!=index){
+                                                                                                return true
+                                                                                            }return false
+                                                                                        }))
+                                                                                    }} className={styles.delete_input}>
+                                                                                        <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                    </button>
+                                                                                    :""
+                                                                                }
+                                                                                <input placeholder="Dil..." value={dil_form.name}
+                                                                                onInput={(e)=>{
+                                                                                    set_dil_forms(dil_forms.map((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...a,
+                                                                                                name: e.target.value
+                                                                                            }
+                                                                                        }return a
+                                                                                    }))
+                                                                                }} />
+                                                                            </div>
+                                                                            <div className={styles.stars_container}>
+                                                                                <div className={styles.stars_input}>
+                                                                                    {
+                                                                                        [1,2,3,4,5].map((star_index)=>{
+                                                                                            return (
+                                                                                                <div onMouseOver={()=>{
+                                                                                                    set_dil_forms(dil_forms.map((a,map_index)=>{
+                                                                                                        if(index==map_index){
+                                                                                                            return {
+                                                                                                                ...a,
+                                                                                                                star_show: star_index
+                                                                                                            }
+                                                                                                        }return a
+                                                                                                    }))
+                                                                                                }}
+                                                                                                onMouseLeave={()=>{
+                                                                                                    set_dil_forms(dil_forms.map((a,map_index)=>{
+                                                                                                        if(index==map_index){
+                                                                                                            return {
+                                                                                                                ...a,
+                                                                                                                star_show: a.star
+                                                                                                            }
+                                                                                                        }return a
+                                                                                                    }))
+                                                                                                }}
+                                                                                                onClick={()=>{
+                                                                                                    set_dil_forms(dil_forms.map((a,map_index)=>{
+                                                                                                        if(index==map_index){
+                                                                                                            return {
+                                                                                                                ...a,
+                                                                                                                star: star_index
+                                                                                                            }
+                                                                                                        }return a
+                                                                                                    }))
+                                                                                                }} className={styles.star+" "+(star_index<=dil_form.star_show?styles.active:"")}>
+                                                                                                    <svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.964 1.19l2.316 4.66c.116.235.34.399.6.437l5.185.749c.21.028.4.138.528.306a.77.77 0 01-.085 1.032l-3.758 3.634a.762.762 0 00-.226.7l.9 5.129a.787.787 0 01-.652.892.868.868 0 01-.516-.08l-4.618-2.421a.776.776 0 00-.742 0l-4.652 2.434a.812.812 0 01-1.077-.33.796.796 0 01-.08-.5l.9-5.128a.788.788 0 00-.227-.7L.982 8.37A.786.786 0 01.98 7.259l.003-.004a.91.91 0 01.452-.222l5.186-.75a.812.812 0 00.6-.437L9.534 1.19a.787.787 0 01.458-.4.798.798 0 01.61.044.82.82 0 01.362.356z" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                                                                </div>
+                                                                                            )
+                                                                                        })
+                                                                                    }
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                                })
+                                                            }
+                                                            <button onClick={(e)=>{
+                                                                e.preventDefault();
+                                                                e.stopPropagation();
+                                                                set_dil_forms([
+                                                                    ...dil_forms,
+                                                                    dil_form_structure
+                                                                ])
+                                                            }} className={styles.add_button+" "+styles.in_card}>
+                                                                Dil Ekle
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div className={styles.item}>
+                                                        <div className={styles.form_name}>
+                                                            Bilgisayar Becerisi
+                                                        </div>
+                                                        <div className={styles.card}>
+                                                            {
+                                                                bilgisayar_becerisi_forms.map((bilgisayar_becerisi_form,index)=>{
+                                                                    return (
+                                                                        <div className={styles.input_with_stars}>
+                                                                            <div className={styles.input_container}>
+                                                                                {
+                                                                                    bilgisayar_becerisi_forms.length>1?
+                                                                                    <button onClick={(e)=>{
+                                                                                        e.stopPropagation();
+                                                                                        e.preventDefault();
+                                                                                        set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.filter((a,map_index)=>{
+                                                                                            if(map_index!=index){
+                                                                                                return true
+                                                                                            }return false
+                                                                                        }))
+                                                                                    }} className={styles.delete_input}>
+                                                                                        <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                    </button>
+                                                                                    :""
+                                                                                }
+                                                                                <input placeholder="Beceri..." value={bilgisayar_becerisi_form.name}
+                                                                                onInput={(e)=>{
+                                                                                    set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.map((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...a,
+                                                                                                name: e.target.value
+                                                                                            }
+                                                                                        }return a
+                                                                                    }))
+                                                                                }} />
+                                                                            </div>
+                                                                            <div className={styles.stars_container}>
+                                                                                <div className={styles.stars_input}>
+                                                                                    {
+                                                                                        [1,2,3,4,5].map((star_index)=>{
+                                                                                            return (
+                                                                                                <div onMouseOver={()=>{
+                                                                                                    set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.map((a,map_index)=>{
+                                                                                                        if(index==map_index){
+                                                                                                            return {
+                                                                                                                ...a,
+                                                                                                                star_show: star_index
+                                                                                                            }
+                                                                                                        }return a
+                                                                                                    }))
+                                                                                                }}
+                                                                                                onMouseLeave={()=>{
+                                                                                                    set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.map((a,map_index)=>{
+                                                                                                        if(index==map_index){
+                                                                                                            return {
+                                                                                                                ...a,
+                                                                                                                star_show: a.star
+                                                                                                            }
+                                                                                                        }return a
+                                                                                                    }))
+                                                                                                }}
+                                                                                                onClick={()=>{
+                                                                                                    set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.map((a,map_index)=>{
+                                                                                                        if(index==map_index){
+                                                                                                            return {
+                                                                                                                ...a,
+                                                                                                                star: star_index
+                                                                                                            }
+                                                                                                        }return a
+                                                                                                    }))
+                                                                                                }} className={styles.star+" "+(star_index<=bilgisayar_becerisi_form.star_show?styles.active:"")}>
+                                                                                                    <svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.964 1.19l2.316 4.66c.116.235.34.399.6.437l5.185.749c.21.028.4.138.528.306a.77.77 0 01-.085 1.032l-3.758 3.634a.762.762 0 00-.226.7l.9 5.129a.787.787 0 01-.652.892.868.868 0 01-.516-.08l-4.618-2.421a.776.776 0 00-.742 0l-4.652 2.434a.812.812 0 01-1.077-.33.796.796 0 01-.08-.5l.9-5.128a.788.788 0 00-.227-.7L.982 8.37A.786.786 0 01.98 7.259l.003-.004a.91.91 0 01.452-.222l5.186-.75a.812.812 0 00.6-.437L9.534 1.19a.787.787 0 01.458-.4.798.798 0 01.61.044.82.82 0 01.362.356z" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                                                                </div>
+                                                                                            )
+                                                                                        })
+                                                                                    }
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                                })
+                                                            }
+                                                            <button onClick={(e)=>{
+                                                                e.preventDefault();
+                                                                e.stopPropagation();
+                                                                set_bilgisayar_becerisi_forms([
+                                                                    ...bilgisayar_becerisi_forms,
+                                                                    bilgisayar_becerisi_form_structure
+                                                                ])
+                                                            }} className={styles.add_button+" "+styles.in_card}>
+                                                                Beceri Ekle
+                                                            </button>
+                                                        </div>
+                                                    </div>
 
                                                     <div className={styles.item}>
                                                         <div className={styles.form_name}>
@@ -1096,7 +1306,7 @@ export default function Form(){
                                                                                     }return true
                                                                                 }))
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1191,7 +1401,7 @@ export default function Form(){
                                                                                     }return true
                                                                                 }))
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1440,7 +1650,7 @@ export default function Form(){
                                                         }
                                                     }} className={styles.button+" "+styles.prev}>
                                                         <div className={styles.icon}>
-                                                            <svg stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M13 8l-4 4 4 4" stroke="var(--geist-stroke)"/></svg>
+                                                            <svg stroke="currentColor" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M13 8l-4 4 4 4" stroke="var(--geist-stroke)"/></svg>
                                                         </div>
                                                         <p>
                                                             Geri Git
@@ -1454,7 +1664,7 @@ export default function Form(){
                                                             Kaydet ve Devam Et
                                                         </p>
                                                         <div className={styles.icon}>
-                                                            <svg stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M11 16l4-4-4-4" stroke="var(--geist-stroke)"/></svg>
+                                                            <svg stroke="currentColor" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M11 16l4-4-4-4" stroke="var(--geist-stroke)"/></svg>
                                                         </div>
                                                     </button>:
                                                     <button className={styles.button+" "+styles.next}>
