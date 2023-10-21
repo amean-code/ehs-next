@@ -283,7 +283,7 @@
 }
 
 .form .question {
-  font-size: 20px;
+  font-size: 18px;
   font-family: Inter-Bold;
   margin-bottom: 5px;
   color: var(--text-color);
@@ -351,6 +351,10 @@
   margin-bottom: 5px;
 }
 
+.form textarea {
+  min-height: 130px;
+}
+
 .form select {
   padding: 5px;
 }
@@ -377,21 +381,21 @@
   border-radius: 10px;
 }
 
-.options{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 10px 10px 10px 30px;
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 10px 10px 30px;
 }
 
-.option{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    cursor: pointer !important;
-    width: 100%;
+.option {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  cursor: pointer !important;
+  width: 100%;
 }
 
 .checkbox_item {
@@ -414,8 +418,8 @@
   width: 0;
 }
 
-.checkbox_item label{
-    cursor: pointer !important;
+.checkbox_item label {
+  cursor: pointer !important;
 }
 
 .checkbox_item .checkmark {

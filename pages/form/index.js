@@ -198,6 +198,29 @@ export default function Form(){
         },
     ])
 
+    const [mentorluk_sonrasi_surec,set_mentorluk_sonrasi_surec] = useState([
+        {
+            name: "Lisans ve Lisansüstü Tez Mentörlüğü",
+            checked: false
+        },
+        {
+            name: "Proje Mentörlüğü",
+            checked: false
+        },
+        {
+            name: "Akademik ve Kariyer Mentörlüğü",
+            checked: false
+        },
+        {
+            name: "Girişimcilik Mentörlüğü",
+            checked: false
+        },
+        {
+            name: "Akran Mentörlüğü",
+            checked: false
+        },
+    ])
+
     return (
         <>
         <Head>
@@ -923,6 +946,55 @@ export default function Form(){
                                                     </>:
                                                     index==4?
                                                     <>
+                                                        <div className={styles.item}>
+                                                            <div className={styles.question}>
+                                                                1. Mentörlük sürecinizi tamamladıktan sonra EHS topluluğuyla nasıl bir ilişki kurmayı planlıyorsunuz?
+                                                            </div>
+                                                            <div className={styles.options}>
+                                                                {
+                                                                    mentorluk_sonrasi_surec.map((option,index)=>{
+                                                                        return (
+                                                                            <div className={styles.option} onClick={()=>{
+                                                                                set_mentorluk_sonrasi_surec(mentorluk_sonrasi_surec.map((a,map_index)=>{
+                                                                                    if(index==map_index){
+                                                                                        return {
+                                                                                            ...a,
+                                                                                            checked: !a.checked
+                                                                                        }
+                                                                                    }return a
+                                                                                }))
+                                                                            }}>
+                                                                                <div className={styles.checkbox_item} name="lisans-ve-lisansüst-tez">
+                                                                                    <input type="checkbox" checked={option.checked} />
+                                                                                    <span className={styles.checkmark}></span>
+                                                                                </div>
+                                                                                <label for="lisans-ve-lisansüst-tez">
+                                                                                    {option.name}
+                                                                                </label>
+                                                                            </div>
+                                                                        )
+                                                                    })
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                        <div className={styles.item}>
+                                                            <div className={styles.question}>
+                                                                2. EHS topluluğuna mentör olarak katkıda bulunmayı düşünüyor musunuz? Eğer evet ise, hangi konularda mentörlük yapmayı tercih edersiniz?
+                                                            </div>
+                                                            <textarea placeholder="Cevabınız..." required />
+                                                        </div>
+                                                        <div className={styles.item}>
+                                                            <div className={styles.question}>
+                                                                3. EHS etkinliklerinde hangi kapasitelerde görev almayı düşünüyorsunuz? (Örneğin: etkinlik organizasyonu, konuşmacı olarak katılmak, sponsorluk ilişkileri kurma vb. )
+                                                            </div>
+                                                            <textarea placeholder="Cevabınız..." required />
+                                                        </div>
+                                                        <div className={styles.item}>
+                                                            <div className={styles.question}>
+                                                                4. EHS ile ilgili ek olarak paylaşmak istediğiniz düşünceleriniz veya beklentileriniz var mı?
+                                                            </div>
+                                                            <textarea placeholder="Cevabınız..." required />
+                                                        </div>
                                                     </>:""
 
                                                 }
