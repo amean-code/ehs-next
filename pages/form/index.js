@@ -106,6 +106,27 @@ export default function Form(){
         proje_form_structure
     ]);
 
+    const yayin_form_structure = {
+        name:"",
+        kurum:"",
+        yayin_tarihi:"",
+        DOI:""
+    }
+
+    const [yayin_forms,set_yayin_forms] = useState([
+        yayin_form_structure
+    ]);
+
+    const hobi_form_structure = {
+        name:"",
+        aciklama:"",
+        professional:false
+    }
+
+    const [hobi_forms,set_hobi_forms] = useState([
+        hobi_form_structure
+    ]);
+
 
     let handle_phone_oninput = (e) => {
 
@@ -858,8 +879,6 @@ export default function Form(){
                                                         </button>
                                                     </div>
 
-
-
                                                     <div className={styles.item}>
                                                         <div className={styles.form_name}>
                                                             Projeler
@@ -1053,9 +1072,202 @@ export default function Form(){
                                                                 proje_form_structure
                                                             ])
                                                         }} className={styles.add_button}>
-                                                            Kurs ve Sertifika Bilgisi Ekle
+                                                            Proje Ekle
                                                         </button>
                                                     </div>
+
+
+                                                    <div className={styles.item}>
+                                                        <div className={styles.form_name}>
+                                                            Yayınlar
+                                                        </div>
+                                                        {
+                                                            yayin_forms.map((yayin_form,index)=>{
+                                                                return (
+                                                                    <div className={styles.card}>
+                                                                        {
+                                                                            yayin_forms.length>1?
+                                                                            <button onClick={(e)=>{
+                                                                                e.stopPropagation();
+                                                                                e.preventDefault();
+                                                                                set_yayin_forms(yayin_forms.filter((a,map_index)=>{
+                                                                                    if(index==map_index){
+                                                                                        return false
+                                                                                    }return true
+                                                                                }))
+                                                                            }} className={styles.delete_icon}>
+                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                            </button>:""
+                                                                        }
+                                                                        <div className={styles.item}>
+                                                                            <label for={"proje-name-"+index}>
+                                                                                Proje İsmi
+                                                                            </label>
+                                                                            <input type="text" name={"proje-name-"+index} required placeholder="İsim..."
+                                                                                value={yayin_form.name} 
+                                                                                onInput={(e)=>{
+                                                                                    set_yayin_forms(yayin_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                name: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"yayinlayan-kurum-"+index}>
+                                                                                Yayınlanan Kurum
+                                                                            </label>
+                                                                            <input type="text" name={"yayinlayan-kurum-"+index} required placeholder="Yayınlanan Kurum..."
+                                                                                value={yayin_form.kurum} 
+                                                                                onInput={(e)=>{
+                                                                                    set_yayin_forms(yayin_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                kurum: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"doı-"+index}>
+                                                                                DOI
+                                                                            </label>
+                                                                            <textarea required name={"doı-"+index} placeholder="DOI..." 
+                                                                                value={yayin_form.DOI}
+
+                                                                                onInput={(e)=>{
+                                                                                    set_yayin_forms(yayin_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                DOI: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            >
+                                                                            </textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            })
+                                                        }
+                                                        <button onClick={(e)=>{
+                                                            e.stopPropagation();
+                                                            e.preventDefault();
+                                                            set_yayin_forms([
+                                                                ...yayin_forms,
+                                                                yayin_form_structure
+                                                            ])
+                                                        }} className={styles.add_button}>
+                                                            Yayın Ekle
+                                                        </button>
+                                                    </div>
+
+
+                                                    <div className={styles.item}>
+                                                        <div className={styles.form_name}>
+                                                            Hobiler
+                                                        </div>
+                                                        {
+                                                            hobi_forms.map((hobi_form,index)=>{
+                                                                return (
+                                                                    <div className={styles.card}>
+                                                                        {
+                                                                            hobi_forms.length>1?
+                                                                            <button onClick={(e)=>{
+                                                                                e.stopPropagation();
+                                                                                e.preventDefault();
+                                                                                set_hobi_forms(hobi_forms.filter((a,map_index)=>{
+                                                                                    if(index==map_index){
+                                                                                        return false
+                                                                                    }return true
+                                                                                }))
+                                                                            }} className={styles.delete_icon}>
+                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                            </button>:""
+                                                                        }
+                                                                        <div className={styles.item}>
+                                                                            <label for={"hobi-name-"+index}>
+                                                                                Hobi Başlığı
+                                                                            </label>
+                                                                            <input type="text" name={"hobi-name-"+index} required placeholder="İsim..."
+                                                                                value={hobi_form.name} 
+                                                                                onInput={(e)=>{
+                                                                                    set_hobi_forms(hobi_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                name: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.options}>
+                                                                            <div className={styles.option} onClick={()=>{
+                                                                                set_hobi_forms(hobi_forms.map((a,map_index)=>{
+                                                                                    if(index==map_index){
+                                                                                        return {
+                                                                                            ...a,
+                                                                                            professional: !a.professional
+                                                                                        }
+                                                                                    }return a
+                                                                                }))
+                                                                            }}>
+                                                                                <div className={styles.checkbox_item} name="lisans-ve-lisansüst-tez">
+                                                                                    <input type="checkbox" checked={hobi_form.professional} />
+                                                                                    <span className={styles.checkmark}></span>
+                                                                                </div>
+                                                                                <label for="lisans-ve-lisansüst-tez">
+                                                                                    Profesyonel
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"description-"+index}>
+                                                                                Açıklama
+                                                                            </label>
+                                                                            <textarea required name={"description-"+index} placeholder="Açıklama..." 
+                                                                                value={hobi_form.description}
+
+                                                                                onInput={(e)=>{
+                                                                                    set_hobi_forms(hobi_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                description: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            >
+                                                                            </textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            })
+                                                        }
+                                                        <button onClick={(e)=>{
+                                                            e.stopPropagation();
+                                                            e.preventDefault();
+                                                            set_hobi_forms([
+                                                                ...hobi_forms,
+                                                                hobi_form_structure
+                                                            ])
+                                                        }} className={styles.add_button}>
+                                                            Hobi Ekle
+                                                        </button>
+                                                    </div>
+                                                    
                                                     
                                                     </>:
                                                     index==2?
