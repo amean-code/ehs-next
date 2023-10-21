@@ -2,10 +2,11 @@ import { useState } from "react";
 import styles from "../../styles/Form.module.css"
 import Image from "next/image";
 import Head from "next/head";
+import { useRef } from "react";
 
 export default function Form(){
 
-    const [state,set_state] = useState(1);
+    const [state,set_state] = useState(0);
     const [steps,set_steps] = useState([
         {
             name: "İletişim Bilgileri"
@@ -26,12 +27,48 @@ export default function Form(){
 
     const [mobile_progress,set_menu_progress] = useState(false);
 
+    const mentorluk_basvuru_turu_ref = useRef();
+
+    const [error,set_error] = useState({
+        code: "",
+        message: ""
+    });
+
     let handle_submit = (e) => {
         e.preventDefault();
         e.stopPropagation();
+
+        set_error({
+            code: "",
+            message: ""
+        });
         
         if(state<steps.length-1){
-            set_state(state+1);
+
+            let success = true;
+
+            if(state==2){
+                if(mentorluk_sureci_form.filter(a=>{
+                    if(a.checked){
+                        return true
+                    }return false
+                })==0){
+                    success=false;
+                    set_error({
+                        code: "mentorluk_basvuru_turu_min_1",
+                        message: "En az 1 mentörlük başvuru türü işaretlenmeli"
+                    });
+                    console.log("mentorluk_basvuru_turu_ref: ",mentorluk_basvuru_turu_ref);
+                    console.log("mentorluk_basvuru_turu_ref: ",mentorluk_basvuru_turu_ref.current);
+                    mentorluk_basvuru_turu_ref.current.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            if(success){
+                set_state(state+1);
+            }
         }
     };
 
@@ -44,6 +81,7 @@ export default function Form(){
     })
 
     const egitim_form_structure = {
+        id: -1,
         bölüm:"",
         okul:"",
         derece:"",
@@ -61,6 +99,7 @@ export default function Form(){
 
 
     const tecrube_form_structure = {
+        id: -1,
         pozisyon:"",
         kurum:"",
         baslangic:"",
@@ -77,6 +116,7 @@ export default function Form(){
 
 
     const kurs_form_structure = {
+        id: -1,
         name:"",
         kurum:"",
         tamamlama_tarihi:"",
@@ -90,6 +130,7 @@ export default function Form(){
     ]);
 
     const proje_form_structure = {
+        id: -1,
         name:"",
         yer:"",
         destekleyen_kurum:"",
@@ -107,6 +148,7 @@ export default function Form(){
     ]);
 
     const yayin_form_structure = {
+        id: -1,
         name:"",
         kurum:"",
         yayin_tarihi:"",
@@ -118,6 +160,7 @@ export default function Form(){
     ]);
 
     const hobi_form_structure = {
+        id: -1,
         name:"",
         aciklama:"",
         professional:false
@@ -128,6 +171,7 @@ export default function Form(){
     ]);
 
     const bilgisayar_becerisi_form_structure = {
+        id: -1,
         name:"",
         star:"",
         star_show: ""
@@ -138,6 +182,7 @@ export default function Form(){
     ]);
 
     const dil_form_structure = {
+        id: -1,
         name:"",
         star:"",
         star_show: ""
@@ -305,7 +350,7 @@ export default function Form(){
                         {
                             steps.map((step,index)=>{
                                 return (
-                                    <div onClick={()=>set_state(index)} className={styles.item+" "+(index<=state?styles.active:"")+" "+(index==state?styles.focus:"")}>
+                                    <div key={"step-1-"+index} onClick={()=>set_state(index)} className={styles.item+" "+(index<=state?styles.active:"")+" "+(index==state?styles.focus:"")}>
                                         <div className={styles.icon}>
                                             {
                                                 index>state?
@@ -328,7 +373,7 @@ export default function Form(){
                         {
                             steps.map((step,index)=>{
                                 return (
-                                    <div className={styles.section}>
+                                    <div key={"step-2-"+index} className={styles.section}>
                                         <div className={styles.step_name}>
                                             {step.name}
                                         </div>
@@ -381,7 +426,7 @@ export default function Form(){
                                                         {
                                                             egitim_forms.map((egitim_form,index)=>{
                                                                 return (
-                                                                    <div className={styles.card}>
+                                                                    <div key={"egitim-1-"+index} className={styles.card}>
                                                                         {
                                                                             egitim_forms.length>1?
                                                                             <button onClick={(e)=>{
@@ -588,7 +633,7 @@ export default function Form(){
                                                         {
                                                             tecrube_forms.map((tecrube_form,index)=>{
                                                                 return (
-                                                                    <div className={styles.card}>
+                                                                    <div key={"tecrube-1-"+index} className={styles.card}>
                                                                         {
                                                                             tecrube_forms.length>1?
                                                                             <button onClick={(e)=>{
@@ -767,7 +812,7 @@ export default function Form(){
                                                         {
                                                             kurs_forms.map((kurs_form,index)=>{
                                                                 return (
-                                                                    <div className={styles.card}>
+                                                                    <div key={"kurs-1-"+index} className={styles.card}>
                                                                         {
                                                                             kurs_forms.length>1?
                                                                             <button onClick={(e)=>{
@@ -906,7 +951,7 @@ export default function Form(){
                                                         {
                                                             proje_forms.map((proje_form,index)=>{
                                                                 return (
-                                                                    <div className={styles.card}>
+                                                                    <div key={"proje-1-"+index} className={styles.card}>
                                                                         {
                                                                             proje_forms.length>1?
                                                                             <button onClick={(e)=>{
@@ -1104,7 +1149,7 @@ export default function Form(){
                                                             {
                                                                 dil_forms.map((dil_form,index)=>{
                                                                     return (
-                                                                        <div className={styles.input_with_stars}>
+                                                                        <div key={"dil-1-"+index} className={styles.input_with_stars}>
                                                                             <div className={styles.input_container}>
                                                                                 {
                                                                                     dil_forms.length>1?
@@ -1138,7 +1183,7 @@ export default function Form(){
                                                                                     {
                                                                                         [1,2,3,4,5].map((star_index)=>{
                                                                                             return (
-                                                                                                <div onMouseOver={()=>{
+                                                                                                <div key={"star-"+star_index+"-"+index} onMouseOver={()=>{
                                                                                                     set_dil_forms(dil_forms.map((a,map_index)=>{
                                                                                                         if(index==map_index){
                                                                                                             return {
@@ -1199,7 +1244,7 @@ export default function Form(){
                                                             {
                                                                 bilgisayar_becerisi_forms.map((bilgisayar_becerisi_form,index)=>{
                                                                     return (
-                                                                        <div className={styles.input_with_stars}>
+                                                                        <div key={"star-2-"+index} className={styles.input_with_stars}>
                                                                             <div className={styles.input_container}>
                                                                                 {
                                                                                     bilgisayar_becerisi_forms.length>1?
@@ -1233,7 +1278,7 @@ export default function Form(){
                                                                                     {
                                                                                         [1,2,3,4,5].map((star_index)=>{
                                                                                             return (
-                                                                                                <div onMouseOver={()=>{
+                                                                                                <div key={"star-3-"+index+star_index} onMouseOver={()=>{
                                                                                                     set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.map((a,map_index)=>{
                                                                                                         if(index==map_index){
                                                                                                             return {
@@ -1294,7 +1339,7 @@ export default function Form(){
                                                         {
                                                             yayin_forms.map((yayin_form,index)=>{
                                                                 return (
-                                                                    <div className={styles.card}>
+                                                                    <div key={"yayin-1-"+index} className={styles.card}>
                                                                         {
                                                                             yayin_forms.length>1?
                                                                             <button onClick={(e)=>{
@@ -1389,7 +1434,7 @@ export default function Form(){
                                                         {
                                                             hobi_forms.map((hobi_form,index)=>{
                                                                 return (
-                                                                    <div className={styles.card}>
+                                                                    <div key={"hoib-1-"+index} className={styles.card}>
                                                                         {
                                                                             hobi_forms.length>1?
                                                                             <button onClick={(e)=>{
@@ -1488,7 +1533,11 @@ export default function Form(){
                                                         </div>
                                                         <textarea placeholder="Cevabınız..." required />
                                                     </div>
-                                                    <div className={styles.item}>
+                                                    <div className={styles.item+" "+(
+                                                        error.code=="mentorluk_basvuru_turu_min_1"?
+                                                        styles.error
+                                                        :""
+                                                    )} ref={mentorluk_basvuru_turu_ref}>
                                                         <div className={styles.question}>
                                                             2.  Mentörlük Başvuru Türü:
                                                         </div>
@@ -1496,7 +1545,11 @@ export default function Form(){
                                                             {
                                                                 mentorluk_sureci_form.map((option,index)=>{
                                                                     return (
-                                                                        <div className={styles.option} onClick={()=>{
+                                                                        <div key={"mentorluk-sureci-1-"+index} className={styles.option} onClick={()=>{
+                                                                            set_error({
+                                                                                code: "",
+                                                                                message: ""
+                                                                            })
                                                                             set_mentorluk_sureci_form(mentorluk_sureci_form.map((a,map_index)=>{
                                                                                 if(index==map_index){
                                                                                     return {
@@ -1527,7 +1580,7 @@ export default function Form(){
                                                     </div>
                                                     <div className={styles.item}>
                                                         <div className={styles.question}>
-                                                            4.  EHS'den almayı umduğunuz mentörlüğün süresi hakkında bir tahmininiz var mı? (Örnek: 3 ay, 6 ay, 1 yıl vb.)
+                                                            4.  EHS&apos;den almayı umduğunuz mentörlüğün süresi hakkında bir tahmininiz var mı? (Örnek: 3 ay, 6 ay, 1 yıl vb.)
                                                         </div>
                                                         <textarea placeholder="Cevabınız..." required />
                                                     </div>
@@ -1594,7 +1647,7 @@ export default function Form(){
                                                                 {
                                                                     mentorluk_sonrasi_surec.map((option,index)=>{
                                                                         return (
-                                                                            <div className={styles.option} onClick={()=>{
+                                                                            <div key={"mentorluk-sonrasi-1-"+index} className={styles.option} onClick={()=>{
                                                                                 set_mentorluk_sonrasi_surec(mentorluk_sonrasi_surec.map((a,map_index)=>{
                                                                                     if(index==map_index){
                                                                                         return {
