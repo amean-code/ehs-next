@@ -89,6 +89,24 @@ export default function Form(){
         kurs_form_structure
     ]);
 
+    const proje_form_structure = {
+        name:"",
+        yer:"",
+        destekleyen_kurum:"",
+        fonlayan_kurum:"",
+        proje_butcesi:"",
+        gorev_1:"",
+        gorev_2:"",
+        gorev_3:"",
+        teknolojiler:"",
+        oduller:""
+    }
+
+    const [proje_forms,set_proje_forms] = useState([
+        proje_form_structure
+    ]);
+
+
     let handle_phone_oninput = (e) => {
 
         let phone = e.target.value;
@@ -836,9 +854,209 @@ export default function Form(){
                                                                 kurs_form_structure
                                                             ])
                                                         }} className={styles.add_button}>
-                                                            Tecrübe Bilgisi Ekle
+                                                            Kurs ve Sertifika Bilgisi Ekle
                                                         </button>
                                                     </div>
+
+
+
+                                                    <div className={styles.item}>
+                                                        <div className={styles.form_name}>
+                                                            Projeler
+                                                        </div>
+                                                        {
+                                                            proje_forms.map((proje_form,index)=>{
+                                                                return (
+                                                                    <div className={styles.card}>
+                                                                        {
+                                                                            proje_forms.length>1?
+                                                                            <button onClick={(e)=>{
+                                                                                e.stopPropagation();
+                                                                                e.preventDefault();
+                                                                                set_proje_forms(proje_forms.filter((a,map_index)=>{
+                                                                                    if(index==map_index){
+                                                                                        return false
+                                                                                    }return true
+                                                                                }))
+                                                                            }} className={styles.delete_icon}>
+                                                                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                            </button>:""
+                                                                        }
+                                                                        <div className={styles.item}>
+                                                                            <label for={"proje-name-"+index}>
+                                                                                Proje İsmi
+                                                                            </label>
+                                                                            <input type="text" name={"proje-name-"+index} required placeholder="İsim..."
+                                                                                value={proje_form.name} 
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                name: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"yer-"+index}>
+                                                                                Yer
+                                                                            </label>
+                                                                            <input type="text" name={"yer-"+index} required placeholder="Yer..."
+                                                                                value={proje_form.yer} 
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                yer: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"destekleyen-kurum-"+index}>
+                                                                                Destekleyen Kurum
+                                                                            </label>
+                                                                            <input type="text" name={"destekleyen-kurum-"+index} required placeholder="Destekleyen Kurum..."
+                                                                                value={proje_form.destekleyen_kurum} 
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                destekleyen_kurum: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"fonlayan-kurum-"+index}>
+                                                                                Fonlayan Kurum
+                                                                            </label>
+                                                                            <input type="text" name={"fonlayan-kurum-"+index} required placeholder="Fonlayan Kurum..."
+                                                                                value={proje_form.fonlayan_kurum} 
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                fonlayan_kurum: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label>
+                                                                                Görevler
+                                                                            </label>
+                                                                            <input type="text" required placeholder="Görev 1" 
+                                                                                value={proje_form.gorev_1}
+                                                                                
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                gorev_1: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                            <input type="text" required placeholder="Görev 2" 
+                                                                                value={proje_form.gorev_2}
+                                                                                
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                gorev_2: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                            <input type="text" required placeholder="Görev 3" 
+                                                                                value={proje_form.gorev_3}
+                                                                                
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                gorev_3: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"teknolojiler-"+index}>
+                                                                                Kullanılan teknolojiler
+                                                                            </label>
+                                                                            <textarea required name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
+                                                                                value={proje_form.teknolojiler}
+
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                teknolojiler: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            >
+                                                                            </textarea>
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"oduller-"+index}>
+                                                                                Ödüller
+                                                                            </label>
+                                                                            <textarea required name={"oduller-"+index} placeholder="Ödüller..." 
+                                                                                value={proje_form.oduller}
+
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                oduller: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            >
+                                                                            </textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            })
+                                                        }
+                                                        <button onClick={(e)=>{
+                                                            e.stopPropagation();
+                                                            e.preventDefault();
+                                                            set_proje_forms([
+                                                                ...proje_forms,
+                                                                proje_form_structure
+                                                            ])
+                                                        }} className={styles.add_button}>
+                                                            Kurs ve Sertifika Bilgisi Ekle
+                                                        </button>
+                                                    </div>
+                                                    
                                                     </>:
                                                     index==2?
                                                     <>
