@@ -350,13 +350,26 @@ export default function Form(){
                     mentorluk_basvuru_turu_ref.current.scrollIntoView({
                         behavior: 'smooth'
                     });
-                }else{
-                    set_state(state+1);
                     setTimeout(()=>{
                     set_loader(false);
                     },200)
+                }else{
+                    set_state(state+1);
+                    setTimeout(()=>{
+                        set_loader(false);
+                    },200)
                 }
+            }else{
+                set_state(state+1);
+                setTimeout(()=>{
+                    set_loader(false);
+                },200)
             }
+        }else{
+            setTimeout(()=>{
+                set_loader(false);
+            },200)
+
         }
     };
 
