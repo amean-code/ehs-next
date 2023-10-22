@@ -2,20 +2,22 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/header.module.css";
+import  jwt  from "../node_modules/jsonwebtoken";
+import Cookies from "../node_modules/js-cookie";
+import { useRouter } from "next/router";
 
 function Header() {
   const [mobile_menu, set_mobile_menu] = useState(false);
 
+  const [user,set_user] = useState(null);
+
+  const router = useRouter();
+
   useEffect(()=>{
-    document.addEventListener("click",()=>{
-      set_mobile_menu(false);
-
-    })
-
-    return ()=>{
-      document.removeEventListener("click",()=>{})
-    };
-  },[])
+    if(Cookies.get("emobilite_user_token")){
+      set_user(jwt.decode(Cookies.get("emobilite_user_token")));
+    }
+  },[]);
 
   return (
     <header className={styles.site_header} >
@@ -54,6 +56,11 @@ function Header() {
           <a href="hakkimizda.php">Events</a>
           <a href="contact.php">Mentoring</a>
           <a href="prof.php">Contact Us</a>
+          {
+            user?
+            <a href="/form">Mentee Form</a>
+            :""
+          }
         </div>
         <div onClick={(e)=>{
           e.preventDefault();

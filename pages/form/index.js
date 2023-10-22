@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../styles/Form.module.css"
 import Image from "next/image";
 import Head from "next/head";
 import { useRef } from "react";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
+import jwt from "jsonwebtoken";
+import MenteeService from "../../services/Mentee";
+import FormService from "../../services/Form";
 
 export default function Form(){
+
+    const router = useRouter();
+
+    const [user,set_user] = useState();
+
+    useEffect(()=>{
+        if(Cookies.get("ehs_user_token")){
+          set_user(jwt.decode(Cookies.get("ehs_user_token")));
+        }else{
+            router.push("/login")
+        }
+    },[]);
 
     const [state,set_state] = useState(0);
     const [steps,set_steps] = useState([
@@ -32,45 +49,7 @@ export default function Form(){
     const [error,set_error] = useState({
         code: "",
         message: ""
-    });
-
-    let handle_submit = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        set_error({
-            code: "",
-            message: ""
-        });
-        
-        if(state<steps.length-1){
-
-            let success = true;
-
-            if(state==2){
-                if(mentorluk_sureci_form.filter(a=>{
-                    if(a.checked){
-                        return true
-                    }return false
-                })==0){
-                    success=false;
-                    set_error({
-                        code: "mentorluk_basvuru_turu_min_1",
-                        message: "En az 1 mentörlük başvuru türü işaretlenmeli"
-                    });
-                    console.log("mentorluk_basvuru_turu_ref: ",mentorluk_basvuru_turu_ref);
-                    console.log("mentorluk_basvuru_turu_ref: ",mentorluk_basvuru_turu_ref.current);
-                    mentorluk_basvuru_turu_ref.current.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            }
-
-            if(success){
-                set_state(state+1);
-            }
-        }
-    };
+    });    
 
     const [mentee_form,set_mentee_form] = useState({
         name: "",
@@ -82,14 +61,14 @@ export default function Form(){
 
     const egitim_form_structure = {
         id: -1,
-        bölüm:"",
-        okul:"",
-        derece:"",
-        baslangic:"",
-        bitis:"",
-        ilgini_ceken_ders:"",
-        proje_arastirma_konulari:"",
-        aktif_klupler:""
+        department:"",
+        university:"",
+        rate:"",
+        start_date:"",
+        finish_date:"",
+        interesting_lesson:"",
+        project_research_topics:"",
+        active_clubs:""
     }
 
     const [egitim_forms,set_egitim_forms] = useState([
@@ -100,14 +79,14 @@ export default function Form(){
 
     const tecrube_form_structure = {
         id: -1,
-        pozisyon:"",
-        kurum:"",
-        baslangic:"",
-        bitis:"",
-        gorev_1:"",
-        gorev_2:"",
-        gorev_3:"",
-        teknolojiler:""
+        position:"",
+        institution:"",
+        start_date:"",
+        finish_date:"",
+        task_1:"",
+        task_2:"",
+        task_3:"",
+        technologies:""
     }
 
     const [tecrube_forms,set_tecrube_forms] = useState([
@@ -118,11 +97,11 @@ export default function Form(){
     const kurs_form_structure = {
         id: -1,
         name:"",
-        kurum:"",
-        tamamlama_tarihi:"",
-        yetenek_1:"",
-        yetenek_2:"",
-        yetenek_3:""
+        institution:"",
+        finish_date:"",
+        skill_1:"",
+        skill_2:"",
+        skill_3:""
     }
 
     const [kurs_forms,set_kurs_forms] = useState([
@@ -131,16 +110,16 @@ export default function Form(){
 
     const proje_form_structure = {
         id: -1,
-        name:"",
-        yer:"",
-        destekleyen_kurum:"",
-        fonlayan_kurum:"",
-        proje_butcesi:"",
-        gorev_1:"",
-        gorev_2:"",
-        gorev_3:"",
-        teknolojiler:"",
-        oduller:""
+        project:"",
+        city:"",
+        supporting_institution:"",
+        funding_institution:"",
+        budget:"",
+        task_1:"",
+        task_2:"",
+        task_3:"",
+        technologies:"",
+        awards:""
     }
 
     const [proje_forms,set_proje_forms] = useState([
@@ -150,8 +129,8 @@ export default function Form(){
     const yayin_form_structure = {
         id: -1,
         name:"",
-        kurum:"",
-        yayin_tarihi:"",
+        publishing_institution:"",
+        publish_date:"",
         DOI:""
     }
 
@@ -162,8 +141,8 @@ export default function Form(){
     const hobi_form_structure = {
         id: -1,
         name:"",
-        aciklama:"",
-        professional:false
+        description:"",
+        isProfiessional:false
     }
 
     const [hobi_forms,set_hobi_forms] = useState([
@@ -172,8 +151,8 @@ export default function Form(){
 
     const bilgisayar_becerisi_form_structure = {
         id: -1,
-        name:"",
-        star:"",
+        skill:"",
+        point:0,
         star_show: ""
     }
 
@@ -183,8 +162,8 @@ export default function Form(){
 
     const dil_form_structure = {
         id: -1,
-        name:"",
-        star:"",
+        language:"",
+        point:0,
         star_show: ""
     }
 
@@ -323,7 +302,205 @@ export default function Form(){
             name: "Akran Mentörlüğü",
             checked: false
         },
-    ])
+    ]);
+
+    const [loader,set_loader] = useState(false);
+
+    let handle_submit = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        set_loader(true);
+
+        set_error({
+            code: "",
+            message: ""
+        });
+        
+        if(state<steps.length-1){
+
+            if(state==0){
+                MenteeService.update_mentee(user?.id,JSON.stringify(mentee_form)).then(res=>res.json())
+                .then(data=>{
+                    console.log("DATA : ",data);
+
+                    if(data.success){
+                        set_state(state+1);                        
+                        setTimeout(()=>{
+                            set_loader(false);
+                        },200)
+                        Cookies.set("ehs_user_token",data.accessToken);
+                        set_user(data.data);
+                    }
+                })
+            }else if(state==1){
+                fill_form_handle();
+            } else if(state==2){
+                if(mentorluk_sureci_form.filter(a=>{
+                    if(a.checked){
+                        return true
+                    }return false
+                })==0){
+                    set_error({
+                        code: "mentorluk_basvuru_turu_min_1",
+                        message: "En az 1 mentörlük başvuru türü işaretlenmeli"
+                    });
+                    console.log("mentorluk_basvuru_turu_ref: ",mentorluk_basvuru_turu_ref);
+                    console.log("mentorluk_basvuru_turu_ref: ",mentorluk_basvuru_turu_ref.current);
+                    mentorluk_basvuru_turu_ref.current.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }else{
+                    set_state(state+1);
+                    setTimeout(()=>{
+                    set_loader(false);
+                    },200)
+                }
+            }
+        }
+    };
+
+    useEffect(()=>{
+        if(user){
+            console.log("USER: ",user);
+            set_mentee_form({
+                ...mentee_form,
+                name: user.name,
+                surname:  user.surname,
+                email:  user.email,
+                phone:  user.phone,
+                linkedin:  user.linkedin
+            })
+
+            get_form_handle();
+            
+        }
+    },[user])
+
+    let get_form_handle = () => {
+        FormService.get_form(Cookies.get("ehs_user_token")).then(res=>res.json())
+        .then(data=>{
+            console.log("FORM DATA: ",data);
+
+            if(data.success){
+                set_loader(false);
+                if(data.educations.length>0){
+                    set_egitim_forms(data.educations.map(a=>{
+                        let start_date=new Date(a.start_date);
+                        let finish_date=new Date(a.finish_date);
+                        return {
+                            ...a,
+                            start_date: start_date.getFullYear()+"-"+((start_date.getMonth()+1)+'').padStart(2,'0')+"-"+(start_date.getDate()+"").padStart(2,'0'),
+                            finish_date: finish_date.getFullYear()+"-"+((finish_date.getMonth()+1)+'').padStart(2,'0')+"-"+(finish_date.getDate()+"").padStart(2,'0')
+                        }
+                    }));
+                }else{
+                    set_egitim_forms([egitim_form_structure]);
+                }
+                if(data.experience_informations.length>0){
+                    set_tecrube_forms(data.experience_informations.map(a=>{
+                        let start_date=new Date(a.start_date);
+                        let finish_date=new Date(a.finish_date);
+                        return {
+                            ...a,
+                            start_date: start_date.getFullYear()+"-"+((start_date.getMonth()+1)+'').padStart(2,'0')+"-"+(start_date.getDate()+"").padStart(2,'0'),
+                            finish_date: finish_date.getFullYear()+"-"+((finish_date.getMonth()+1)+'').padStart(2,'0')+"-"+(finish_date.getDate()+"").padStart(2,'0')
+                        }
+                    }));
+                }else{
+                    set_tecrube_forms([tecrube_form_structure]);
+                }
+                if(data.course_informations.length>0){
+                    set_kurs_forms(data.course_informations.map(a=>{
+                        let finish_date=new Date(a.finish_date);
+                        return {
+                            ...a,
+                            finish_date: finish_date.getFullYear()+"-"+((finish_date.getMonth()+1)+'').padStart(2,'0')+"-"+(finish_date.getDate()+"").padStart(2,'0')
+                        }
+                    }));
+                }else{
+                    set_kurs_forms([kurs_form_structure]);
+                }
+                if(data.publishes.length>0){
+                    set_yayin_forms(data.publishes.map(a=>{
+                        let publish_date=new Date(a.publish_date);
+                        return {
+                            ...a,
+                            publish_date: publish_date.getFullYear()+"-"+((publish_date.getMonth()+1)+'').padStart(2,'0')+"-"+(publish_date.getDate()+"").padStart(2,'0')
+                        }
+                    }));
+                }else{
+                    set_yayin_forms([yayin_form_structure]);
+                }
+                if(data.project_informations.length>0){
+                    set_proje_forms(data.project_informations.map(a=>{
+                        return {
+                            ...a
+                        }
+                    }));
+                }else{
+                    set_proje_forms([proje_form_structure]);
+                }
+                if(data.hobbies.length>0){
+                    set_hobi_forms(data.hobbies.map(a=>{
+                        return {
+                            ...a
+                        }
+                    }));
+                }else{
+                    set_hobi_forms([hobi_form_structure]);
+                }
+                if(data.languages.length>0){
+                    set_dil_forms(data.languages.map(a=>{
+                        return {
+                            ...a,
+                            language: a.language,
+                            star_show: a.point
+                        }
+                    }));
+                }else{
+                    set_dil_forms([dil_forms]);
+                }
+                if(data.computer_skills.length>0){
+                    set_bilgisayar_becerisi_forms(data.computer_skills.map(a=>{
+                        return {
+                            ...a,
+                            skill: a.skill,
+                            star_show: a.point
+                        }
+                    }));
+                }else{
+                    set_bilgisayar_becerisi_forms([bilgisayar_becerisi_form_structure]);
+                }
+            }
+        })
+    }
+
+    let fill_form_handle = () => {
+        set_loader(true);
+        FormService.fill_form(Cookies.get("ehs_user_token"),JSON.stringify({
+            educations: egitim_forms,
+            experience_informations: tecrube_forms,
+            course_informations: kurs_forms,
+            project_informations: proje_forms,
+            languages: dil_forms,
+            computer_skills: bilgisayar_becerisi_forms,
+            publishes: yayin_forms,
+            hobbies: hobi_forms
+        })).then(res=>res.json())
+        .then(data=>{
+            console.log("FILL FORM : ",data);
+            if(data.success){
+
+                set_state(state+1);
+                get_form_handle();
+            }
+        })
+    }
+
+    useEffect(()=>{
+        console.log("egitim_forms : ",egitim_forms)
+    },[egitim_forms])
 
     return (
         <>
@@ -350,7 +527,9 @@ export default function Form(){
                         {
                             steps.map((step,index)=>{
                                 return (
-                                    <div key={"step-1-"+index} onClick={()=>set_state(index)} className={styles.item+" "+(index<=state?styles.active:"")+" "+(index==state?styles.focus:"")}>
+                                    <div key={"step-1-"+index} 
+                                    // onClick={()=>set_state(index)} 
+                                    className={styles.item+" "+(index<=state?styles.active:"")+" "+(index==state?styles.focus:"")}>
                                         <div className={styles.icon}>
                                             {
                                                 index>state?
@@ -369,6 +548,12 @@ export default function Form(){
                     </div>
                 </div>
                 <div className={styles.form_body}>
+                    {
+                        loader?
+                        <div className={styles.loader}>
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M12 2a1 1 0 011 1v3a1 1 0 11-2 0V3a1 1 0 011-1zM17 12a1 1 0 011-1h3a1 1 0 110 2h-3a1 1 0 01-1-1zM12 22a1 1 0 01-1-1v-3a1 1 0 112 0v3a1 1 0 01-1 1zM2 12a1 1 0 011-1h3a1 1 0 110 2H3a1 1 0 01-1-1zM4.93 4.93a1 1 0 011.41 0l2.12 2.12a1 1 0 01-1.41 1.41L4.93 6.34a1 1 0 010-1.41zM19.07 4.93a1 1 0 010 1.41l-2.12 2.12a1 1 0 11-1.41-1.41l2.12-2.12a1 1 0 011.41 0zM19.07 19.07a1 1 0 01-1.41 0l-2.12-2.12a1 1 0 011.41-1.41l2.12 2.12a1 1 0 010 1.41zM4.93 19.07a1 1 0 010-1.41l2.12-2.12a1 1 0 011.41 1.41l-2.12 2.12a1 1 0 01-1.41 0z"/></svg>
+                        </div>:""
+                    }
                     <div className={styles.section_slider} style={{minWidth: (steps.length*100)+"%",transform: "translateX(-"+(state*(100/steps.length))+"%)"}}>
                         {
                             steps.map((step,index)=>{
@@ -387,13 +572,13 @@ export default function Form(){
                                                             <label for="name">
                                                                 İsim
                                                             </label>
-                                                            <input required type="text" value={mentee_form.name} onInput={(e)=>set_mentee_form({...mentee_form,name:e.target.value})} name="name" placeholder="İsminiz..." />
+                                                            <input required={true} type="text" value={mentee_form.name} onInput={(e)=>set_mentee_form({...mentee_form,name:e.target.value})} name="name" placeholder="İsminiz..." />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <label for="name">
                                                                 Soyisim
                                                             </label>
-                                                            <input required type="text" value={mentee_form.surname} onInput={(e)=>set_mentee_form({...mentee_form,surname:e.target.value})} name="surname" placeholder="Soyisminiz..." />
+                                                            <input required={true} type="text" value={mentee_form.surname} onInput={(e)=>set_mentee_form({...mentee_form,surname:e.target.value})} name="surname" placeholder="Soyisminiz..." />
                                                         </div>
                                                     </div>
                                                     <div className={styles.row}>
@@ -401,13 +586,13 @@ export default function Form(){
                                                             <label for="email">
                                                                 E-mail
                                                             </label>
-                                                            <input required type="email" value={mentee_form.email} onInput={(e)=>set_mentee_form({...mentee_form,email:e.target.value})} name="email" placeholder="Emailiniz..." />
+                                                            <input readOnly required={true} type="email" value={mentee_form.email} onInput={(e)=>set_mentee_form({...mentee_form,email:e.target.value})} name="email" placeholder="Emailiniz..." />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <label for="phone">
                                                                 Telefon Numarası
                                                             </label>
-                                                            <input value={mentee_form.phone} onInput={handle_phone_oninput} required type="tel" name="phone" placeholder="Telefon Numaranız..." pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}"  />
+                                                            <input value={mentee_form.phone} onInput={handle_phone_oninput} required={true} type="tel" name="phone" placeholder="Telefon Numaranız..." pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}"  />
                                                         </div>
                                                     </div>
                                                     <div className={styles.item}>
@@ -445,14 +630,14 @@ export default function Form(){
                                                                             <label for={"bölüm-"+index}>
                                                                                 Bölüm
                                                                             </label>
-                                                                            <input type="text" name={"bölüm-"+index} required placeholder="Bölümünüz..."
-                                                                                value={egitim_form.bölüm} 
+                                                                            <input type="text" name={"bölüm-"+index} required={true} placeholder="Bölümünüz..."
+                                                                                value={egitim_form.department} 
                                                                                 onInput={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                bölüm: e.target.value
+                                                                                                department: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -463,14 +648,14 @@ export default function Form(){
                                                                             <label for={"okul-"+index}>
                                                                                 Okul
                                                                             </label>
-                                                                            <input type="text" name={"okul-"+index} required placeholder="Okulunuz..."
-                                                                                value={egitim_form.okul} 
+                                                                            <input type="text" name={"okul-"+index} required={true} placeholder="Okulunuz..."
+                                                                                value={egitim_form.university} 
                                                                                 onInput={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                okul: e.target.value
+                                                                                                university: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -481,13 +666,13 @@ export default function Form(){
                                                                             <label for={"derece-"+index}>
                                                                                 Derece
                                                                             </label>
-                                                                            <select defaultValue={"-"} value={egitim_form.derece}
+                                                                            <select defaultValue={"-"} value={egitim_form.rate}
                                                                                 onChange={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                derece: e.target.value
+                                                                                                rate: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -518,13 +703,13 @@ export default function Form(){
                                                                                     Başlangıç
                                                                                 </label>
                                                                                 <input type="date" placeholder="Başlangıç Tarihi"
-                                                                                    value={egitim_form.baslangic}
+                                                                                    value={egitim_form.start_date}
                                                                                     onChange={(e)=>{
                                                                                         set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                             if(index==map_index){
                                                                                                 return {
                                                                                                     ...form,
-                                                                                                    baslangic: e.target.value
+                                                                                                    start_date: e.target.value
                                                                                                 }
                                                                                             }return form
                                                                                         }))
@@ -536,13 +721,13 @@ export default function Form(){
                                                                                     Bitiş
                                                                                 </label>
                                                                                 <input type="date" placeholder="Bitiş Tarihi"
-                                                                                    value={egitim_form.bitis}
+                                                                                    value={egitim_form.finish_date}
                                                                                     onChange={(e)=>{
                                                                                         set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                             if(index==map_index){
                                                                                                 return {
                                                                                                     ...form,
-                                                                                                    bitis: e.target.value
+                                                                                                    finish_date: e.target.value
                                                                                                 }
                                                                                             }return form
                                                                                         }))
@@ -555,14 +740,14 @@ export default function Form(){
                                                                                 İlgini Çeken En Önemli 5 Ders
                                                                             </label>
                                                                             <textarea name={"ilgi-ders-"+index} placeholder="İlgini Çeken En Önemli 5 Ders" 
-                                                                                value={egitim_form.ilgini_ceken_ders}
+                                                                                value={egitim_form.interesting_lesson}
 
                                                                                 onInput={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                ilgini_ceken_ders: e.target.value
+                                                                                                interesting_lesson: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -575,14 +760,14 @@ export default function Form(){
                                                                                 Yapılan Projeler / Araştırma Konuları
                                                                             </label>
                                                                             <textarea name={"proje-arastirma-"+index} placeholder="Yapılan Projeler / Araştırma Konuları" 
-                                                                                value={egitim_form.proje_arastirma_konulari}
+                                                                                value={egitim_form.project_research_topics}
 
                                                                                 onInput={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                proje_arastirma_konulari: e.target.value
+                                                                                                project_research_topics: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -595,14 +780,14 @@ export default function Form(){
                                                                                 Aktif Kulüpler
                                                                             </label>
                                                                             <textarea name={"kulüpler-"+index} placeholder="Aktif Kulüpler" 
-                                                                                value={egitim_form.aktif_klupler}
+                                                                                value={egitim_form.active_clubs}
 
                                                                                 onInput={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                aktif_klupler: e.target.value
+                                                                                                active_clubs: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -652,14 +837,14 @@ export default function Form(){
                                                                             <label for={"pozisyon-"+index}>
                                                                                 Pozisyon
                                                                             </label>
-                                                                            <input type="text" name={"pozisyon-"+index} required placeholder="Pozisyonunuz..."
-                                                                                value={tecrube_form.pozisyon} 
+                                                                            <input type="text" name={"pozisyon-"+index} required={true} placeholder="Pozisyonunuz..."
+                                                                                value={tecrube_form.position} 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                pozisyon: e.target.value
+                                                                                                position: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -670,14 +855,14 @@ export default function Form(){
                                                                             <label for={"kurum-"+index}>
                                                                                 Kurum
                                                                             </label>
-                                                                            <input type="text" name={"kurum-"+index} required placeholder="Kurumunuz..."
-                                                                                value={tecrube_form.kurum} 
+                                                                            <input type="text" name={"kurum-"+index} required={true} placeholder="Kurumunuz..."
+                                                                                value={tecrube_form.institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                kurum: e.target.value
+                                                                                                institution: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -690,13 +875,13 @@ export default function Form(){
                                                                                     Başlangıç
                                                                                 </label>
                                                                                 <input type="date" placeholder="Başlangıç Tarihi"
-                                                                                    value={tecrube_form.baslangic}
+                                                                                    value={tecrube_form.start_date}
                                                                                     onChange={(e)=>{
                                                                                         set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                             if(index==map_index){
                                                                                                 return {
                                                                                                     ...form,
-                                                                                                    baslangic: e.target.value
+                                                                                                    start_date: e.target.value
                                                                                                 }
                                                                                             }return form
                                                                                         }))
@@ -708,13 +893,13 @@ export default function Form(){
                                                                                     Bitiş
                                                                                 </label>
                                                                                 <input type="date" placeholder="Bitiş Tarihi"
-                                                                                    value={tecrube_form.bitis}
+                                                                                    value={tecrube_form.finish_date}
                                                                                     onChange={(e)=>{
                                                                                         set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                             if(index==map_index){
                                                                                                 return {
                                                                                                     ...form,
-                                                                                                    bitis: e.target.value
+                                                                                                    finish_date: e.target.value
                                                                                                 }
                                                                                             }return form
                                                                                         }))
@@ -726,43 +911,43 @@ export default function Form(){
                                                                             <label>
                                                                                 Görevler
                                                                             </label>
-                                                                            <input type="text" required placeholder="Görev 1" 
-                                                                                value={tecrube_form.gorev_1}
+                                                                            <input type="text" required={true} placeholder="Görev 1" 
+                                                                                value={tecrube_form.task_1}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                gorev_1: e.target.value
+                                                                                                task_1: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required placeholder="Görev 2" 
-                                                                                value={tecrube_form.gorev_2}
+                                                                            <input type="text" required={true} placeholder="Görev 2" 
+                                                                                value={tecrube_form.task_2}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                gorev_2: e.target.value
+                                                                                                task_2: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required placeholder="Görev 3" 
-                                                                                value={tecrube_form.gorev_3}
+                                                                            <input type="text" required={true} placeholder="Görev 3" 
+                                                                                value={tecrube_form.task_3}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                gorev_3: e.target.value
+                                                                                                task_3: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -773,15 +958,15 @@ export default function Form(){
                                                                             <label for={"teknolojiler-"+index}>
                                                                                 Kullanılan teknolojiler
                                                                             </label>
-                                                                            <textarea required name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
-                                                                                value={tecrube_form.teknolojiler}
+                                                                            <textarea required={true} name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
+                                                                                value={tecrube_form.technologies}
 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                teknolojiler: e.target.value
+                                                                                                technologies: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -831,7 +1016,7 @@ export default function Form(){
                                                                             <label for={"kurs-name-"+index}>
                                                                                 Kurs/Sertifika İsmi
                                                                             </label>
-                                                                            <input type="text" name={"kurs-name-"+index} required placeholder="İsim..."
+                                                                            <input type="text" name={"kurs-name-"+index} required={true} placeholder="İsim..."
                                                                                 value={kurs_form.name} 
                                                                                 onInput={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
@@ -849,14 +1034,14 @@ export default function Form(){
                                                                             <label for={"kurum-"+index}>
                                                                                 Kurum
                                                                             </label>
-                                                                            <input type="text" name={"kurum-"+index} required placeholder="Kurumunuz..."
-                                                                                value={kurs_form.kurum} 
+                                                                            <input type="text" name={"kurum-"+index} required={true} placeholder="Kurumunuz..."
+                                                                                value={kurs_form.institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                kurum: e.target.value
+                                                                                                institution: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -868,13 +1053,13 @@ export default function Form(){
                                                                                 Tamamlama Tarihi
                                                                             </label>
                                                                             <input type="date" placeholder="Bitiş Tarihi"
-                                                                                value={kurs_form.tamamlama_tarihi}
+                                                                                value={kurs_form.finish_date}
                                                                                 onChange={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                tamamlama_tarihi: e.target.value
+                                                                                                finish_date: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -885,43 +1070,43 @@ export default function Form(){
                                                                             <label>
                                                                                 Kazanılan Yetenekler
                                                                             </label>
-                                                                            <input type="text" required placeholder="Yetenek 1" 
-                                                                                value={kurs_form.yetenek_1}
+                                                                            <input type="text" required={true} placeholder="Yetenek 1" 
+                                                                                value={kurs_form.skill_1}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                yetenek_1: e.target.value
+                                                                                                skill_1: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required placeholder="Yetenek 2" 
-                                                                                value={kurs_form.yetenek_2}
+                                                                            <input type="text" required={true} placeholder="Yetenek 2" 
+                                                                                value={kurs_form.skill_2}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                yetenek_2: e.target.value
+                                                                                                skill_2: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required placeholder="Yetenek 3" 
-                                                                                value={kurs_form.yetenek_3}
+                                                                            <input type="text" required={true} placeholder="Yetenek 3" 
+                                                                                value={kurs_form.skill_3}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                yetenek_3: e.target.value
+                                                                                                skill_3: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -970,14 +1155,14 @@ export default function Form(){
                                                                             <label for={"proje-name-"+index}>
                                                                                 Proje İsmi
                                                                             </label>
-                                                                            <input type="text" name={"proje-name-"+index} required placeholder="İsim..."
-                                                                                value={proje_form.name} 
+                                                                            <input type="text" name={"proje-name-"+index} required={true} placeholder="İsim..."
+                                                                                value={proje_form.project} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                name: e.target.value
+                                                                                                project: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -988,14 +1173,14 @@ export default function Form(){
                                                                             <label for={"yer-"+index}>
                                                                                 Yer
                                                                             </label>
-                                                                            <input type="text" name={"yer-"+index} required placeholder="Yer..."
-                                                                                value={proje_form.yer} 
+                                                                            <input type="text" name={"yer-"+index} required={true} placeholder="Yer..."
+                                                                                value={proje_form.city} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                yer: e.target.value
+                                                                                                city: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -1006,14 +1191,14 @@ export default function Form(){
                                                                             <label for={"destekleyen-kurum-"+index}>
                                                                                 Destekleyen Kurum
                                                                             </label>
-                                                                            <input type="text" name={"destekleyen-kurum-"+index} required placeholder="Destekleyen Kurum..."
-                                                                                value={proje_form.destekleyen_kurum} 
+                                                                            <input type="text" name={"destekleyen-kurum-"+index} required={true} placeholder="Destekleyen Kurum..."
+                                                                                value={proje_form.supporting_institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                destekleyen_kurum: e.target.value
+                                                                                                supporting_institution: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -1024,14 +1209,32 @@ export default function Form(){
                                                                             <label for={"fonlayan-kurum-"+index}>
                                                                                 Fonlayan Kurum
                                                                             </label>
-                                                                            <input type="text" name={"fonlayan-kurum-"+index} required placeholder="Fonlayan Kurum..."
-                                                                                value={proje_form.fonlayan_kurum} 
+                                                                            <input type="text" name={"fonlayan-kurum-"+index} required={true} placeholder="Fonlayan Kurum..."
+                                                                                value={proje_form.funding_institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                fonlayan_kurum: e.target.value
+                                                                                                funding_institution: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
+                                                                            <label for={"proje-butcesi-"+index}>
+                                                                                Bütçe
+                                                                            </label>
+                                                                            <input type="number" min="0" name={"proje-butcesi-"+index} required={true} placeholder="Proje Bütçesi..."
+                                                                                value={proje_form.budget} 
+                                                                                onInput={(e)=>{
+                                                                                    set_proje_forms(proje_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                budget: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -1042,43 +1245,43 @@ export default function Form(){
                                                                             <label>
                                                                                 Görevler
                                                                             </label>
-                                                                            <input type="text" required placeholder="Görev 1" 
-                                                                                value={proje_form.gorev_1}
+                                                                            <input type="text" required={true} placeholder="Görev 1" 
+                                                                                value={proje_form.task_1}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                gorev_1: e.target.value
+                                                                                                task_1: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required placeholder="Görev 2" 
-                                                                                value={proje_form.gorev_2}
+                                                                            <input type="text" required={true} placeholder="Görev 2" 
+                                                                                value={proje_form.task_2}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                gorev_2: e.target.value
+                                                                                                task_2: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required placeholder="Görev 3" 
-                                                                                value={proje_form.gorev_3}
+                                                                            <input type="text" required={true} placeholder="Görev 3" 
+                                                                                value={proje_form.task_3}
                                                                                 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                gorev_3: e.target.value
+                                                                                                task_3: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -1089,15 +1292,15 @@ export default function Form(){
                                                                             <label for={"teknolojiler-"+index}>
                                                                                 Kullanılan teknolojiler
                                                                             </label>
-                                                                            <textarea required name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
-                                                                                value={proje_form.teknolojiler}
+                                                                            <textarea required={true} name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
+                                                                                value={proje_form.technologies}
 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                teknolojiler: e.target.value
+                                                                                                technologies: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -1109,15 +1312,15 @@ export default function Form(){
                                                                             <label for={"oduller-"+index}>
                                                                                 Ödüller
                                                                             </label>
-                                                                            <textarea required name={"oduller-"+index} placeholder="Ödüller..." 
-                                                                                value={proje_form.oduller}
+                                                                            <textarea required={true} name={"oduller-"+index} placeholder="Ödüller..." 
+                                                                                value={proje_form.awards}
 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                oduller: e.target.value
+                                                                                                awards: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -1166,13 +1369,13 @@ export default function Form(){
                                                                                     </button>
                                                                                     :""
                                                                                 }
-                                                                                <input placeholder="Dil..." value={dil_form.name}
+                                                                                <input placeholder="Dil..." value={dil_form.language}
                                                                                 onInput={(e)=>{
                                                                                     set_dil_forms(dil_forms.map((a,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...a,
-                                                                                                name: e.target.value
+                                                                                                language: e.target.value
                                                                                             }
                                                                                         }return a
                                                                                     }))
@@ -1198,7 +1401,7 @@ export default function Form(){
                                                                                                         if(index==map_index){
                                                                                                             return {
                                                                                                                 ...a,
-                                                                                                                star_show: a.star
+                                                                                                                star_show: a.point
                                                                                                             }
                                                                                                         }return a
                                                                                                     }))
@@ -1208,7 +1411,7 @@ export default function Form(){
                                                                                                         if(index==map_index){
                                                                                                             return {
                                                                                                                 ...a,
-                                                                                                                star: star_index
+                                                                                                                point: star_index
                                                                                                             }
                                                                                                         }return a
                                                                                                     }))
@@ -1261,13 +1464,13 @@ export default function Form(){
                                                                                     </button>
                                                                                     :""
                                                                                 }
-                                                                                <input placeholder="Beceri..." value={bilgisayar_becerisi_form.name}
+                                                                                <input placeholder="Beceri..." value={bilgisayar_becerisi_form.skill}
                                                                                 onInput={(e)=>{
                                                                                     set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.map((a,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...a,
-                                                                                                name: e.target.value
+                                                                                                skill: e.target.value
                                                                                             }
                                                                                         }return a
                                                                                     }))
@@ -1293,7 +1496,7 @@ export default function Form(){
                                                                                                         if(index==map_index){
                                                                                                             return {
                                                                                                                 ...a,
-                                                                                                                star_show: a.star
+                                                                                                                star_show: a.point
                                                                                                             }
                                                                                                         }return a
                                                                                                     }))
@@ -1303,7 +1506,7 @@ export default function Form(){
                                                                                                         if(index==map_index){
                                                                                                             return {
                                                                                                                 ...a,
-                                                                                                                star: star_index
+                                                                                                                point: star_index
                                                                                                             }
                                                                                                         }return a
                                                                                                     }))
@@ -1355,10 +1558,10 @@ export default function Form(){
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
-                                                                            <label for={"proje-name-"+index}>
-                                                                                Proje İsmi
+                                                                            <label for={"yayin-name-"+index}>
+                                                                                İsim
                                                                             </label>
-                                                                            <input type="text" name={"proje-name-"+index} required placeholder="İsim..."
+                                                                            <input type="text" name={"yayin-name-"+index} required={true} placeholder="İsim..."
                                                                                 value={yayin_form.name} 
                                                                                 onInput={(e)=>{
                                                                                     set_yayin_forms(yayin_forms.map((form,map_index)=>{
@@ -1376,14 +1579,14 @@ export default function Form(){
                                                                             <label for={"yayinlayan-kurum-"+index}>
                                                                                 Yayınlanan Kurum
                                                                             </label>
-                                                                            <input type="text" name={"yayinlayan-kurum-"+index} required placeholder="Yayınlanan Kurum..."
-                                                                                value={yayin_form.kurum} 
+                                                                            <input type="text" name={"yayinlayan-kurum-"+index} required={true} placeholder="Yayınlanan Kurum..."
+                                                                                value={yayin_form.publishing_institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_yayin_forms(yayin_forms.map((form,map_index)=>{
                                                                                         if(index==map_index){
                                                                                             return {
                                                                                                 ...form,
-                                                                                                kurum: e.target.value
+                                                                                                publishing_institution: e.target.value
                                                                                             }
                                                                                         }return form
                                                                                     }))
@@ -1391,10 +1594,28 @@ export default function Form(){
                                                                             />
                                                                         </div>
                                                                         <div className={styles.item}>
+                                                                            <label for={"yayinlanma-tarihi-"+index}>
+                                                                                Yayınlanma Tarihi
+                                                                            </label>
+                                                                            <input type="date" placeholder="Yayınlanma Tarihi"
+                                                                                value={yayin_form.publish_date}
+                                                                                onChange={(e)=>{
+                                                                                    set_yayin_forms(yayin_forms.map((form,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return {
+                                                                                                ...form,
+                                                                                                publish_date: e.target.value
+                                                                                            }
+                                                                                        }return form
+                                                                                    }))
+                                                                                }} 
+                                                                            />
+                                                                        </div>
+                                                                        <div className={styles.item}>
                                                                             <label for={"doı-"+index}>
                                                                                 DOI
                                                                             </label>
-                                                                            <textarea required name={"doı-"+index} placeholder="DOI..." 
+                                                                            <textarea required={true} name={"doı-"+index} placeholder="DOI..." 
                                                                                 value={yayin_form.DOI}
 
                                                                                 onInput={(e)=>{
@@ -1453,7 +1674,7 @@ export default function Form(){
                                                                             <label for={"hobi-name-"+index}>
                                                                                 Hobi Başlığı
                                                                             </label>
-                                                                            <input type="text" name={"hobi-name-"+index} required placeholder="İsim..."
+                                                                            <input type="text" name={"hobi-name-"+index} required={true} placeholder="İsim..."
                                                                                 value={hobi_form.name} 
                                                                                 onInput={(e)=>{
                                                                                     set_hobi_forms(hobi_forms.map((form,map_index)=>{
@@ -1473,13 +1694,13 @@ export default function Form(){
                                                                                     if(index==map_index){
                                                                                         return {
                                                                                             ...a,
-                                                                                            professional: !a.professional
+                                                                                            isProfiessional: !a.isProfiessional
                                                                                         }
                                                                                     }return a
                                                                                 }))
                                                                             }}>
                                                                                 <div className={styles.checkbox_item} name="lisans-ve-lisansüst-tez">
-                                                                                    <input type="checkbox" checked={hobi_form.professional} />
+                                                                                    <input type="checkbox" checked={hobi_form.isProfiessional} />
                                                                                     <span className={styles.checkmark}></span>
                                                                                 </div>
                                                                                 <label for="lisans-ve-lisansüst-tez">
@@ -1491,7 +1712,7 @@ export default function Form(){
                                                                             <label for={"description-"+index}>
                                                                                 Açıklama
                                                                             </label>
-                                                                            <textarea required name={"description-"+index} placeholder="Açıklama..." 
+                                                                            <textarea required={true} name={"description-"+index} placeholder="Açıklama..." 
                                                                                 value={hobi_form.description}
 
                                                                                 onInput={(e)=>{
@@ -1531,7 +1752,7 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             1.  EHS ile nasıl tanıştınız?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required />
+                                                        <textarea placeholder="Cevabınız..." required={true} />
                                                     </div>
                                                     <div className={styles.item+" "+(
                                                         error.code=="mentorluk_basvuru_turu_min_1"?
@@ -1576,19 +1797,19 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             3.  Bu mentörlükten beklentileriniz nelerdir?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required />
+                                                        <textarea placeholder="Cevabınız..." required={true} />
                                                     </div>
                                                     <div className={styles.item}>
                                                         <div className={styles.question}>
                                                             4.  EHS&apos;den almayı umduğunuz mentörlüğün süresi hakkında bir tahmininiz var mı? (Örnek: 3 ay, 6 ay, 1 yıl vb.)
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required />
+                                                        <textarea placeholder="Cevabınız..." required={true} />
                                                     </div>
                                                     <div className={styles.item}>
                                                         <div className={styles.question}>
                                                             5.  Mentörlük sürecinde ne sıklıkla mentörünüzle buluşmayı planlıyorsunuz? (Örnek: haftada bir, ayda bir vb.)
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required />
+                                                        <textarea placeholder="Cevabınız..." required={true} />
                                                     </div>
                                                     </>:
                                                     index==3?
@@ -1625,7 +1846,7 @@ export default function Form(){
                                                                                                 }
                                                                                             }return a
                                                                                         }))
-                                                                                    }} required placeholder="Cevabınız..." />
+                                                                                    }} required={true} placeholder="Cevabınız..." />
                                                                                 </div>
                                                                                 </>
                                                                             )
@@ -1674,19 +1895,19 @@ export default function Form(){
                                                             <div className={styles.question}>
                                                                 2. EHS topluluğuna mentör olarak katkıda bulunmayı düşünüyor musunuz? Eğer evet ise, hangi konularda mentörlük yapmayı tercih edersiniz?
                                                             </div>
-                                                            <textarea placeholder="Cevabınız..." required />
+                                                            <textarea placeholder="Cevabınız..." required={true} />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <div className={styles.question}>
                                                                 3. EHS etkinliklerinde hangi kapasitelerde görev almayı düşünüyorsunuz? (Örneğin: etkinlik organizasyonu, konuşmacı olarak katılmak, sponsorluk ilişkileri kurma vb. )
                                                             </div>
-                                                            <textarea placeholder="Cevabınız..." required />
+                                                            <textarea placeholder="Cevabınız..." required={true} />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <div className={styles.question}>
                                                                 4. EHS ile ilgili ek olarak paylaşmak istediğiniz düşünceleriniz veya beklentileriniz var mı?
                                                             </div>
-                                                            <textarea placeholder="Cevabınız..." required />
+                                                            <textarea placeholder="Cevabınız..." required={true} />
                                                         </div>
                                                     </>:""
 
