@@ -575,6 +575,48 @@
   animation: loader_spin 1s ease-in-out infinite;
 }
 
+.delete_form{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left:0;
+  top:0;
+  background-color: #00000053;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.delete_form .delete_box{
+  background-color: white;
+  padding: 25px 45px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: auto;
+}
+
+.delete_form .delete_box .content{
+  font-size: 18px;
+  font-family: Inter-Bold;
+  color: car(--text-color);
+}
+
+.delete_form .delete_box .button{
+  width: 100%;
+  background-color: rgb(255, 39, 39);
+  color: white;
+  font-family: Inter-Bold;
+  display: flex;
+  gap: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
 
 
 @keyframes loader_spin {

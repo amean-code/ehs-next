@@ -515,6 +515,49 @@ export default function Form(){
         console.log("egitim_forms : ",egitim_forms)
     },[egitim_forms])
 
+    const [delete_form,set_delete_form] = useState({
+        show: false,
+        id: 0,
+        key: ""
+    });
+
+    let delete_item = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        FormService.delete_item(Cookies.get("ehs_user_token"),JSON.stringify({
+            key: delete_form.key,
+            id: delete_form.id
+        })).then(res=>res.json())
+        .then(data=>{
+            console.log("DATA: ",data);
+
+            if(data.success){
+                set_delete_form({
+                    show: false,
+                    id: 0,
+                    key: ""
+                });
+
+                get_form_handle();
+            }
+        })
+    }
+
+    let delete_item_vars = (id,key) => {
+        FormService.delete_item(Cookies.get("ehs_user_token"),JSON.stringify({
+            key: key,
+            id: id
+        })).then(res=>res.json())
+        .then(data=>{
+            console.log("DATA: ",data);
+
+            if(data.success){
+                get_form_handle();
+            }
+        })
+    }
+
     return (
         <>
         <Head>
@@ -523,6 +566,30 @@ export default function Form(){
             </title>
         </Head>
         <div className={styles.main}>
+            {
+                delete_form.show?
+                <div onClick={(e)=>{
+                    set_delete_form({...delete_form,show:false})
+                }} className={styles.delete_form}>
+                    <div onClick={(e)=>{
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }} className={styles.delete_box}>
+                        <div className={styles.content}>
+                            Bu İşlem Geri Alınamaz
+                        </div>
+                        <button onClick={delete_item} className={styles.button}>
+                            <div className={styles.icon}>
+                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            </div>
+                            <p>
+                                Sil
+                            </p>
+                        </button>
+                    </div>
+                </div>
+                :""
+            }
             <div className={styles.form_wrapper}>
                 <div className={styles.sidebar}>
                     <div className={styles.logo_container}>
@@ -630,11 +697,20 @@ export default function Form(){
                                                                             <button onClick={(e)=>{
                                                                                 e.stopPropagation();
                                                                                 e.preventDefault();
-                                                                                set_egitim_forms(egitim_forms.filter((a,map_index)=>{
-                                                                                    if(index==map_index){
-                                                                                        return false
-                                                                                    }return true
-                                                                                }))
+                                                                                if(egitim_form.id>0){
+                                                                                    set_delete_form({
+                                                                                        key: "education",
+                                                                                        id: egitim_form.id,
+                                                                                        show:true
+                                                                                    })
+                                                                                }else{
+
+                                                                                    set_egitim_forms(egitim_forms.filter((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return false
+                                                                                        }return true
+                                                                                    }))
+                                                                                }
                                                                             }} className={styles.delete_icon}>
                                                                                 <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
@@ -837,11 +913,20 @@ export default function Form(){
                                                                             <button onClick={(e)=>{
                                                                                 e.stopPropagation();
                                                                                 e.preventDefault();
-                                                                                set_tecrube_forms(tecrube_forms.filter((a,map_index)=>{
-                                                                                    if(index==map_index){
-                                                                                        return false
-                                                                                    }return true
-                                                                                }))
+                                                                                if(tecrube_form.id>0){
+                                                                                    set_delete_form({
+                                                                                        key: "experience",
+                                                                                        id: tecrube_form.id,
+                                                                                        show:true
+                                                                                    })
+                                                                                }else{
+
+                                                                                    set_tecrube_forms(tecrube_forms.filter((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return false
+                                                                                        }return true
+                                                                                    }))
+                                                                                }
                                                                             }} className={styles.delete_icon}>
                                                                                 <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
@@ -1016,11 +1101,20 @@ export default function Form(){
                                                                             <button onClick={(e)=>{
                                                                                 e.stopPropagation();
                                                                                 e.preventDefault();
-                                                                                set_kurs_forms(kurs_forms.filter((a,map_index)=>{
-                                                                                    if(index==map_index){
-                                                                                        return false
-                                                                                    }return true
-                                                                                }))
+                                                                                if(kurs_form.id>0){
+                                                                                    set_delete_form({
+                                                                                        key: "course",
+                                                                                        id: kurs_form.id,
+                                                                                        show:true
+                                                                                    })
+                                                                                }else{
+
+                                                                                    set_kurs_forms(kurs_forms.filter((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return false
+                                                                                        }return true
+                                                                                    }))
+                                                                                }
                                                                             }} className={styles.delete_icon}>
                                                                                 <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
@@ -1155,11 +1249,20 @@ export default function Form(){
                                                                             <button onClick={(e)=>{
                                                                                 e.stopPropagation();
                                                                                 e.preventDefault();
-                                                                                set_proje_forms(proje_forms.filter((a,map_index)=>{
-                                                                                    if(index==map_index){
-                                                                                        return false
-                                                                                    }return true
-                                                                                }))
+                                                                                if(proje_form.id>0){
+                                                                                    set_delete_form({
+                                                                                        key: "project",
+                                                                                        id: proje_form.id,
+                                                                                        show:true
+                                                                                    })
+                                                                                }else{
+
+                                                                                    set_proje_forms(proje_forms.filter((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return false
+                                                                                        }return true
+                                                                                    }))
+                                                                                }
                                                                             }} className={styles.delete_icon}>
                                                                                 <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
@@ -1372,11 +1475,15 @@ export default function Form(){
                                                                                     <button onClick={(e)=>{
                                                                                         e.stopPropagation();
                                                                                         e.preventDefault();
-                                                                                        set_dil_forms(dil_forms.filter((a,map_index)=>{
-                                                                                            if(map_index!=index){
-                                                                                                return true
-                                                                                            }return false
-                                                                                        }))
+                                                                                        if(dil_form.id>0){
+                                                                                            delete_item_vars(dil_form.id,"language");
+                                                                                        }else{
+                                                                                            set_dil_forms(dil_forms.filter((a,map_index)=>{
+                                                                                                if(map_index!=index){
+                                                                                                    return true
+                                                                                                }return false
+                                                                                            }))
+                                                                                        }
                                                                                     }} className={styles.delete_input}>
                                                                                         <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                                     </button>
@@ -1467,11 +1574,15 @@ export default function Form(){
                                                                                     <button onClick={(e)=>{
                                                                                         e.stopPropagation();
                                                                                         e.preventDefault();
-                                                                                        set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.filter((a,map_index)=>{
-                                                                                            if(map_index!=index){
-                                                                                                return true
-                                                                                            }return false
-                                                                                        }))
+                                                                                        if(bilgisayar_becerisi_form.id>0){
+                                                                                            delete_item_vars(bilgisayar_becerisi_form.id,"computer-skill");
+                                                                                        }else{
+                                                                                            set_bilgisayar_becerisi_forms(bilgisayar_becerisi_forms.filter((a,map_index)=>{
+                                                                                                if(map_index!=index){
+                                                                                                    return true
+                                                                                                }return false
+                                                                                            }))
+                                                                                        }
                                                                                     }} className={styles.delete_input}>
                                                                                         <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                                     </button>
@@ -1561,11 +1672,20 @@ export default function Form(){
                                                                             <button onClick={(e)=>{
                                                                                 e.stopPropagation();
                                                                                 e.preventDefault();
-                                                                                set_yayin_forms(yayin_forms.filter((a,map_index)=>{
-                                                                                    if(index==map_index){
-                                                                                        return false
-                                                                                    }return true
-                                                                                }))
+                                                                                if(yayin_form.id>0){
+                                                                                    set_delete_form({
+                                                                                        key: "publish",
+                                                                                        id: yayin_form.id,
+                                                                                        show:true
+                                                                                    })
+                                                                                }else{
+
+                                                                                    set_yayin_forms(yayin_forms.filter((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return false
+                                                                                        }return true
+                                                                                    }))
+                                                                                }
                                                                             }} className={styles.delete_icon}>
                                                                                 <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
@@ -1674,11 +1794,20 @@ export default function Form(){
                                                                             <button onClick={(e)=>{
                                                                                 e.stopPropagation();
                                                                                 e.preventDefault();
-                                                                                set_hobi_forms(hobi_forms.filter((a,map_index)=>{
-                                                                                    if(index==map_index){
-                                                                                        return false
-                                                                                    }return true
-                                                                                }))
+                                                                                if(hobi_form.id>0){
+                                                                                    set_delete_form({
+                                                                                        key: "hobby",
+                                                                                        id: hobi_form.id,
+                                                                                        show:true
+                                                                                    })
+                                                                                }else{
+
+                                                                                    set_hobi_forms(hobi_forms.filter((a,map_index)=>{
+                                                                                        if(index==map_index){
+                                                                                            return false
+                                                                                        }return true
+                                                                                    }))
+                                                                                }
                                                                             }} className={styles.delete_icon}>
                                                                                 <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""

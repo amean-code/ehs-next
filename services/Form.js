@@ -23,4 +23,16 @@ const fill_form = (token,body) => {
     });
 }
 
-export default { get_form, fill_form }
+const delete_item = (token,body) => {
+    return fetch(`${Config.ServerAPI}/api/form/delete-item-from-form/`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            ehs_token: token
+        },
+        method: 'POST',
+        body: body
+    });
+}
+
+export default { get_form, fill_form, delete_item }
