@@ -8,6 +8,7 @@ import TimeLine from "../components/TimeLine";
 import NotFoundPage from "./404";
 import Vision from "../components/Vision";
 import News from "../components/News";
+import Blog from "../components/Blog";
 import Mentoring from "../components/Mentoring";
 import styles from "../styles/App.module.css"
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Vision/>
       <News/>
       <Mentoring/>
+      <Blog/>
       <Team />
       <TimeLine />
       <Contact />
