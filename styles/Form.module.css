@@ -168,6 +168,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   transition: all ease-in-out 0.5s;
+  max-height: 85vh;
 }
 
 .form_body .section {
@@ -647,6 +648,11 @@
     min-height: 100vh;
   }
 
+  .step_name{
+    font-size: 20px !important;
+    color: black !important;
+  }
+
   .form_wrapper .sidebar {
     flex: 0.1;
   }
@@ -681,6 +687,10 @@
 
   .button p {
     font-size: 12px;
+  }
+
+  .section{
+    padding: 20px !important;
   }
 
   .row {

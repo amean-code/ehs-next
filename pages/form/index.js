@@ -196,110 +196,148 @@ export default function Form(){
         }
     }
 
-    const [mentorluk_sureci_form,set_mentorluk_sureci_form] = useState([
+    const [mentorluk_sureci_genel_bilgiler_form,set_mentorluk_sureci_genel_bilgiler_form] = useState({
+        question_1: "",
+        question_3: "",
+        question_4: "",
+        question_5: ""
+    })
+
+    const [mentorluk_sureci_basvuru_turu_form,set_mentorluk_sureci_basvuru_turu_form] = useState([
         {
             name: "Lisans ve Lisansüstü Tez Mentörlüğü",
+            key: "lisans-ve-lisansustu-tez-mentorlugu",
             checked: false,
             questions:[
                 {
                     question: "Tez konunuz hakkında kısa bir açıklama yapar mısınız?",
+                    key: "question_1",
                     answer: ""
                 },
                 {
                     question: "Hangi aşamadasınız? (Konu belirleme, literatür tarama, veri toplama vb.)",
+                    key: "question_2",
                     answer: ""
                 },
                 {
                     question: "Hangi konularda yardım arıyorsunuz?",
+                    key: "question_3",
                     answer: ""
                 }
             ]
         },
         {
             name: "Proje Mentörlüğü",
+            key: "proje-mentorlugu",
             checked: false,
             questions:[
                 {
                     question: "Projenizin kısa bir özeti nedir?",
+                    key: "question_1",
                     answer: ""
                 },
                 {
                     question: "Projenizin şuanki aşaması nedir?",
+                    key: "question_2",
                     answer: ""
                 },
                 {
                     question: "Hangi konularda danışmanlık arıyorsunuz?",
+                    key: "question_3",
                     answer: ""
                 }
             ]
         },
         {
             name: "Akademik ve Kariyer Mentörlüğü",
+            key: "akademik-ve-kariyer-mentorlugu",
             checked: false,
             questions:[
                 {
                     question: "Şuanki kariyer hedefiniz nedir?",
+                    key: "question_1",
                     answer: ""
                 },
                 {
                     question: "Hangi alanlarda rehberlik arıyorsunuz? (Örneğin: iş başvurusu, CV hazırlığı vb.)",
+                    key: "question_2",
                     answer: ""
                 }
             ]
         },
         {
             name: "Girişimcilik Mentörlüğü",
+            key: "girisimcilik-mentorlugu",
             checked: false,
             questions:[
                 {
                     question: "Girişim fikriniz nedir?",
+                    key: "question_1",
                     answer: ""
                 },
                 {
                     question: "Şuanda hangi aşamadasınız?",
+                    key: "question_2",
                     answer: ""
                 },
                 {
                     question: "Hangi konularda rehberlik arıyorsunuz?",
+                    key: "question_3",
                     answer: ""
                 }
             ]
         },
         {
             name: "Akran Mentörlüğü",
+            key: "akran-mentorlugu",
             checked: false,
             questions:[
                 {
                     question: "Hangi deneyimleri veya bilgileri paylaşmak istersiniz?",
+                    key: "question_1",
                     answer: ""
                 },
                 {
                     question: "Hangi konularda akran rehberliği arıyorsunuz?",
+                    key: "question_2",
                     answer: ""
                 }
             ]
         },
     ])
 
-    const [mentorluk_sonrasi_surec,set_mentorluk_sonrasi_surec] = useState([
+
+
+    const [mentorluk_sonrasi_surec,set_mentorluk_sonrasi_surec] = useState({
+        question_2: "",
+        question_3: "",
+        question_4: ""
+    })
+
+    const [mentorluk_sonrasi_surec_iliski_form,set_mentorluk_sonrasi_surec_iliski_form] = useState([
         {
-            name: "Lisans ve Lisansüstü Tez Mentörlüğü",
+            name: "Aktif bir üye olarak kalmak",
+            key: "aktif-uye-kalmak",
             checked: false
         },
         {
-            name: "Proje Mentörlüğü",
+            name: "Kendi mentörlük deneyimlerimi paylaşmak",
+            key: "mentorluk-deneyimlerini-paylasmak",
             checked: false
         },
         {
-            name: "Akademik ve Kariyer Mentörlüğü",
+            name: "EHS etkinliklerine katılmak veya bu etkinliklerde görev almak",
+            key: "etkinliklere-katilmak",
             checked: false
         },
         {
-            name: "Girişimcilik Mentörlüğü",
+            name: "EHS projelerinde aktif rol almak",
+            key: "projelerde-rol-almak",
             checked: false
         },
         {
-            name: "Akran Mentörlüğü",
+            name: "EHS'deki diğer bireylerle ağ kurmaya devam etmek",
+            key: "ağ-kurmaya-devam-etmek",
             checked: false
         },
     ]);
@@ -316,7 +354,6 @@ export default function Form(){
             code: "",
             message: ""
         });
-        
         if(state<steps.length-1){
 
             if(state==0){
@@ -335,8 +372,12 @@ export default function Form(){
                 })
             }else if(state==1){
                 fill_form_handle();
+            }else if(state==3){
+                mentorluk_sureci_ayrinti_bilgiler_form_handle();
+            }else if(state==4){
+                mentorluk_sonrasi_surec_form_handle();
             } else if(state==2){
-                if(mentorluk_sureci_form.filter(a=>{
+                if(mentorluk_sureci_basvuru_turu_form.filter(a=>{
                     if(a.checked){
                         return true
                     }return false
@@ -354,10 +395,7 @@ export default function Form(){
                     set_loader(false);
                     },200)
                 }else{
-                    set_state(state+1);
-                    setTimeout(()=>{
-                        set_loader(false);
-                    },200)
+                    mentorluk_sureci_genel_bilgiler_form_handle();
                 }
             }else{
                 set_state(state+1);
@@ -366,6 +404,7 @@ export default function Form(){
                 },200)
             }
         }else{
+            mentorluk_sonrasi_surec_form_handle();
             setTimeout(()=>{
                 set_loader(false);
             },200)
@@ -485,6 +524,165 @@ export default function Form(){
                 }else{
                     set_bilgisayar_becerisi_forms([bilgisayar_becerisi_form_structure]);
                 }
+                if(data.mentoring_process_general_information){
+                    set_mentorluk_sureci_genel_bilgiler_form(data.mentoring_process_general_information);
+
+                    set_mentorluk_sureci_basvuru_turu_form(mentorluk_sureci_basvuru_turu_form.map((item,index)=>{
+                        if(data.mentoring_process_general_information.question_2.includes(item.key)){
+                            return {
+                                ...item,
+                                checked: true
+                            }
+                        }else{
+                            return {
+                                ...item,
+                                checked: false
+                            }
+                        }
+                    }))
+                }
+                if(data.post_mentoring_process){
+                    set_mentorluk_sonrasi_surec(data.post_mentoring_process);
+
+                    set_mentorluk_sonrasi_surec_iliski_form(mentorluk_sonrasi_surec_iliski_form.map((item,index)=>{
+                        if(data.post_mentoring_process.question_1.includes(item.key)){
+                            return {
+                                ...item,
+                                checked: true
+                            }
+                        }else{
+                            return {
+                                ...item,
+                                checked: false
+                            }
+                        }
+                    }))
+                }
+                if(data.mentoring_process_detailed_information){
+                    set_mentorluk_sureci_basvuru_turu_form(mentorluk_sureci_basvuru_turu_form.map(item=>{
+                        if(item.key=="lisans-ve-lisansustu-tez-mentorlugu"){
+                            return {
+                                ...item,
+                                checked: data.mentoring_process_general_information.question_2.includes(item.key)?true:false,
+                                questions: item.questions.map(question_item=>{
+                                    if(question_item.key=="question_1"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.lisans_ve_lisansustu_tez_mentorlugu_question_1
+                                        }
+                                    }else if(question_item.key=="question_2"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.lisans_ve_lisansustu_tez_mentorlugu_question_2
+                                        }
+                                    }else if(question_item.key=="question_3"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.lisans_ve_lisansustu_tez_mentorlugu_question_3
+                                        }
+                                    }else{
+                                        return question_item
+                                    }
+                                })
+                            }
+                        }else if(item.key=="proje-mentorlugu"){
+                            return {
+                                ...item,
+                                checked: data.mentoring_process_general_information.question_2.includes(item.key)?true:false,
+                                questions: item.questions.map(question_item=>{
+                                    if(question_item.key=="question_1"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.proje_mentorlugu_question_1
+                                        }
+                                    }else if(question_item.key=="question_2"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.proje_mentorlugu_question_2
+                                        }
+                                    }else if(question_item.key=="question_3"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.proje_mentorlugu_question_3
+                                        }
+                                    }else{
+                                        return question_item
+                                    }
+                                })
+                            }
+                        }else if(item.key=="girisimcilik-mentorlugu"){
+                            return {
+                                ...item,
+                                checked: data.mentoring_process_general_information.question_2.includes(item.key)?true:false,
+                                questions: item.questions.map(question_item=>{
+                                    if(question_item.key=="question_1"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.girisimcilik_mentorlugu_question_1
+                                        }
+                                    }else if(question_item.key=="question_2"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.girisimcilik_mentorlugu_question_2
+                                        }
+                                    }else if(question_item.key=="question_3"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.girisimcilik_mentorlugu_question_3
+                                        }
+                                    }else{
+                                        return question_item
+                                    }
+                                })
+                            }
+                        }else if(item.key=="akademik-ve-kariyer-mentorlugu"){
+                            return {
+                                ...item,
+                                checked: data.mentoring_process_general_information.question_2.includes(item.key)?true:false,
+                                questions: item.questions.map(question_item=>{
+                                    if(question_item.key=="question_1"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.akademik_ve_kariyer_mentorlugu_question_1
+                                        }
+                                    }else if(question_item.key=="question_2"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.akademik_ve_kariyer_mentorlugu_question_2
+                                        }
+                                    }else{
+                                        return question_item
+                                    }
+                                })
+                            }
+                        } else if(item.key=="akran-mentorlugu"){
+                            return {
+                                ...item,
+                                checked: data.mentoring_process_general_information.question_2.includes(item.key)?true:false,
+                                questions: item.questions.map(question_item=>{
+                                    if(question_item.key=="question_1"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.akran_mentorlugu_question_1
+                                        }
+                                    }else if(question_item.key=="question_2"){
+                                        return {
+                                            ...question_item,
+                                            answer: data.mentoring_process_detailed_information.akran_mentorlugu_question_2
+                                        }
+                                    }else{
+                                        return question_item
+                                    }
+                                })
+                            }
+                        } else{
+                            return {
+                                ...item,
+                                checked: data.mentoring_process_general_information.question_2.includes(item.key)?true:false,
+                            }
+                        }
+                    }))
+                }
             }
         })
     }
@@ -508,6 +706,158 @@ export default function Form(){
                 set_state(state+1);
                 get_form_handle();
             }
+        })
+    }
+
+    let mentorluk_sureci_genel_bilgiler_form_handle = () => {
+        set_loader(true);
+        let question_2_data = [];
+
+        mentorluk_sureci_basvuru_turu_form.map(a=>{
+            if(a.checked){
+                question_2_data.push(a.key);
+            }
+        })
+
+        FormService.mentoring_process_general_information_form(Cookies.get("ehs_user_token"),JSON.stringify({
+            ...mentorluk_sureci_genel_bilgiler_form,
+            question_2: question_2_data
+        })).then(res=>res.json()).then(data=>{
+            console.log("DATA: ",data);
+            get_form_handle()
+            set_state(state+1);
+            setTimeout(()=>{
+                set_loader(false);
+            },200)
+        })
+    }
+
+    let mentorluk_sonrasi_surec_form_handle = () => {
+        set_loader(true);
+        let question_1_data = [];
+
+        mentorluk_sonrasi_surec_iliski_form.map(a=>{
+            if(a.checked){
+                question_1_data.push(a.key);
+            }
+        })
+
+        FormService.post_mentoring_process(Cookies.get("ehs_user_token"),JSON.stringify({
+            ...mentorluk_sonrasi_surec,
+            question_1: question_1_data
+        })).then(res=>res.json()).then(data=>{
+            console.log("DATA: ",data);
+            // get_form_handle()
+            // set_state(state+1);
+            setTimeout(()=>{
+                set_loader(false);
+            },200)
+        })
+    }
+
+    let mentorluk_sureci_ayrinti_bilgiler_form_handle = () => {
+
+        set_loader(true);
+        let body = {};
+        console.log(mentorluk_sureci_basvuru_turu_form);
+        mentorluk_sureci_basvuru_turu_form.map(a=>{
+            if(a.key=="lisans-ve-lisansustu-tez-mentorlugu"){
+                body = {
+                    ...body,
+                    lisans_ve_lisansustu_tez_mentorlugu_question_1: a.questions.find(b=>{
+                        if(b.key=="question_1"){
+                            return b
+                        }
+                    }).answer,
+                    lisans_ve_lisansustu_tez_mentorlugu_question_2: a.questions.find(b=>{
+                        if(b.key=="question_2"){
+                            return b
+                        }
+                    }).answer,
+                    lisans_ve_lisansustu_tez_mentorlugu_question_3: a.questions.find(b=>{
+                        if(b.key=="question_3"){
+                            return b
+                        }
+                    }).answer
+                }
+            }else if(a.key=="proje-mentorlugu"){
+                body = {
+                    ...body,
+                    proje_mentorlugu_question_1: a.questions.find(b=>{
+                        if(b.key=="question_1"){
+                            return b
+                        }
+                    }).answer,
+                    proje_mentorlugu_question_2: a.questions.find(b=>{
+                        if(b.key=="question_2"){
+                            return b
+                        }
+                    }).answer,
+                    proje_mentorlugu_question_3: a.questions.find(b=>{
+                        if(b.key=="question_3"){
+                            return b
+                        }
+                    }).answer
+                }
+            }else if(a.key=="girisimcilik-mentorlugu"){
+                body = {
+                    ...body,
+                    girisimcilik_mentorlugu_question_1: a.questions.find(b=>{
+                        if(b.key=="question_1"){
+                            return b
+                        }
+                    }).answer,
+                    girisimcilik_mentorlugu_question_2: a.questions.find(b=>{
+                        if(b.key=="question_2"){
+                            return b
+                        }
+                    }).answer,
+                    girisimcilik_mentorlugu_question_3: a.questions.find(b=>{
+                        if(b.key=="question_3"){
+                            return b
+                        }
+                    }).answer
+                }
+            }else if(a.key=="akademik-ve-kariyer-mentorlugu"){
+                body = {
+                    ...body,
+                    akademik_ve_kariyer_mentorlugu_question_1: a.questions.find(b=>{
+                        if(b.key=="question_1"){
+                            return b
+                        }
+                    }).answer,
+                    akademik_ve_kariyer_mentorlugu_question_2: a.questions.find(b=>{
+                        if(b.key=="question_2"){
+                            return b
+                        }
+                    }).answer
+                }
+            }else if(a.key=="akran-mentorlugu"){
+                body = {
+                    ...body,
+                    akran_mentorlugu_question_1: a.questions.find(b=>{
+                        if(b.key=="question_1"){
+                            return b
+                        }
+                    }).answer,
+                    akran_mentorlugu_question_2: a.questions.find(b=>{
+                        if(b.key=="question_2"){
+                            return b
+                        }
+                    }).answer
+                }
+            }
+        })
+
+        FormService.mentoring_process_detailed_information_form(Cookies.get("ehs_user_token"),JSON.stringify(body)).then(res=>res.json()).then(data=>{
+            console.log("DATA: ",data);
+
+            get_form_handle()
+
+            set_state(state+1);
+            setTimeout(()=>{
+                set_loader(false);
+            },200)
         })
     }
 
@@ -580,7 +930,7 @@ export default function Form(){
                         </div>
                         <button onClick={delete_item} className={styles.button}>
                             <div className={styles.icon}>
-                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                             </div>
                             <p>
                                 Sil
@@ -712,7 +1062,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -928,7 +1278,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1116,7 +1466,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1264,7 +1614,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1536,7 +1886,7 @@ export default function Form(){
                                                                                                         }return a
                                                                                                     }))
                                                                                                 }} className={styles.star+" "+(star_index<=dil_form.star_show?styles.active:"")}>
-                                                                                                    <svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.964 1.19l2.316 4.66c.116.235.34.399.6.437l5.185.749c.21.028.4.138.528.306a.77.77 0 01-.085 1.032l-3.758 3.634a.762.762 0 00-.226.7l.9 5.129a.787.787 0 01-.652.892.868.868 0 01-.516-.08l-4.618-2.421a.776.776 0 00-.742 0l-4.652 2.434a.812.812 0 01-1.077-.33.796.796 0 01-.08-.5l.9-5.128a.788.788 0 00-.227-.7L.982 8.37A.786.786 0 01.98 7.259l.003-.004a.91.91 0 01.452-.222l5.186-.75a.812.812 0 00.6-.437L9.534 1.19a.787.787 0 01.458-.4.798.798 0 01.61.044.82.82 0 01.362.356z" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                                                                    <svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.964 1.19l2.316 4.66c.116.235.34.399.6.437l5.185.749c.21.028.4.138.528.306a.77.77 0 01-.085 1.032l-3.758 3.634a.762.762 0 00-.226.7l.9 5.129a.787.787 0 01-.652.892.868.868 0 01-.516-.08l-4.618-2.421a.776.776 0 00-.742 0l-4.652 2.434a.812.812 0 01-1.077-.33.796.796 0 01-.08-.5l.9-5.128a.788.788 0 00-.227-.7L.982 8.37A.786.786 0 01.98 7.259l.003-.004a.91.91 0 01.452-.222l5.186-.75a.812.812 0 00.6-.437L9.534 1.19a.787.787 0 01.458-.4.798.798 0 01.61.044.82.82 0 01.362.356z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                                                                                                 </div>
                                                                                             )
                                                                                         })
@@ -1635,7 +1985,7 @@ export default function Form(){
                                                                                                         }return a
                                                                                                     }))
                                                                                                 }} className={styles.star+" "+(star_index<=bilgisayar_becerisi_form.star_show?styles.active:"")}>
-                                                                                                    <svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.964 1.19l2.316 4.66c.116.235.34.399.6.437l5.185.749c.21.028.4.138.528.306a.77.77 0 01-.085 1.032l-3.758 3.634a.762.762 0 00-.226.7l.9 5.129a.787.787 0 01-.652.892.868.868 0 01-.516-.08l-4.618-2.421a.776.776 0 00-.742 0l-4.652 2.434a.812.812 0 01-1.077-.33.796.796 0 01-.08-.5l.9-5.128a.788.788 0 00-.227-.7L.982 8.37A.786.786 0 01.98 7.259l.003-.004a.91.91 0 01.452-.222l5.186-.75a.812.812 0 00.6-.437L9.534 1.19a.787.787 0 01.458-.4.798.798 0 01.61.044.82.82 0 01.362.356z" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                                                                    <svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.964 1.19l2.316 4.66c.116.235.34.399.6.437l5.185.749c.21.028.4.138.528.306a.77.77 0 01-.085 1.032l-3.758 3.634a.762.762 0 00-.226.7l.9 5.129a.787.787 0 01-.652.892.868.868 0 01-.516-.08l-4.618-2.421a.776.776 0 00-.742 0l-4.652 2.434a.812.812 0 01-1.077-.33.796.796 0 01-.08-.5l.9-5.128a.788.788 0 00-.227-.7L.982 8.37A.786.786 0 01.98 7.259l.003-.004a.91.91 0 01.452-.222l5.186-.75a.812.812 0 00.6-.437L9.534 1.19a.787.787 0 01.458-.4.798.798 0 01.61.044.82.82 0 01.362.356z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                                                                                                 </div>
                                                                                             )
                                                                                         })
@@ -1687,7 +2037,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1809,7 +2159,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }
                                                                             }} className={styles.delete_icon}>
-                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                                                                <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                                             </button>:""
                                                                         }
                                                                         <div className={styles.item}>
@@ -1894,7 +2244,12 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             1.  EHS ile nasıl tanıştınız?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true} />
+                                                        <textarea placeholder="Cevabınız..." required={true} value={mentorluk_sureci_genel_bilgiler_form.question_1} onInput={(e)=>{
+                                                            set_mentorluk_sureci_genel_bilgiler_form({
+                                                                ...mentorluk_sureci_genel_bilgiler_form,
+                                                                question_1: e.target.value
+                                                            });
+                                                        }} />
                                                     </div>
                                                     <div className={styles.item+" "+(
                                                         error.code=="mentorluk_basvuru_turu_min_1"?
@@ -1906,14 +2261,14 @@ export default function Form(){
                                                         </div>
                                                         <div className={styles.options}>
                                                             {
-                                                                mentorluk_sureci_form.map((option,index)=>{
+                                                                mentorluk_sureci_basvuru_turu_form.map((option,index)=>{
                                                                     return (
                                                                         <div key={"mentorluk-sureci-1-"+index} className={styles.option} onClick={()=>{
                                                                             set_error({
                                                                                 code: "",
                                                                                 message: ""
                                                                             })
-                                                                            set_mentorluk_sureci_form(mentorluk_sureci_form.map((a,map_index)=>{
+                                                                            set_mentorluk_sureci_basvuru_turu_form(mentorluk_sureci_basvuru_turu_form.map((a,map_index)=>{
                                                                                 if(index==map_index){
                                                                                     return {
                                                                                         ...a,
@@ -1939,25 +2294,40 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             3.  Bu mentörlükten beklentileriniz nelerdir?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true} />
+                                                        <textarea placeholder="Cevabınız..." required={true}  value={mentorluk_sureci_genel_bilgiler_form.question_3} onInput={(e)=>{
+                                                            set_mentorluk_sureci_genel_bilgiler_form({
+                                                                ...mentorluk_sureci_genel_bilgiler_form,
+                                                                question_3: e.target.value
+                                                            });
+                                                        }} />
                                                     </div>
                                                     <div className={styles.item}>
                                                         <div className={styles.question}>
                                                             4.  EHS&apos;den almayı umduğunuz mentörlüğün süresi hakkında bir tahmininiz var mı? (Örnek: 3 ay, 6 ay, 1 yıl vb.)
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true} />
+                                                        <textarea placeholder="Cevabınız..." required={true}  value={mentorluk_sureci_genel_bilgiler_form.question_4} onInput={(e)=>{
+                                                            set_mentorluk_sureci_genel_bilgiler_form({
+                                                                ...mentorluk_sureci_genel_bilgiler_form,
+                                                                question_4: e.target.value
+                                                            });
+                                                        }} />
                                                     </div>
                                                     <div className={styles.item}>
                                                         <div className={styles.question}>
                                                             5.  Mentörlük sürecinde ne sıklıkla mentörünüzle buluşmayı planlıyorsunuz? (Örnek: haftada bir, ayda bir vb.)
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true} />
+                                                        <textarea placeholder="Cevabınız..." required={true} value={mentorluk_sureci_genel_bilgiler_form.question_5} onInput={(e)=>{
+                                                            set_mentorluk_sureci_genel_bilgiler_form({
+                                                                ...mentorluk_sureci_genel_bilgiler_form,
+                                                                question_5: e.target.value
+                                                            });
+                                                        }} />
                                                     </div>
                                                     </>:
                                                     index==3?
                                                     <>
                                                     {
-                                                        mentorluk_sureci_form.map((option,option_index)=>{
+                                                        mentorluk_sureci_basvuru_turu_form.map((option,option_index)=>{
                                                             if(option.checked){
                                                                 return (
                                                                     <>
@@ -1973,7 +2343,7 @@ export default function Form(){
                                                                                         {question_index+1})  {question.question}
                                                                                     </label>
                                                                                     <textarea value={question.answer} onInput={(e)=>{
-                                                                                        set_mentorluk_sureci_form(mentorluk_sureci_form.map((a,map_index)=>{
+                                                                                        set_mentorluk_sureci_basvuru_turu_form(mentorluk_sureci_basvuru_turu_form.map((a,map_index)=>{
                                                                                             if(option_index==map_index){
                                                                                                 return {
                                                                                                     ...a,
@@ -2008,10 +2378,10 @@ export default function Form(){
                                                             </div>
                                                             <div className={styles.options}>
                                                                 {
-                                                                    mentorluk_sonrasi_surec.map((option,index)=>{
+                                                                    mentorluk_sonrasi_surec_iliski_form.map((option,index)=>{
                                                                         return (
                                                                             <div key={"mentorluk-sonrasi-1-"+index} className={styles.option} onClick={()=>{
-                                                                                set_mentorluk_sonrasi_surec(mentorluk_sonrasi_surec.map((a,map_index)=>{
+                                                                                set_mentorluk_sonrasi_surec_iliski_form(mentorluk_sonrasi_surec_iliski_form.map((a,map_index)=>{
                                                                                     if(index==map_index){
                                                                                         return {
                                                                                             ...a,
@@ -2037,19 +2407,34 @@ export default function Form(){
                                                             <div className={styles.question}>
                                                                 2. EHS topluluğuna mentör olarak katkıda bulunmayı düşünüyor musunuz? Eğer evet ise, hangi konularda mentörlük yapmayı tercih edersiniz?
                                                             </div>
-                                                            <textarea placeholder="Cevabınız..." required={true} />
+                                                            <textarea placeholder="Cevabınız..." required={true} value={mentorluk_sonrasi_surec.question_2} onInput={(e)=>{
+                                                                set_mentorluk_sonrasi_surec({
+                                                                    ...mentorluk_sonrasi_surec,
+                                                                    question_2: e.target.value
+                                                                })
+                                                            }} />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <div className={styles.question}>
                                                                 3. EHS etkinliklerinde hangi kapasitelerde görev almayı düşünüyorsunuz? (Örneğin: etkinlik organizasyonu, konuşmacı olarak katılmak, sponsorluk ilişkileri kurma vb. )
                                                             </div>
-                                                            <textarea placeholder="Cevabınız..." required={true} />
+                                                            <textarea placeholder="Cevabınız..." required={true} value={mentorluk_sonrasi_surec.question_3} onInput={(e)=>{
+                                                                set_mentorluk_sonrasi_surec({
+                                                                    ...mentorluk_sonrasi_surec,
+                                                                    question_3: e.target.value
+                                                                })
+                                                            }} />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <div className={styles.question}>
                                                                 4. EHS ile ilgili ek olarak paylaşmak istediğiniz düşünceleriniz veya beklentileriniz var mı?
                                                             </div>
-                                                            <textarea placeholder="Cevabınız..." required={true} />
+                                                            <textarea placeholder="Cevabınız..." required={true} value={mentorluk_sonrasi_surec.question_4} onInput={(e)=>{
+                                                                set_mentorluk_sonrasi_surec({
+                                                                    ...mentorluk_sonrasi_surec,
+                                                                    question_4: e.target.value
+                                                                })
+                                                            }} />
                                                         </div>
                                                     </>:""
 
@@ -2066,7 +2451,7 @@ export default function Form(){
                                                         }
                                                     }} className={styles.button+" "+styles.prev}>
                                                         <div className={styles.icon}>
-                                                            <svg stroke="currentColor" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M13 8l-4 4 4 4" stroke="var(--geist-stroke)"/></svg>
+                                                            <svg stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M13 8l-4 4 4 4" stroke="var(--geist-stroke)"/></svg>
                                                         </div>
                                                         <p>
                                                             Geri Git
@@ -2080,7 +2465,7 @@ export default function Form(){
                                                             Kaydet ve Devam Et
                                                         </p>
                                                         <div className={styles.icon}>
-                                                            <svg stroke="currentColor" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M11 16l4-4-4-4" stroke="var(--geist-stroke)"/></svg>
+                                                            <svg stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shape-rendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z" fill="var(--geist-fill)"/><path d="M11 16l4-4-4-4" stroke="var(--geist-stroke)"/></svg>
                                                         </div>
                                                     </button>:
                                                     <button className={styles.button+" "+styles.next}>
