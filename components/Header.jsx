@@ -91,6 +91,22 @@ function Header() {
           <li className={styles.mobile_li}><a className={styles.mobiler_a} href="hakkimizda.php">Events</a></li>
           <li className={styles.mobile_li}><a className={styles.mobiler_a} href="contact.php">Mentoring</a></li>
           <li className={styles.mobile_li}><a className={styles.mobiler_a} href="prof.php">Contact Us</a></li>
+          {
+            user?
+            <li className={styles.mobile_li}>
+              <Link className={styles.button} href="/form">Mentee Form</Link>
+            </li>:
+            <>
+            <li className={styles.mobile_li}>
+              <Link className={styles.button} href="/login">Giriş Yap</Link>
+            </li>
+            <li className={styles.mobile_li}>
+              <Link className={styles.button} href="/register">Kayıt Ol</Link>
+            </li>
+
+            </>
+
+          }
           <div className={styles.mobile_languages} style={{height:"auto"}}>
             <img className={styles.img} src="/images/tr-buton.svg" alt="" />
             <img className={styles.img} src="/images/us-buton.svg" alt="" />

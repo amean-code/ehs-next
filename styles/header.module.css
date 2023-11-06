@@ -174,12 +174,12 @@
     font-weight: 300;
 }
 
-.header_right .button {
+.button {
     text-decoration: none;
     background-color: var(--primary);
     font-weight: 300;
     padding: 10px 15px;
-    color: white;
+    color: white !important;
     border-radius: 10px;
 }
 .button:hover{
@@ -203,7 +203,8 @@
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .mobile_menu.open{
-    height: 240px;
+    min-height: 240px;
+    height: auto;
 }
 .mobile_menu .mobile_languages{
     display: flex;
