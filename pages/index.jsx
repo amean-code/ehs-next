@@ -21,7 +21,6 @@ export default function Home() {
       <Vision/>
       <News/>
       <Mentoring/>
-      <Blog/>
       <Team />
       <TimeLine />
       <Contact />
