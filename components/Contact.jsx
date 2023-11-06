@@ -7,9 +7,9 @@ function Contact() {
   const [activeNav, setActiveNav] = useState("");
 
   return (
-    <div className="flex w-full p-[24px] justify-center items-center">
-      <div className="flex flex-col gap-5 p-8 overflow-hidden text-white bg-green-600 shadow-lg md:flex-row md:space-y-0 sm:p-12 rounded-xl">
-        <div className="flex flex-col justify-between space-y-8">
+    <div class="flex w-full p-[24px] justify-center items-center" id="contact-us">
+      <div class="flex flex-col md:flex-row  gap-5 md:space-y-0 bg-green-600  p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
+        <div class="flex flex-col space-y-8 justify-between">
           <div>
             <h1 className="text-4xl font-bold tracking-wide">Contact Us</h1>
             <p className="pt-2 text-sm text-green-100">For all your non-existant company needs Fake Corp are here to help, do not<br/> hesitate to contact us!</p>

@@ -7,7 +7,7 @@ function Header() {
     const [activeNav, setActiveNav] = useState("");
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="events">
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={styles.col_lg_4 + " " + styles.col_md_6 + " " + styles.mb30}>

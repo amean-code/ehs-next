@@ -7,7 +7,7 @@ function Mentoring() {
   const [activeNav, setActiveNav] = useState("");
 
   return (
-    <section className={styles.section_methods}>
+    <section className={styles.section_methods} id="mentoring">
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.col_lg_12}>

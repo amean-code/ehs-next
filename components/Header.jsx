@@ -51,16 +51,11 @@ function Header() {
             <Image width={200} height={200} src="/images/logo.png" alt="" />
           </div>
         </div>
-        <div className={styles.header_right}>
-          <a href="anasayfa.php">About Us</a>
-          <a href="hakkimizda.php">Events</a>
-          <a href="contact.php">Mentoring</a>
-          <a href="prof.php">Contact Us</a>
-          {
-            user?
-            <a href="/form">Mentee Form</a>
-            :""
-          }
+        <div className={styles.header_right}>  
+          <Link href="#about-us">About Us</Link>
+          <Link href="#events">Events</Link>
+          <Link href="#mentoring">Mentoring</Link>
+          <Link href="#contact-us">Contact Us</Link>
         </div>
         <div onClick={(e)=>{
           e.preventDefault();
@@ -77,14 +72,11 @@ function Header() {
         <div className={styles.mobile_menu+" "+(
           mobile_menu?
           styles.open:""
-        )} onClick={(e)=>{
-          e.preventDefault();
-          e.stopPropagation();
-        }}>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="anasayfa.php">About Us</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="hakkimizda.php">Events</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="contact.php">Mentoring</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="prof.php">Contact Us</a></li>
+        )}>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#about-us">About Us</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#events">Events</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#mentoring">Mentoring</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#contact-us">Contact Us</Link></li>
           <div className={styles.mobile_languages} style={{height:"auto"}}>
             <img className={styles.img} src="/images/tr-buton.svg" alt="" />
             <img className={styles.img} src="/images/us-buton.svg" alt="" />
