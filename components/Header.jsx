@@ -52,6 +52,7 @@ function Header() {
           </div>
         </div>
         <div className={styles.header_right}>
+<<<<<<< Updated upstream
           <a href="anasayfa.php">About Us</a>
           <a href="hakkimizda.php">Events</a>
           <a href="contact.php">Mentoring</a>
@@ -61,6 +62,12 @@ function Header() {
             <a href="/form">Mentee Form</a>
             :""
           }
+=======
+          <a href="#about-us">About Us</a>
+          <a href="#events">Events</a>
+          <a href="#mentoring">Mentoring</a>
+          <a href="#contact-us">Contact Us</a>
+>>>>>>> Stashed changes
         </div>
         <div onClick={(e)=>{
           e.preventDefault();
@@ -77,14 +84,11 @@ function Header() {
         <div className={styles.mobile_menu+" "+(
           mobile_menu?
           styles.open:""
-        )} onClick={(e)=>{
-          e.preventDefault();
-          e.stopPropagation();
-        }}>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="anasayfa.php">About Us</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="hakkimizda.php">Events</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="contact.php">Mentoring</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="prof.php">Contact Us</a></li>
+        )}>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#about-us">About Us</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#events">Events</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#mentoring">Mentoring</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#contact-us">Contact Us</a></li>
           <div className={styles.mobile_languages} style={{height:"auto"}}>
             <img className={styles.img} src="/images/tr-buton.svg" alt="" />
             <img className={styles.img} src="/images/us-buton.svg" alt="" />
