@@ -73,11 +73,14 @@ function Header() {
         <div className={styles.mobile_menu+" "+(
           mobile_menu?
           styles.open:""
-        )}>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#about-us">About Us</Link></li>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#events">Events</Link></li>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#mentoring">Mentoring</Link></li>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#contact-us">Contact Us</Link></li>
+        )} onClick={(e)=>{
+          e.preventDefault();
+          e.stopPropagation();
+        }}>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="anasayfa.php">About Us</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="hakkimizda.php">Events</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="contact.php">Mentoring</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="prof.php">Contact Us</a></li>
           <div className={styles.mobile_languages} style={{height:"auto"}}>
             <img className={styles.img} src="/images/tr-buton.svg" alt="" />
             <img className={styles.img} src="/images/us-buton.svg" alt="" />
