@@ -173,6 +173,18 @@
     color: rgb(77, 77, 77);
     font-weight: 300;
 }
+
+.header_right .button {
+    text-decoration: none;
+    background-color: var(--primary);
+    font-weight: 300;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+}
+.button:hover{
+    filter:brightness(0.8)
+}
 /*MOBİLE MENU*/
 .mobile_menu{
     z-index: 10000;

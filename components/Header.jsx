@@ -15,8 +15,9 @@ function Header() {
   const router = useRouter();
 
   useEffect(()=>{
-    if(Cookies.get("emobilite_user_token")){
-      set_user(jwt.decode(Cookies.get("emobilite_user_token")));
+    console.log('Cookies.get("ehs_user_token")',Cookies.get("ehs_user_token"));
+    if(Cookies.get("ehs_user_token")){
+      set_user(jwt.decode(Cookies.get("ehs_user_token")));
     }
   },[]);
 
@@ -57,6 +58,15 @@ function Header() {
           <Link href="#events">Events</Link>
           <Link href="#mentoring">Mentoring</Link>
           <Link href="#contact-us">Contact Us</Link>
+          {
+            user?
+            <Link className={styles.button} href="/form">Mentee Form</Link>:
+            <>
+            <Link className={styles.button} href="/login">Giriş Yap</Link>
+            <Link className={styles.button} href="/register">Kayıt Ol</Link>
+            </>
+
+          }
         </div>
         <div onClick={(e)=>{
           e.preventDefault();

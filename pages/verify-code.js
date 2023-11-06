@@ -71,7 +71,7 @@ export default function VerifyCode () {
             }else{
                 Cookies.set("ehs_user_token",data.accessToken);
 
-                router.push("/","/");
+                router.push("/form","/form");
             }
         })
     }
