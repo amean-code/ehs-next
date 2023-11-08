@@ -739,13 +739,13 @@ export default function Form(){
                                                             <label for="name">
                                                                 İsim
                                                             </label>
-                                                            <input required={true} type="text" value={mentee_form.name} onInput={(e)=>set_mentee_form({...mentee_form,name:e.target.value})} name="name" placeholder="İsminiz..." />
+                                                            <input required={false} type="text" value={mentee_form.name} onInput={(e)=>set_mentee_form({...mentee_form,name:e.target.value})} name="name" placeholder="İsminiz..." />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <label for="name">
                                                                 Soyisim
                                                             </label>
-                                                            <input required={true} type="text" value={mentee_form.surname} onInput={(e)=>set_mentee_form({...mentee_form,surname:e.target.value})} name="surname" placeholder="Soyisminiz..." />
+                                                            <input required={false} type="text" value={mentee_form.surname} onInput={(e)=>set_mentee_form({...mentee_form,surname:e.target.value})} name="surname" placeholder="Soyisminiz..." />
                                                         </div>
                                                     </div>
                                                     <div className={styles.row}>
@@ -753,13 +753,13 @@ export default function Form(){
                                                             <label for="email">
                                                                 E-mail
                                                             </label>
-                                                            <input readOnly required={true} type="email" value={mentee_form.email} onInput={(e)=>set_mentee_form({...mentee_form,email:e.target.value})} name="email" placeholder="Emailiniz..." />
+                                                            <input readOnly required={false} type="email" value={mentee_form.email} onInput={(e)=>set_mentee_form({...mentee_form,email:e.target.value})} name="email" placeholder="Emailiniz..." />
                                                         </div>
                                                         <div className={styles.item}>
                                                             <label for="phone">
                                                                 Telefon Numarası
                                                             </label>
-                                                            <input value={mentee_form.phone} onInput={handle_phone_oninput} required={true} type="tel" name="phone" placeholder="Telefon Numaranız..." pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}"  />
+                                                            <input value={mentee_form.phone} onInput={handle_phone_oninput} required={false} type="tel" name="phone" placeholder="Telefon Numaranız..." pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}"  />
                                                         </div>
                                                     </div>
                                                     <div className={styles.item}>
@@ -806,7 +806,7 @@ export default function Form(){
                                                                             <label for={"bölüm-"+index}>
                                                                                 Bölüm
                                                                             </label>
-                                                                            <input type="text" name={"bölüm-"+index} required={true} placeholder="Bölümünüz..."
+                                                                            <input type="text" name={"bölüm-"+index} required={false} placeholder="Bölümünüz..."
                                                                                 value={egitim_form.department} 
                                                                                 onInput={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
@@ -824,7 +824,7 @@ export default function Form(){
                                                                             <label for={"okul-"+index}>
                                                                                 Okul
                                                                             </label>
-                                                                            <input type="text" name={"okul-"+index} required={true} placeholder="Okulunuz..."
+                                                                            <input type="text" name={"okul-"+index} required={false} placeholder="Okulunuz..."
                                                                                 value={egitim_form.university} 
                                                                                 onInput={(e)=>{
                                                                                     set_egitim_forms(egitim_forms.map((form,map_index)=>{
@@ -1022,7 +1022,7 @@ export default function Form(){
                                                                             <label for={"pozisyon-"+index}>
                                                                                 Pozisyon
                                                                             </label>
-                                                                            <input type="text" name={"pozisyon-"+index} required={true} placeholder="Pozisyonunuz..."
+                                                                            <input type="text" name={"pozisyon-"+index} required={false} placeholder="Pozisyonunuz..."
                                                                                 value={tecrube_form.position} 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
@@ -1040,7 +1040,7 @@ export default function Form(){
                                                                             <label for={"kurum-"+index}>
                                                                                 Kurum
                                                                             </label>
-                                                                            <input type="text" name={"kurum-"+index} required={true} placeholder="Kurumunuz..."
+                                                                            <input type="text" name={"kurum-"+index} required={false} placeholder="Kurumunuz..."
                                                                                 value={tecrube_form.institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_tecrube_forms(tecrube_forms.map((form,map_index)=>{
@@ -1096,7 +1096,7 @@ export default function Form(){
                                                                             <label>
                                                                                 Görevler
                                                                             </label>
-                                                                            <input type="text" required={true} placeholder="Görev 1" 
+                                                                            <input type="text" required={false} placeholder="Görev 1" 
                                                                                 value={tecrube_form.task_1}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1110,7 +1110,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required={true} placeholder="Görev 2" 
+                                                                            <input type="text" required={false} placeholder="Görev 2" 
                                                                                 value={tecrube_form.task_2}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1124,7 +1124,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required={true} placeholder="Görev 3" 
+                                                                            <input type="text" required={false} placeholder="Görev 3" 
                                                                                 value={tecrube_form.task_3}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1143,7 +1143,7 @@ export default function Form(){
                                                                             <label for={"teknolojiler-"+index}>
                                                                                 Kullanılan teknolojiler
                                                                             </label>
-                                                                            <textarea required={true} name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
+                                                                            <textarea required={false} name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
                                                                                 value={tecrube_form.technologies}
 
                                                                                 onInput={(e)=>{
@@ -1210,7 +1210,7 @@ export default function Form(){
                                                                             <label for={"kurs-name-"+index}>
                                                                                 Kurs/Sertifika İsmi
                                                                             </label>
-                                                                            <input type="text" name={"kurs-name-"+index} required={true} placeholder="İsim..."
+                                                                            <input type="text" name={"kurs-name-"+index} required={false} placeholder="İsim..."
                                                                                 value={kurs_form.name} 
                                                                                 onInput={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
@@ -1228,7 +1228,7 @@ export default function Form(){
                                                                             <label for={"kurum-"+index}>
                                                                                 Kurum
                                                                             </label>
-                                                                            <input type="text" name={"kurum-"+index} required={true} placeholder="Kurumunuz..."
+                                                                            <input type="text" name={"kurum-"+index} required={false} placeholder="Kurumunuz..."
                                                                                 value={kurs_form.institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_kurs_forms(kurs_forms.map((form,map_index)=>{
@@ -1264,7 +1264,7 @@ export default function Form(){
                                                                             <label>
                                                                                 Kazanılan Yetenekler
                                                                             </label>
-                                                                            <input type="text" required={true} placeholder="Yetenek 1" 
+                                                                            <input type="text" required={false} placeholder="Yetenek 1" 
                                                                                 value={kurs_form.skill_1}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1278,7 +1278,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required={true} placeholder="Yetenek 2" 
+                                                                            <input type="text" required={false} placeholder="Yetenek 2" 
                                                                                 value={kurs_form.skill_2}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1292,7 +1292,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required={true} placeholder="Yetenek 3" 
+                                                                            <input type="text" required={false} placeholder="Yetenek 3" 
                                                                                 value={kurs_form.skill_3}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1358,7 +1358,7 @@ export default function Form(){
                                                                             <label for={"proje-name-"+index}>
                                                                                 Proje İsmi
                                                                             </label>
-                                                                            <input type="text" name={"proje-name-"+index} required={true} placeholder="İsim..."
+                                                                            <input type="text" name={"proje-name-"+index} required={false} placeholder="İsim..."
                                                                                 value={proje_form.project} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
@@ -1376,7 +1376,7 @@ export default function Form(){
                                                                             <label for={"yer-"+index}>
                                                                                 Yer
                                                                             </label>
-                                                                            <input type="text" name={"yer-"+index} required={true} placeholder="Yer..."
+                                                                            <input type="text" name={"yer-"+index} required={false} placeholder="Yer..."
                                                                                 value={proje_form.city} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
@@ -1394,7 +1394,7 @@ export default function Form(){
                                                                             <label for={"destekleyen-kurum-"+index}>
                                                                                 Destekleyen Kurum
                                                                             </label>
-                                                                            <input type="text" name={"destekleyen-kurum-"+index} required={true} placeholder="Destekleyen Kurum..."
+                                                                            <input type="text" name={"destekleyen-kurum-"+index} required={false} placeholder="Destekleyen Kurum..."
                                                                                 value={proje_form.supporting_institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
@@ -1412,7 +1412,7 @@ export default function Form(){
                                                                             <label for={"fonlayan-kurum-"+index}>
                                                                                 Fonlayan Kurum
                                                                             </label>
-                                                                            <input type="text" name={"fonlayan-kurum-"+index} required={true} placeholder="Fonlayan Kurum..."
+                                                                            <input type="text" name={"fonlayan-kurum-"+index} required={false} placeholder="Fonlayan Kurum..."
                                                                                 value={proje_form.funding_institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
@@ -1430,7 +1430,7 @@ export default function Form(){
                                                                             <label for={"proje-butcesi-"+index}>
                                                                                 Bütçe
                                                                             </label>
-                                                                            <input type="number" min="0" name={"proje-butcesi-"+index} required={true} placeholder="Proje Bütçesi..."
+                                                                            <input type="number" min="0" name={"proje-butcesi-"+index} required={false} placeholder="Proje Bütçesi..."
                                                                                 value={proje_form.budget} 
                                                                                 onInput={(e)=>{
                                                                                     set_proje_forms(proje_forms.map((form,map_index)=>{
@@ -1448,7 +1448,7 @@ export default function Form(){
                                                                             <label>
                                                                                 Görevler
                                                                             </label>
-                                                                            <input type="text" required={true} placeholder="Görev 1" 
+                                                                            <input type="text" required={false} placeholder="Görev 1" 
                                                                                 value={proje_form.task_1}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1462,7 +1462,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required={true} placeholder="Görev 2" 
+                                                                            <input type="text" required={false} placeholder="Görev 2" 
                                                                                 value={proje_form.task_2}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1476,7 +1476,7 @@ export default function Form(){
                                                                                     }))
                                                                                 }}
                                                                             />
-                                                                            <input type="text" required={true} placeholder="Görev 3" 
+                                                                            <input type="text" required={false} placeholder="Görev 3" 
                                                                                 value={proje_form.task_3}
                                                                                 
                                                                                 onInput={(e)=>{
@@ -1495,7 +1495,7 @@ export default function Form(){
                                                                             <label for={"teknolojiler-"+index}>
                                                                                 Kullanılan teknolojiler
                                                                             </label>
-                                                                            <textarea required={true} name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
+                                                                            <textarea required={false} name={"teknolojiler-"+index} placeholder="Kullanılan teknolojiler" 
                                                                                 value={proje_form.technologies}
 
                                                                                 onInput={(e)=>{
@@ -1515,7 +1515,7 @@ export default function Form(){
                                                                             <label for={"oduller-"+index}>
                                                                                 Ödüller
                                                                             </label>
-                                                                            <textarea required={true} name={"oduller-"+index} placeholder="Ödüller..." 
+                                                                            <textarea required={false} name={"oduller-"+index} placeholder="Ödüller..." 
                                                                                 value={proje_form.awards}
 
                                                                                 onInput={(e)=>{
@@ -1781,7 +1781,7 @@ export default function Form(){
                                                                             <label for={"yayin-name-"+index}>
                                                                                 İsim
                                                                             </label>
-                                                                            <input type="text" name={"yayin-name-"+index} required={true} placeholder="İsim..."
+                                                                            <input type="text" name={"yayin-name-"+index} required={false} placeholder="İsim..."
                                                                                 value={yayin_form.name} 
                                                                                 onInput={(e)=>{
                                                                                     set_yayin_forms(yayin_forms.map((form,map_index)=>{
@@ -1799,7 +1799,7 @@ export default function Form(){
                                                                             <label for={"yayinlayan-kurum-"+index}>
                                                                                 Yayınlanan Kurum
                                                                             </label>
-                                                                            <input type="text" name={"yayinlayan-kurum-"+index} required={true} placeholder="Yayınlanan Kurum..."
+                                                                            <input type="text" name={"yayinlayan-kurum-"+index} required={false} placeholder="Yayınlanan Kurum..."
                                                                                 value={yayin_form.publishing_institution} 
                                                                                 onInput={(e)=>{
                                                                                     set_yayin_forms(yayin_forms.map((form,map_index)=>{
@@ -1835,7 +1835,7 @@ export default function Form(){
                                                                             <label for={"doı-"+index}>
                                                                                 DOI
                                                                             </label>
-                                                                            <textarea required={true} name={"doı-"+index} placeholder="DOI..." 
+                                                                            <textarea required={false} name={"doı-"+index} placeholder="DOI..." 
                                                                                 value={yayin_form.DOI}
 
                                                                                 onInput={(e)=>{
@@ -1903,7 +1903,7 @@ export default function Form(){
                                                                             <label for={"hobi-name-"+index}>
                                                                                 Hobi Başlığı
                                                                             </label>
-                                                                            <input type="text" name={"hobi-name-"+index} required={true} placeholder="İsim..."
+                                                                            <input type="text" name={"hobi-name-"+index} required={false} placeholder="İsim..."
                                                                                 value={hobi_form.name} 
                                                                                 onInput={(e)=>{
                                                                                     set_hobi_forms(hobi_forms.map((form,map_index)=>{
@@ -1941,7 +1941,7 @@ export default function Form(){
                                                                             <label for={"description-"+index}>
                                                                                 Açıklama
                                                                             </label>
-                                                                            <textarea required={true} name={"description-"+index} placeholder="Açıklama..." 
+                                                                            <textarea required={false} name={"description-"+index} placeholder="Açıklama..." 
                                                                                 value={hobi_form.description}
 
                                                                                 onInput={(e)=>{
@@ -1981,7 +1981,7 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             1.  EHS ile nasıl tanıştınız?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true} value={universite_temsilcilik_sureci_genel_bilgiler.question_1} onInput={(e)=>{
+                                                        <textarea placeholder="Cevabınız..." required={false} value={universite_temsilcilik_sureci_genel_bilgiler.question_1} onInput={(e)=>{
                                                             set_universite_temsilcilik_sureci_genel_bilgiler({
                                                                 ...universite_temsilcilik_sureci_genel_bilgiler,
                                                                 question_1: e.target.value
@@ -1992,7 +1992,7 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             2.  Energy Hack Space'in öğrenci temsilcisi olmak isteme sebebiniz nedir?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true} value={universite_temsilcilik_sureci_genel_bilgiler.question_2} onInput={(e)=>{
+                                                        <textarea placeholder="Cevabınız..." required={false} value={universite_temsilcilik_sureci_genel_bilgiler.question_2} onInput={(e)=>{
                                                             set_universite_temsilcilik_sureci_genel_bilgiler({
                                                                 ...universite_temsilcilik_sureci_genel_bilgiler,
                                                                 question_2: e.target.value
@@ -2003,7 +2003,7 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             3.  Bu role nasıl katkı sağlayacağına dair düşüncüleriniz nelerdir?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true}  value={universite_temsilcilik_sureci_genel_bilgiler.question_3} onInput={(e)=>{
+                                                        <textarea placeholder="Cevabınız..." required={false}  value={universite_temsilcilik_sureci_genel_bilgiler.question_3} onInput={(e)=>{
                                                             set_universite_temsilcilik_sureci_genel_bilgiler({
                                                                 ...universite_temsilcilik_sureci_genel_bilgiler,
                                                                 question_3: e.target.value
@@ -2014,7 +2014,7 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             4.  Energy Hack Space'den beklentilerinizi açıklayınız.
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true}  value={universite_temsilcilik_sureci_genel_bilgiler.question_4} onInput={(e)=>{
+                                                        <textarea placeholder="Cevabınız..." required={false}  value={universite_temsilcilik_sureci_genel_bilgiler.question_4} onInput={(e)=>{
                                                             set_universite_temsilcilik_sureci_genel_bilgiler({
                                                                 ...universite_temsilcilik_sureci_genel_bilgiler,
                                                                 question_4: e.target.value
@@ -2072,7 +2072,7 @@ export default function Form(){
                                                         <div className={styles.question}>
                                                             6.  Eklemek istediğiniz herhangi bir ek bilgi veya yorum var mı?
                                                         </div>
-                                                        <textarea placeholder="Cevabınız..." required={true} value={universite_temsilcilik_sureci_genel_bilgiler.question_6} onInput={(e)=>{
+                                                        <textarea placeholder="Cevabınız..." required={false} value={universite_temsilcilik_sureci_genel_bilgiler.question_6} onInput={(e)=>{
                                                             set_universite_temsilcilik_sureci_genel_bilgiler({
                                                                 ...universite_temsilcilik_sureci_genel_bilgiler,
                                                                 question_6: e.target.value
