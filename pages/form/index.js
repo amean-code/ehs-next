@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import jwt from "jsonwebtoken";
 import MenteeService from "../../services/Mentee";
 import FormService from "../../services/Form";
+import Link from "next/link";
 
 export default function Form(){
 
@@ -942,9 +943,9 @@ export default function Form(){
             }
             <div className={styles.form_wrapper}>
                 <div className={styles.sidebar}>
-                    <div className={styles.logo_container}>
+                    <Link href="/" className={styles.logo_container}>
                         <Image width={200} height={200} src="/images/logo.png" alt="" className={styles.image} />
-                    </div>
+                    </Link>
                     <div className={styles.title}>
                         <p>
                             Mentee Başvuru Formu
