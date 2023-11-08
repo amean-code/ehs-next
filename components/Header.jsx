@@ -96,9 +96,15 @@ function Header() {
           <li className={styles.mobile_li}><a className={styles.mobiler_a} href="prof.php">Contact Us</a></li>
           {
             user?
+            <>
+            
             <li className={styles.mobile_li}>
               <Link className={styles.button} href="/form">Mentee Form</Link>
-            </li>:
+            </li>
+            <li className={styles.mobile_li}>
+              <Link className={styles.button} href="/university-form">Universite Temsilci Formu</Link>
+            </li>
+            </>:
             <>
             <li className={styles.mobile_li}>
               <Link className={styles.button} href="/login">Giriş Yap</Link>
