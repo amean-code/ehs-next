@@ -35,6 +35,18 @@ const mentoring_process_general_information_form = (token,body) => {
     });
 }
 
+const university_representation_process_general_information_form = (token,body) => {
+    return fetch(`${Config.ServerAPI}/api/form/university-representation-process-general-information/`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            ehs_token: token
+        },
+        method: 'POST',
+        body: body
+    });
+}
+
 const post_mentoring_process = (token,body) => {
     return fetch(`${Config.ServerAPI}/api/form/post-mentoring-process/`, {
         headers: {
@@ -71,4 +83,4 @@ const delete_item = (token,body) => {
     });
 }
 
-export default { get_form, fill_form, delete_item, mentoring_process_general_information_form, mentoring_process_detailed_information_form, post_mentoring_process }
+export default { get_form, fill_form, delete_item, mentoring_process_general_information_form, mentoring_process_detailed_information_form, post_mentoring_process, university_representation_process_general_information_form }

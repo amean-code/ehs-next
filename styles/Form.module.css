@@ -402,6 +402,7 @@
 }
 
 .options {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -483,6 +484,84 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/* /////////////////// */
+
+
+.radio_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-width: 20px !important;
+  height: 20px;
+}
+
+.radio_item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio_item label {
+  cursor: pointer !important;
+}
+
+.radio_item span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio_item .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  border-radius: 100%;
+}
+
+.radio_item:hover input ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.radio_item input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.radio_item .checkmark:after {
+  content: '';
+  /* position: absolute; */
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.radio_item input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.radio_item .checkmark:after {
+  left: 0px;
+  top: -2px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg) translateY(-1px) translateX(-1px);
 }
 
 .input_with_stars{

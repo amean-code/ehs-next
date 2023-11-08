@@ -60,7 +60,10 @@ function Header() {
           <Link href="#contact-us">Contact Us</Link>
           {
             user?
-            <Link className={styles.button} href="/form">Mentee Form</Link>:
+            <>
+              <Link className={styles.button} href="/form">Mentee Form</Link>
+              <Link className={styles.button} href="/university-form">Üniversite Temsilcisi Form</Link>
+            </>:
             <>
             <Link className={styles.button} href="/login">Giriş Yap</Link>
             <Link className={styles.button} href="/register">Kayıt Ol</Link>
