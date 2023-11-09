@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/App.module.css";
+import Link from "next/link";
 
 function Team() {
   const [activeNav, setActiveNav] = useState("");
@@ -17,8 +18,8 @@ function Team() {
               </div>
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
-                <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <Link href="#"><i className="fa-brands fa-linkedin fa-xl w-[24px] h-[24px]" style={{ color: "#166bfe" }}></i></Link>
+                {/* <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a> */}
               </div>
             </figure>
           </div>
@@ -30,8 +31,8 @@ function Team() {
               </div>
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
-                <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <Link href="#"><i className="fa-brands fa-linkedin fa-xl w-[24px] h-[24px]" style={{ color: "#166bfe" }}></i></Link>
+                {/* <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a> */}
               </div>
             </figure>
           </div>
@@ -45,8 +46,8 @@ function Team() {
               </div>
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
-                <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <Link href="#"><i className="fa-brands fa-linkedin fa-xl w-[24px] h-[24px]" style={{ color: "#166bfe" }}></i></Link>
+                {/* <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a> */}
               </div>
             </figure>
           </div>
@@ -58,8 +59,8 @@ function Team() {
               </div>
               <p>Must explain to you how mistaken idea denouncing pleasure & praising pain was born & we will give expound actual human happiness.</p>
               <div className={styles.linkedinArea}>
-                <i className="fa-brands fa-linkedin fa-xl" style={{ color: "#166bfe" }}></i>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a>
+                <Link href="#"><i className="fa-brands fa-linkedin fa-xl w-[24px] h-[24px]" style={{ color: "#166bfe" }}></i></Link>
+                {/* <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a> */}
               </div>
             </figure>
           </div>

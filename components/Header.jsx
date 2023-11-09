@@ -24,7 +24,7 @@ function Header() {
   return (
     <header className={styles.site_header} >
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-      <div className={styles.header_top}>
+      {/* <div className={styles.header_top}>
         <div className={styles.header_top_left}>
           <div className={styles.whatsapp}>
             <Image width={20} height={20} className={styles.whatsapp_logo} src="/images/whatsapp.svg" alt="" />
@@ -46,7 +46,7 @@ function Header() {
             <Image width={200} height={200} src="/images/youtube.svg" alt="" />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles.header_container}>
         <div className={styles.header_left}>
           <div className={styles.header_logo}>
@@ -65,8 +65,8 @@ function Header() {
               <Link className={styles.button} href="/university-form">Üniversite Temsilcisi Form</Link>
             </>:
             <>
-            <Link className={styles.button} href="/login">Giriş Yap</Link>
-            <Link className={styles.button} href="/register">Kayıt Ol</Link>
+            <Link className={styles.button} href="/login">Login</Link>
+            <Link className={styles.button} href="/register">Register</Link>
             </>
 
           }
@@ -107,10 +107,10 @@ function Header() {
             </>:
             <>
             <li className={styles.mobile_li}>
-              <Link className={styles.button} href="/login">Giriş Yap</Link>
+              <Link className={styles.button} href="/login">Login</Link>
             </li>
             <li className={styles.mobile_li}>
-              <Link className={styles.button} href="/register">Kayıt Ol</Link>
+              <Link className={styles.button} href="/register">Register</Link>
             </li>
 
             </>

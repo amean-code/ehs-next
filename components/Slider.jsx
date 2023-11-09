@@ -10,12 +10,12 @@ function Slider() {
         <section>
         <div className={styles.main_container}>
           <div className={styles.containLeft}>
-            <Image width={200} height={200} src="/images/containLeft.jpg" alt="" />
+            <Image className={styles.slider_imageleft} width={200} height={200} src="/images/containLeft.jpg" alt="" />
           </div>
           
           <div className={styles.containRight}>
             <h4>
-              WHAT WE DO
+              Who we are?
             </h4>
             <h2>Our Services</h2>
             <div className={styles.buttons}>
@@ -23,19 +23,19 @@ function Slider() {
                 active_button=="public-seminar"?
                 styles.active:""
               )}>
-                Public Seminar
+                Who we are?
               </div>
               <div onClick={()=>set_active_button("house-training")} className={styles.item+" "+(
                 active_button=="house-training"?
                 styles.active:""
               )}>
-                In House Training
+                What we do?
               </div>
               <div onClick={()=>set_active_button("personal-coaching")} className={styles.item+" "+(
                 active_button=="personal-coaching"?
                 styles.active:""
               )}>
-                Personal Coaching
+                Why join? 
               </div>
             </div>
             {

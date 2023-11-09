@@ -1,7 +1,7 @@
 
 
 .main_body{
-    padding-top: 160px;
+    padding-top: 120px;
 }
 
 /*slider*/
@@ -93,6 +93,11 @@
     font-family: Inter-Medium;
     color: var(--text-color);
     padding-bottom: 15px;
+}
+
+.slider_imageleft{
+    max-height: 450px;
+    object-fit: contain;
 }
 
 /*slider*/

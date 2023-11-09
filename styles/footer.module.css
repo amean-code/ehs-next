@@ -215,6 +215,22 @@
     align-items: stretch;
 }
 
+.sponsor_row{
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_sponsorImg{
+    object-fit: contain;
+    height: 100px;
+    width: 150px;
+}
+
 @media screen and (min-width:1200px) {
     .col_xl_4{
         flex: 0 0 auto;

@@ -25,12 +25,12 @@ export default function Home() {
       <Header />
       <Slider />
       <SliderBottom />
-      <Vision/>
-      <Events/>
+      <Events />
+      <TimeLine />
+      {/* <Vision/> */}
       <News/>
       <Mentoring/>
       <Team />
-      <TimeLine />
       <Contact />
       <Footer />
     </div>

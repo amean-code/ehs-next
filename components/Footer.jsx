@@ -11,34 +11,15 @@ function Footer() {
             <link rel="stylesheet" href="styles/footer.module.css" />
             <div className={footerStyle.footer_container}>
                 <div className={footerStyle.footer_cta} style={{paddingBottom: "3rem",paddingTop: "3rem"}}>
-                    <div className={footerStyle.row}>
-                        <div className={footerStyle.col_xl_4+" "+footerStyle.col_md_4+" "+footerStyle.mb_30}>
-                            <div className={footerStyle.single_cta}>
-                                <i className="fas fa_map_marker_alt"></i>
-                                <div className={footerStyle.cta_text}>
-                                    <h4 className={footerStyle.h4}>Adres</h4>
-                                    <span className={footerStyle.span}>1010 Avenue, sw 54321, chandigarh</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={footerStyle.col_xl_4+" "+footerStyle.col_md_4+" "+footerStyle.mb_30}>
-                            <div className={footerStyle.single_cta}>
-                                <i className="fas fa_phone"></i>
-                                <div className={footerStyle.cta_text}>
-                                    <h4 className={footerStyle.h4}>Telefon:</h4>
-                                    <span className={footerStyle.span}>+90 (123) 123 12 12</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={footerStyle.col_xl_4+" "+footerStyle.col_md_4+" "+footerStyle.mb_30}>
-                            <div className={footerStyle.single_cta}>
-                                <i className="far fa_envelope_open"></i>
-                                <div className={footerStyle.cta_text}>
-                                    <h4 className={footerStyle.h4}>E-mail</h4>
-                                    <span className={footerStyle.span}>ehs@info.com</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div className={footerStyle.sponsor_row}>
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s1_vareint_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s2_smartPulse_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s3_foton_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s4_pomega_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s5_odyssey_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s6_gelecekbilimde_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s7_solargy_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s8_solarian_logo.webp" alt="" />
                     </div>
                 </div>
                 <div className="footer_content" style={{paddingBottom: "3rem",paddingTop: "3rem"}}>
@@ -76,7 +57,7 @@ function Footer() {
                         <div className="col_xl_4 col_lg_4 col_md_6 mb_50">
                             <div className={footerStyle.footer_widget}>
                                 <div className={footerStyle.footer_widget_heading}>
-                                    <h3 className={footerStyle.h3}>Öneriler</h3>
+                                    <h3 className={footerStyle.h3}>Takipte Kalın</h3>
                                 </div>
                                 <div className="footer_text mb_25">
                                     <p className={footerStyle.p}>Bizim hakkımızda önerileriniz varsa buraya yazabilirsiniz.</p>
