@@ -25,8 +25,8 @@ export default function Home() {
       <Header />
       <Slider />
       <SliderBottom />
-      <Events />
       <TimeLine />
+      <Events />
       <News/>
       <Mentoring/>
       <Team />
