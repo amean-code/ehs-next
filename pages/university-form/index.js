@@ -1990,7 +1990,7 @@ export default function Form(){
                                                     </div>
                                                     <div className={styles.item}>
                                                         <div className={styles.question}>
-                                                            2.  Energy Hack Space'in öğrenci temsilcisi olmak isteme sebebiniz nedir?
+                                                            2.  Energy Hack Space in öğrenci temsilcisi olmak isteme sebebiniz nedir?
                                                         </div>
                                                         <textarea placeholder="Cevabınız..." required={false} value={universite_temsilcilik_sureci_genel_bilgiler.question_2} onInput={(e)=>{
                                                             set_universite_temsilcilik_sureci_genel_bilgiler({
@@ -2012,7 +2012,7 @@ export default function Form(){
                                                     </div>
                                                     <div className={styles.item}>
                                                         <div className={styles.question}>
-                                                            4.  Energy Hack Space'den beklentilerinizi açıklayınız.
+                                                            4.  Energy Hack Spaceden beklentilerinizi açıklayınız.
                                                         </div>
                                                         <textarea placeholder="Cevabınız..." required={false}  value={universite_temsilcilik_sureci_genel_bilgiler.question_4} onInput={(e)=>{
                                                             set_universite_temsilcilik_sureci_genel_bilgiler({

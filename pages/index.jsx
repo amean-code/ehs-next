@@ -27,7 +27,6 @@ export default function Home() {
       <SliderBottom />
       <Events />
       <TimeLine />
-      {/* <Vision/> */}
       <News/>
       <Mentoring/>
       <Team />

@@ -158,7 +158,7 @@ function Events() {
                     {
                         filtered_events.map(event=>{
                             return (
-                                <div className={styles.item}>
+                                <div className={styles.item} key={event}>
                                     <div className={styles.date}>
                                         <div className={styles.day}>
                                             {event.day}
