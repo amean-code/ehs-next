@@ -49,14 +49,15 @@ function Header() {
       </div> */}
       <div className={styles.header_container}>
         <div className={styles.header_left}>
-          <div className={styles.header_logo}>
+          <Link href="/" className={styles.header_logo}>
             <Image width={200} height={200} src="/images/logo.png" alt="" />
-          </div>
+          </Link>
         </div>
         <div className={styles.header_right}>  
           <Link href="#about-us">About Us</Link>
           <Link href="#events">Events</Link>
           <Link href="#mentoring">Mentoring</Link>
+          <Link href="/sponsors">Sponsors</Link>
           <Link href="#contact-us">Contact Us</Link>
           {
             user?
@@ -90,10 +91,11 @@ function Header() {
           e.preventDefault();
           e.stopPropagation();
         }}>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="anasayfa.php">About Us</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="hakkimizda.php">Events</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="contact.php">Mentoring</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="prof.php">Contact Us</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#about-us">About Us</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#events">Events</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#mentoring">Mentoring</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="/sponsors">Sponsors</a></li>
+          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#contact-us">Contact Us</a></li>
           {
             user?
             <>
