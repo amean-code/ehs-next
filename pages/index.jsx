@@ -14,6 +14,7 @@ import Mentoring from "../components/Mentoring";
 import styles from "../styles/App.module.css"
 import Head from "next/head";
 import MentoringComments from "../components/MentoringComments";
+import Comments from "../components/Comments";
 export default function Home() {
   return (
     
@@ -30,6 +31,7 @@ export default function Home() {
       <Events />
       <News/>
       <MentoringComments />
+      <Comments />
       <Mentoring/>
       <Team />
       <Contact />

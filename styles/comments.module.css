@@ -1,0 +1,79 @@
+.section{
+    width: 100%;
+    height: fit-content;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+.title .h1{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+.container{
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.card_body{
+    margin-left: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    width: 20%;
+    min-width: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+.card_top{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.photo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 50px;
+}
+.card_image{
+    border-radius: 50px;
+}
+.username{
+    font-size: 1rem;
+    font-family: Inter-SemiBold;
+    color: inherit;
+    font-family: inherit;
+    letter-spacing: 1px;
+    font-weight: 500;
+    line-height: 1.2;
+
+}
+.comment .p{
+    font-size: 1rem;
+    font-family: Inter-ExtraLight;
+    color: inherit;
+    color: rgba(0, 0, 0, 0.602);
+    line-height: 1.6875rem;
+    margin-bottom: 0!important;
+}
