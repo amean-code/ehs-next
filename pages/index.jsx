@@ -28,6 +28,7 @@ export default function Home() {
       <TimeLine />
       <Events />
       <News/>
+      <MentoringComments />
       <Mentoring/>
       <Team />
       <Contact />
