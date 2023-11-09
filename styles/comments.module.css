@@ -34,7 +34,7 @@
     justify-content: center;
     gap: 10px;
     max-width: 1100px;
-
+    padding: 10px 20px;
 }
 
 .column{
@@ -87,4 +87,16 @@
     color: rgba(0, 0, 0, 0.602);
     line-height: 1.6875rem;
     margin-bottom: 0!important;
+}
+
+@media screen and (max-width: 1000px) {
+    .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
 }
