@@ -1,0 +1,151 @@
+.wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.section{
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+
+.title_1{
+    font-size: 50px;
+    font-family: Inter-Bold;
+    color: rgb(50, 50, 50);
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.title_2{
+    font-size: 30px;
+    font-family: Inter-Bold;
+    color: rgb(50, 50, 50);
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.description{
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.card{
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(22 163 74);
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    min-width: 200px;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(74,222,128);
+    z-index: 11;
+    border-radius: 100%;
+}
+
+.card .name{
+    font-size: 24px;
+    font-family: Inter-Bold;
+    letter-spacing: -1px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.card .info{
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    color: rgb(240, 240, 240);
+    margin-bottom: 10px;
+    line-height: 15px;
+    margin-bottom: 20px;
+}
+
+.card .card_title{
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    font-family: Inter-Bold;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+    min-height: 150px;
+}
+
+.list .item{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.list .item .icon{
+    width: 7.5px !important;
+    height: 7.5px !important;
+    fill: rgb(117, 245, 164);
+    stroke: rgb(74,222,128);
+    padding-top: 2px;
+}
+
+.list .item .icon svg{
+    width: 7.5px !important;
+    height: 7.5px !important;
+}
+
+.list .item .text{
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    color: rgb(240, 240, 240);
+    margin-bottom: 7.5px;
+    line-height: 15px;
+    margin-bottom: 10px;
+}
+
+.card .card_number{
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: white;
+    font-family: Inter-Bold;
+    width: 100%;
+    float: bottom;
+}

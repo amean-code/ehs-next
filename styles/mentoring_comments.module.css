@@ -86,6 +86,7 @@
     flex-direction: row;
     width: 38%;
     min-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .card_left{
     display: flex;
