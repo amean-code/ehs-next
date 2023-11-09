@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function Comments() {
+function MentoringComments() {
     const [mobile_menu, set_mobile_menu] = useState(false);
 
     const [user, set_user] = useState(null);
@@ -112,4 +112,4 @@ function Comments() {
     );
 }
 
-export default Comments;
+export default MentoringComments;

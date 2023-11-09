@@ -13,6 +13,7 @@ import Blog from "../components/Blog";
 import Mentoring from "../components/Mentoring";
 import styles from "../styles/App.module.css"
 import Head from "next/head";
+import MentoringComments from "../components/MentoringComments";
 export default function Home() {
   return (
     
