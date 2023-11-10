@@ -247,5 +247,9 @@
     .row{
         flex-direction: column;
     }
+
+    .sponsor_row{
+        flex-direction: column;
+    }
 }
 
