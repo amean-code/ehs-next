@@ -4,13 +4,11 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    padding-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 20px 50px;
 }
 
 .section{
-    max-width: 1000px;
+    max-width: 1100px;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -30,6 +28,16 @@
 
 .title_2{
     font-size: 30px;
+    font-family: Inter-Bold;
+    color: rgb(50, 50, 50);
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.title_3{
+    font-size: 26px;
     font-family: Inter-Bold;
     color: rgb(50, 50, 50);
     width: 100%;
@@ -65,7 +73,7 @@
     min-width: 200px;
 }
 
-.card::before{
+.card::after{
     content: "";
     position: absolute;
     top: -50px;
@@ -83,6 +91,8 @@
     letter-spacing: -1px;
     color: white;
     margin-bottom: 10px;
+    z-index: 12;
+    position: relative;
 }
 
 .card .info{
@@ -148,4 +158,158 @@
     font-family: Inter-Bold;
     width: 100%;
     float: bottom;
+}
+
+.center_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.button{
+    background-color: var(--primary);
+    padding: 10px 15px;
+    font-size: 18px;
+    font-family: Inter-Bold;
+    color: white;
+    border-radius: 10px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover{
+    background-color: var(--primary-dark);
+}
+
+.button:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    background-color: var(--primary);
+    border-radius: 100%;
+}
+
+.gallery{
+    width: 100%;
+    display: grid;
+    gap: 10px;
+}
+
+.gallery_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    position: relative;
+}
+
+.gallery_image img{
+    width: auto;
+    height: 100%;
+    filter: drop-shadow(0px 0px 1px black);
+}
+
+.akademik_birlikler{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 50px 10px;
+}
+
+.item{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.item .profile{
+    width: 180px;
+    height: 180px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.item .profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 100%;
+}
+
+.item .info{
+    width: 90%;
+    /* background-color: var(--primary); */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+    margin-top: 10px;
+}
+
+.item .info .name{
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    /* color: white; */
+    font-family: Inter-Bold;
+}
+
+.item .info .university{
+    /* font-size: 14px; */
+    color: var(--text-color);
+}
+
+.item .info .links{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.item .info .links svg{
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (max-width:950px) {
+    .wrapper{
+        padding: 10px 20px;
+    }
+
+    .akademik_birlikler{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:800) {
+    .akademik_birlikler{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .gallery{
+        grid-template-columns: 1fr !important;
+    }
+    .akademik_birlikler{
+        grid-template-columns: 1fr;
+    }
 }

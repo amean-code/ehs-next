@@ -1,6 +1,4 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Arrow_down } from "../icons";
+import Link from "next/link";
 import styles from "../styles/sponsors.module.css";
 import Contact from "./Contact";
 
@@ -159,8 +157,364 @@ function Sponsors() {
                         </div>
                     </div>
                 </div>
+                <div className={styles.center_button}>
+                    <Link href="#contact-us" className={styles.button}>
+                        <div className={styles.text}>
+                            İletişime Geç
+                        </div>
+                    </Link>
+                </div>
             </section>
-            <Contact />
+            <section className={styles.section}>
+                <div className={styles.title_3} style={{textAlign:"center"}}>
+                    2022-2023 Sponsorlarımız
+                </div>
+                <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
+                    Ana Sponsorlar
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image}>
+                            <img style={{minWidth:"150px"}} src="/images/s2_smartPulse_logo.webp" />
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
+                    Sponsorlar
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className={styles.section}>
+                <div className={styles.title_3} style={{textAlign:"center"}}>
+                    2023-2024 Sponsorlarımız
+                </div>
+                <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
+                    Ana Sponsorlar
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image}>
+                            <img style={{minWidth:"150px"}} src="/images/s2_smartPulse_logo.webp" />
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
+                    Sponsorlar
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding: "20px"}}>
+                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className={styles.section}>
+                <div className={styles.title_2}>
+                    Partners
+                </div>
+                <div className={styles.description}>
+                    EHS'nin kurulduğu kısa süre zarfında enerji sektöründe yenilikçi ve sürdürülebilir çözümler üretme hedefimiz doğrultusunda önemli adımlar attık. Bu başlangıç aşamasında bile, iş çözümleri geliştirme konusunda birçok partnerle işbirliği yapma fırsatı bulduk. Her yeni partnerlik, bize sektördeki dönüşümü hızlandırma konusunda yeni perspektifler ve enerjiler getiriyor. Siz de enerji sektöründe sürdürülebilir bir değişim yaratma hedefimize katkıda bulunmak ve birlikte büyüyerek yeni başarılara imza atmak istiyorsanız, EHS ile partnerlik yapma fırsatını kaçırmayın!
+                </div>
+            </section>
+            <section className={styles.section}>
+                <div className={styles.title_3} style={{textAlign:"center"}}>
+                    2022-2023 Partnerler
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className={styles.section}>
+                <div className={styles.title_3} style={{textAlign:"center"}}>
+                    2023-2024 Partnerler
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                        <div className={styles.gallery_image} style={{padding:"20px"}}>
+                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className={styles.section}>
+                <div className={styles.title_2}>
+                    Akademik İş Birlikleri
+                </div>
+                <div className={styles.akademik_birlikler}>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Göktürk Poyrazoğlu
+                            </div>
+                            <div className={styles.university}>
+                                Özyeğin Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </section>
+            <div id="contact-us" style={{paddingTop:"130px",width:"100%"}}>
+                <Contact />
+            </div>
         </div>
     );
 }
