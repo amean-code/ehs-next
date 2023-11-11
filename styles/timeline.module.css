@@ -51,7 +51,7 @@
 .progress_bar_container .li:hover:before {
     border: solid 2px #fff;
 
-    background: linear-gradient(to right, #8386e8 0%, #fff 100%);
+    background: linear-gradient(to right, var(--primary) 0%, #fff 100%);
 }
 
 .progress_bar_container .li {
@@ -123,7 +123,7 @@
     width: 3%;
     height: 100%;
     background: #207893;
-    background: linear-gradient(to right, #8386e8 0%, #8386e8 100%);
+    background: linear-gradient(to right, var(--primary) 0%, var(--primary) 100%);
     position: absolute;
     z-index: 2;
     border-radius: 50px;

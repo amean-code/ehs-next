@@ -54,11 +54,11 @@ function Header() {
           </Link>
         </div>
         <div className={styles.header_right}>  
-          <Link href="#about-us">About Us</Link>
-          <Link href="#events">Events</Link>
-          <Link href="#mentoring">Mentoring</Link>
+          <Link href="/#about-us">About Us</Link>
+          <Link href="/#events">Events</Link>
+          <Link href="/#mentoring">Mentoring</Link>
           <Link href="/sponsors">Sponsors</Link>
-          <Link href="#contact-us">Contact Us</Link>
+          <Link href="/#contact-us">Contact Us</Link>
           {
             user?
             <>

@@ -8,7 +8,7 @@ function Contact() {
   const [activeNav, setActiveNav] = useState("");
 
   return (
-    <div className="flex items-center justify-center w-full" id="contact-us">
+    <div className="flex items-center justify-center w-full mb-2" id="contact-us">
       <div style={{maxWidth:"1100px",width:"100%",justifyContent:"space-between"}} className="flex flex-col gap-5 p-8 overflow-hidden text-white bg-green-600 shadow-lg md:flex-row md:space-y-0 sm:p-12 rounded-xl">
         <div className="flex flex-col justify-between space-y-8">
           <div>
