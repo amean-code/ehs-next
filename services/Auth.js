@@ -11,6 +11,17 @@ const login = (config) => {
     });
 }
 
+const loginAdmin = (config) => {
+    return fetch(`${Config.ServerAPI}/auth/login-admin`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        ...config
+    });
+}
+
 const send_verify_code = (config) => {
     return fetch(`${Config.ServerAPI}/auth/send-verify-code`, {
         headers: {
@@ -57,4 +68,4 @@ const verifyMail = (config) => {
 }
 
 
-export default { login, register, verifyMail, send_verify_code, reset_password }
+export default { login, register, verifyMail, send_verify_code, reset_password, loginAdmin }
