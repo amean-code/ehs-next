@@ -45,7 +45,7 @@ export default function Login () {
 
             if(data.success){
                 Cookies.set("ehs_admin_token",data.accessToken);
-                router.push("/");
+                router.push("/admin");
             }else if(data.message=="auth_failed"){
                 set_error("Email veya Şifre Yanlış");
             }else if(data.message=="user_not_found"){
