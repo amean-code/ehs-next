@@ -14,7 +14,7 @@ function Sponsors() {
                     Sponsors
                 </div>
                 <div className={styles.description}>
-                    Enerji sektöründe çığır açan teknolojilere, açık kaynak bilgiye ve teknolojiye erişimin artması, enerji dönüşümüne herkesin katılımını sağlamak amacıyla inovatif projeler ve eğitimlerle ilerliyoruz. EHS'nin vizyonu ve misyonu doğrultusunda, enerji sektöründeki genç yetenekleri destekleyerek, bilimsel araştırmalarla endüstrinin pratik ihtiyaçlarını birleştiriyor, enerji dönüşümüne gerçek anlamda katkıda bulunuyoruz. Siz de bu dönüşümün bir parçası olabilir, genç yeteneklerle erken aşamada bağlantı kurarak onların bu misyonu gerçekleştirmelerine yardımcı olabilirsiniz. EHS sponsoru olarak sadece bir organizasyona destek vermekle kalmayıp, enerji sektöründe sürdürülebilir bir geleceği birlikte inşa etmenin liderlerinden biri olabilirsiniz.
+                    Enerji sektöründe çığır açan teknolojilere, açık kaynak bilgiye ve teknolojiye erişimin artması, enerji dönüşümüne herkesin katılımını sağlamak amacıyla inovatif projeler ve eğitimlerle ilerliyoruz. EHS nin vizyonu ve misyonu doğrultusunda, enerji sektöründeki genç yetenekleri destekleyerek, bilimsel araştırmalarla endüstrinin pratik ihtiyaçlarını birleştiriyor, enerji dönüşümüne gerçek anlamda katkıda bulunuyoruz. Siz de bu dönüşümün bir parçası olabilir, genç yeteneklerle erken aşamada bağlantı kurarak onların bu misyonu gerçekleştirmelerine yardımcı olabilirsiniz. EHS sponsoru olarak sadece bir organizasyona destek vermekle kalmayıp, enerji sektöründe sürdürülebilir bir geleceği birlikte inşa etmenin liderlerinden biri olabilirsiniz.
                 </div>
             </section>
             <section className={styles.section}>
@@ -244,7 +244,7 @@ function Sponsors() {
                     Partners
                 </div>
                 <div className={styles.description}>
-                    EHS'nin kurulduğu kısa süre zarfında enerji sektöründe yenilikçi ve sürdürülebilir çözümler üretme hedefimiz doğrultusunda önemli adımlar attık. Bu başlangıç aşamasında bile, iş çözümleri geliştirme konusunda birçok partnerle işbirliği yapma fırsatı bulduk. Her yeni partnerlik, bize sektördeki dönüşümü hızlandırma konusunda yeni perspektifler ve enerjiler getiriyor. Siz de enerji sektöründe sürdürülebilir bir değişim yaratma hedefimize katkıda bulunmak ve birlikte büyüyerek yeni başarılara imza atmak istiyorsanız, EHS ile partnerlik yapma fırsatını kaçırmayın!
+                    EHS nin kurulduğu kısa süre zarfında enerji sektöründe yenilikçi ve sürdürülebilir çözümler üretme hedefimiz doğrultusunda önemli adımlar attık. Bu başlangıç aşamasında bile, iş çözümleri geliştirme konusunda birçok partnerle işbirliği yapma fırsatı bulduk. Her yeni partnerlik, bize sektördeki dönüşümü hızlandırma konusunda yeni perspektifler ve enerjiler getiriyor. Siz de enerji sektöründe sürdürülebilir bir değişim yaratma hedefimize katkıda bulunmak ve birlikte büyüyerek yeni başarılara imza atmak istiyorsanız, EHS ile partnerlik yapma fırsatını kaçırmayın!
                 </div>
             </section>
             <section className={styles.section}>

@@ -91,11 +91,11 @@ function Header() {
           e.preventDefault();
           e.stopPropagation();
         }}>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#about-us">About Us</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#events">Events</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#mentoring">Mentoring</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="/sponsors">Sponsors</a></li>
-          <li className={styles.mobile_li}><a className={styles.mobiler_a} href="#contact-us">Contact Us</a></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#about-us">About Us</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#events">Events</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#mentoring">Mentoring</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="/sponsors">Sponsors</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#contact-us">Contact Us</Link></li>
           {
             user?
             <>
