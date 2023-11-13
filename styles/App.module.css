@@ -419,6 +419,7 @@ figure.snip1192 .author .h5 .span {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 120px;
 }
 
 .contact_container {

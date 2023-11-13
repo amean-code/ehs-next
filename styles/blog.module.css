@@ -60,6 +60,10 @@
     flex-direction: row;
     gap: 15px;
 }
+.des_mid img{
+    max-width: 70px;
+    object-fit: contain;
+}
 .des_mid .p{
     font-weight: 700;
 }

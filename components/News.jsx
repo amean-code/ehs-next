@@ -1,128 +1,235 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/news.module.css";
 
-function Header() {
-    const [activeNav, setActiveNav] = useState("");
+function News() {
+
+    const [page,set_page] = useState(0);
+
+    const [news,const_news] = useState([
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        },
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        },
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        },
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        },
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        },
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        },
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        },
+        {
+            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            day: 12,
+            month: 11,
+            year: 2023,
+            author: "Durmuş Kartcı",
+            views: 2173
+        }
+    ]);
+
+    const [windows,set_windows] = useState([]);
+
+    const [new_per_window,set_new_per_window] = useState(3);
+
+    const [grid_template_columns_str,set_grid_template_columns_str] = useState("");
+
+    
+    const months = [
+        "Ocak",
+        "Şubat",
+        "Mart",
+        "Nisan",
+        "Mayıs",
+        "Haziran",
+        "Temmuz",
+        "Ağustos",
+        "Eylül",
+        "Ekim",
+        "Kasım",
+        "Aralık"
+    ]
+
+
+    useEffect(()=>{
+
+        let window_handler=[];
+
+        let new_windows=[];
+
+        let column_str="";
+
+        for(let i=0;i<new_per_window;i++){
+            column_str += "1fr "
+        }
+
+        news.forEach((item,index) => {
+
+            window_handler.push(item);
+
+            if(index%new_per_window==new_per_window-1){
+                new_windows.push(window_handler);
+                window_handler = [];
+            }else if(index==news.length-1){
+                new_windows.push(window_handler);
+                window_handler = [];
+            }
+
+        });
+
+        set_windows(new_windows);
+        set_grid_template_columns_str(column_str)
+
+        console.log("column_str",column_str);
+        console.log("new_windows",new_windows);
+
+    },[new_per_window]);
+
+    let random_color = (opacity=1) => {
+        let r = Math.random()*100+100;
+        let g = Math.random()*100+100;
+        let b = Math.random()*100+100;
+
+        return "rgba("+r+","+g+","+b+","+opacity+")";
+    }
 
     return (
-        <section className={styles.section} id="events">
-            <div className={styles.container}>
-                <div className={styles.row}>
-                    <div className={styles.col_lg_4 + " " + styles.col_md_6 + " " + styles.mb30}>
-                        <div className={styles.bloglist + " " + styles.item}>
-                            <div className={styles.post_content}>
-                                <div className={styles.date_box}>
-                                    <div className={styles.m}>10</div>
-                                    <div className={styles.d}>NOV</div>
-                                </div>
-                                <div className={styles.post_image}>
-                                    <img className={styles.img} alt="" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" />
-                                </div>
-                                <div className={styles.post_text}>
-                                    <span className={styles.p_tagline}>Motivation</span>
-                                    <h4 className={styles.h4}><a href="news-single.html">The Things Every Successful Enterpreneur Does</a></h4>
-                                    <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <span className={styles.p_author}>Fynley Wilkinson</span>
-                                </div>
-                            </div>
-                        </div>
+        <section className={styles.section}>
+            <div className={styles.wrapper}>
+                <div className={styles.title}>
+                    EHS News
+                </div>
+                <div className={styles.description}>
+                    Esse velit ea duis non voluptate irure aliquip do sit amet aliqua minim.
+                </div>
+                <div className={styles.slider_wrapper}>
+                    <div className={styles.prev_button_container}>
+                        <button onClick={()=>{
+                            if(page==0){
+                                set_page(windows.length-1);    
+                            }else{
+                                set_page(page-1)
+                            }
+                        }} className={styles.prev_button+" "+styles.button}>
+                            <svg stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
                     </div>
-                    <div className={styles.col_lg_4 + " " + styles.col_md_6 + " " + styles.mb30}>
-                        <div className={styles.bloglist + " " + styles.item}>
-                            <div className={styles.post_content}>
-                                <div className={styles.date_box}>
-                                    <div className={styles.m}>10</div>
-                                    <div className={styles.d}>NOV</div>
-                                </div>
-                                <div className={styles.post_image}>
-                                    <img className={styles.img} alt="" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" />
-                                </div>
-                                <div className={styles.post_text}>
-                                    <span className={styles.p_tagline}>Motivation</span>
-                                    <h4 className={styles.h4}><a href="news-single.html">The Things Every Successful Enterpreneur Does</a></h4>
-                                    <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <span className={styles.p_author}>Fynley Wilkinson</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div className={styles.slider_windows}>
+                        {
+                            windows.map((window,index)=>{
+                                return (
+                                    <div className={styles.window} style={{transform: "translateX("+(index-page)*100+"%)",gridTemplateColumns:grid_template_columns_str}}>
+                                        {
+                                            window.map((item,item_index)=>{
+                                            return (
+                                                <div className={styles.new_item}>
+                                                    <div className={styles.date}>
+                                                        <div className={styles.day}>
+                                                            {item.day}
+                                                        </div>
+                                                        <div className={styles.month}>
+                                                            {months[item.month-1]}
+                                                        </div>
+                                                        <div className={styles.year}>
+                                                            {item.year}
+                                                        </div>
+                                                    </div>
+                                                    <div className={styles.views}>
+                                                        <div className={styles.icon}>
+                                                            <svg strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                                        </div>
+                                                        <div className={styles.number}>
+                                                            {item.views}
+                                                        </div>
+                                                    </div>
+                                                    <div className={styles.image}>
+                                                        <img src="https://www.alastyr.com/blog/wp-content/uploads/2021/01/blog-ile-para-nasil-kazanilir.png" />
+                                                    </div>
+                                                    <div className={styles.body}>
+                                                        <div className={styles.name}>
+                                                            {item.name}
+                                                        </div>
+                                                        <div className={styles.author}>
+                                                            by {item.author}
+                                                        </div>
+                                                        <div className={styles.content}>
+                                                            {item.content.slice(0,220)}...
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                            })
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
-                    <div className={styles.col_lg_4 + " " + styles.col_md_6 + " " + styles.mb30}>
-                        <div className={styles.bloglist + " " + styles.item}>
-                            <div className={styles.post_content}>
-                                <div className={styles.date_box}>
-                                    <div className={styles.m}>10</div>
-                                    <div className={styles.d}>NOV</div>
-                                </div>
-                                <div className={styles.post_image}>
-                                    <img className={styles.img} alt="" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" />
-                                </div>
-                                <div className={styles.post_text}>
-                                    <span className={styles.p_tagline}>Motivation</span>
-                                    <h4 className={styles.h4}><a href="news-single.html">The Things Every Successful Enterpreneur Does</a></h4>
-                                    <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <span className={styles.p_author}>Fynley Wilkinson</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.col_lg_4 + " " + styles.col_md_6 + " " + styles.mb30}>
-                        <div className={styles.bloglist + " " + styles.item}>
-                            <div className={styles.post_content}>
-                                <div className={styles.date_box}>
-                                    <div className={styles.m}>10</div>
-                                    <div className={styles.d}>NOV</div>
-                                </div>
-                                <div className={styles.post_image}>
-                                    <img className={styles.img} alt="" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" />
-                                </div>
-                                <div className={styles.post_text}>
-                                    <span className={styles.p_tagline}>Motivation</span>
-                                    <h4 className={styles.h4}><a href="news-single.html">The Things Every Successful Enterpreneur Does</a></h4>
-                                    <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <span className={styles.p_author}>Fynley Wilkinson</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.col_lg_4 + " " + styles.col_md_6 + " " + styles.mb30}>
-                        <div className={styles.bloglist + " " + styles.item}>
-                            <div className={styles.post_content}>
-                                <div className={styles.date_box}>
-                                    <div className={styles.m}>10</div>
-                                    <div className={styles.d}>NOV</div>
-                                </div>
-                                <div className={styles.post_image}>
-                                    <img className={styles.img} alt="" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" />
-                                </div>
-                                <div className={styles.post_text}>
-                                    <span className={styles.p_tagline}>Motivation</span>
-                                    <h4 className={styles.h4}><a href="news-single.html">The Things Every Successful Enterpreneur Does</a></h4>
-                                    <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <span className={styles.p_author}>Fynley Wilkinson</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.col_lg_4 + " " + styles.col_md_6 + " " + styles.mb30}>
-                        <div className={styles.bloglist + " " + styles.item}>
-                            <div className={styles.post_content}>
-                                <div className={styles.date_box}>
-                                    <div className={styles.m}>10</div>
-                                    <div className={styles.d}>NOV</div>
-                                </div>
-                                <div className={styles.post_image}>
-                                    <img className={styles.img} alt="" src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" />
-                                </div>
-                                <div className={styles.post_text}>
-                                    <span className={styles.p_tagline}>Motivation</span>
-                                    <h4 className={styles.h4}><a href="news-single.html">The Things Every Successful Enterpreneur Does</a></h4>
-                                    <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <span className={styles.p_author}>Fynley Wilkinson</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div className={styles.next_button_container}>
+                        <button onClick={()=>{
+                            
+                            if(page==windows.length-1){
+                                set_page(0);    
+                            }else{
+                                set_page(page+1)
+                            }
+                        }} className={styles.next_button+" "+styles.button}>
+                            <svg stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -130,4 +237,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default News;
