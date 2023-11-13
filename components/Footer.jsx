@@ -17,8 +17,6 @@ function Footer() {
                         <img className={footerStyle.footer_sponsorImg} src="/images/s3_foton_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s4_pomega_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s5_odyssey_logo.webp" alt="" />
-                        <img className={footerStyle.footer_sponsorImg} src="/images/s6_gelecekbilimde_logo.webp" alt="" />
-                        <img className={footerStyle.footer_sponsorImg} src="/images/s7_solargy_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s8_solarian_logo.webp" alt="" />
                     </div>
                 </div>
