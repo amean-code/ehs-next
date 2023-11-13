@@ -7,30 +7,52 @@ function Blog() {
     const [activeNav, setActiveNav] = useState("");
 
     return (
-        <div className={styles.page_wrapper}>
-            <div className={styles.backtotop}>
-                <a href="#" className={styles.scroll}>
-                    <i className={styles.far+" "+styles.fa_arrow_up}></i>
-                </a>
-            </div>
-            <section className={styles.page_banner}>
-                <div className={styles.container}>
-                    <div className={styles.content_wrapper}>
-                        <div className={styles.row+" "+styles.align_items_center}>
-                            <div className={styles.col+" "+styles.col_lg_8}>
-                                <ul className={styles.breadcrumb_nav+" "+styles.unordered_list}>
-                                    <li><a href="in_ex_html{">Home</a></li>
-                                    <li><a href="#!">Blogs</a></li><li>Blog Details</li>
-                                </ul>
-                                <h1 className={styles.page_title+" "+styles.mb_0}>
-                                    Create An Epic Resume For Your Dream Job
-                                </h1>
+        <section className={styles.section}>
+            <div className={styles.left}>
+                <div className={styles.top}>
+                    <div className={styles.blog_image}>
+                        <img src="https://html.merku.love/collab/assets/images/blog/blog_details_image_1.jpg" alt="" />
+                    </div>
+                    <div className={styles.blog_info}>
+                        <div className={styles.info}>
+                            <img src="/images/pin.png" alt="" />
+                            <p>Sticky Post</p>
+                        </div>
+                        <div className={styles.info}>
+                            <img src="/images/user.png" alt="" />
+                            <p>by Durrad</p>
+                        </div>
+                        <div className={styles.info}>
+                            <img src="/images/calendar.png" alt="" />
+                            <p>Feb 12, 2023</p>
+                        </div>
+                    </div>
+                    <div className={styles.description}>
+                        <div className={styles.des_top}>
+                            <p>
+                                Mauris rhoncus aenean vel elit scelerisque mauris. 
+                                Ultrices vitae auctor eu augue ut. Curabitur gravida arcu ac 
+                                tortor dignissim convallis aenean et tortor. Proin fermentum 
+                                leo vel orci porta non pulvinar neque. At tellus at urna 
+                                condimentum mattis pellentesque.
+                            </p>
+                        </div>
+                        <div className={styles.des_mid}>
+                            <img src="https://html.merku.love/collab/assets/images/icon/icon_quote.svg" alt="" />
+                            <div className={styles.p}>
+                                Nec feugiat nisl pretium fusce id velit ut. 
+                                Lobortis mattis aliquam faucibus purus in. 
+                                Ultricies integer quis auctor elit sed. 
+                                Lobortis scelerisque fermentum dui faucibus in ornare quam
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+            <div className={styles.right}>
+
+            </div>
+        </section>
     );
 }
 

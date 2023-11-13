@@ -58,6 +58,7 @@ function Header() {
           <Link href="/#events">Events</Link>
           <Link href="/#mentoring">Mentoring</Link>
           <Link href="/sponsors">Sponsors</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/#contact-us">Contact Us</Link>
           {
             user?
