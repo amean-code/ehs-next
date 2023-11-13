@@ -49,7 +49,7 @@ function Slider() {
                 </p>
               :active_button=="why-join"?
                 <p>
-                  Energy Hack Space (EHS) katıldığınızda, enerji sektöründe gerçek bir değişiklik yaratma potansiyeline sahip bir topluluğun parçası olursunuz. EHS, sadece teorik bilgi sunmakla kalmaz, aynı zamanda uygulamalı deneyimler, endüstri içi ağ kurma fırsatları ve kariyer gelişimine yönelik mentörlük programlarıyla bireyleri destekler. Enerji, optimizasyon ve yapay zeka gibi alanlarda uzmanlaşmayı hedefleyenler için mükemmel bir öğrenme ve paylaşma platformudur. Katılımcılarımız, sektördeki en güncel trendler, teknolojiler ve yenilikçi çözümler hakkında bilgi sahibi olma fırsatı bulurken, aynı zamanda potansiyel işbirlikleri ve ortaklıklar için kapılar açılır. EHS'ye katılarak, enerji sektöründe geleceğin liderlerinden biri olma yolunda büyük bir adım atmış olursunuz.
+                  Energy Hack Space (EHS) katıldığınızda, enerji sektöründe gerçek bir değişiklik yaratma potansiyeline sahip bir topluluğun parçası olursunuz. EHS, sadece teorik bilgi sunmakla kalmaz, aynı zamanda uygulamalı deneyimler, endüstri içi ağ kurma fırsatları ve kariyer gelişimine yönelik mentörlük programlarıyla bireyleri destekler. Enerji, optimizasyon ve yapay zeka gibi alanlarda uzmanlaşmayı hedefleyenler için mükemmel bir öğrenme ve paylaşma platformudur. Katılımcılarımız, sektördeki en güncel trendler, teknolojiler ve yenilikçi çözümler hakkında bilgi sahibi olma fırsatı bulurken, aynı zamanda potansiyel işbirlikleri ve ortaklıklar için kapılar açılır. EHSye katılarak, enerji sektöründe geleceğin liderlerinden biri olma yolunda büyük bir adım atmış olursunuz.
                 </p>
               :""
             }
