@@ -4,6 +4,30 @@
     padding-top: 110px;
 }
 
+.text_center {
+    text-align: center!important;
+}
+.title_h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.small_border {
+    width: 100px;
+    height: 3px;
+    border-top: solid 2px #333333;
+    border-left: none;
+    border-right: none;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
 /*slider*/
 .main_container {
     width: 100%;
@@ -219,8 +243,20 @@
 
 /*Card*/
 
+.teamTitle{
+    pad: 12px;
+    text-align: center;
+    font-size: 40;
+    font-weight: 800;
+}
+
+.briefbioText{
+    font-weight: 300;
+    font-size: 14;
+    line-height: normal;
+}
+
 .cardArea {
-    width: 80%;
     margin: 0 auto;
     display: flex;
     padding: 30px;
@@ -292,15 +328,12 @@ figure.snip1192 p {
     display: block;
     border-radius: 8px;
     position: relative;
-    font-size: 0.8em;
-    line-height: 1.6em;
     color: #848484;
-    font-size: 18px;
-    line-height: 28px;
     margin-top: 15px;
     margin-bottom: 25px;
     font-weight: 400;
     font-style: normal;
+    text-align: justify;
 }
 
 figure.snip1192 blockquote:before,

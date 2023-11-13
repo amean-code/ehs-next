@@ -19,37 +19,37 @@ function Slider() {
             </h4>
             <h2>Our Services</h2>
             <div className={styles.buttons}>
-              <div onClick={()=>set_active_button("public-seminar")} className={styles.item+" "+(
-                active_button=="public-seminar"?
+              <div onClick={()=>set_active_button("who-we-are")} className={styles.item+" "+(
+                active_button=="who-we-are"?
                 styles.active:""
               )}>
                 Who we are?
               </div>
-              <div onClick={()=>set_active_button("house-training")} className={styles.item+" "+(
-                active_button=="house-training"?
+              <div onClick={()=>set_active_button("what-we-do")} className={styles.item+" "+(
+                active_button=="what-we-do"?
                 styles.active:""
               )}>
                 What we do?
               </div>
-              <div onClick={()=>set_active_button("personal-coaching")} className={styles.item+" "+(
-                active_button=="personal-coaching"?
+              <div onClick={()=>set_active_button("why-join")} className={styles.item+" "+(
+                active_button=="why-join"?
                 styles.active:""
               )}>
                 Why join? 
               </div>
             </div>
             {
-              active_button=="public-seminar"?
+              active_button=="who-we-are"?
                 <p>
-                  Culpa qui proident amet sunt. Amet labore velit sunt anim velit commodo aliquip et cillum Lorem anim sit ullamco ipsum. Sunt eiusmod irure et velit do consequat officia laboris do labore deserunt dolor do. Ad nostrud elit elit mollit est quis in culpa.
+                  Energy Hack Space (EHS), enerji sektöründeki inovatif yaklaşımları ve sürdürülebilir çözümleri teşvik eden bir platformdur. Misyonumuz, enerji dönüşümünün hızını artırmak, öğrencilere, yeni mezunlara ve sektör profesyonellerine eşsiz öğrenme ve ağ kurma fırsatları sunmaktır. Multidisipliner bir yaklaşım ile enerji sektöründe karşılaşılan zorlukları ve fırsatları ele alıyor, bu alandaki tutkulu bireyleri bir araya getirerek bilgi alışverişini ve işbirliğini destekliyoruz. EHS, enerji sektörünün geleceğini şekillendirmek isteyen herkes için bir buluşma noktasıdır.
                 </p>
-              :active_button=="house-training"?
+              :active_button=="what-we-do"?
                 <p>
-                  Elit sit sint duis incididunt magna sint deserunt nostrud ad dolore magna cillum consectetur fugiat. Dolore amet ut Lorem in sunt id velit cillum voluptate ipsum cillum aliqua minim. Reprehenderit esse occaecat aliquip fugiat laboris quis ut sunt adipisicing deserunt. Ipsum excepteur consectetur aliquip minim magna ipsum pariatur anim eu anim. Sunt in aliquip eu incididunt laboris cillum nisi est velit ut incididunt.ud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.
+                  Energy Hack Space (EHS) olarak enerji sektöründe inovasyonun ve sürdürülebilirliğin önündeki engelleri kaldırmayı hedefliyoruz. Bu amaç doğrultusunda, enerjiye dair hackathonlar, atölyeler ve eğitimler düzenleyerek sektöre yeni soluklar kazandırıyoruz. Öğrencilerden profesyonellere kadar geniş bir kitleye enerji, optimizasyon ve yapay zeka üzerine eğitimler ve mentörlük programları sunuyoruz. Ayrıca, sektördeki yenilikçi fikirleri ve projeleri desteklemek için bir ağ oluşturma ve işbirliği fırsatları yaratma görevini üstleniyoruz. EHS, enerji dönüşümünü hızlandırmak ve bu alandaki potansiyeli maksimize etmek için kapsamlı çözümler sunmaktadır.
                 </p>
-              :active_button=="personal-coaching"?
+              :active_button=="why-join"?
                 <p>
-                  Eiusmod non consectetur nisi velit amet ullamco consectetur consectetur nulla. Occaecat esse voluptate amet est eu enim ullamco eiusmod. Et aliqua pariatur do ullamco et laboris aute adipisicing. Sunt reprehenderit duis consequat excepteur dolore. Laboris aliqua excepteur aute in tempor ullamco ipsum labore. Eiusmod velit et reprehenderit id velit do exercitation. Aliqua Lorem proident tempor consequat tempor cillum qui occaecat non commodo.
+                  Energy Hack Space (EHS) katıldığınızda, enerji sektöründe gerçek bir değişiklik yaratma potansiyeline sahip bir topluluğun parçası olursunuz. EHS, sadece teorik bilgi sunmakla kalmaz, aynı zamanda uygulamalı deneyimler, endüstri içi ağ kurma fırsatları ve kariyer gelişimine yönelik mentörlük programlarıyla bireyleri destekler. Enerji, optimizasyon ve yapay zeka gibi alanlarda uzmanlaşmayı hedefleyenler için mükemmel bir öğrenme ve paylaşma platformudur. Katılımcılarımız, sektördeki en güncel trendler, teknolojiler ve yenilikçi çözümler hakkında bilgi sahibi olma fırsatı bulurken, aynı zamanda potansiyel işbirlikleri ve ortaklıklar için kapılar açılır. EHS'ye katılarak, enerji sektöründe geleceğin liderlerinden biri olma yolunda büyük bir adım atmış olursunuz.
                 </p>
               :""
             }
