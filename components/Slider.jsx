@@ -4,7 +4,7 @@ import { Arrow_down } from "../icons";
 import styles from "../styles/App.module.css";
 
 function Slider() {
-    const [active_button, set_active_button] = useState("public-seminar");
+    const [active_button, set_active_button] = useState("who-we-are");
 
     return (
         <section>
