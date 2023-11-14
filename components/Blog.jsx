@@ -95,7 +95,7 @@ function Blog() {
                             <div className={styles.col}>
                                 <div className={styles.list_item}>
                                     <img src="/images/square.png" alt="" />
-                                    <p>Felis bibendum ut tristique et egestas quis ipsum</p>
+                                    <p>Felis bibendum ut tristique et egestas quis </p>
                                 </div>
                                 <div className={styles.list_item}>
                                     <img src="/images/square.png" alt="" />

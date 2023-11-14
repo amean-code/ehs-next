@@ -114,7 +114,10 @@
     border-radius: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
+.images img:hover{
+    transition: ease-in-out 0.5s;
+    transform: scale(1.01);
+}
 .row{
     display: flex;
     flex-direction: row;
@@ -135,6 +138,10 @@
     gap: 6px;
     align-items: center;
     justify-content: center;
+}
+.list_item:hover{
+    transition: ease-in-out 0.5s;
+    transform: scale(1.01);
 }
 .list_item p{
     font-family: Inter-ExtraLight;
@@ -159,6 +166,10 @@
     padding: 20px;
     background: rgb(240, 240, 240);
 }
+.card:hover{
+    transition: ease-in-out 0.5s;
+    transform: scale(1.01);
+}
 .card_top{
     flex: 1;
     display: flex;
@@ -182,7 +193,7 @@
     height: 70px;
 }
 .card_left img{
-    width: 30px;
+    width: 70px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     user-select: none;
