@@ -30,22 +30,101 @@ function Blog() {
                     <div className={styles.description}>
                         <div className={styles.des_top}>
                             <p>
-                                Mauris rhoncus aenean vel elit scelerisque mauris. 
-                                Ultrices vitae auctor eu augue ut. Curabitur gravida arcu ac 
-                                tortor dignissim convallis aenean et tortor. Proin fermentum 
-                                leo vel orci porta non pulvinar neque. At tellus at urna 
+                                Mauris rhoncus aenean vel elit scelerisque mauris.
+                                Ultrices vitae auctor eu augue ut. Curabitur gravida arcu ac
+                                tortor dignissim convallis aenean et tortor. Proin fermentum
+                                leo vel orci porta non pulvinar neque. At tellus at urna
                                 condimentum mattis pellentesque.
                             </p>
                         </div>
                         <div className={styles.des_mid}>
                             <img src="https://html.merku.love/collab/assets/images/icon/icon_quote.svg" alt="" />
                             <div className={styles.p}>
-                                Nec feugiat nisl pretium fusce id velit ut. 
-                                Lobortis mattis aliquam faucibus purus in. 
-                                Ultricies integer quis auctor elit sed. 
+                                Nec feugiat nisl pretium fusce id velit ut.
+                                Lobortis mattis aliquam faucibus purus in.
+                                Ultricies integer quis auctor elit sed.
                                 Lobortis scelerisque fermentum dui faucibus in ornare quam
                             </div>
                         </div>
+                        <div className={styles.des_bot}>
+                            <p>
+                                Senectus et netus et malesuada.
+                                Massa tincidunt dui ut ornare lectus sit.
+                                Sed enim ut sem viverra.
+                                Fermentum odio eu feugiat pretium.
+                                Interdum varius sit amet mattis vulputate enim.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.mid}>
+                    <div className={styles.part}>
+                        <p className={styles.title}>Hard skills for a business analyst resume</p>
+                        <p className={styles.text}>
+                            Amet cursus sit amet dictum sit amet justo.
+                            Morbi tincidunt ornare massa eget. In nulla
+                            posuere sollicitudin aliquam ultrices sagittis
+                            orci a. Diam donec adipiscing tristique risus
+                            nec feugiat in fermentum posuere. In mollis
+                            nunc sed id semper risus in hendrerit gravida.
+                            Pretium viverra suspendisse potenti nullam ac
+                            tortor vitae purus faucibus. Aliquet lectus proin
+                            nibh nisl condimentum id venenatis.
+                        </p>
+                        <div className={styles.images}>
+                            <img src="/images/blog_img1.jpeg" alt="" />
+                            <img src="/images/blog_img2.jpeg" alt="" />
+                        </div>
+                    </div>
+                    <div className={styles.part}>
+                        <p className={styles.title}>Conduct research into the company you are applying to</p>
+                        <p className={styles.text}>
+                            Non diam phasellus vestibulum lorem sed.
+                            Leo in vitae turpis massa sed. Urna cursus
+                            eget nunc scelerisque. Elementum tempus egestas
+                            sed sed risus. Aliquam sem et tortor consequat
+                            id porta nibh venenatis. Egestas congue quisque
+                            egestas diam in arcu cursus euismod.
+                        </p>
+                        <div className={styles.images}>
+
+                        </div>
+                    </div>
+                    <div className={styles.row}>
+                        <div className={styles.col}>
+                            <div className={styles.list_item}>
+                                <img src="/images/square.png" alt="" />
+                                <p>Felis bibendum ut tristique et egestas quis ipsum</p>
+                            </div>
+                            <div className={styles.list_item}>
+                                <img src="/images/square.png" alt="" />
+                                <p>Aliquam faucibus purus in massa tempor</p>
+                            </div>
+                            <div className={styles.list_item}>
+                                <img src="/images/square.png" alt="" />
+                                <p>Interdum posuere lorem ipsum dolor consectetur</p>
+                            </div>
+                            <div className={styles.list_item}>
+                                <img src="/images/square.png" alt="" />
+                                <p>Aliquam malesuada bibendum vitae elementum</p>
+                            </div>
+                        </div>
+                        <div className={styles.col}>
+                                <div className={styles.list_item}>
+                                <p>1. Gravida in fermentum et sollicitudin ac orci.</p>
+                                </div>
+                                <div className={styles.list_item}>
+                                    <p>2. Mauris vitae ultricies leo integer malesuada</p>
+                                </div>
+                                <div className={styles.list_item}>
+                                    <p>3. Lacus sed viverra tellus habitasse</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div className={styles.text}>
+                        <p>
+                        Libero enim sed faucibus turpis in. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Sit amet nisl purus in mollis nunc sed id. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Felis donec et odio pellentesque diam volutpat commodo sed.
+                        </p>
                     </div>
                 </div>
             </div>

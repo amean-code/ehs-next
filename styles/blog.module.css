@@ -1,12 +1,15 @@
 .section{
     width: 100%;
-    min-height: 1500px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 50px;
 }
 .left{
     flex: 2;
     padding: 60px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
     margin-left: 80px;
 }
 .right{
@@ -24,7 +27,7 @@
 }
 .blog_info{
     width: 100%;
-    max-height: 50px;
+    /* max-height: 50px; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -57,13 +60,75 @@
 }
 .des_mid{
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
-    gap: 15px;
+    gap: 35px;
 }
 .des_mid img{
     max-width: 70px;
     object-fit: contain;
+    margin-top: 7px;
 }
 .des_mid .p{
     font-weight: 700;
+    font-size: 22px;
+}
+
+.des_bot p{
+    font-family: Inter-ExtraLight;
+}
+
+.mid{
+    border-bottom: 1px solid rgb(162, 162, 162);
+}
+
+.mid .title{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.mid .text{
+    font-size: 16px;
+    font-family: Inter-ExtraLight;
+    margin-bottom: 30px;
+}
+.images{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.images img{
+    width: 400px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+.col .list_item{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+.list_item p{
+    font-family: Inter-ExtraLight;
+}
+.col .list_item img{
+    width: 15px;
+    height: 15px;
+    margin-bottom: 1px;
 }
