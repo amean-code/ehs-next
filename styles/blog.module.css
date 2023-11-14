@@ -5,12 +5,21 @@
     justify-content: space-evenly;
     margin-bottom: 50px;
 }
+
+.wrapper{
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
 .left{
-    flex: 3;
-    padding: 60px;
+    flex: 2;
+    padding: 30px;
     gap: 20px;
     display: flex;
-    margin-left: 80px;
     flex-direction: column;
 }
 .top{
@@ -173,7 +182,7 @@
     height: 70px;
 }
 .card_left img{
-    width: 60px;
+    width: 30px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     user-select: none;
@@ -220,8 +229,8 @@
 
 
 .right{
-    flex: 1;
-    padding: 60px 100px 60px 60px;
+    flex: 1.5;
+    padding: 30px 100px 30px 30px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -268,7 +277,7 @@
     justify-content: space-between;
 }
 .category_text p{
-    font-family: Inter-ExtraLight;
+    /* font-family: Inter-ExtraLight; */
 }
 
 .other_blogs{
@@ -341,34 +350,63 @@
     flex-wrap: wrap;
     gap: 15px;
 }
+
 .tags .tags_title{
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 6px;
     background-color: #f6f6f6;
-    transition: all ease-in-out 0.4s;
-    border-radius: 3px;
+    transition: all ease-in-out 0.2s;
+    border-radius: 8px;
 }
 .tags_title:hover{
     outline: 0;
     text-decoration: none;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+    transform: translateX(-3px) translateY(-3px);
 }
 .tags_title p{
     font-size: 14px;
     color: 1f1d0d;
     font-family: Inter-ExtraLight;
 }
+.checkbox_input{
+    width: 18px;
+    height: 18px;
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.category:hover .checkbox_input,
+.checkbox_input.active{
+    /* background-color: var(--primary); */
+    border-color: var(--primary);
+}
+
+.checkbox_input .checkbox_square{
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+}
+
+.checkbox_input .checkbox_square.active{
+    background-color: var(--primary);
+}
 /*MEDİA*/
 @media (max-width: 992px){
     .left{
         margin: 0;
     }
-    .section{
+    .wrapper{
         flex-direction: column;
     }
     .left{
-        padding: 60px 20px;
+        padding: 30px 20px;
     }
     .des_mid img{
         display: none;
@@ -381,6 +419,6 @@
         flex-wrap: wrap;
     }
     .right{
-        padding: 60px;
+        padding: 30px;
     }
 }
