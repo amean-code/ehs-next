@@ -103,7 +103,8 @@
     gap: 15px;
 }
 .images img{
-    width: 400px;
+    flex: 1;
+    min-width: 400px;
     border-radius: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -111,7 +112,8 @@
 .row{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 100px;
     margin-bottom: 30px;
 }
 .col{
@@ -231,5 +233,9 @@
     }
     .des_mid img{
         display: none;
+    }
+    .row{
+        flex-direction: column;
+        gap: 20px;
     }
 }

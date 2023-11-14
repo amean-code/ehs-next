@@ -1,0 +1,8 @@
+.cursor {
+    position: fixed;
+    border-radius: 100%;
+    z-index: 2173123;
+    transition: all linear 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+}
