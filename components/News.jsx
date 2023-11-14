@@ -1,13 +1,30 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/news.module.css";
 
 function News() {
 
+    
+    function useWindowSize() {
+        const [size, setSize] = useState([0, 0]);
+        useLayoutEffect(() => {
+            function updateSize() {
+                setSize([window.innerWidth, window.innerHeight]);
+            }
+            window.addEventListener('resize', updateSize);
+            updateSize();
+            return () => window.removeEventListener('resize', updateSize);
+        }, []);
+        return size;
+    }
+
+    const [width,height] = useWindowSize();
+  
+
     const [page,set_page] = useState(0);
 
-    const [news,const_news] = useState([
+    const [news,set_news] = useState([
         {
             name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
@@ -82,6 +99,24 @@ function News() {
         }
     ]);
 
+    useEffect(()=>{
+        let new_news = [];
+
+        for(let i = 0;i<100;i++){
+            new_news.push({
+                name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+                content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+                day: Math.floor(Math.random()*27)+1,
+                month: Math.floor(Math.random()*11)+1,
+                year: Math.floor(Math.random()*4)+2020,
+                author: "Durmuş Kartcı",
+                views: Math.floor(Math.random()*2000)+1000
+            })
+        }
+
+        set_news(new_news);
+    },[])
+
     const [windows,set_windows] = useState([]);
 
     const [new_per_window,set_new_per_window] = useState(3);
@@ -133,11 +168,24 @@ function News() {
 
         set_windows(new_windows);
         set_grid_template_columns_str(column_str)
+    },[new_per_window,news]);
 
-        console.log("column_str",column_str);
-        console.log("new_windows",new_windows);
+    useEffect(()=>{
 
-    },[new_per_window]);
+        console.log("WIDTH : ",width)
+        console.log("HEIGHT: ",height)
+
+        if(width>=950 && width<1300){
+            set_new_per_window(3);
+        }else if(width>=740 && width<950){
+            set_new_per_window(2);
+        }else if(width<740){
+            set_new_per_window(1);
+        }else{
+            set_new_per_window(4);
+        }
+
+    },[width,height])
 
     let random_color = (opacity=1) => {
         let r = Math.random()*100+100;
