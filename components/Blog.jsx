@@ -318,6 +318,44 @@ function Blog() {
                         </div>
                     </div>
                 </div>
+                <div className={styles.tags}>
+                    <p style={{fontSize: "22px", fontWeight:"700"}}>TAGS</p>
+                    <div className={styles.tags_title}>
+                        <p>
+                            PROJECT MANAGEMENT
+                        </p>
+                    </div>
+                    <div className={styles.tags_title}>
+                        <p>
+                            ENGINEER
+                        </p>
+                    </div>
+                    <div className={styles.tags_title}>
+                        <p>
+                            NETWORK
+                        </p>
+                    </div>
+                    <div className={styles.tags_title}>
+                        <p>
+                            SYSTEMS
+                        </p>
+                    </div>
+                    <div className={styles.tags_title}>
+                        <p>
+                            CAREER
+                        </p>
+                    </div>
+                    <div className={styles.tags_title}>
+                        <p>
+                            HARD SKILLS
+                        </p>
+                    </div>
+                    <div className={styles.tags_title}>
+                        <p>
+                            IT & SOFTWARE
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     );

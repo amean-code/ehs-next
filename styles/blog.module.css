@@ -2,15 +2,16 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     margin-bottom: 50px;
 }
 .left{
-    flex: 2;
-    padding: 60px 0px 60px 60px;
+    flex: 3;
+    padding: 60px;
     gap: 20px;
     display: flex;
-    flex-direction: column;
     margin-left: 80px;
+    flex-direction: column;
 }
 .top{
     display: flex;
@@ -220,7 +221,7 @@
 
 .right{
     flex: 1;
-    padding: 60px 40px 40px 40px;
+    padding: 60px 100px 60px 60px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -277,7 +278,10 @@
     justify-content: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(220, 220, 220);
 }
+
 .other_blogs .other_blogs_title{
     font-size: 22px;
     font-weight: 700;
@@ -292,9 +296,9 @@
     gap: 15px;
 }
 .blog_card_left{
-    flex: 1;
-    max-width: 100px;
-    max-height: 120px;
+    flex: 2;
+    max-width: 120px;
+    max-height: 140px;
     border-radius: 10px;
 }
 .blog_card_left img{
@@ -313,18 +317,47 @@
 }
 .name p{
     font-family: Inter-Extralight;
+    font-size: 14px;
 }
 .name img{
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
 }
 .blog_title p{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
 }
 .blog_date p{
     font-family: Inter-ExtraLight;
     font-size: 14px;
+}
+.tags{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.tags .tags_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background-color: #f6f6f6;
+    transition: all ease-in-out 0.4s;
+    border-radius: 3px;
+}
+.tags_title:hover{
+    outline: 0;
+    text-decoration: none;
+}
+.tags_title p{
+    font-size: 14px;
+    color: 1f1d0d;
+    font-family: Inter-ExtraLight;
 }
 /*MEDİA*/
 @media (max-width: 992px){
@@ -346,5 +379,8 @@
     }
     .images{
         flex-wrap: wrap;
+    }
+    .right{
+        padding: 60px;
     }
 }
