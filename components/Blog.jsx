@@ -211,7 +211,113 @@ function Blog() {
                 </div>
             </div>
             <div className={styles.right}>
-
+                <div className={styles.categories}>
+                    <div className={styles.category_title}>
+                        <p>Categories</p>
+                        <div className={styles.img}>
+                            <img src="/images/up.png" alt="" />
+                        </div>
+                    </div>
+                    <div className={styles.category}>
+                        <div className={styles.check_box}>
+                            <img src="/images/checkbox.png" alt="" />
+                        </div>
+                        <div className={styles.category_text}>
+                            <p>Desing</p>
+                            <p>(18)</p>
+                        </div>
+                    </div>
+                    <div className={styles.category}>
+                        <div className={styles.check_box}>
+                            <img src="/images/checkbox.png" alt="" />
+                        </div>
+                        <div className={styles.category_text}>
+                            <p>IT & Software</p>
+                            <p>(11)</p>
+                        </div>
+                    </div>
+                    <div className={styles.category}>
+                        <div className={styles.check_box}>
+                            <img src="/images/checkbox.png" alt="" />
+                        </div>
+                        <div className={styles.category_text}>
+                            <p>Development</p>
+                            <p>(10)</p>
+                        </div>
+                    </div>
+                    <div className={styles.category}>
+                        <div className={styles.check_box}>
+                            <img src="/images/checkbox.png" alt="" />
+                        </div>
+                        <div className={styles.category_text}>
+                            <p>Marketing</p>
+                            <p>(4)</p>
+                        </div>
+                    </div>
+                    <div className={styles.category}>
+                        <div className={styles.check_box}>
+                            <img src="/images/checkbox.png" alt="" />
+                        </div>
+                        <div className={styles.category_text}>
+                            <p>Business</p>
+                            <p>(8)</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.other_blogs}>
+                    <p className={styles.other_blogs_title}>Other Blogs</p>
+                    <div className={styles.blog_card}>
+                        <div className={styles.blog_card_left}>
+                            <img src="/images/image1.jpeg" alt="" />
+                        </div>
+                        <div className={styles.blog_card_right}>
+                            <div className={styles.name}>
+                                <img src="/images/user.png" alt="" />
+                                <p>by Durrad</p>
+                            </div>
+                            <div className={styles.blog_title}>
+                                <p>Create An Epic Resume For Your Dream Job</p>
+                            </div>
+                            <div className={styles.blog_date}>
+                                <p>Feb 23, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.blog_card}>
+                        <div className={styles.blog_card_left}>
+                            <img src="/images/image2.jpeg" alt="" />
+                        </div>
+                        <div className={styles.blog_card_right}>
+                            <div className={styles.name}>
+                                <img src="/images/user.png" alt="" />
+                                <p>by Durrad</p>
+                            </div>
+                            <div className={styles.blog_title}>
+                                <p>Create An Epic Resume For Your Dream Job</p>
+                            </div>
+                            <div className={styles.blog_date}>
+                                <p>Feb 23, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.blog_card}>
+                        <div className={styles.blog_card_left}>
+                            <img src="/images/image5.jpeg" alt="" />
+                        </div>
+                        <div className={styles.blog_card_right}>
+                            <div className={styles.name}>
+                                <img src="/images/user.png" alt="" />
+                                <p>by Durrad</p>
+                            </div>
+                            <div className={styles.blog_title}>
+                                <p>Create An Epic Resume For Your Dream Job</p>
+                            </div>
+                            <div className={styles.blog_date}>
+                                <p>Feb 23, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

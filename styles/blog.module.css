@@ -6,14 +6,11 @@
 }
 .left{
     flex: 2;
-    padding: 60px;
+    padding: 60px 0px 60px 60px;
     gap: 20px;
     display: flex;
     flex-direction: column;
     margin-left: 80px;
-}
-.right{
-    flex: 1;
 }
 .top{
     display: flex;
@@ -99,7 +96,6 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 35px;
-    flex-wrap: wrap;
     gap: 15px;
 }
 .images img{
@@ -221,6 +217,116 @@
     font-family: Inter-ExtraLight;
 }
 
+
+.right{
+    flex: 1;
+    padding: 60px 40px 40px 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.categories{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    margin-bottom: 30px;
+}
+.categories .category_title{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.category_title p{
+    font-size: 22px;
+    font-weight: 700;
+}
+.category_title .img{
+    width: 20px;
+}
+.category{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+.category .check_box{
+    max-width: 15px;
+}
+.category_text{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.category_text p{
+    font-family: Inter-ExtraLight;
+}
+
+.other_blogs{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.other_blogs .other_blogs_title{
+    font-size: 22px;
+    font-weight: 700;
+}
+.blog_card{
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+}
+.blog_card_left{
+    flex: 1;
+    max-width: 100px;
+    max-height: 120px;
+    border-radius: 10px;
+}
+.blog_card_left img{
+    border-radius: 10px;
+    width: 100%;
+}
+.blog_card_right{
+    flex: 3;
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.name p{
+    font-family: Inter-Extralight;
+}
+.name img{
+    width: 17px;
+    height: 17px;
+}
+.blog_title p{
+    font-size: 18px;
+    font-weight: 800;
+}
+.blog_date p{
+    font-family: Inter-ExtraLight;
+    font-size: 14px;
+}
+/*MEDİA*/
 @media (max-width: 992px){
     .left{
         margin: 0;
@@ -237,5 +343,8 @@
     .row{
         flex-direction: column;
         gap: 20px;
+    }
+    .images{
+        flex-wrap: wrap;
     }
 }
