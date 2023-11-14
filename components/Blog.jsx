@@ -110,22 +110,104 @@ function Blog() {
                             </div>
                         </div>
                         <div className={styles.col}>
-                                <div className={styles.list_item}>
+                            <div className={styles.list_item}>
                                 <p>1. Gravida in fermentum et sollicitudin ac orci.</p>
-                                </div>
-                                <div className={styles.list_item}>
-                                    <p>2. Mauris vitae ultricies leo integer malesuada</p>
-                                </div>
-                                <div className={styles.list_item}>
-                                    <p>3. Lacus sed viverra tellus habitasse</p>
-                                </div>
+                            </div>
+                            <div className={styles.list_item}>
+                                <p>2. Mauris vitae ultricies leo integer malesuada</p>
+                            </div>
+                            <div className={styles.list_item}>
+                                <p>3. Lacus sed viverra tellus habitasse</p>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.text}>
                         <p>
-                        Libero enim sed faucibus turpis in. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Sit amet nisl purus in mollis nunc sed id. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Felis donec et odio pellentesque diam volutpat commodo sed.
+                            Libero enim sed faucibus turpis in. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Sit amet nisl purus in mollis nunc sed id. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Felis donec et odio pellentesque diam volutpat commodo sed.
                         </p>
                     </div>
+                </div>
+                <div className={styles.comments}>
+
+                    <h1>COMMENTS</h1>
+                        <div className={styles.card}>
+                            <div className={styles.card_top}>
+                                <div className={styles.card_left}>
+                                    <div className={styles.photo}>
+                                        <img src="/images/image1.jpeg" alt="" />
+                                    </div>
+                                    <div className={styles.author_info}>
+                                        <div className={styles.user}>
+                                            <p>Carolyn Wallace</p>
+                                        </div>
+                                        <div className={styles.date}>
+                                            <p>January 27, 2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={styles.card_right}>
+                                    <img src="/images/back.png" alt="" />
+                                    <p>Reply</p>
+                                </div>
+                            </div>
+                            <div className={styles.card_bottom}>
+                                <p>
+                                    Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Vitae ultricies leo integer malesuada nunc vel. Nibh cras pulvinar mattis nunc sed. Convallis a cras semper auctor neque vitae tempus. Mattis molestie a iaculis at erat pellentesque adipiscing.
+                                </p>
+                            </div>
+                        </div>
+                        <div className={styles.card}>
+                            <div className={styles.card_top}>
+                                <div className={styles.card_left}>
+                                    <div className={styles.photo}>
+                                        <img src="/images/image2.jpeg" alt="" />
+                                    </div>
+                                    <div className={styles.author_info}>
+                                        <div className={styles.user}>
+                                            <p>Reyn Chirsty</p>
+                                        </div>
+                                        <div className={styles.date}>
+                                            <p>Jun 11, 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={styles.card_right}>
+                                    <img src="/images/back.png" alt="" />
+                                    <p>Reply</p>
+                                </div>
+                            </div>
+                            <div className={styles.card_bottom}>
+                                <p>
+                                    Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Vitae ultricies leo integer malesuada nunc vel. Nibh cras pulvinar mattis nunc sed. Convallis a cras semper auctor neque vitae tempus. Mattis molestie a iaculis at erat pellentesque adipiscing.
+                                </p>
+                            </div>
+                        </div>
+                        <div className={styles.card}>
+                            <div className={styles.card_top}>
+                                <div className={styles.card_left}>
+                                    <div className={styles.photo}>
+                                        <img src="/images/photo3.jpeg" alt="" />
+                                    </div>
+                                    <div className={styles.author_info}>
+                                        <div className={styles.user}>
+                                            <p>Emin Kartcı CEO</p>
+                                        </div>
+                                        <div className={styles.date}>
+                                            <p>February 28, 2020</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={styles.card_right}>
+                                    <img src="/images/back.png" alt="" />
+                                    <p>Reply</p>
+                                </div>
+                            </div>
+                            <div className={styles.card_bottom}>
+                                <p>
+                                    Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Vitae ultricies leo integer malesuada nunc vel. Nibh cras pulvinar mattis nunc sed. Convallis a cras semper auctor neque vitae tempus. Mattis molestie a iaculis at erat pellentesque adipiscing.
+                                </p>
+                            </div>
+                        </div>
                 </div>
             </div>
             <div className={styles.right}>
