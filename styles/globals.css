@@ -181,6 +181,7 @@ body {
 *{
   line-height: 150%;
   transition: all ease-in-out 0.2s;
+  /* cursor: none; */
 }
 
 
@@ -231,4 +232,12 @@ body {
 
 *::-webkit-scrollbar-thumb:hover {
   background: #888;
+}
+
+
+
+@media screen and (min-width:900px) {
+  *{
+    /* cursor: none !important; */
+  }
 }

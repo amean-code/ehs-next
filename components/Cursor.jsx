@@ -10,14 +10,13 @@ export default ()=> {
     useEffect(()=>{
         let new_cursors = [];
 
-        let number = 30;
+        let number = 14;
 
         for(let i = 0;i<number; i++){
-            let max_size = 8;
-            let size = max_size*((i+1)/number);
+            let max_size = 6;
+            let size = max_size*((i+1)/(number));
 
-            let duration = 0.15 * ((max_size-size)/max_size);
-
+            let duration = 0.1 * ((max_size-size)/max_size);
             let color_i = 0;
 
             if(size > max_size*3/4){

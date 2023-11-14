@@ -5,4 +5,11 @@
     transition: all linear 0.1s;
     transform: translateX(-50%) translateY(-50%);
     pointer-events: none;
+    border: 1px solid vaR(--primary);
+}
+
+@media screen and (max-width:900px) {
+    .cursor{
+        display: none;
+    }
 }
