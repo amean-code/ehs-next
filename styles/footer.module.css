@@ -1,6 +1,4 @@
-.footer_section {
-    padding-left: 20px;
-    padding-right: 20px;
+.footer_section{
 }
 
 .ul {
@@ -44,6 +42,8 @@
 .footer_content {
     position: relative !important;
     z-index: 2 !important;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .footer_pattern .img_fluid {
@@ -71,7 +71,7 @@
     font-size: 14px !important;
     color: #7e7e7e !important;
     line-height: 28px !important;
-    text-align: center;
+    text-align: flex-start;
 }
 
 .footer_social_icon .span {
@@ -130,7 +130,7 @@
 .footer_widget .ul .li {
     display: inline-block !important;
     float: left !important;
-    width: 50% !important;
+    width: 40% !important;
     margin-bottom: 12px !important;
 }
 
@@ -153,19 +153,20 @@
 }
 
 .subscribe_form .input {
-    width: 100% !important;
+    width: 70% !important;
     padding: 14px 28px !important;
     background: #2E2E2E !important;
     border: 1px solid #2E2E2E !important;
     color: #fff !important;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .subscribe_form .button {
     position: absolute !important;
-    right: 0 !important;
     background: #ff5e14 !important;
-    padding: 13px 20px !important;
+    padding: 15.1px!important;
     border: 1px solid #ff5e14 !important;
+    border-radius: 0px 5px 5px 0px;
     top: 0 !important;
 }
 

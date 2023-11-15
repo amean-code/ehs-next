@@ -10,10 +10,10 @@ export default ()=> {
     useEffect(()=>{
         let new_cursors = [];
 
-        let number = 14;
+        let number = 100;
 
         for(let i = 0;i<number; i++){
-            let max_size = 6;
+            let max_size = 12;
             let size = max_size*((i+1)/(number));
 
             let duration = 0.1 * ((max_size-size)/max_size);
@@ -30,10 +30,10 @@ export default ()=> {
             }
 
             let colors = [
-                "#39B24840",
-                "#39B24835",
-                "#39B24830",
-                "#39B24825"
+                "#39B24880",
+                "#39B24870",
+                "#39B24860",
+                "#39B24850"
             ];
 
             new_cursors.push({

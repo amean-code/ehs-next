@@ -5,7 +5,7 @@
     transition: all linear 0.1s;
     transform: translateX(-50%) translateY(-50%);
     pointer-events: none;
-    border: 1px solid vaR(--primary);
+    border: 1px solid #39B24820;
 }
 
 @media screen and (max-width:900px) {

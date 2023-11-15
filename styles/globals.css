@@ -238,6 +238,6 @@ body {
 
 @media screen and (min-width:900px) {
   *{
-    /* cursor: none !important; */
+    cursor: none !important;
   }
 }
