@@ -60,7 +60,7 @@ function Footer() {
                                     <h3 className={footerStyle.h3}>Subscribe</h3>
                                 </div>
                                 <div className={footerStyle.footer_text+" "+footerStyle.mb_25}>
-                                    <p className={footerStyle.p}>Bizim hakkımızda önerileriniz varsa buraya yazabilirsiniz.</p>
+                                    <p className={footerStyle.p}>If you have suggestions, you can write them here.</p>
                                 </div>
                                 <div className={footerStyle.subscribe_form}>
                                     <form className={footerStyle.form} action="#">

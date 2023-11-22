@@ -28,14 +28,14 @@ function MentoringComments() {
                     <div className={styles.top_title}>
                         <h2 className={styles.h2}>Don’t just take our word for it</h2>
                     </div>
-                    <div className={styles.buttons}>
+                    {/* <div className={styles.buttons}>
                         <div className={styles.left_arrow}>
                             <img className={styles.img} src="/images/left_arrow.png" alt="" />
                         </div>
                         <div className={styles.right_arrow}>
                             <img className={styles.img} src="/images/right_arrow.png" alt="" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.bottom}>
                     <div className={styles.cards}>

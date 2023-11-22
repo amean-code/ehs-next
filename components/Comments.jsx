@@ -179,7 +179,7 @@ function Comments() {
                     <div className={styles.card_bottom}>
                         <div className={styles.comment}>
                             <p className={styles.p}>
-                                Morbi et nisl a sapien Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh posuere. Aenean sagittis nisl. Sapien urna, sagittis a magna in, malesuada.Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh posuere. Aenean sagittis nisl. Sapien urna, sagittis a magna in, malesuada.malesuada scelerisque. Suspendisse tempor turpis mattis nibh posuere. Aenean sagittis nisl. Sapien urna, sagittis a magna in, malesuada.
+                                Morbi et nisl a sapien Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh posuere. Aenean sagittis nisl. Sapien urna, sagittis a magna in, malesuada.Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh posuere. Aenean sagittis nisl.
                             </p>
                         </div>
                     </div>

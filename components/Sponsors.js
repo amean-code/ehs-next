@@ -14,7 +14,7 @@ function Sponsors() {
                     Sponsors
                 </div>
                 <div className={styles.description}>
-                    Enerji sektöründe çığır açan teknolojilere, açık kaynak bilgiye ve teknolojiye erişimin artması, enerji dönüşümüne herkesin katılımını sağlamak amacıyla inovatif projeler ve eğitimlerle ilerliyoruz. EHS nin vizyonu ve misyonu doğrultusunda, enerji sektöründeki genç yetenekleri destekleyerek, bilimsel araştırmalarla endüstrinin pratik ihtiyaçlarını birleştiriyor, enerji dönüşümüne gerçek anlamda katkıda bulunuyoruz. Siz de bu dönüşümün bir parçası olabilir, genç yeteneklerle erken aşamada bağlantı kurarak onların bu misyonu gerçekleştirmelerine yardımcı olabilirsiniz. EHS sponsoru olarak sadece bir organizasyona destek vermekle kalmayıp, enerji sektöründe sürdürülebilir bir geleceği birlikte inşa etmenin liderlerinden biri olabilirsiniz.
+                    We are moving forward with innovative projects and trainings to increase access to breakthrough technologies, open source knowledge and technology in the energy sector and to ensure everyone's participation in the energy transformation. In line with the vision and mission of EHS, by supporting young talents in the energy sector, we combine scientific research with the practical needs of the industry and contribute to the energy transformation in a real sense. You can be a part of this transformation and help them realize this mission by connecting with young talents at an early stage. As an EHS sponsor, you are not just supporting an organization, you can be one of the leaders in building a sustainable future in the energy sector together.
                 </div>
             </section>
             <section className={styles.section}>
@@ -27,7 +27,7 @@ function Sponsors() {
                             Aute sunt aute occaecat eu veniam sunt laboris aute reprehenderit aliquip.
                         </div>
                         <div className={styles.card_title}>
-                            Sponsor Hakları
+                            Sponsor Rights
                         </div>
                         <div className={styles.list}>
                             <div className={styles.item}>
@@ -35,7 +35,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS News bültenlerinde ayda bir firma tanıtımı.
+                                    Monthly company presentation in EHS News bulletins.
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -43,7 +43,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    CV havuzuna 1 yıl süresince erişim.
+                                    Access to the CV pool for 1 year.
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -51,7 +51,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS Marathon 202* ana sponsoru olarak tanıtım.
+                                    Promotion as the main sponsor of EHS Marathon 202*.
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -59,12 +59,12 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS web sitesinde 1 yıl süresince sponsorluk logosunun görüntülenmesi.
+                                    Display of the sponsorship logo on the EHS website for 1 year.
                                 </div>
                             </div>
                         </div>
                         <div className={styles.card_title} style={{textAlign:"center"}}>
-                            Sponsor Sorumlulukları
+                            Sponsor Responsibilities
                         </div>
                         <div className={styles.card_number}>
                             $10,000
@@ -78,7 +78,7 @@ function Sponsors() {
                             Aute sunt aute occaecat eu veniam sunt laboris aute reprehenderit aliquip.
                         </div>
                         <div className={styles.card_title}>
-                            Sponsor Hakları
+                            Sponsor Rights
                         </div>
                         <div className={styles.list}>
                             <div className={styles.item}>
@@ -86,7 +86,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS News bültenlerinde üç ayda bir firma tanıtımı.
+                                    Quarterly company promotion in EHS News newsletters.
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -94,7 +94,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    CV havuzuna 1 yıl süresince erişim.
+                                    Access to the CV pool for 1 year.
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -102,12 +102,12 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS web sitesinde 1 yıl süresince sponsorluk logosunun görüntülenmesi.
+                                    Display of the sponsorship logo on the EHS website for 1 year.
                                 </div>
                             </div>
                         </div>
                         <div className={styles.card_title} style={{textAlign:"center"}}>
-                            Sponsor Sorumlulukları
+                            Sponsor Responsibilities
                         </div>
                         <div className={styles.card_number}>
                             $5,000
@@ -121,7 +121,7 @@ function Sponsors() {
                             Aute sunt aute occaecat eu veniam sunt laboris aute reprehenderit aliquip.
                         </div>
                         <div className={styles.card_title}>
-                            Sponsor Hakları
+                            Sponsor Rights
                         </div>
                         <div className={styles.list}>
                             <div className={styles.item}>
@@ -129,7 +129,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS Marathon 202* CV havuzuna erişim.
+                                    EHS Marathon 202* CV pool access
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -137,7 +137,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS Marathon 202* web sayfasında sponsorluk logosunun görüntülenmesi.
+                                    Display of the sponsorship logo on the EHS Marathon 202* web page.
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -145,12 +145,12 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS Marathon 202* sponsor olarak tanıtım.
+                                    EHS Marathon 202* promotion as a sponsor.
                                 </div>
                             </div>
                         </div>
                         <div className={styles.card_title} style={{textAlign:"center"}}>
-                            Sponsor Sorumlulukları
+                            Sponsor Responsibilities
                         </div>
                         <div className={styles.card_number}>
                             $5,000
@@ -160,17 +160,17 @@ function Sponsors() {
                 <div className={styles.center_button}>
                     <Link href="#contact-us" className={styles.button}>
                         <div className={styles.text}>
-                            İletişime Geç
+                            Contact Us
                         </div>
                     </Link>
                 </div>
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2022-2023 Sponsorlarımız
+                    2022-2023 Our Sponsors
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Ana Sponsorlar
+                    Main Sponsors
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -183,7 +183,7 @@ function Sponsors() {
                     </div>
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Sponsorlar
+                    Sponsors
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
@@ -204,10 +204,10 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2023-2024 Sponsorlarımız
+                    2023-2024 Our Sponsors
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Ana Sponsorlar
+                    Main Sponsors
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -220,7 +220,7 @@ function Sponsors() {
                     </div>
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Sponsorlar
+                    Sponsor
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
@@ -244,12 +244,12 @@ function Sponsors() {
                     Partners
                 </div>
                 <div className={styles.description}>
-                    EHS nin kurulduğu kısa süre zarfında enerji sektöründe yenilikçi ve sürdürülebilir çözümler üretme hedefimiz doğrultusunda önemli adımlar attık. Bu başlangıç aşamasında bile, iş çözümleri geliştirme konusunda birçok partnerle işbirliği yapma fırsatı bulduk. Her yeni partnerlik, bize sektördeki dönüşümü hızlandırma konusunda yeni perspektifler ve enerjiler getiriyor. Siz de enerji sektöründe sürdürülebilir bir değişim yaratma hedefimize katkıda bulunmak ve birlikte büyüyerek yeni başarılara imza atmak istiyorsanız, EHS ile partnerlik yapma fırsatını kaçırmayın!
+                    In the short time that EHS was established, we took important steps towards our goal of producing innovative and sustainable solutions in the energy sector. Even at this initial stage, we have had the opportunity to collaborate with many partners on developing business solutions. Each new partnership brings us new perspectives and energies to accelerate the transformation in the sector. If you want to contribute to our goal of creating a sustainable change in the energy sector and achieve new successes by growing together, do not miss the opportunity to partner with EHS!
                 </div>
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2022-2023 Partnerler
+                    2022-2023 Partners
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -270,7 +270,7 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2023-2024 Partnerler
+                    2023-2024 Partners
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -291,7 +291,7 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_2}>
-                    Akademik İş Birlikleri
+                    Academic Collaborations
                 </div>
                 <div className={styles.akademik_birlikler}>
                     <div className={styles.item}>
@@ -303,7 +303,7 @@ function Sponsors() {
                                 Ayşe Kübra Erenoğlu
                             </div>
                             <div className={styles.university}>
-                                Yıldız Teknik Üniversitesi
+                                Yıldız Teknik University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -321,7 +321,7 @@ function Sponsors() {
                                 Ozan Erdinç
                             </div>
                             <div className={styles.university}>
-                                Yıldız Teknik Üniversitesi
+                                Yıldız Teknik University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -339,7 +339,7 @@ function Sponsors() {
                                 Ersan Şentürk
                             </div>
                             <div className={styles.university}>
-                                Yıldız Teknik Üniversitesi
+                                Yıldız Teknik University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -357,7 +357,7 @@ function Sponsors() {
                                 Göktürk Poyrazoğlu
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Özyeğin University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -375,7 +375,7 @@ function Sponsors() {
                                 Yavuz Ateş
                             </div>
                             <div className={styles.university}>
-                                Manisa Celal Bayar Üniversitesi
+                                Manisa Celal Bayar University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -393,7 +393,7 @@ function Sponsors() {
                                 Kaan Tutuş
                             </div>
                             <div className={styles.university}>
-                                Manisa Celal Bayar Üniversitesi
+                                Manisa Celal Bayar University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -411,7 +411,7 @@ function Sponsors() {
                                 Alper Çiçek
                             </div>
                             <div className={styles.university}>
-                                Trakya Üniversitesi
+                                Trakya University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -429,7 +429,7 @@ function Sponsors() {
                                 Akın Taşcıkaraoğlu
                             </div>
                             <div className={styles.university}>
-                                Muğla Sıtkı Koçman Üniversitesi
+                                Muğla Sıtkı Koçman University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -465,7 +465,7 @@ function Sponsors() {
                                 Bilal Canol
                             </div>
                             <div className={styles.university}>
-                                Kocaeli Üniversitesi
+                                Kocaeli University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -483,7 +483,7 @@ function Sponsors() {
                                 Sıtkı Güner
                             </div>
                             <div className={styles.university}>
-                                Erzurum Teknik Üniversitesi
+                                Erzurum Teknik University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -501,7 +501,7 @@ function Sponsors() {
                                 Asiye Kaymaz
                             </div>
                             <div className={styles.university}>
-                                Fatih Sultan Mehmet Vakıf Üniversitesi
+                                Fatih Sultan Mehmet Vakıf University
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>

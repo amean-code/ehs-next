@@ -85,7 +85,7 @@ function Events() {
     },[filtered_events])
 
     return (
-        <div className={styles.events_wrapper}>
+        <div className={styles.events_wrapper}id="events">
             <div className={styles.events_container}>
                 <div className={styles.title}>
                     Energy Hack Space Events
@@ -93,11 +93,11 @@ function Events() {
                 <div className={styles.filters}>
                     <div className={styles.select_filter}>
                         <label>
-                            Yıl :
+                            Year :
                         </label>
                         <select value={year_filter} onChange={(e)=>set_year_filter(e.target.value)}>
                             <option value="*">
-                                Hepsi
+                                All
                             </option>
                             <option value="2023">
                                 2023
@@ -112,47 +112,47 @@ function Events() {
                     </div>
                     <div className={styles.select_filter}>
                         <label>
-                            Ay: 
+                            Month: 
                         </label>
                         <select value={month_filter} onChange={(e)=>set_month_filter(e.target.value)}>
                             <option value="*">
-                                Hepsi
+                                All
                             </option>
                             <option value="1">
-                                Ocak
+                                January
                             </option>
                             <option value="2">
-                                Şubat
+                                February
                             </option>
                             <option value="3">
-                                Mart
+                                March
                             </option>
                             <option value="4">
-                                Nisan
+                                April
                             </option>
                             <option value="5">
-                                Mayıs
+                                May
                             </option>
                             <option value="6">
-                                Haziran
+                                Jun
                             </option>
                             <option value="7">
-                                Temmuz
+                                July
                             </option>
                             <option value="8">
-                                Ağustos
+                                August
                             </option>
                             <option value="9">
-                                Eylül
+                                September
                             </option>
                             <option value="10">
-                                Ekim
+                                October
                             </option>
                             <option value="11">
-                                Kasım
+                                November
                             </option>
                             <option value="12">
-                                Aralık
+                                December
                             </option>
                         </select>
                     </div>
@@ -196,7 +196,7 @@ function Events() {
                 </div>
                 <div className={styles.buttons}>
                     <div className={styles.button}>
-                        Tümü
+                        All
                     </div>
                 </div>
             </div>

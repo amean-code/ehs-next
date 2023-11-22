@@ -26,75 +26,75 @@ function News() {
 
     const [news,set_news] = useState([
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         },
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         },
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         },
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         },
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         },
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         },
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         },
         {
-            name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+            name: "What is Energy Hack Space?",
             content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
             day: 12,
             month: 11,
             year: 2023,
-            author: "Durmuş Kartcı",
+            author: "EHS",
             views: 2173
         }
     ]);
@@ -104,12 +104,12 @@ function News() {
 
         for(let i = 0;i<100;i++){
             new_news.push({
-                name: "Neden böyle olmuşuz? Nerelerde kavrulmuşuz ?",
+                name: "What is Energy Hack Space?",
                 content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
                 day: Math.floor(Math.random()*27)+1,
                 month: Math.floor(Math.random()*11)+1,
                 year: Math.floor(Math.random()*4)+2020,
-                author: "Durmuş Kartcı",
+                author: "EHS",
                 views: Math.floor(Math.random()*2000)+1000
             })
         }
