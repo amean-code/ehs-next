@@ -34,6 +34,9 @@ function Events() {
         for(let i = 0; i<3000;i++){
             new_events.push({
                 name: "Cupidatat ad dolore anim irure esse non duis ea.",
+                location: "Antalya/Turkey",
+                hour: Math.floor(Math.random()*13)+8,
+                minute: Math.floor(Math.random()*60),
                 year: Math.floor(Math.random()*3)+2021,
                 month: Math.floor(Math.random()*12)+1,
                 day: Math.floor(Math.random()*27)+1
@@ -170,6 +173,20 @@ function Events() {
                                     <div className={styles.content}>
                                         <div className={styles.name}>
                                             {event.name}
+                                        </div>
+                                        <div className={styles.info}>
+                                            <div className={styles.location}>
+                                                <span>
+                                                    Location: 
+                                                </span>
+                                                {event.location}
+                                            </div>
+                                            <div className={styles.time}>
+                                                <span>
+                                                    Time: 
+                                                </span>
+                                                {event.hour}:{event.minute}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

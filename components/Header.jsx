@@ -78,11 +78,7 @@ function Header() {
           e.stopPropagation();
           set_mobile_menu(!mobile_menu);
         }} className={styles.toggle_btn}>
-          <i className={
-            mobile_menu?
-            "fa-solid fa-xmark":
-            "fa-solid fa-bars"
-          }></i>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">  <path d="M480 224H32a32 32 0 0 0 0 64h448a32 32 0 0 0 0-64zM32 138.67h448a32 32 0 0 0 0-64H32a32 32 0 0 0 0 64zm448 234.66H32a32 32 0 0 0 0 64h448a32 32 0 0 0 0-64z"/></svg>
         </div>
         {/*mobile menu*/}
         <div className={styles.mobile_menu+" "+(

@@ -359,7 +359,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
 .tags .tags_title{
@@ -369,6 +369,7 @@
     padding: 6px;
     background-color: #f6f6f6;
     transition: all ease-in-out 0.2s;
+    border: 3px solid transparent;
     border-radius: 8px;
 }
 .tags_title:hover{
@@ -376,7 +377,6 @@
     text-decoration: none;
     border-right: 3px solid gray;
     border-bottom: 3px solid gray;
-    transform: translateX(-3px) translateY(-3px);
 }
 .tags_title p{
     font-size: 14px;

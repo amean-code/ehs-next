@@ -57,7 +57,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 20px;
-    gap: 10px;
+    gap: 20px;
 }
 
 .events_list .item{
@@ -70,11 +70,12 @@
 
 .events_list .item:hover{
     scale: 1.02;
+    transform: translateX(2%);
 }
 
 .events_list .item .date{
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -114,11 +115,32 @@
     font-size: 20px;
     letter-spacing: -0.7px;
     /* font-family: Inter-Bold; */
-    color: var(--text-color)
+    color: black;
 }
 
-.events_list .item:hover .content .name{
-    color: black;
+.events_list .item .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.events_list .item .info .location{
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.events_list .item .info .location span{
+    font-family: Inter-Bold;
+}
+
+.events_list .item .info .time{
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.events_list .item .info .time span{
+    font-family: Inter-Bold;
 }
 
 .buttons{
