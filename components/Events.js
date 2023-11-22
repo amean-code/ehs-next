@@ -14,18 +14,18 @@ function Events() {
     const [month_filter,set_month_filter] = useState("*");
 
     const months = [
-        "Ocak",
-        "Şubat",
-        "Mart",
-        "Nisan",
-        "Mayıs",
-        "Haziran",
-        "Temmuz",
-        "Ağustos",
-        "Eylül",
-        "Ekim",
-        "Kasım",
-        "Aralık"
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "Jun",
+        "July",
+        "Agust",
+        "September",
+        "October",
+        "November",
+        "December"
     ]
 
     useEffect(()=>{

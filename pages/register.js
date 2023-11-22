@@ -52,7 +52,7 @@ export default function SignUp () {
         <>
         <Head>
             <title>
-                Kayıt Ol || EHS
+                Register || EHS
             </title>
         </Head>
         <main className={styles.main}>
@@ -64,11 +64,11 @@ export default function SignUp () {
                         </Link>
                         <form className={styles.form} onSubmit={onSubmit}>
                             <label for="name">
-                                İsim
+                                Name
                             </label>
                             <input required value={register.name} onInput={(e)=>{set_register(form=>{return {...form,name:e.target.value}})}} type="text" name="name" id="name" />
                             <label for="name">
-                                Soyisim
+                                Surname
                             </label>
                             <input required value={register.surname} onInput={(e)=>{set_register(form=>{return {...form,surname:e.target.value}})}} type="text" name="surname" id="surname" />
                             <label for="email">
@@ -76,7 +76,7 @@ export default function SignUp () {
                             </label>
                             <input required value={register.email} onInput={(e)=>{set_register(form=>{return {...form,email:e.target.value}})}} type="email" name="email" id="email" />
                             <label for="password">
-                                Şifre
+                                Password
                             </label>
                             <div className={styles.password_input}>
                                 <input required value={register.password} onInput={(e)=>{set_register(form=>{return {...form,password:e.target.value}})}} type={show_pass?"text":"password"} name="password" id="password" />
@@ -96,10 +96,10 @@ export default function SignUp () {
                                 {info}
                             </div>
                             <button type="submit">
-                                Kayıt Ol
+                                Register
                             </button>
                             <Link href="/login" className={styles.button}>
-                                Giriş Yap
+                                Login
                             </Link>
                         </form>                        
                     </div>

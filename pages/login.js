@@ -60,7 +60,7 @@ export default function Login () {
         <>
         <Head>
             <title>
-                Giriş Yap || EHS
+                Login || EHS
             </title>
         </Head>
         <main className={styles.main}>
@@ -90,7 +90,7 @@ export default function Login () {
                                 </div>
                             </div>
                             <Link href="/forgot-password" className={styles.forgot_password}>
-                                Şifremi Unuttum
+                                Forgot Password
                             </Link>
                             <div className={styles.error}>
                                 {error}
@@ -99,10 +99,10 @@ export default function Login () {
                                 {info}
                             </div>
                             <button type="submit">
-                                Giriş Yap
+                                Login
                             </button>
                             <Link href="/register" className={styles.button}>
-                                Kayıt Ol
+                                Register
                             </Link>
                         </form>
                     </div>
