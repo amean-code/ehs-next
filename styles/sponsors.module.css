@@ -272,6 +272,7 @@
 .item .info .university{
     /* font-size: 14px; */
     color: var(--text-color);
+    text-align: center;
 }
 
 .item .info .links{

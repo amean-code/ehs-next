@@ -188,13 +188,13 @@ function Sponsors() {
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
-                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                            <img style={{minWidth:"100px"}} src="/images/s8_solarian_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
-                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                            <img style={{minWidth:"100px"}} src="/images/s1_vareint_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
-                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                            <img style={{minWidth:"100px"}} src="/images/s6_gelecekbilimde_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
                             <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
@@ -212,7 +212,7 @@ function Sponsors() {
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
-                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                            <img style={{minWidth:"150px"}} src="/images/s5_odyssey_logo.webp" />
                         </div>
                         <div className={styles.gallery_image}>
                             <img style={{minWidth:"150px"}} src="/images/s2_smartPulse_logo.webp" />
@@ -225,13 +225,13 @@ function Sponsors() {
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
-                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                            <img style={{minWidth:"100px"}} src="/images/s1_vareint_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
-                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                            <img style={{minWidth:"100px"}} src="/images/s6_gelecekbilimde_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
-                            <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
+                            <img style={{minWidth:"100px"}} src="/images/s2_smartPulse_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding: "20px"}}>
                             <img style={{minWidth:"100px"}} src="/images/s4_pomega_logo.webp" />
@@ -254,13 +254,13 @@ function Sponsors() {
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
-                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                            <img style={{minWidth:"150px"}} src="/images/s2_smartPulse_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
-                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                            <img style={{minWidth:"150px"}} src="/images/s4_pomega_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
-                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                            <img style={{minWidth:"150px"}} src="/images/s6_gelecekbilimde_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
                             <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
@@ -278,13 +278,13 @@ function Sponsors() {
                             <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
-                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                            <img style={{minWidth:"150px"}} src="/images/s2_smartPulse_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
-                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                            <img style={{minWidth:"150px"}} src="/images/s6_gelecekbilimde_logo.webp" />
                         </div>
                         <div className={styles.gallery_image} style={{padding:"20px"}}>
-                            <img style={{minWidth:"150px"}} src="/images/s1_vareint_logo.webp" />
+                            <img style={{minWidth:"150px"}} src="/images/s4_pomega_logo.webp" />
                         </div>
                     </div>
                 </div>
@@ -296,14 +296,50 @@ function Sponsors() {
                 <div className={styles.akademik_birlikler}>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/ayse_erenoglu.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Ayşe Kübra Erenoğlu
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Yıldız Teknik Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/ozan_erdinc.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Ozan Erdinç
+                            </div>
+                            <div className={styles.university}>
+                                Yıldız Teknik Üniversitesi
+                            </div>
+                            <div className={styles.links}>
+                                <Link href="" className={styles.link_item}>
+                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.item}>
+                        <div className={styles.profile}>
+                            <img src="/images/ersan_senturk.jpeg" />
+                        </div>
+                        <div className={styles.info}>
+                            <div className={styles.name}>
+                                Ersan Şentürk
+                            </div>
+                            <div className={styles.university}>
+                                Yıldız Teknik Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -332,14 +368,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/yavuz_ates.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Yavuz Ateş
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Manisa Celal Bayar Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -350,14 +386,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/kaan_tutus.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Kaan Tutuş
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Manisa Celal Bayar Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -368,14 +404,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/alper_cicek.png" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Alper Çiçek
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Trakya Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -386,14 +422,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/akin_tascıkaraoglu.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Akın Taşcıkaraoğlu
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Muğla Sıtkı Koçman Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -404,14 +440,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/ibrahim_sengor.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                İbrahim Şengör
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                University College Cork
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -422,14 +458,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/bilal_canol.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Bilal Canol
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Kocaeli Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -440,14 +476,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/sitki_guner.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Sıtkı Güner
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Erzurum Teknik Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -458,14 +494,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/asiye_kaymaz.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Asiye Kaymaz
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                Fatih Sultan Mehmet Vakıf Üniversitesi
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -476,32 +512,14 @@ function Sponsors() {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
+                            <img src="/images/baris_sanli.jpeg" />
                         </div>
                         <div className={styles.info}>
                             <div className={styles.name}>
-                                Göktürk Poyrazoğlu
+                                Barış Sanlı
                             </div>
                             <div className={styles.university}>
-                                Özyeğin Üniversitesi
-                            </div>
-                            <div className={styles.links}>
-                                <Link href="" className={styles.link_item}>
-                                    <svg style={{fill:"#0474B3"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs/><path d="M18.33 0C19.251 0 20 .748 20 1.67v16.66A1.67 1.67 0 0118.33 20H1.67A1.67 1.67 0 010 18.33V1.67C0 .749.748 0 1.67 0h16.66zm-4.811 7.5c-1.42 0-2.39.627-2.823 1.356l-.071.13V7.625H7.917v9.583h2.916v-4.642c0-1.556.573-2.545 1.95-2.545.95 0 1.349.84 1.381 2.337l.003.208v4.642h2.916v-5.293c0-2.857-.683-4.415-3.564-4.415zm-7.686 0H2.917v9.583h2.916V7.5zm-1.458-5a1.875 1.875 0 100 3.75 1.875 1.875 0 000-3.75z" fillRule="evenodd"/></svg>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.item}>
-                        <div className={styles.profile}>
-                            <img src="/images/gokturk_poyrazoglu.jpeg" />
-                        </div>
-                        <div className={styles.info}>
-                            <div className={styles.name}>
-                                Göktürk Poyrazoğlu
-                            </div>
-                            <div className={styles.university}>
-                                Özyeğin Üniversitesi
+                                
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
