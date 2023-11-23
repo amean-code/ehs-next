@@ -14,7 +14,7 @@ function Sponsors() {
                     Sponsors
                 </div>
                 <div className={styles.description}>
-                    We are moving forward with innovative projects and trainings to increase access to breakthrough technologies, open source knowledge and technology in the energy sector and to ensure everyone's participation in the energy transformation. In line with the vision and mission of EHS, by supporting young talents in the energy sector, we combine scientific research with the practical needs of the industry and contribute to the energy transformation in a real sense. You can be a part of this transformation and help them realize this mission by connecting with young talents at an early stage. As an EHS sponsor, you are not just supporting an organization, you can be one of the leaders in building a sustainable future in the energy sector together.
+                    We are moving forward with innovative projects and trainings to increase access to breakthrough technologies, open source knowledge and technology in the energy sector and to ensure everyones participation in the energy transformation. In line with the vision and mission of EHS, by supporting young talents in the energy sector, we combine scientific research with the practical needs of the industry and contribute to the energy transformation in a real sense. You can be a part of this transformation and help them realize this mission by connecting with young talents at an early stage. As an EHS sponsor, you are not just supporting an organization, you can be one of the leaders in building a sustainable future in the energy sector together.
                 </div>
             </section>
             <section className={styles.section}>

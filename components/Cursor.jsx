@@ -1,7 +1,7 @@
 import { createRef, useEffect, useRef, useState } from "react";
 import styles from "../styles/cursor.module.css" 
 
-export default ()=> {
+function Cursor () {
 
     const [mousePosition,setMousePosition] = useState({ x: null, y: null });
 
@@ -74,7 +74,7 @@ export default ()=> {
             {
                 cursors.map(cursor=>{
                     return (
-                        <div ref={cursor.ref} className={styles.cursor} style={{transitionDuration: cursor.transition+"s",width: cursor.size+"px",height: cursor.size+"px",background: cursor.color}}>
+                        <div key={cursor.ref} ref={cursor.ref} className={styles.cursor} style={{transitionDuration: cursor.transition+"s",width: cursor.size+"px",height: cursor.size+"px",background: cursor.color}}>
 
                         </div>
                     )
@@ -83,3 +83,5 @@ export default ()=> {
         </>
     )
 } 
+
+export default Cursor
