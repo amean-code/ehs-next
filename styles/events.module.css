@@ -35,14 +35,14 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
-    background-color: var(--primary);
-    padding: 5px;
+    /* background-color: var(--primary); */
+    /* padding: 5px; */
     border-radius: 10px;
 }
 
 .select_filter label{
     padding: 5px;
-    color: white;
+    color: var(--text-color);
     font-size: 18px;
     font-family: Inter-Bold;
 }
@@ -51,6 +51,7 @@
     border-radius: 7px;
     cursor: pointer;
     outline-width: 0px;
+    border: 2px solid var(--primary);
 }
 
 .events_list{

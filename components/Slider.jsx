@@ -15,7 +15,7 @@ function Slider() {
           
           <div className={styles.containRight}>
             <h4>
-              Who we are?
+              Energy Hack Space
             </h4>
             <h2>Our Services</h2>
             <div className={styles.buttons}>

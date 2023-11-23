@@ -30,9 +30,9 @@ export default function Home() {
       <TimeLine />
       <Events />
       <News/>
+      <Mentoring/>
       <MentoringComments />
       <Comments />
-      <Mentoring/>
       <Team />
       <Contact />
       <Footer />
