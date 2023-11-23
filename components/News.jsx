@@ -220,11 +220,11 @@ function News() {
                         {
                             windows.map((window,index)=>{
                                 return (
-                                    <div className={styles.window} style={{transform: "translateX("+(index-page)*100+"%)",gridTemplateColumns:grid_template_columns_str}}>
+                                    <div key={index} className={styles.window} style={{transform: "translateX("+(index-page)*100+"%)",gridTemplateColumns:grid_template_columns_str}}>
                                         {
                                             window.map((item,item_index)=>{
                                             return (
-                                                <div className={styles.new_item}>
+                                                <div key={index} className={styles.new_item}>
                                                     <div className={styles.date}>
                                                         <div className={styles.day}>
                                                             {item.day}

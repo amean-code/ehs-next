@@ -74,7 +74,7 @@ export default ()=> {
             {
                 cursors.map(cursor=>{
                     return (
-                        <div ref={cursor.ref} className={styles.cursor} style={{transitionDuration: cursor.transition+"s",width: cursor.size+"px",height: cursor.size+"px",background: cursor.color}}>
+                        <div key={cursor} ref={cursor.ref} className={styles.cursor} style={{transitionDuration: cursor.transition+"s",width: cursor.size+"px",height: cursor.size+"px",background: cursor.color}}>
 
                         </div>
                     )
