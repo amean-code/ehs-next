@@ -113,6 +113,21 @@
     line-height: 20px;
 }
 
+.card .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .buttons .button{
+    background-color: var(--primary-dark) !important;
+}
+
+.card .buttons .button:hover{
+    filter: brightness(0.8);
+}
+
 .list{
     display: flex;
     flex-direction: column;

@@ -4,15 +4,26 @@ import { Arrow_down } from "../icons";
 import styles from "../styles/header.module.css";
 import  jwt  from "../node_modules/jsonwebtoken";
 import Cookies from "../node_modules/js-cookie";
-import { useRouter } from "next/router";
 import Link from "next/link";
+
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
 
 function Header() {
   const [mobile_menu, set_mobile_menu] = useState(false);
 
   const [user,set_user] = useState(null);
 
-  const router = useRouter();
+  const router = useRouter()
+
+  const { locale, locales, defaultLocale } = router
+
+  const changeLanguage = (e) => {
+    const locale = e.target.value
+    router.push('/', '/', { locale })
+  }
 
   useEffect(()=>{
     console.log('Cookies.get("ehs_user_token")',Cookies.get("ehs_user_token"));
@@ -72,6 +83,17 @@ function Header() {
             </>
 
           }
+          <div className={styles.lang_container}>
+              <select
+                  className={styles.change_lang}
+                  value={locale}
+                  onChange={changeLanguage}
+              >
+                  {locales.map((locale) => {
+                  return <option key={locale} value={locale}>{locale.toUpperCase()}</option>
+                  })}
+              </select>
+          </div>
         </div>
         <div onClick={(e)=>{
           e.preventDefault();

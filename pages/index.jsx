@@ -15,13 +15,28 @@ import styles from "../styles/App.module.css"
 import Head from "next/head";
 import MentoringComments from "../components/MentoringComments";
 import Comments from "../components/Comments";
+
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
+
 export default function Home() {
+
+  // LANGUAGE
+  const router = useRouter();
+
+  const {locale} = router;
+
+  const t = lang[locale];
+  // LANGUAGE
+
   return (
     
     <div className={styles.main_body}>
       <Head>
         <title>
-          Energy Hack Space
+          {t?.ehs}
         </title>
       </Head>
       <Header />

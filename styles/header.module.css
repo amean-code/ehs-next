@@ -167,7 +167,7 @@
     height: 30px;
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 10px;
     flex: 2;
     justify-content: flex-end;
     padding-right: 50px;
@@ -179,6 +179,10 @@
     color: rgb(77, 77, 77);
     font-weight: 300;
     font-size: 14px;
+}
+
+.header_right a:not(.button){
+    margin-right: 15px;
 }
 
 .button {
@@ -239,6 +243,29 @@
     align-items: center;
     justify-content: center;
 }
+
+.lang_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lang_container select{
+    border: 3px solid var(--primary);
+    border-radius: 10px;
+    padding: 7px 8px;
+    color: var(--primary);
+    font-family: Inter-Bold;
+    background-color: transparent;
+}
+
+
+.lang_container select:hover{
+    cursor: pointer;
+    background-color: var(--primary);
+    color: white;
+}
+
 /*MOBİLE MENU*/
 /*RESPONSİVE*/
 @media(max-width: 992px){

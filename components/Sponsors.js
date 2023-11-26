@@ -63,11 +63,10 @@ function Sponsors() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.card_title} style={{textAlign:"center"}}>
-                            Sponsor Responsibilities
-                        </div>
-                        <div className={styles.card_number}>
-                            $10,000
+                        <div className={styles.buttons}>
+                            <Link href="#contact-us" className={styles.button}>
+                                Contact for More Info
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.card}>
@@ -106,11 +105,10 @@ function Sponsors() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.card_title} style={{textAlign:"center"}}>
-                            Sponsor Responsibilities
-                        </div>
-                        <div className={styles.card_number}>
-                            $5,000
+                        <div className={styles.buttons}>
+                            <Link href="#contact-us" className={styles.button}>
+                                Contact for More Info
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.card}>
@@ -149,20 +147,12 @@ function Sponsors() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.card_title} style={{textAlign:"center"}}>
-                            Sponsor Responsibilities
-                        </div>
-                        <div className={styles.card_number}>
-                            $5,000
+                        <div className={styles.buttons}>
+                            <Link href="#contact-us" className={styles.button}>
+                                Contact for More Info
+                            </Link>
                         </div>
                     </div>
-                </div>
-                <div className={styles.center_button}>
-                    <Link href="#contact-us" className={styles.button}>
-                        <div className={styles.text}>
-                            Contact Us
-                        </div>
-                    </Link>
                 </div>
             </section>
             <section className={styles.section}>
@@ -530,7 +520,7 @@ function Sponsors() {
                     </div>
                 </div>  
             </section>
-            <div id="contact-us" style={{paddingTop:"130px",width:"100%"}}>
+            <div id="contact-us" style={{width:"100%"}}>
                 <Contact />
             </div>
         </div>
