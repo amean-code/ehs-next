@@ -2,8 +2,18 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/events.module.css";
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
+
 
 function Events() {
+    // LANGUAGE
+    const router = useRouter();
+    const { locale } = router;
+    const t = lang[locale];
+    // LANGUAGE
     const [activeNav, setActiveNav] = useState("");
 
     const [events,set_events] = useState([]);
@@ -14,18 +24,18 @@ function Events() {
     const [month_filter,set_month_filter] = useState("*");
 
     const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "Jun",
-        "July",
-        "Agust",
-        "September",
-        "October",
-        "November",
-        "December"
+        t?.january,
+        t?.february,
+        t?.march,
+        t?.april,
+        t?.may,
+        t?.jun,
+        t?.july,
+        t?.august,
+        t?.september,
+        t?.october,
+        t?.november,
+        t?.december,
     ]
 
     useEffect(()=>{
@@ -88,16 +98,16 @@ function Events() {
         <div className={styles.events_wrapper}id="events">
             <div className={styles.events_container}>
                 <div className={styles.title}>
-                    Energy Hack Space Events
+                   {t?.ehs_events}
                 </div>
                 <div className={styles.filters}>
                     <div className={styles.select_filter}>
                         <label>
-                            Year :
+                            {t?.year}
                         </label>
                         <select value={year_filter} onChange={(e)=>set_year_filter(e.target.value)}>
                             <option value="*">
-                                All
+                                {t?.all}
                             </option>
                             <option value="2023">
                                 2023
@@ -112,47 +122,47 @@ function Events() {
                     </div>
                     <div className={styles.select_filter}>
                         <label>
-                            Month: 
+                            {t?.month}
                         </label>
                         <select value={month_filter} onChange={(e)=>set_month_filter(e.target.value)}>
                             <option value="*">
-                                All
+                                {t?.all}
                             </option>
                             <option value="1">
-                                January
+                                {t?.january}
                             </option>
                             <option value="2">
-                                February
+                                {t?.february}
                             </option>
                             <option value="3">
-                                March
+                                {t?.march}
                             </option>
                             <option value="4">
-                                April
+                                {t?.april}
                             </option>
                             <option value="5">
-                                May
+                                {t?.may}
                             </option>
                             <option value="6">
-                                Jun
+                                {t?.jun}
                             </option>
                             <option value="7">
-                                July
+                                {t?.july}
                             </option>
                             <option value="8">
-                                August
+                                {t?.august}
                             </option>
                             <option value="9">
-                                September
+                                {t?.september}
                             </option>
                             <option value="10">
-                                October
+                                {t?.october}
                             </option>
                             <option value="11">
-                                November
+                                {t?.november}
                             </option>
                             <option value="12">
-                                December
+                                {t?.december}
                             </option>
                         </select>
                     </div>
@@ -177,13 +187,13 @@ function Events() {
                                         <div className={styles.info}>
                                             <div className={styles.location}>
                                                 <span>
-                                                    Location: 
+                                                    {t?.location}
                                                 </span>
                                                 {event.location}
                                             </div>
                                             <div className={styles.time}>
                                                 <span>
-                                                    Time: 
+                                                    {t?.time}
                                                 </span>
                                                 {event.hour}:{event.minute}
                                             </div>
@@ -196,7 +206,7 @@ function Events() {
                 </div>
                 <div className={styles.buttons}>
                     <div className={styles.button}>
-                        All
+                        {t?.all}
                     </div>
                 </div>
             </div>

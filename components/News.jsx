@@ -2,9 +2,19 @@ import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/news.module.css";
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
+
 
 function News() {
 
+    // LANGUAGE
+    const router = useRouter();
+    const { locale } = router;
+    const t = lang[locale];
+    // LANGUAGE
     
     function useWindowSize() {
         const [size, setSize] = useState([0, 0]);
@@ -26,8 +36,8 @@ function News() {
 
     const [news,set_news] = useState([
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -35,8 +45,8 @@ function News() {
             views: 2173
         },
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing conseatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -44,8 +54,8 @@ function News() {
             views: 2173
         },
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -53,8 +63,8 @@ function News() {
             views: 2173
         },
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -62,8 +72,8 @@ function News() {
             views: 2173
         },
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -71,8 +81,8 @@ function News() {
             views: 2173
         },
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -80,8 +90,8 @@ function News() {
             views: 2173
         },
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -89,8 +99,8 @@ function News() {
             views: 2173
         },
         {
-            name: "What is Energy Hack Space?",
-            content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+            name: t?.what_is_ehs,
+            content: t?.what_is_ehs_text,
             day: 12,
             month: 11,
             year: 2023,
@@ -104,8 +114,8 @@ function News() {
 
         for(let i = 0;i<100;i++){
             new_news.push({
-                name: "What is Energy Hack Space?",
-                content: "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
+                name: t?.what_is_ehs,
+                content: t?.what_is_ehs_text,
                 day: Math.floor(Math.random()*27)+1,
                 month: Math.floor(Math.random()*11)+1,
                 year: Math.floor(Math.random()*4)+2020,
@@ -125,19 +135,20 @@ function News() {
 
     
     const months = [
-        "Ocak",
-        "Şubat",
-        "Mart",
-        "Nisan",
-        "Mayıs",
-        "Haziran",
-        "Temmuz",
-        "Ağustos",
-        "Eylül",
-        "Ekim",
-        "Kasım",
-        "Aralık"
+        t?.january,
+        t?.february,
+        t?.march,
+        t?.april,
+        t?.may,
+        t?.jun,
+        t?.july,
+        t?.august,
+        t?.september,
+        t?.october,
+        t?.november,
+        t?.december,
     ]
+    
 
 
     useEffect(()=>{
@@ -199,10 +210,10 @@ function News() {
         <section className={styles.section}>
             <div className={styles.wrapper}>
                 <div className={styles.title}>
-                    EHS News
+                    {t?.ehs_news}
                 </div>
                 <div className={styles.description}>
-                    Esse velit ea duis non voluptate irure aliquip do sit amet aliqua minim.
+                    {t?.ehs_news_text}
                 </div>
                 <div className={styles.slider_wrapper}>
                     <div className={styles.prev_button_container}>
@@ -252,7 +263,7 @@ function News() {
                                                             {item.name}
                                                         </div>
                                                         <div className={styles.author}>
-                                                            by {item.author}
+                                                            {t?.by} {item.author}
                                                         </div>
                                                         <div className={styles.content}>
                                                             {item.content.slice(0,220)}...

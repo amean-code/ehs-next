@@ -20,6 +20,9 @@ function Header() {
 
   const { locale, locales, defaultLocale } = router
 
+  const t = lang[locale];
+
+
   const changeLanguage = (e) => {
     const locale = e.target.value
     router.push('/', '/', { locale })
@@ -65,21 +68,21 @@ function Header() {
           </Link>
         </div>
         <div className={styles.header_right}>  
-          <Link href="/#about-us">About Us</Link>
-          <Link href="/#events">Events</Link>
-          <Link href="/#mentoring">Mentoring</Link>
-          <Link href="/sponsors">Sponsors</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/#contact-us">Contact Us</Link>
+          <Link href="/#about-us">{t?.about_us}</Link>
+          <Link href="/#events">{t?.events}</Link>
+          <Link href="/#mentoring">{t?.mentoring}</Link>
+          <Link href="/sponsors">{t?.sponsors}</Link>
+          <Link href="/blog">{t?.blog}</Link>
+          <Link href="/#contact-us">{t?.contact_us}</Link>
           {
             user?
             <>
-              <Link className={styles.button} href="/form">Mentee Form</Link>
-              <Link className={styles.button} href="/university-form">Üniversite Temsilcisi Form</Link>
+              <Link className={styles.button} href="/form">{t?.mentee_form}</Link>
+              <Link className={styles.button} href="/university-form">{t?.university_representative_form}</Link>
             </>:
             <>
-            <Link className={styles.button} href="/login">Login</Link>
-            <Link className={styles.button} href="/register">Register</Link>
+            <Link className={styles.button} href="/login">{t?.login}</Link>
+            <Link className={styles.button} href="/register">{t?.register}</Link>
             </>
 
           }

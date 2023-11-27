@@ -25,9 +25,7 @@ export default function Home() {
 
   // LANGUAGE
   const router = useRouter();
-
   const {locale} = router;
-
   const t = lang[locale];
   // LANGUAGE
 

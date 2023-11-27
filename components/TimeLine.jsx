@@ -3,7 +3,18 @@ import { useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/timeline.module.css";
 
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
+
 function TimeLine() {
+
+  // LANGUAGE
+  const router = useRouter();
+  const { locale } = router;
+  const t = lang[locale];
+  // LANGUAGE
   const [activeNav, setActiveNav] = useState(1);
 
   return (
@@ -17,7 +28,7 @@ function TimeLine() {
               activeNav == 1 || activeNav == 2 || activeNav == 3 || activeNav == 4 || activeNav == 5 ?
                 styles.active : ""
             ) + " " + styles.li}>
-              <div className={styles.step_inner}>HOME WORK</div>
+              <div className={styles.step_inner}>{t?.home_work}</div>
             </li>
             <li onClick={() => {
               setActiveNav(2);
@@ -27,7 +38,7 @@ function TimeLine() {
                   styles.active : ""
               )
               + " " + styles.li}>
-              <div className={styles.step_inner}>RESPONSIVE PART</div>
+              <div className={styles.step_inner}>{t?.responsive_part}</div>
             </li>
             <li onClick={() => {
               setActiveNav(3);
@@ -37,7 +48,7 @@ function TimeLine() {
                   styles.active : ""
               )
               + " " + styles.li}>
-              <div className={styles.step_inner}>Creative cREATIONS</div>
+              <div className={styles.step_inner}>{t?.creative_creations}</div>
             </li>
             <li onClick={() => {
               setActiveNav(4);
@@ -47,7 +58,7 @@ function TimeLine() {
                   styles.active : ""
               )
               + " " + styles.li}>
-              <div className={styles.step_inner}>TESTIMONIALS PART</div>
+              <div className={styles.step_inner}>{t?.testimonials_part}</div>
             </li>
             <li onClick={() => {
               setActiveNav(5);
@@ -57,7 +68,7 @@ function TimeLine() {
                   styles.active : ""
               )
               + " " + styles.li}>
-              <div className={styles.step_inner}>OUR LOCATIONS</div>
+              <div className={styles.step_inner}>{t?.our_locations}</div>
             </li>
           </ul>
 
@@ -85,13 +96,8 @@ function TimeLine() {
                 activeNav == 1 ?
                   styles.active : ""
               )}>
-            <h2 className={styles.timeline_h2}>HOME SECTION</h2>
-            <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
-              ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-              dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
-              mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
-              volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
-              orci.</p>
+            <h2 className={styles.timeline_h2}>{t?.home_section}</h2>
+            <p className={styles.p}>{t?.home_section_text}</p>
           </div>
 
           <div className={styles.section_content + " " + styles.strategy + " " +
@@ -99,13 +105,8 @@ function TimeLine() {
                 activeNav == 2 ?
                   styles.active : ""
               )}>
-            <h2 className={styles.timeline_h2}>GALLERY SECTION</h2>
-            <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
-              ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-              dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
-              mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
-              volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
-              orci.</p>
+            <h2 className={styles.timeline_h2}>{t?.gallery_section}</h2>
+            <p className={styles.p}>{t?.gallery_section_text}</p>
           </div>
 
           <div className={styles.section_content + " " + styles.creative + " " +
@@ -113,13 +114,8 @@ function TimeLine() {
                 activeNav == 3 ?
                   styles.active : ""
               )}>
-            <h2 className={styles.timeline_h2}>Creative CREATIONS</h2>
-            <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
-              ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-              dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
-              mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
-              volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
-              orci.</p>
+            <h2 className={styles.timeline_h2}>{t?.creative_creations}</h2>
+            <p className={styles.p}>{t?.creative_creations_text}</p>
           </div>
 
           <div className={styles.section_content + " " + styles.production + " " +
@@ -127,13 +123,8 @@ function TimeLine() {
                 activeNav == 4 ?
                   styles.active : ""
               )}>
-            <h2 className={styles.timeline_h2}>TESTIMONIALS NOW</h2>
-            <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
-              ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-              dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
-              mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
-              volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
-              orci.</p>
+            <h2 className={styles.timeline_h2}>{t?.testimonials_now}</h2>
+            <p className={styles.p}>{t?.testimonials_now_text}</p>
           </div>
 
           <div className={styles.section_content + " " + styles.analysis + " " +
@@ -141,13 +132,8 @@ function TimeLine() {
                 activeNav == 5 ?
                   styles.active : ""
               )}>
-            <h2 className={styles.timeline_h2}>OUR LOCATIONS</h2>
-            <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
-              ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-              dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
-              mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
-              volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
-              orci.</p>
+            <h2 className={styles.timeline_h2}>{t?.our_locations}</h2>
+            <p className={styles.p}>{t?.our_locations_text}</p>
           </div>
         </div>
       </div>
