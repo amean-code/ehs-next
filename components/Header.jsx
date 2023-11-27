@@ -74,6 +74,7 @@ function Header() {
           <Link href="/sponsors">{t?.sponsors}</Link>
           <Link href="/blog">{t?.blog}</Link>
           <Link href="/#contact-us">{t?.contact_us}</Link>
+          <Link href="/hackathon">{t?.hackathon}</Link>
           {
             user?
             <>
@@ -113,11 +114,12 @@ function Header() {
           e.preventDefault();
           e.stopPropagation();
         }}>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#about-us">About Us</Link></li>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#events">Events</Link></li>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#mentoring">Mentoring</Link></li>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="/sponsors">Sponsors</Link></li>
-          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#contact-us">Contact Us</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#about-us">{t?.about_us}</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#events">{t?.events}</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#mentoring">{t?.mentoring}</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="/sponsors">{t?.sponsors}</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="#contact-us">{t?.contact_us}</Link></li>
+          <li className={styles.mobile_li}><Link className={styles.mobiler_a} href="/hackathon">{t?.hackathon}</Link></li>
           {
             user?
             <>

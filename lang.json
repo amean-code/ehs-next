@@ -60,7 +60,11 @@
         "what_is_ehs_text": "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
         "ehs_news": "EHS News",
         "ehs_news_text": "Esse velit ea duis non voluptate irure aliquip do sit amet aliqua minim.",
-        "by": "by"
+        "by": "by",
+        "hackathon": "Hackathon",
+        "description": "Dear Waiters: Designers of all-weather electrical systems.",
+        "about_us_text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of"
+
     },
     "tr":{
         "ehs": "Energy Hack Space",
@@ -122,7 +126,10 @@
         "what_is_ehs_text": "Tempor cupidatat deserunt aute irure ut. Eu qui in ad adipisicing consectetur occaecat ex excepteur do culpa pariatur laboris est amet. Lorem est nulla aute tempor minim anim exercitation do sit reprehenderit sint tempor amet minim.",
         "ehs_news": "EHS Haberler",
         "ehs_news_text": "Esse velit ea duis non voluptate irure aliquip do sit amet aliqua minim.",
-        "by": ""
+        "by": "",
+        "hackathon": "Hackathon",
+        "description": "Kıymetli Bekleyenler: Her koşula dayanıklı elektrik sistemi tasarlayanlar.",
+        "about_us_text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of"
     }
 
 }
