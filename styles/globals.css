@@ -118,7 +118,23 @@
 
 *:root{
   --primary: #39B248;
+  --primary-opac: #39B2482e;
   --primary-dark: #199228;
+  --primary-dark-opac: #1992282e;
+  --primary-light: #69e278;
+  --primary-light-opac: #69e2782e;
+  --secondary: #B23948;
+  --secondary-opac: #B239482e;
+  --secondary-dark: #921928;
+  --secondary-dark-opac: #9219282e;
+  --secondary-light: #e26978;
+  --secondary-light-opac: #e269782e;
+  --third: #48B239;
+  --third-opac: #48B2392e;
+  --third-dark: #289219;
+  --third-dark-opac: #2892192e;
+  --third-light: #e27869;
+  --third-light-opac: #e278692e;
   --background-color: #dedede;
   --background-color-opacity: rgba(250,250,250,0.85);
   --text-color: #5e5e5e;
