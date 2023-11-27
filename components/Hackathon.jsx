@@ -49,7 +49,10 @@ function Hackathon() {
                 </div>
                 <div className={styles.about_us}>
                     <p>{t?.about_us}</p>
+                    <div className="about_us_container">
+                        <img src="" alt="" />
                     <p>{t?.about_us_text}</p>
+                    </div>
                 </div>
             </div>
         </section>
