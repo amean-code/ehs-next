@@ -1,0 +1,285 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(242, 242, 242);
+}
+
+.container{
+  border-radius: 20px;
+  border: 1px solid var(--background-color);
+  width: 60vw;
+  min-width: 400px;
+  height: 65vh;
+  min-height: 400px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider{
+  width: 100%;
+  height: 65vh;
+  min-height: 400px;
+  position: relative;
+  left: 0;
+  top: 0;
+  gap: 0px;
+  /* overflow: hidden; */
+  display: flex;
+}
+
+.controller{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 0px;
+  border-top: 1px solid var(--background-color);
+  padding: 20px 10%;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.controller button{
+  border-radius: 20px;
+  padding: 10px 30px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  color: white;
+}
+
+.controller button.prev{
+  background-color: var(--background-color);
+  color: var(--text-color)
+}
+
+.window{
+  width: 100%;
+  height: 65vh;
+  min-height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body{
+  width: 100%;
+  height: 65vh;
+  min-height: 400px;
+}
+
+.landing{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+  padding-bottom: 130px;
+}
+
+.landing .image{
+  flex: 1.8;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.landing .image img{
+  width: 90%;
+}
+
+.landing .info{
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.landing .info h1{
+  font-size: 34px;
+  line-height: 37px;
+  font-family: Inter-Bold;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.landing .info p{
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--text-color);
+  margin-bottom: 5%;
+}
+
+.form_body{
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+.form_body h2{
+  font-size: 35px;
+  font-family: Inter-Bold;
+  color: var(--primary);
+  height: 100px;
+  width: 80%;
+  margin: 0px;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  padding: 40px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  padding: 20px 5%;
+  padding-bottom: 130px;
+  width: 70%;
+  min-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  row-gap: 30px;
+}
+
+.form .item{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.form .item label{
+  font-size: 14px;
+  font-family: Inter-Bold;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.form .item label span{
+  color: red;
+}
+
+.form .item .inputs{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.form .item .inputs input{
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
+  outline: 2px solid var(--background-color);
+  max-width: 300px;
+  min-width: 100px;
+}
+
+.form .item .info{
+  font-size: 11px;
+  color: rgb(120, 120, 120);
+  font-family: Inter-Bold;
+}
+
+.radio_input{
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.radio_input .radio{
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-direction: flex-start;
+}
+
+.radio_input .radio .checkmark{
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  border: 2px solid var(--background-color);
+  background-color: rgb(240, 240, 240);
+}
+
+.radio_input .radio.actibe .checkmark{
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+}
+
+@media screen and (max-width: 1100px) {
+  
+  .form{
+    grid-template-columns: 1fr;
+    min-width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .landing{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .landing .image{
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .landing .info{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+  }
+  
+  .slider,.window,.body{
+    height: 100vh;
+  }
+  
+}
