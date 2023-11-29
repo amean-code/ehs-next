@@ -67,7 +67,10 @@
         "gorev1": "Mission 1",
         "gorev2": "Mission 2",
         "gorev3": "Mission 3",
-        "gorevler_title": "Missions"
+        "gorevler_title": "Missions",
+        "oduller": "Prizes",
+        "per_person": "Per Person",
+        "judge": "Hakemler"
 
     },
     "tr":{
@@ -137,8 +140,10 @@
         "gorev2": "Görev 2",
         "gorev3": "Görev 3",
         "gorevler_title": "Görevler",
-        "description": "Dear Waiters: Designers of all-weather electrical systems."
-
+        "description": "Dear Waiters: Designers of all-weather electrical systems.",
+        "oduller": "Ödüller",
+        "per_person": "Kişi Başı",
+        "judge": "Hakemler"
     }
 
 }
