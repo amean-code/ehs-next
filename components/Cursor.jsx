@@ -74,7 +74,7 @@ function Cursor () {
             {
                 cursors.map(cursor=>{
                     return (
-                        <div key={cursor.ref} ref={cursor.ref} className={styles.cursor} style={{transitionDuration: cursor.transition+"s",width: cursor.size+"px",height: cursor.size+"px",background: cursor.color}}>
+                        <div key={cursor.size} ref={cursor.ref} className={styles.cursor} style={{transitionDuration: cursor.transition+"s",width: cursor.size+"px",height: cursor.size+"px",background: cursor.color}}>
 
                         </div>
                     )
