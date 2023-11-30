@@ -70,8 +70,11 @@
         "gorevler_title": "Missions",
         "oduller": "Prizes",
         "per_person": "Per Person",
-        "judge": "Hakemler"
-
+        "judge": "Hakemler",
+        "energy_policy_center": "Energy Policy Center",
+        "yildiz_teknik_uni": "Prof. | Yıldız Techin University",
+        "senior": "Senior Member | IEEE",
+        "treasuser": "Treasuser | IEEE PES TR"
     },
     "tr":{
         "ehs": "Energy Hack Space",
@@ -143,7 +146,11 @@
         "description": "Dear Waiters: Designers of all-weather electrical systems.",
         "oduller": "Ödüller",
         "per_person": "Kişi Başı",
-        "judge": "Hakemler"
+        "judge": "Hakemler",
+        "energy_policy_center": "Enerji Politikaları Merkezi",
+        "yildiz_teknik_uni": "Prof. | Yıldız Teknik Üniversitesi",
+        "senior": "Senior Member | IEEE",
+        "treasuser": "Treasuser | IEEE PES TR"
     }
 
 }
