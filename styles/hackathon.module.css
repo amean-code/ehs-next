@@ -588,10 +588,6 @@ figure.snip1192 .author .h5 .span {
         display: none;
     }
 
-    .timeline .date_item .month{
-        /* flex: 1; */
-    }
-
     .about_us_container{
         flex-direction: column !important;
         gap: 10px;
