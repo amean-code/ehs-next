@@ -461,5 +461,188 @@ figure.snip1192 .author .h5 .span {
 /*JUDGES*/
 
 /*TIMELINE*/
+.timeline_section{
+    width: 100%;
+    padding: 50px 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 
+.timeline_section h3{
+    font-size: 36px;
+    font-family: Inter-Bold;
+    color: var(--primary-dark);
+    width: 100%;
+    text-align: center;
+}
+
+.timeline{
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline .date_item{
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.timeline .date_item:hover{
+    cursor: pointer;
+}
+
+.timeline .date_item .events{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.timeline .date_item:nth-child(4n-1) .events{
+    align-items: flex-start;
+}
+
+.timeline .date_item .events .event_item{
+    font-size: 16px;
+    margin-bottom: 2px;
+    font-family: Inter-Medium;
+    color: rgb(50,50,50);
+    letter-spacing: -0.2px;
+}
+
+.timeline .date_item:hover .events .event_item{
+    font-family: Inter-Bold;
+    color: rgb(20,20,20);
+}
+
+.timeline .date_item .month{
+    width: 100px !important;
+    height: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    text-align: center;
+    border-radius: 100%;
+    color: white;
+    font-size: 20px;
+    font-family: Inter-Bold ;
+    line-height: 22px;
+}
+
+.timeline .date_item:hover .month{
+    background-color: var(--primary-dark);
+    scale: 1.02;
+}
+
+.timeline .date_item:first-child .month{
+    background-color: var(--primary-dark) !important;
+}
+
+.timeline .date_item:first-child:hover .month{
+    filter: brightness(0.8);
+}
+
+.timeline .line{
+    width: 2px;
+    height: 60px;
+    border: 3px dashed var(--primary-light);
+}
+
+@media screen and (max-width: 700px) {
+    .timeline .date_item{
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .timeline .date_item:nth-child(4n-1){
+        flex-direction: row-reverse;
+    }
+
+    .timeline .date_item .events{
+        align-items: flex-end !important;
+        flex: 1;
+    }
+
+    .timeline .date_item:nth-child(4n+1) .events:last-child{
+        display: none;
+    }
+
+    .timeline .date_item:nth-child(4n-1) .events:first-child{
+        display: none;
+    }
+
+    .timeline .date_item .month{
+        /* flex: 1; */
+    }
+
+    .about_us_container{
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    .about_us_container img{
+        margin: 0px;
+    }
+
+    .about_us_container p{
+        margin: 0px;
+    }
+
+    .container{
+        flex-direction: column-reverse !important;
+    }
+
+    .container .left{
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .prize {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+
+    .prize .item:nth-child(1){
+        order: 2;
+    }
+
+    .prize .item:nth-child(2){
+        order: 1;
+    }
+
+    .prize .item:nth-child(3){
+        order: 3;
+    }
+
+    .judge .title{
+        width: 100%;
+        text-align: center;
+    }
+
+    .judge .wrapper{
+        flex-direction: column !important;
+    }
+}
 /*TIMELINE*/

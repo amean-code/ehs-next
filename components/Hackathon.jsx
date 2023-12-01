@@ -59,7 +59,94 @@ function Hackathon() {
                 </div>
             </div>
             {/* TIMELINE */}
-            
+            <section className={styles.timeline_section}>
+                <h3>
+                    Takvim
+                </h3>
+                <div className={styles.timeline}>
+                    <div className={styles.date_item}>
+                        <div className={styles.events}>
+                            <div className={styles.event_item}>
+                                1 - Başvuru Açılması
+                            </div>
+                            <div className={styles.event_item}>
+                                21 - Başvuru Kapanışı
+                            </div>
+                            <div className={styles.event_item}>
+                                28 - Katılımcıların İlani
+                            </div>
+                        </div>
+                        <div className={styles.month}>
+                            Nisan
+                        </div>
+                        <div className={styles.events}>
+                        </div>
+                    </div>
+                    <div className={styles.line}>
+
+                    </div>
+                    <div className={styles.date_item}>
+                        <div className={styles.events}>
+                        </div>
+                        <div className={styles.month}>
+                            1 <br/> Mayıs
+                        </div>
+                        <div className={styles.events+" "+styles.left_align}>
+                            <div className={styles.event_item}>
+                                Tanışma Toplantısı
+                            </div>
+                            <div className={styles.event_item}>
+                                Elektrik Düzenlemeleri Eğitim
+                            </div>
+                            <div className={styles.event_item}>
+                                Katılımcıların İlani
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.line}>
+                        
+                    </div>
+                    <div className={styles.date_item}>
+                        <div className={styles.events}>
+                            <div className={styles.event_item}>
+                                Tanışma Toplantısı
+                            </div>
+                            <div className={styles.event_item}>
+                                Elektrik Düzenlemeleri Eğitim
+                            </div>
+                            <div className={styles.event_item}>
+                                Katılımcıların İlani
+                            </div>
+                        </div>
+                        <div className={styles.month}>
+                            2 <br/> Mayıs
+                        </div>
+                        <div className={styles.events}>
+                        </div>
+                    </div>
+                    <div className={styles.line}>
+                        
+                    </div>
+                    <div className={styles.date_item}>
+                        <div className={styles.events}>
+                        </div>
+                        <div className={styles.month}>
+                            3 <br/> Mayıs
+                        </div>
+                        <div className={styles.events+" "+styles.left_align}>
+                            <div className={styles.event_item}>
+                                Tanışma Toplantısı
+                            </div>
+                            <div className={styles.event_item}>
+                                Elektrik Düzenlemeleri Eğitim
+                            </div>
+                            <div className={styles.event_item}>
+                                Katılımcıların İlani
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             {/* TIMELINE */}
 
             {/* SLIDER */}
