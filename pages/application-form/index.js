@@ -276,7 +276,7 @@ export default function Form(){
                                         kriters.map((kriter,index)=>{
                                             return (
 
-                                                <div onClick={()=>set_kriters(kriters.map((a,i)=>{
+                                                <div key={index} onClick={()=>set_kriters(kriters.map((a,i)=>{
                                                     if(i==index){
                                                         return {
                                                             ...a,
@@ -466,7 +466,7 @@ export default function Form(){
                     {
                         members.map((member,index)=>{
                             return (
-                                <div className={styles.window} style={{transform: "translateX("+(3+index-page)*100+"%)"}}>
+                                <div key={index} className={styles.window} style={{transform: "translateX("+(3+index-page)*100+"%)"}}>
                                     <div className={styles.body+" "+styles.form_body}>
                                         <h2>
                                             {index+1}. Üye Bilgileri
@@ -658,7 +658,7 @@ export default function Form(){
                                     Kısa bir kıyamet günü senaryosu: Elektrik sisteminizi çalışır durumda tutmak için nasıl hazırlanabilirsiniz?
                                 </div>
                                 <div className={styles.list_item}>
-                                    Hackaton'dan ne bekliyoruz?
+                                    Hackaton dan ne bekliyoruz?
                                 </div>
                                 <div className={styles.list_item}>
                                     Bu beklentileri karşılayacağımıza neden inanıyoruz?
