@@ -2,7 +2,7 @@
 import Head from "next/head";
 import styles from "../../styles/ApplicationForm.module.css";
 import Link from "next/link"
-
+import ApplicationFormService from "../../services/ApplicationForm";
 // LANGUAGE
 import { useRouter } from 'next/router';
 import lang from "../../lang.json"
@@ -22,9 +22,10 @@ export default function Form(){
     const [max_page,set_max_page] = useState(0);
 
     const [takim_bilgileri,set_takim_bilgileri] = useState({
-        team_name: "",
+        id: 0,
+        name: "",
         leader_id: 0,
-        member_number: 4
+        member_count: 4
     });
 
     const [members,set_members] = useState([]);
@@ -96,8 +97,7 @@ export default function Form(){
     }
 
     useEffect(()=>{
-        set_max_page(takim_bilgileri.member_number+4);
-        set_page(takim_bilgileri.member_number+3);
+        set_max_page(takim_bilgileri.member_count+4);
 
         let new_member_form = {
             name:"",
@@ -109,7 +109,7 @@ export default function Form(){
 
         let new_member_forms = [];
 
-        for(let i = 1;i<=takim_bilgileri.member_number;i++){
+        for(let i = 1;i<=takim_bilgileri.member_count;i++){
             if(i>members.length){
                 new_member_forms.push(new_member_form);
             }
@@ -117,14 +117,14 @@ export default function Form(){
 
         set_members([
             ...members.filter((a,i)=>{
-                if(i+1<=takim_bilgileri.member_number){
+                if(i+1<=takim_bilgileri.member_count){
                     return true
                 }return false
             }),
             ...new_member_forms
         ])
 
-    },[takim_bilgileri.member_number]);
+    },[takim_bilgileri.member_count]);
 
     const [feedback,set_feedback] = useState({
         channel: "",
@@ -149,6 +149,61 @@ export default function Form(){
 
     const [error_modal,set_error_modal] = useState([]);
 
+    let submit_form = () => {
+        ApplicationFormService.create_form({
+            ...takim_bilgileri
+        }).then(res=>res.json())
+        .then(team_data=>{
+            console.log("TEAM DATA: ",team_data);
+
+            if(!team_data.error){
+
+                ApplicationFormService.add_presentaion(team_data.data.id,file_input.file).then(res=>res.json())
+                .then(presentation_data=>{
+                    console.log("PRESENTATION DATA: ",presentation_data);
+                });
+
+
+                members.forEach((member,index)=>{
+                    ApplicationFormService.create_member({
+                        ...member,
+                        team_id: team_data.data.id
+                    }).then(res=>res.json())
+                    .then(member_data=>{
+                        console.log("MEMBER "+index+" :",member_data);
+                        if(!member_data.error){
+                            if(index==0){
+                                set_takim_bilgileri({...takim_bilgileri,id:team_data.data.id,leader_id: member_data?.data?.id})
+                            }
+                        }
+                    })
+                });
+
+                ApplicationFormService.create_team_feedback({
+                    ...feedback,
+                    team_id: team_data.data.id
+                }).then(res=>res.json())
+                .then(feedback_data=>{
+                    console.log("FEEDBACK DATA: ",feedback_data);
+                })
+
+                
+            }
+
+        })
+    }
+
+    useEffect(()=>{
+        if(takim_bilgileri.leader_id!=0){
+            ApplicationFormService.update_form(takim_bilgileri.id,{
+                leader_id: takim_bilgileri.leader_id
+            }).then(res=>res.json())
+            .then(data=>{
+                console.log("LEADER ID DATA: ",data)
+            })
+        }
+    },[takim_bilgileri.leader_id])
+
     let handle_submit = () => {
 
         let error_modals = [];
@@ -157,7 +212,7 @@ export default function Form(){
             
             let success = true;
 
-            if(takim_bilgileri.team_name.length==0){
+            if(takim_bilgileri.name.length==0){
                 error_modals.push({
                     key: "takim_bilgileri_name_required",
                     active: true,
@@ -196,7 +251,7 @@ export default function Form(){
                 set_page(page+1);
             }
 
-        }else if(page>1){
+        }else if(page>1&&page<=1+members.length){
             members.forEach((member,index)=>{
                 if(page==index+3){
                     let success = true;
@@ -242,6 +297,25 @@ export default function Form(){
                     }
                 }
             })
+        }else if(page==3+members.length){
+
+            let success = true;
+
+            if(!file_input.file){
+                success=false;
+                error_modals.push({
+                    key: "presentation_required",
+                    active: true,
+                    message: "Sunum Boş Bırakılamaz"
+                });
+
+                console.log("FİLE REQUİRED");
+            }
+
+            if(success){
+                set_page(page+1);
+            }
+
         }else{
             set_page(page+1);
         }
@@ -249,6 +323,10 @@ export default function Form(){
         set_error_modal(error_modals);
 
     }
+
+    useEffect(()=>{
+        console.log("error_modal",error_modal);
+    },[error_modal])
 
     return (
         <div className={styles.main}>
@@ -276,7 +354,7 @@ export default function Form(){
                                         kriters.map((kriter,index)=>{
                                             return (
 
-                                                <div onClick={()=>set_kriters(kriters.map((a,i)=>{
+                                                <div key={index} onClick={()=>set_kriters(kriters.map((a,i)=>{
                                                     if(i==index){
                                                         return {
                                                             ...a,
@@ -331,7 +409,7 @@ export default function Form(){
                                         </div>:""
                                     }
                                     <div className={styles.inputs}>
-                                        <input value={takim_bilgileri.team_name} onInput={(e)=>set_takim_bilgileri({...takim_bilgileri,team_name: e.target.value})} type="text" placeholder="Takımınızın Adı" />
+                                        <input value={takim_bilgileri.name} onInput={(e)=>set_takim_bilgileri({...takim_bilgileri,name: e.target.value})} type="text" placeholder="Takımınızın Adı" />
                                     </div>
                                     <div className={styles.info}>
                                         Sonradan değiştirebilirsiniz
@@ -441,7 +519,7 @@ export default function Form(){
                                     </label>
                                     <div className={styles.inputs}>
                                         <div className={styles.radio_input}>
-                                            <div onClick={()=>set_takim_bilgileri({...takim_bilgileri,member_number: 4})} className={styles.radio+" "+(takim_bilgileri.member_number==4?styles.active:"")}>
+                                            <div onClick={()=>set_takim_bilgileri({...takim_bilgileri,member_count: 4})} className={styles.radio+" "+(takim_bilgileri.member_count==4?styles.active:"")}>
                                                 <div className={styles.checkmark}>
 
                                                 </div>
@@ -449,7 +527,7 @@ export default function Form(){
                                                     4
                                                 </div>
                                             </div>
-                                            <div onClick={()=>set_takim_bilgileri({...takim_bilgileri,member_number: 5})}  className={styles.radio+" "+(takim_bilgileri.member_number==5?styles.active:"")}>
+                                            <div onClick={()=>set_takim_bilgileri({...takim_bilgileri,member_count: 5})}  className={styles.radio+" "+(takim_bilgileri.member_count==5?styles.active:"")}>
                                                 <div className={styles.checkmark}>
 
                                                 </div>
@@ -466,7 +544,7 @@ export default function Form(){
                     {
                         members.map((member,index)=>{
                             return (
-                                <div className={styles.window} style={{transform: "translateX("+(3+index-page)*100+"%)"}}>
+                                <div key={index} className={styles.window} style={{transform: "translateX("+(3+index-page)*100+"%)"}}>
                                     <div className={styles.body+" "+styles.form_body}>
                                         <h2>
                                             {index+1}. Üye Bilgileri
@@ -628,7 +706,7 @@ export default function Form(){
                             )
                         })
                     }
-                    <div className={styles.window} style={{transform: "translateX("+(3+takim_bilgileri.member_number-page)*100+"%)"}}>
+                    <div className={styles.window} style={{transform: "translateX("+(3+takim_bilgileri.member_count-page)*100+"%)"}}>
                         <div className={styles.body+" "+styles.form_body}>
                             <h2>
                                 Takımların Oluşturulması
@@ -658,7 +736,7 @@ export default function Form(){
                                     Kısa bir kıyamet günü senaryosu: Elektrik sisteminizi çalışır durumda tutmak için nasıl hazırlanabilirsiniz?
                                 </div>
                                 <div className={styles.list_item}>
-                                    Hackaton'dan ne bekliyoruz?
+                                    Hackaton dan ne bekliyoruz?
                                 </div>
                                 <div className={styles.list_item}>
                                     Bu beklentileri karşılayacağımıza neden inanıyoruz?
@@ -667,7 +745,27 @@ export default function Form(){
                             <div className={styles.file_label}>
                                 Takım Sunumu <span>*</span>
                             </div>
-                            <div className={styles.file_input+" "+(file_input.state=="drag"?styles.active:"")} onDragOver={dragOverHandle} onDragLeave={dragLeaveHandle} onDrop={dropHandle} onClick={clickHandle}>
+                            {
+                                error_modal.find(a=>{
+                                    if(a.key=="presentation_required"&&a.active){
+                                        return a
+                                    }return false
+                                })?
+                                <div className={styles.error_label}>
+                                    {
+                                        error_modal.find(a=>{
+                                            if(a.key=="presentation_required"&&a.active){
+                                                return a
+                                            }return false
+                                        }).message
+                                    }
+                                </div>:""
+                            }
+                            <div className={styles.file_input+" "+(file_input.state=="drag"?styles.active:"")+" "+(error_modal.find(a=>{
+                                    if(a.key=="presentation_required"&&a.active){
+                                        return a
+                                    }return false
+                                })?styles.error:"")} onDragOver={dragOverHandle} onDragLeave={dragLeaveHandle} onDrop={dropHandle} onClick={clickHandle}>
                                 <input onChange={changeHandle} ref={file_ref} type="file" />
                                 <div className={styles.drop_zone}>
                                     {
@@ -721,7 +819,7 @@ export default function Form(){
                             </div>
                         </div>
                     </div>
-                    <div className={styles.window} style={{transform: "translateX("+(4+takim_bilgileri.member_number-page)*100+"%)"}}>
+                    <div className={styles.window} style={{transform: "translateX("+(4+takim_bilgileri.member_count-page)*100+"%)"}}>
                         <div className={styles.body+" "+styles.form_body}>
                             <h2>
                                 Bizi Haberdar Et
@@ -801,22 +899,27 @@ export default function Form(){
                         }
                         {
                             page<max_page?
-                            kriters.filter((a)=>{
-                                if(!a.selected){
-                                    return true
-                                }return false
-                            }).length==0?
                             <button onClick={()=>{
                                 handle_submit();
-                            }} className={styles.next}>
+                            }} className={styles.next+" "+(
+                                kriters.filter((a)=>{
+                                    if(!a.selected){
+                                        return true
+                                    }return false
+                                }).length>0?styles.disabled:"")} disabled={
+                                    kriters.filter((a)=>{
+                                        if(!a.selected){
+                                            return true
+                                        }return false
+                                    }).length>0}>
                                 İleri
                             </button>
-                            :"":""
+                            :""
                         }
                         {
                             page==max_page?
                             <button onClick={()=>{
-                                set_page(page);
+                                submit_form()
                             }} className={styles.next}>
                                 Gönder
                             </button>

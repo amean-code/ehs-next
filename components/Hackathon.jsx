@@ -235,7 +235,7 @@ function Hackathon() {
                             <div className={styles.author}>
                                 <img src="/images/baris_sanli.jpeg" alt="sq-sample1" />
                                 <h5 className={styles.h5}>Barış Sanlı <span className={styles.span}>{t?.energy_policy_center}</span></h5>
-                                <a href="http://barissanli.com" target="_blank" className={styles.p}>barissanli.com</a>
+                                <Link href="http://barissanli.com" target="_blank" className={styles.p}>barissanli.com</Link>
                                 <div className={styles.linkedinArea}>
                                     <Link href="#"><i className="fa-brands fa-linkedin fa-xl w-[24px] h-[24px]" style={{ color: "#478AFF", fontWeight: "700" }}></i></Link>
                                     {/* <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a> */}
