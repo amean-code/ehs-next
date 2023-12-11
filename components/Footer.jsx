@@ -3,7 +3,16 @@ import { useState } from "react";
 import { Arrow_down } from "../icons";
 import footerStyle from "../styles/footer.module.css";
 
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
 function Footer() {
+    // LANGUAGE
+    const router = useRouter();
+    const { locale } = router;
+    const t = lang[locale];
+    // LANGUAGE
     const [activeNav, setActiveNav] = useState("");
 
     return (
@@ -28,8 +37,7 @@ function Footer() {
                                     <a className={footerStyle.a} href="index.jsx"><img src="/images/logo.png" className={footerStyle.img_fluid} alt="logo" /></a>
                                 </div>
                                 <div className={footerStyle.footer_text}>
-                                    <p className={footerStyle.p}>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
-                                        elit,Lorem ipsum dolor sit amet.</p>
+                                    <p className={footerStyle.p}>{t?.who_we_are_text_short}</p>
                                 </div>
                                 {/* <div className={footerStyle.footer_social_icon}>
                                     <span className={footerStyle.span}>Sosyal Medya</span>
@@ -42,25 +50,25 @@ function Footer() {
                         <div className={footerStyle.col_xl_4+" "+footerStyle.col_lg_4+" "+footerStyle.col_md_6+" "+footerStyle.mb_30} style={{display:"flex", alignItems:"center", justifyContent:"center", marginLeft:"60px"}}>
                             <div className={footerStyle.footer_widget}>
                                 <div className={footerStyle.footer_widget_heading}>
-                                    <h3 className={footerStyle.h3}>Links</h3>
+                                    <h3 className={footerStyle.h3}>{t?.links}</h3>
                                 </div>
                                 <ul className={footerStyle.ul}>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">About Us</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">Events</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">Mentoring</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">Sponsors</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">Blog</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">Contact Us</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.about_us}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.events}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.mentoring}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.sponsors}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.blog}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.contact_us}</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div className={footerStyle.col_xl_4+" "+footerStyle.col_lg_4+" "+footerStyle.col_md_6+" "+footerStyle.mb_50}>
                             <div className={footerStyle.footer_widget}>
                                 <div className={footerStyle.footer_widget_heading}>
-                                    <h3 className={footerStyle.h3}>Subscribe</h3>
+                                    <h3 className={footerStyle.h3}>{t?.subscribe}</h3>
                                 </div>
                                 <div className={footerStyle.footer_text+" "+footerStyle.mb_25}>
-                                    <p className={footerStyle.p}>If you have suggestions, you can write them here.</p>
+                                    <p className={footerStyle.p}>{t?.suggestion}</p>
                                 </div>
                                 <div className={footerStyle.subscribe_form}>
                                     <form className={footerStyle.form} action="#">
@@ -78,7 +86,7 @@ function Footer() {
                     <div className={footerStyle.footer_row}>
                         <div className="col_xl_6 col_lg_6 text_center text_lg_left">
                             <div className={footerStyle.copyright_text}>
-                                <p className={footerStyle.p}>Copyright &copy; 2023 <a className={footerStyle.a} href="https://codepen.io/anupkumar92/">AMEAN</a></p>
+                                <p className={footerStyle.p}>{t?.copyright} &copy; 2023 <a className={footerStyle.a} href="https://codepen.io/anupkumar92/">AMEAN</a></p>
                             </div>
                         </div>
                     </div>
