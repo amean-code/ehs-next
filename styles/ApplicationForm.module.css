@@ -61,9 +61,16 @@
   color: white;
 }
 
-.controller button.prev{
+
+
+.controller button.prev,
+.controller button.disabled{
   background-color: var(--background-color);
   color: var(--text-color)
+}
+
+.controller button.disabled{
+  cursor: auto;
 }
 
 .window{
@@ -159,6 +166,10 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.form_body .file_input.error{
+  border-color: red !important;
 }
 
 .form_body .file_input.active,
@@ -278,6 +289,14 @@
 
 .form_body .file_label span{
   color: red;
+}
+.form_body .error_label{
+  font-size: 12px;
+  padding: 5px 5%;
+  font-family: Inter-Bold;
+  width: 100%;
+  text-align: left;
+  color: rgb(247,79,79);
 }
 
 .form_body a{
