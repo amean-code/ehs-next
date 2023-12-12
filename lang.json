@@ -114,7 +114,9 @@
         "year_partners_2022": "2022-2023 Partners",
         "year_partners_2023": "2023-2024 Partners",
         "academic": "Academic Collaborations",
-        "university": "University"
+        "university": "University",
+        "mentee_comments" : "Mentee Comments",
+        "mentor_comments" : "Mentor Comments"
     },
     "tr":{
         "ehs": "Energy Hack Space",
@@ -231,7 +233,9 @@
         "year_partners_2022": "2022-2023 Ortaklar",
         "year_partners_2023": "2023-2024 Ortaklar",
         "academic": "Akademik İşbirlikleri",
-        "university": "Üniversitesi"
+        "university": "Üniversitesi",
+        "mentee_comments" : "Mentee Yorumları",
+        "mentor_comments" : "Mentör Yorumları"
     }
 
 }

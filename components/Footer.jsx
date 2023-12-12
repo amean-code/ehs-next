@@ -53,12 +53,12 @@ function Footer() {
                                     <h3 className={footerStyle.h3}>{t?.links}</h3>
                                 </div>
                                 <ul className={footerStyle.ul}>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.about_us}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.events}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.mentoring}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.sponsors}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.blog}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.contact_us}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#about-us">{t?.about_us}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#events">{t?.events}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#mentoring">{t?.mentoring}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/sponsors">{t?.sponsors}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/blog">{t?.blog}</a></li>
+                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#contact-us">{t?.contact_us}</a></li>
                                 </ul>
                             </div>
                         </div>
