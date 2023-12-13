@@ -4,7 +4,16 @@ import { Arrow_down } from "../icons";
 import styles from "../styles/contact.module.css";
 import Link from "next/link";
 
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
 function Contact() {
+  // LANGUAGE
+  const router = useRouter();
+  const { locale } = router;
+  const t = lang[locale];
+  // LANGUAGE
   const [activeNav, setActiveNav] = useState("");
 
   return (
@@ -12,8 +21,8 @@ function Contact() {
       <div style={{maxWidth:"1100px",width:"100%",justifyContent:"space-between"}} className="flex flex-col gap-5 p-8 overflow-hidden text-white bg-green-600 shadow-lg md:flex-row md:space-y-0 sm:p-12 rounded-xl">
         <div className="flex flex-col justify-between space-y-8">
           <div>
-            <h1 className="text-4xl font-bold tracking-wide">Contact Us</h1>
-            <p className="pt-2 text-sm text-green-100">For all your non-existant company needs Fake Corp are here to help, do not<br/> hesitate to contact us!</p>
+            <h1 className="text-4xl font-bold tracking-wide">{t?.contact_us}</h1>
+            <p className="pt-2 text-sm text-green-100">{t?.contact_us_text}</p>
           </div>
           <div className="flex flex-col space-y-6">
             <div className="inline-flex items-center space-x-2 w-60">
@@ -50,32 +59,32 @@ function Contact() {
           <div className="relative z-10 p-8 text-gray-600 bg-white shadow-lg rounded-xl md:w-80">
             <form className="flex flex-col space-y-4" action="">
               <div>
-                <label for="" className="text-sm">Name</label>
+                <label for="" className="text-sm">{t?.name}</label>
                 <input type="text"
-                  placeholder="Name"
+                  placeholder={t?.name}
                   className="w-full px-4 py-2 mt-2 rounded-md outline-none ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-300" />
               </div>
               <div>
-                <label for="subject" className="text-sm">Subject</label>
+                <label for="subject" className="text-sm">{t?.subject}</label>
                 <select name="subject" id="subject" className="w-full px-4 py-2 mt-2 rounded-md outline-none ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-300">
                   <option value="hackathon">Hackathon</option>
                   <option value="sponsor">Sponsor</option>
-                  <option value="other">Other</option>
+                  <option value="other">{t?.other}</option>
                 </select>
               </div>
               <div>
-                <label for="" className="text-sm">Email</label>
+                <label for="" className="text-sm">{t?.email}</label>
                 <input type="email"
-                  placeholder="Email"
+                  placeholder={t?.email}
                   className="w-full px-4 py-2 mt-2 rounded-md outline-none ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-300" />
               </div>
               <div>
-                <label for="" className="text-sm">Message</label>
-                <textarea placeholder="Message"
+                <label for="" className="text-sm">{t?.message}</label>
+                <textarea placeholder={t?.message}
                   rows="4"
                   className="w-full px-4 py-2 mt-2 rounded-md outline-none ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-300"></textarea>
               </div>
-              <button className="self-end inline-block px-6 py-4 text-sm font-bold text-white uppercase bg-green-600 rounded-lg">Send Message</button>
+              <button className="self-end inline-block px-6 py-4 text-sm font-bold text-white uppercase bg-green-600 rounded-lg">{t?.send_message}</button>
             </form>
           </div>
         </div>

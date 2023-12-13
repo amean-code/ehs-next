@@ -2,32 +2,41 @@ import Link from "next/link";
 import styles from "../styles/sponsors.module.css";
 import Contact from "./Contact";
 
+// LANGUAGE
+import { useRouter } from 'next/router';
+import lang from "../lang.json"
+// LANGUAGE
 function Sponsors() {
 
+  // LANGUAGE
+  const router = useRouter();
+  const { locale } = router;
+  const t = lang[locale];
+  // LANGUAGE
     return (
         <div className={styles.wrapper}>
             <section className={styles.section}>
                 <div className={styles.title_1}>
-                    Sponsors & Partners
+                    {t?.sponsor_partner}
                 </div>
                 <div className={styles.title_2}>
-                    Sponsors
+                    {t?.sponsors}
                 </div>
                 <div className={styles.description}>
-                    We are moving forward with innovative projects and trainings to increase access to breakthrough technologies, open source knowledge and technology in the energy sector and to ensure everyones participation in the energy transformation. In line with the vision and mission of EHS, by supporting young talents in the energy sector, we combine scientific research with the practical needs of the industry and contribute to the energy transformation in a real sense. You can be a part of this transformation and help them realize this mission by connecting with young talents at an early stage. As an EHS sponsor, you are not just supporting an organization, you can be one of the leaders in building a sustainable future in the energy sector together.
+                    {t?.sponsors_text}
                 </div>
             </section>
             <section className={styles.section}>
                 <div className={styles.row}>
                     <div className={styles.card}>
                         <div className={styles.name}>
-                            Main Sponsor
+                            {t?.main_sponsor}
                         </div>
                         <div className={styles.info}>
                             Aute sunt aute occaecat eu veniam sunt laboris aute reprehenderit aliquip.
                         </div>
                         <div className={styles.card_title}>
-                            Sponsor Rights
+                            {t?.sponsor_rights}
                         </div>
                         <div className={styles.list}>
                             <div className={styles.item}>
@@ -35,7 +44,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Monthly company presentation in EHS News bulletins.
+                                    {t?.right_text_1}
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -43,7 +52,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Access to the CV pool for 1 year.
+                                    {t?.right_text_2}
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -51,7 +60,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Promotion as the main sponsor of EHS Marathon 202*.
+                                    {t?.right_text_3}
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -59,25 +68,25 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Display of the sponsorship logo on the EHS website for 1 year.
+                                    {t?.right_text_4}
                                 </div>
                             </div>
                         </div>
                         <div className={styles.buttons}>
                             <Link href="#contact-us" className={styles.button}>
-                                Contact for More Info
+                                {t?.more_info}
                             </Link>
                         </div>
                     </div>
                     <div className={styles.card}>
                         <div className={styles.name}>
-                            Sponsor
+                            {t?.sponsor}
                         </div>
                         <div className={styles.info}>
                             Aute sunt aute occaecat eu veniam sunt laboris aute reprehenderit aliquip.
                         </div>
                         <div className={styles.card_title}>
-                            Sponsor Rights
+                            {t?.sponsor_rights}
                         </div>
                         <div className={styles.list}>
                             <div className={styles.item}>
@@ -85,7 +94,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Quarterly company promotion in EHS News newsletters.
+                                    {t?.right_text_5}
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -93,7 +102,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Access to the CV pool for 1 year.
+                                    {t?.right_text_1}
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -101,25 +110,25 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Display of the sponsorship logo on the EHS website for 1 year.
+                                    {t?.right_text_4}
                                 </div>
                             </div>
                         </div>
                         <div className={styles.buttons}>
                             <Link href="#contact-us" className={styles.button}>
-                                Contact for More Info
+                                {t?.more_info}
                             </Link>
                         </div>
                     </div>
                     <div className={styles.card}>
                         <div className={styles.name}>
-                            Marathon Sponsor
+                            {t?.marathon_sponsor}
                         </div>
                         <div className={styles.info}>
                             Aute sunt aute occaecat eu veniam sunt laboris aute reprehenderit aliquip.
                         </div>
                         <div className={styles.card_title}>
-                            Sponsor Rights
+                            {t?.sponsor_rights}
                         </div>
                         <div className={styles.list}>
                             <div className={styles.item}>
@@ -127,7 +136,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS Marathon 202* CV pool access
+                                    {t?.right_text_6}
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -135,7 +144,7 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    Display of the sponsorship logo on the EHS Marathon 202* web page.
+                                    {t?.right_text_4}
                                 </div>
                             </div>
                             <div className={styles.item}>
@@ -143,13 +152,13 @@ function Sponsors() {
                                     <svg stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" shapeRendering="geometricPrecision" viewBox="0 0 24 24"><path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/></svg>
                                 </div>
                                 <div className={styles.text}>
-                                    EHS Marathon 202* promotion as a sponsor.
+                                    {t?.right_text_6}
                                 </div>
                             </div>
                         </div>
                         <div className={styles.buttons}>
                             <Link href="#contact-us" className={styles.button}>
-                                Contact for More Info
+                                {t?.more_info}
                             </Link>
                         </div>
                     </div>
@@ -157,10 +166,10 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2022-2023 Our Sponsors
+                    {t?.year_sponsor_2022}
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Main Sponsors
+                    {t?.main_sponsors}
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -173,7 +182,7 @@ function Sponsors() {
                     </div>
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Sponsors
+                    {t?.sponsors}
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
@@ -194,10 +203,10 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2023-2024 Our Sponsors
+                    {t?.year_sponsor_2023}
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Main Sponsors
+                    {t?.main_sponsor}
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -210,7 +219,7 @@ function Sponsors() {
                     </div>
                 </div>
                 <div className={styles.title_2} style={{textAlign:"center",color:"black"}}>
-                    Sponsor
+                    {t?.sponsor}
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
@@ -231,15 +240,15 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_2}>
-                    Partners
+                    {t?.partners}
                 </div>
                 <div className={styles.description}>
-                    In the short time that EHS was established, we took important steps towards our goal of producing innovative and sustainable solutions in the energy sector. Even at this initial stage, we have had the opportunity to collaborate with many partners on developing business solutions. Each new partnership brings us new perspectives and energies to accelerate the transformation in the sector. If you want to contribute to our goal of creating a sustainable change in the energy sector and achieve new successes by growing together, do not miss the opportunity to partner with EHS!
+                    {t?.partners_text}
                 </div>
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2022-2023 Partners
+                    {t?.year_partners_2022}
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -260,7 +269,7 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_3} style={{textAlign:"center"}}>
-                    2023-2024 Partners
+                    {t?.year_partners_2023}
                 </div>
                 <div className={styles.row}>
                     <div className={styles.gallery} style={{gridTemplateColumns:"1fr 1fr"}}>
@@ -281,7 +290,7 @@ function Sponsors() {
             </section>
             <section className={styles.section}>
                 <div className={styles.title_2}>
-                    Academic Collaborations
+                    {t?.academic}
                 </div>
                 <div className={styles.akademik_birlikler}>
                     <div className={styles.item}>
@@ -293,7 +302,7 @@ function Sponsors() {
                                 Ayşe Kübra Erenoğlu
                             </div>
                             <div className={styles.university}>
-                                Yıldız Teknik University
+                                Yıldız Teknik {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -311,7 +320,7 @@ function Sponsors() {
                                 Ozan Erdinç
                             </div>
                             <div className={styles.university}>
-                                Yıldız Teknik University
+                                Yıldız Teknik {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -329,7 +338,7 @@ function Sponsors() {
                                 Ersan Şentürk
                             </div>
                             <div className={styles.university}>
-                                Yıldız Teknik University
+                                Yıldız Teknik {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -347,7 +356,7 @@ function Sponsors() {
                                 Göktürk Poyrazoğlu
                             </div>
                             <div className={styles.university}>
-                                Özyeğin University
+                                Özyeğin {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -365,7 +374,7 @@ function Sponsors() {
                                 Yavuz Ateş
                             </div>
                             <div className={styles.university}>
-                                Manisa Celal Bayar University
+                                Manisa Celal Bayar {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -383,7 +392,7 @@ function Sponsors() {
                                 Kaan Tutuş
                             </div>
                             <div className={styles.university}>
-                                Manisa Celal Bayar University
+                                Manisa Celal Bayar {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -401,7 +410,7 @@ function Sponsors() {
                                 Alper Çiçek
                             </div>
                             <div className={styles.university}>
-                                Trakya University
+                                Trakya {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -419,7 +428,7 @@ function Sponsors() {
                                 Akın Taşcıkaraoğlu
                             </div>
                             <div className={styles.university}>
-                                Muğla Sıtkı Koçman University
+                                Muğla Sıtkı Koçman {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -455,7 +464,7 @@ function Sponsors() {
                                 Bilal Canol
                             </div>
                             <div className={styles.university}>
-                                Kocaeli University
+                                Kocaeli {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -473,7 +482,7 @@ function Sponsors() {
                                 Sıtkı Güner
                             </div>
                             <div className={styles.university}>
-                                Erzurum Teknik University
+                                Erzurum Teknik {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
@@ -491,7 +500,7 @@ function Sponsors() {
                                 Asiye Kaymaz
                             </div>
                             <div className={styles.university}>
-                                Fatih Sultan Mehmet Vakıf University
+                                Fatih Sultan Mehmet Vakıf {t?.university}
                             </div>
                             <div className={styles.links}>
                                 <Link href="" className={styles.link_item}>
