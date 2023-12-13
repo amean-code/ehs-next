@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Arrow_down } from "../icons";
 import footerStyle from "../styles/footer.module.css";
+import Link from "next/link";
 
 // LANGUAGE
 import { useRouter } from 'next/router';
@@ -53,12 +54,12 @@ function Footer() {
                                     <h3 className={footerStyle.h3}>{t?.links}</h3>
                                 </div>
                                 <ul className={footerStyle.ul}>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#about-us">{t?.about_us}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#events">{t?.events}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#mentoring">{t?.mentoring}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/sponsors">{t?.sponsors}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/blog">{t?.blog}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="/#contact-us">{t?.contact_us}</a></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#about-us">{t?.about_us}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#events">{t?.events}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#mentoring">{t?.mentoring}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/sponsors">{t?.sponsors}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/blog">{t?.blog}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#contact-us">{t?.contact_us}</Link></li>
                                 </ul>
                             </div>
                         </div>
