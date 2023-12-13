@@ -116,7 +116,8 @@
         "academic": "Academic Collaborations",
         "university": "University",
         "mentee_comments" : "Mentee Comments",
-        "mentor_comments" : "Mentor Comments"
+        "mentor_comments" : "Mentor Comments",
+        "our_team": "Our Team"
     },
     "tr":{
         "ehs": "Energy Hack Space",
@@ -235,7 +236,8 @@
         "academic": "Akademik İşbirlikleri",
         "university": "Üniversitesi",
         "mentee_comments" : "Mentee Yorumları",
-        "mentor_comments" : "Mentör Yorumları"
+        "mentor_comments" : "Mentör Yorumları",
+        "our_team": "Takımımız"
     }
 
 }

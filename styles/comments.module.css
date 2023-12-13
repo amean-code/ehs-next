@@ -53,7 +53,7 @@
 .column{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .card_body{
@@ -65,7 +65,8 @@
     flex-direction: column;
     width: 100%;
     /* min-width: 200px; */
-    box-shadow: rgba(100, 100, 111, 0.4) 0px 2px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: rgb(250,250,250);
     
 }
 .card_top{
@@ -114,6 +115,10 @@
     margin-bottom: 0!important;
 }
 
+
+.card_body:hover .comment .p{
+    color: black;
+}
 @media screen and (max-width: 1000px) {
     .container{
         grid-template-columns: 1fr 1fr;

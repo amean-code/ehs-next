@@ -17,6 +17,10 @@
     font-weight: bold;
 }
 
+.section{
+    padding-top: 100px;
+}
+
 .small_border {
     width: 100px;
     height: 3px;
@@ -262,9 +266,10 @@
 .cardArea {
     margin: 0 auto;
     display: flex;
-    padding: 30px;
-    padding-bottom: 60px;
-    padding-top: 60px;
+    padding: 10px;
+    justify-content: center;
+    max-width: 1000px;
+    gap: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -276,13 +281,22 @@
 }
 
 .cardRight {
-    flex: 6;
-    background-color: #fff;
+    width: 300px;
+    background-color: rgb(250, 250, 250);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.cardRight:hover{
+    scale: 1.02;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .cardLeft {
