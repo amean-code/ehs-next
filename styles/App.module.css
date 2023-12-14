@@ -44,7 +44,7 @@
 .containLeft {
     flex: 5;
     height: auto;
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(20 21 45);
     transition: all ease-in-out 0.3s;
 }
 
@@ -53,7 +53,7 @@
     width: 100%;
     object-fit: cover;
     max-width: 100%;
-    border-radius: 30px;
+    border-radius: 5px;
     max-height: 100%;
     transition: all ease-in-out 0.3s;
 }

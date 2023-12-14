@@ -21,7 +21,7 @@ function Slider() {
     <section>
       <div className={styles.main_container}>
         <div className={styles.containLeft}>
-          <Image className={styles.slider_imageleft} width={200} height={200} src="/images/containLeft.jpg" alt="" />
+          <img className={styles.slider_imageleft} width={200} height={200} src="/images/slider_left_image.png" alt="" />
         </div>
 
         <div className={styles.containRight}>

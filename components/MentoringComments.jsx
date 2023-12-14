@@ -26,7 +26,7 @@ function MentoringComments() {
             <div className={styles.container}>
                 <div className={styles.top}>
                     <div className={styles.top_title}>
-                        <h2 className={styles.h2}>Don’t just take our word for it</h2>
+                        <h2 className={styles.h2}>Mentör Yorumları</h2>
                     </div>
                     {/* <div className={styles.buttons}>
                         <div className={styles.left_arrow}>

@@ -24,10 +24,11 @@ function Footer() {
                     <div className={footerStyle.sponsor_row}>
                         <img className={footerStyle.footer_sponsorImg} src="/images/s1_vareint_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s2_smartPulse_logo.webp" alt="" />
-                        <img className={footerStyle.footer_sponsorImg} src="/images/s3_foton_logo.webp" alt="" />
+                        {/* <img className={footerStyle.footer_sponsorImg} src="/images/s3_foton_logo.webp" alt="" /> */}
                         <img className={footerStyle.footer_sponsorImg} src="/images/s4_pomega_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s5_odyssey_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s8_solarian_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s9_amean_danismanlik_logo.png" alt="" />
                     </div>
                 </div>
                 <div className={footerStyle.footer_content} style={{paddingBottom: "3rem",paddingTop: "3rem"}}>
