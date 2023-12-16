@@ -23,13 +23,11 @@ function Hackathon() {
         <div className={styles.main}>
             <section className={styles.banner+" "+styles.first_banner}>
                 <div className={styles.content}>
-                    <div className={styles.title}>
-                        <h1>
-                            EHS Hackaton 24
-                        </h1>
-                    </div>
+                    <h1>
+                        EHS Hackaton 24
+                    </h1>
                     <p>
-                    Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. 
+                        Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. 
                     </p>
                     <div className={styles.buttons}>
                         <Link href="/form">
