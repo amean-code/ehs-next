@@ -126,69 +126,6 @@ function Comments() {
             </div>
         </div>
     </section>
-
-    <section className={styles.section+" "+styles.mentor}>
-        <div className={styles.title}>
-            <h1 className={styles.h1}>
-                {t?.mentor_comments}
-            </h1>
-        </div>
-        <div className={styles.container}>
-            <div className={styles.column}>
-                <div className={styles.card_body}>
-                    <div className={styles.card_top}>
-                        <div className={styles.photo}>
-                            <img className={styles.card_image} src="/images/profile_figure.png" alt="" />
-                        </div>
-                        <div className={styles.info}>
-                            <div className={styles.username}>
-                                Semanur Sancar
-                            </div>
-                            <div className={styles.department}>
-                                ML & Optimization Engineer @ Foton Energy <br/>
-                                Co-Founder @ Energy Hack Space <br/>
-                                Ph.D (c) @ YTÜ Electrical Engineering
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div className={styles.card_bottom}>
-                        <div className={styles.comment}>
-                            <p className={styles.p}>
-                                Energy Hack Spacein kurucu ortaklarından biri olarak, enerji sektörüne dair edindiğim bilgileri genç yeteneklerle paylaşmayı her zaman önemli buldum. Özellikle enerji alanında optimizasyon ve yapay zeka konularında çalışan öğrenci ve yeni mezunlarla gerçekleştirdiğim mentörlük seansları, benim için ayrı bir öneme sahip. Mentörlük yolculuğum Energy Hack Space öncesine de uzanıyor ve bu kısa süre zarfında birçok yeteneğe kılavuzluk ederek onların kariyer yollarını şekillendirmelerine katkıda bulundum. Energy Hack Spacedeki görevim sayesinde, bu deneyimi daha geniş bir kitleye ulaştırma şansım oldu. Kendi mentee deneyimlerimden elde ettiğim içgörülerle, enerji sektöründeki geleceğin profesyonellerine rehberlik ediyorum. Bu süreçte hem bilgi ve deneyimlerimi paylaşma hem de yeni nesille birlikte öğrenme fırsatı buluyorum.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>            
-            <div className={styles.column}>
-                <div className={styles.card_body}>
-                    <div className={styles.card_top}>
-                        <div className={styles.photo}>
-                            <img className={styles.card_image} src="/images/profile_figure.png" alt="" />
-                        </div>
-                        <div className={styles.info}>
-                            <div className={styles.username}>
-                                Can Arslan
-                            </div>
-                            <div className={styles.department}>
-                                Co-Founder @ Foton Türkiye IREC Platform <br/>
-                                Co-Founder @ Energy Hack Space
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div className={styles.card_bottom}>
-                        <div className={styles.comment}>
-                            <p className={styles.p}>
-                                Foton Türkiye IREC Platformu ve Energy Hack Spacein kurucu ortağı olarak, enerji sektöründe yenilikçi fikirlerin ve genç yeteneklerin teşvik edilmesini her zaman destekledim. Enerji alanında bir kariyer veya girişimci olmayı düşünenler için sağladığım mentörlük, bana sektördeki taze fikirleri ve inovatif yaklaşımları yakından gözlemleme şansı veriyor. EHSnin mentörlük programları, sektöre adım atmaya kararlı gençleri deneyimli profesyonellerle bir araya getiriyor ve bu, hem mentörler için hem de menteeler için son derece değerli bir fırsat. Bu programların içinde yer almak, enerji sektöründeki gençleri motive etmek, onlara rehberlik etmek ve kariyerlerinin her aşamasında yanlarında olmak adına büyük bir ayrıcalık. EHSnin mentörlük programlarına katılan her bireyin, enerji alanında katma değer yaratan, yenilikçi ve sürdürülebilir projelerde yer alacağına inanıyorum.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     </>
   );
 }

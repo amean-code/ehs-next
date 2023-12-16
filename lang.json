@@ -117,7 +117,8 @@
         "university": "University",
         "mentee_comments" : "Mentee Comments",
         "mentor_comments" : "Mentor Comments",
-        "our_team": "Our Team"
+        "our_team": "Our Team",
+        "apply_for_hackaton": "Applay For Hackaton"
     },
     "tr":{
         "ehs": "Energy Hack Space",
@@ -237,7 +238,8 @@
         "university": "Üniversitesi",
         "mentee_comments" : "Mentee Yorumları",
         "mentor_comments" : "Mentör Yorumları",
-        "our_team": "Takımımız"
+        "our_team": "Takımımız",
+        "apply_for_hackaton": "Hackaton'a Başvur"
     }
 
 }

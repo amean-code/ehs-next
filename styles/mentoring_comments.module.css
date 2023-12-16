@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 600px;
     height: fit-content;
+    padding: 100px 0px;
 }
 .container{
     width: 100%;
@@ -72,21 +73,47 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     flex-direction: row;
     gap: 30px;
 }
 .card{
-    padding: 37px;
+    padding: 30px 20px;
     border-radius: 10px;
     border: 0.7px solid rgba(128, 128, 128, 0.853);
     display: flex;
-    gap: 36px;
-    flex-direction: row;
-    width: 38%;
-    min-width: 400px;
+    gap: 20px;
+    flex-direction: column;
+    /* min-width: 400px; */
+    max-width: 600px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.card:hover{
+    border: 0.7px solid rgba(100, 100, 100, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 2.6px;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.card .top_body{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card .bottom_body{
+    width: 100%;
+}
+
+.card .bottom_body p{
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(100, 100, 100);
 }
 .card_left{
     display: flex;
@@ -94,17 +121,18 @@
 }
 .card_left img{
     border-radius: 10px;
-    max-height: 200px;
+    max-height: 120px;
+    min-width: 120px;
     width: fit-content;
     object-fit: cover;
+    object-position: center;
 }
 .card_right{
     display: flex;
     flex-direction: column;
-    flex: 2;
+    flex: 3;
 }
 .card_top{
-    height: 25px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -112,6 +140,12 @@
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+}
+.card_top .name{
+    font-size: 24px;
+    line-height: 28px;
+    font-family: Inter-Bold;
+    margin-bottom: 10px;
 }
 .stars{
     display: flex;
@@ -131,9 +165,10 @@
     width: 15px;
 }
 .card_title .h3{
-    font-size: 22px;
-    line-height: 25px;
-    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 17px;
+    margin-bottom: 0px;
+    color: gray;
 }
 
 .card_text .p{
