@@ -26,6 +26,9 @@ function Hackathon() {
                     <h1>
                         EHS Hackaton 24
                     </h1>
+                    <div className={styles.time_text}>
+                        1 Nisan - 3 Mayıs 2024
+                    </div>
                     <p>
                         Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. 
                     </p>

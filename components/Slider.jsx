@@ -18,7 +18,7 @@ function Slider() {
   const [active_button, set_active_button] = useState("who-we-are");
 
   return (
-    <section>
+    <section id="about-us">
       <div className={styles.main_container}>
         <div className={styles.containLeft}>
           <img className={styles.slider_imageleft} width={200} height={200} src="/images/slider_left_image.png" alt="" />
@@ -28,7 +28,7 @@ function Slider() {
           <h4>
             {t?.ehs}
           </h4>
-          <h2>{t?.our_services}</h2>
+          <h2>{t?.about_us}</h2>
           <div className={styles.buttons}>
             <div onClick={() => set_active_button("who-we-are")} className={styles.item + " " + (
               active_button == "who-we-are" ?

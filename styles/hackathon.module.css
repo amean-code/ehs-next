@@ -176,14 +176,29 @@
 
 .first_banner .content h1{
     font-size: 70px;
+    line-height: 70px;
     font-family: Inter-Bold;
-    letter-spacing: -6px;
+    letter-spacing: -3px;
     background: -webkit-linear-gradient(-30deg,  #2d1a64, #5c2d8c, #8753b4 );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	background-size: 100% 100%;
     width: 100%;
     gap: 10px;
+    margin: 0px;
+}
+
+.first_banner .content .time_text{
+    background: -webkit-linear-gradient(-30deg,  #5d4aa4, #8c5dbc, #b783e4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	background-size: 100% 100%;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 0px;
+    font-family: Inter-Bold;
+    margin-bottom: 20px;
+    
 }
 
 .first_banner .content .title{
