@@ -30,7 +30,7 @@ function Hackathon() {
                         Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. Ipsum minim ex ullamco adipisicing enim consectetur. Ex ut in qui incididunt fugiat laborum ut incididunt. Adipisicing mollit velit non proident tempor. 
                     </p>
                     <div className={styles.buttons}>
-                        <Link href="/form">
+                        <Link href="/application-form">
                             {t?.apply_for_hackaton}
                         </Link>
                     </div>
