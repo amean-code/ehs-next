@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deployment":"npm run"
+    "buildstart": "next build ; next start"
   },
   "dependencies": {
     "js-cookie": "^3.0.5",
