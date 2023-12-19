@@ -9,7 +9,7 @@
     background: url('/backgrounds/space_1.jpg');
     background-size: cover;
     filter: brightness(1);
-    opacity: 0.1;
+    opacity: 1;
     z-index: -1;
 }
 

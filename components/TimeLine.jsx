@@ -19,7 +19,7 @@ function TimeLine() {
 
   return (
     <section>
-      <div className={styles.process_wrapper} id="about-us">
+      <div className={styles.process_wrapper}>
         <div className={styles.progress_bar_container}>
           <ul className={styles.ul}>
             <li onClick={() => {

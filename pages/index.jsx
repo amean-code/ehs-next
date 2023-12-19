@@ -41,8 +41,8 @@ export default function Home() {
       <Slider />
       <SliderBottom />
       <TimeLine />
-      <Events />
       <News/>
+      <Events />
       <Mentoring/>
       <MentoringComments />
       <Comments />
