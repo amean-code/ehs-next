@@ -117,12 +117,12 @@
 }
 
 *:root{
-  --primary: #39B248;
-  --primary-opac: #39B2482e;
-  --primary-dark: #199228;
-  --primary-dark-opac: #1992282e;
-  --primary-light: #69e278;
-  --primary-light-opac: #69e2782e;
+  --primary: #793cb6;
+  --primary-opac: #793cb62e;
+  --primary-dark: #442a95;
+  --primary-dark-opac: #442a959e;
+  --primary-light: #a065d3;
+  --primary-light-opac: #a065d32e;
   --secondary: #B23948;
   --secondary-opac: #B239482e;
   --secondary-dark: #921928;

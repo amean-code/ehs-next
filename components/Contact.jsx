@@ -18,7 +18,7 @@ function Contact() {
 
   return (
     <div className="pt-[120px] flex items-center justify-center w-full mb-2" id="contact-us">
-      <div style={{maxWidth:"1100px",width:"100%",justifyContent:"space-between"}} className="flex flex-col gap-5 p-8 overflow-hidden text-white bg-green-600 shadow-lg md:flex-row md:space-y-0 sm:p-12 rounded-xl">
+      <div style={{maxWidth:"1100px",width:"100%",justifyContent:"space-between"}} className="flex flex-col gap-5 p-8 overflow-hidden text-white bg-[var(--primary)] shadow-lg md:flex-row md:space-y-0 sm:p-12 rounded-xl">
         <div className="flex flex-col justify-between space-y-8">
           <div>
             <h1 className="text-4xl font-bold tracking-wide">{t?.contact_us}</h1>
@@ -54,8 +54,8 @@ function Contact() {
           </div>
         </div>
         <div className="relative">
-          <div className="absolute z-0 w-40 h-40 bg-green-400 rounded-full -right-28 -top-28"></div>
-          <div className="absolute z-0 w-40 h-40 bg-green-400 rounded-full -left-28 -bottom-16"></div>
+          <div className="absolute z-0 w-40 h-40 bg-[var(--primary-light)] rounded-full -right-28 -top-28"></div>
+          <div className="absolute z-0 w-40 h-40 bg-[var(--primary-light)] rounded-full -left-28 -bottom-16"></div>
           <div className="relative z-10 p-8 text-gray-600 bg-white shadow-lg rounded-xl md:w-80">
             <form className="flex flex-col space-y-4" action="">
               <div>
@@ -84,7 +84,7 @@ function Contact() {
                   rows="4"
                   className="w-full px-4 py-2 mt-2 rounded-md outline-none ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-300"></textarea>
               </div>
-              <button className="self-end inline-block px-6 py-4 text-sm font-bold text-white uppercase bg-green-600 rounded-lg">{t?.send_message}</button>
+              <button className="self-end inline-block px-6 py-4 text-sm font-bold text-white uppercase bg-[var(--primary-dark)] rounded-lg">{t?.send_message}</button>
             </form>
           </div>
         </div>

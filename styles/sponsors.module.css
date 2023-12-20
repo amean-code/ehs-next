@@ -66,7 +66,7 @@
     flex: 1;
     padding: 20px;
     border-radius: 10px;
-    background-color: rgb(22 163 74);
+    background-color: var(--primary);
     position: relative;
     overflow: hidden;
     z-index: 10;
@@ -80,7 +80,7 @@
     right: -10px;
     width: 100px;
     height: 100px;
-    background-color: rgb(74,222,128);
+    background-color: var(--primary-light);
     z-index: 11;
     border-radius: 100%;
 }
@@ -147,8 +147,7 @@
 .list .item .icon{
     width: 7.5px !important;
     height: 7.5px !important;
-    fill: rgb(117, 245, 164);
-    stroke: rgb(74,222,128);
+    fill: var(--primary-dark);
     padding-top: 2px;
 }
 
