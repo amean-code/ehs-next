@@ -209,9 +209,33 @@
     letter-spacing: 1px;
 }
 
+.sectionTwo::before{
+    content: "";
+    position: absolute;
+    min-width:300vw;
+    min-height:300vw;
+    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, var(--primary-dark),var(--primary),var(--primary-light),var(--primary),var(--primary-dark),var(--secondary-dark),var(--secondary),var(--secondary-light),var(--secondary),var(--secondary-dark));
+    background-size: 5%;
+    z-index: -1;
+    rotate: 20deg;
+	animation: rotating 204s linear infinite;
+}
+
+@keyframes rotating {
+    0%{
+        rotate: 0deg;
+    }100%{
+        rotate: -360deg;
+    }
+}
+
 .sectionTwo {
-    background-color: var(--primary);
     color: #fff;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .containerNumber {
