@@ -353,7 +353,7 @@
     position: absolute;
     width: 1000%;
     height: 1000%;
-    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(90deg, #c698ef , #8047ba  , #150939 50%);
+    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, #c698ef , #8047ba  , #150939 50%);
     background-size: 2%;
     z-index: -1;
     rotate: 20deg;

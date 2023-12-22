@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/events.module.css";
+import app_css from "../styles/App.module.css";
 // LANGUAGE
 import { useRouter } from 'next/router';
 import lang from "../lang.json"
@@ -97,9 +98,9 @@ function Events() {
     return (
         <div className={styles.events_wrapper}id="events">
             <div className={styles.events_container}>
-                <div className={styles.title}>
+                <h3 className={app_css.h3} style={{textAlign:"left",marginBottom:"20px"}}>
                    {t?.ehs_events}
-                </div>
+                </h3>
                 <div className={styles.filters}>
                     <div className={styles.select_filter}>
                         <label>

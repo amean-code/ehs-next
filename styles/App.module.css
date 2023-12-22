@@ -606,6 +606,48 @@ figure.snip1192 .author .h5 .span {
     width: 41.66666667%;
 }
 
+.line{
+    width: 40%;
+    height: 3px;
+    background: -webkit-linear-gradient(-30deg,  var(--primary-dark), var(--primary), var(--primary-light), var(--primary), var(--primary-dark),var(--secondary-dark), var(--secondary), var(--secondary-light), var(--secondary), var(--secondary-dark));
+	animation: title_color 40s ease-in-out infinite;
+	background-size: 400% 400%;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+
+.h3{
+    font-size: 50px;
+    line-height: 60px;
+    font-family: Inter-Bold;
+    background: -webkit-linear-gradient(-30deg,  var(--primary-dark), var(--primary), var(--primary-light), var(--primary), var(--primary-dark),var(--secondary-dark), var(--secondary), var(--secondary-light), var(--secondary), var(--secondary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	animation: title_color 40s ease-in-out infinite;
+	background-size: 400% 400%;
+    width: 100%;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+@keyframes title_color {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
 /*Contact*/
 
 /*RESPONSİVE*/

@@ -1,4 +1,5 @@
 import styles from "../styles/mentoring_comments.module.css";
+import app_css from "../styles/App.module.css";
 // LANGUAGE
 import { useRouter } from 'next/router';
 import lang from "../lang.json"
@@ -19,9 +20,9 @@ function MentoringComments() {
             <div className={styles.container}>
                 <div className={styles.top}>
                     <div className={styles.top_title}>
-                        <h2 className={styles.h2}>{
+                        <h3 className={app_css.h3}>{
                         t?.mentor_comments
-                        }</h2>
+                        }</h3>
                     </div>
                     {/* <div className={styles.buttons}>
                         <div className={styles.left_arrow}>
@@ -31,6 +32,9 @@ function MentoringComments() {
                             <img className={styles.img} src="/images/right_arrow.png" alt="" />
                         </div>
                     </div> */}
+                </div>
+                <div className={app_css.line}>
+                    
                 </div>
                 <div className={styles.bottom}>
                     <div className={styles.cards}>

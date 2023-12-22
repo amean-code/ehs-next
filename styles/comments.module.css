@@ -16,18 +16,20 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     justify-content: center;
 }
-.title .h1{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
-    margin-bottom: 0.5rem;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.2;
-    color: inherit;
+
+@keyframes title_color {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
 }
 .container{
     width: 100%;
@@ -65,10 +67,16 @@
     flex-direction: column;
     width: 100%;
     /* min-width: 200px; */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background-color: rgb(250,250,250);
-    
+    box-shadow: var(--primary-opac) 5px 5px 3px;
+    border:2px solid var(--primary-opac);
+    background-color: rgb(255,255,255);
 }
+
+.card_body:hover{
+    box-shadow: var(--primary-dark-opac) 5px 5px 3px;
+    scale: 1.01;
+}
+
 .card_top{
     display: flex;
     align-items: center;
@@ -80,7 +88,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    max-width: 50px;
+    width: 80px;
+}
+
+.photo svg{
+    width: 80px;
+    height: 80px;
 }
 .card_image{
     border-radius: 50px;
