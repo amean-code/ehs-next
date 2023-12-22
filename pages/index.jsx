@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 import Slider from "../components/Slider";
+import Slider2 from "../components/Slider2";
 import SliderBottom from "../components/SliderBottom";
 import Team from "../components/Team";
 import TimeLine from "../components/TimeLine";
@@ -39,6 +40,7 @@ export default function Home() {
       </Head>
       <Header />
       <Slider />
+      {/* <Slider2 /> */}
       <SliderBottom />
       <TimeLine />
       <News/>
