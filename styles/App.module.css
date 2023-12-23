@@ -212,13 +212,12 @@
 .sectionTwo::before{
     content: "";
     position: absolute;
-    min-width:300vw;
-    min-height:300vw;
+    min-width:200vw;
+    min-height:200vw;
     background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, var(--primary-dark),var(--primary),var(--primary-light),var(--primary),var(--primary-dark),var(--secondary-dark),var(--secondary),var(--secondary-light),var(--secondary),var(--secondary-dark));
-    background-size: 5%;
+    background-size: 10%;
     z-index: -1;
-    rotate: 20deg;
-	animation: rotating 204s linear infinite;
+	animation: rotating 240s linear infinite;
 }
 
 @keyframes rotating {
@@ -306,7 +305,7 @@
 
 .cardRight {
     width: 300px;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,12 +314,13 @@
     padding: 10px;
     border-radius: 10px;
     cursor: auto;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: var(--primary-opac) 5px 5px 3px;
+    border:2px solid var(--primary-opac);
 }
 
 .cardRight:hover{
-    scale: 1.02;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    scale: 1.01;
+    box-shadow: var(--primary-dark-opac) 5px 5px 3px;
 }
 
 .cardLeft {

@@ -19,10 +19,9 @@ function Team() {
   return (
     <section className={styles.section}>
         <div className={styles.text_center}>
-          <h2 className={styles.title_h2}>{
+          <h3 className={styles.h3} style={{marginBottom:"30px"}}>{
             t?.our_team
-          }</h2>
-          <div className={styles.small_border}></div>
+          }</h3>
         </div>
         <div className={styles.cardArea}>
           {/* SEMANUR */}

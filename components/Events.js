@@ -188,15 +188,15 @@ function Events() {
                                         <div className={styles.info}>
                                             <div className={styles.location}>
                                                 <span>
-                                                    {t?.location}
+                                                    {t?.location} : 
                                                 </span>
-                                                {event.location}
+                                                 {event.location}
                                             </div>
                                             <div className={styles.time}>
                                                 <span>
-                                                    {t?.time}
+                                                    {t?.time} : 
                                                 </span>
-                                                {event.hour}:{event.minute}
+                                                 {event.hour}:{event.minute}
                                             </div>
                                         </div>
                                     </div>

@@ -1,9 +1,10 @@
 .section{
     width: 100%;
-    padding: 0px 0px 50px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(-120px);
+    padding-top: 120px;
 }
 
 .wrapper{

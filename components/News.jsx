@@ -233,7 +233,7 @@ function News() {
                         {
                             windows.map((window,index)=>{
                                 return (
-                                    <div key={index} className={styles.window} style={{transform: "translateX("+(index-page)*100+"%)",gridTemplateColumns:grid_template_columns_str}}>
+                                    <div key={"window"+index} className={styles.window} style={{transform: "translateX("+(index-page)*100+"%)",gridTemplateColumns:grid_template_columns_str}}>
                                         {
                                             window.map((item,item_index)=>{
                                             return (

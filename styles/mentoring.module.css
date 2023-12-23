@@ -1,0 +1,123 @@
+.section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    margin-bottom: 50px;
+}
+
+.banner{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.items .item{
+    padding: 10px 40px;
+    box-shadow: var(--primary-opac) 5px 5px 3px;
+    border:2px solid var(--primary-opac);
+    border-radius: 15px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.items .item:hover{
+    scale: 1.01;
+    box-shadow: var(--primary-dark-opac) 5px 5px 3px;
+}
+
+.items .item .icon{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items .item .icon svg{
+    width: 100%;
+    height: auto;
+}
+
+.items .item .content{
+    width: fit-content;
+    padding: 10px 0px;
+}
+
+.items .item .content .title{
+    font-size: 26px;
+    line-height: 32px;
+    font-family: Inter-Bold;
+    background: -webkit-linear-gradient(-30deg,  var(--primary-dark), var(--primary), var(--primary-light), var(--primary), var(--primary-dark),var(--secondary-dark), var(--secondary), var(--secondary-light), var(--secondary), var(--secondary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	animation: title_color 40s ease-in-out infinite;
+	background-size: 400% 400%;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.items .item .content .description{
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(80, 80, 80);
+    padding-bottom: 5px;
+    text-align: justify;
+}
+
+.items .item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.items .item:nth-child(even) .content .title{
+    text-align: right;
+}
+
+.items .item:nth-child(even) .content .description{
+    direction:rtl;
+    text-align: justify;
+}
+
+@keyframes title_color {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+    .item{
+        flex-direction: column !important;
+    }
+    
+    .items .item .content .title{
+        text-align: center !important;
+        margin-bottom: 12px !important;
+        width: 100% !important;
+    }
+    
+    .items .item:nth-child(even) .content .description{
+        direction:ltr;
+        text-align: justify !important;
+    }
+    
+}
