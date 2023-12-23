@@ -50,7 +50,7 @@ function Mentoring() {
                 Proje Mentörlüğü
               </div>
               <div className={styles.description}>
-                Energy Hack Space, enerji sektöründeki projelerde öncü ve yenilikçi fikirlerin hayata geçirilmesi için rehberlik eder. Proje fikrinin oluşumundan uygulamaya kadar olan sürecin her aşamasında, teknik danışmanlığın yanı sıra stratejik ve operasyonel önerilerle projenin başarılı bir şekilde tamamlanmasına katkıda bulunur
+                Energy Hack Space, enerji sektöründeki projelerde öncü ve yenilikçi fikirlerin hayata geçirilmesi için rehberlik eder. Proje fikrinin oluşumundan uygulamaya kadar olan sürecin her aşamasında, teknik danışmanlığın yanı sıra stratejik ve operasyonel önerilerle projenin başarılı bir şekilde tamamlanmasına katkıda bulunur.
               </div>
             </div>
           </div>

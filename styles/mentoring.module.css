@@ -79,19 +79,6 @@
     text-align: justify;
 }
 
-.items .item:nth-child(even){
-    flex-direction: row-reverse;
-}
-
-.items .item:nth-child(even) .content .title{
-    text-align: right;
-}
-
-.items .item:nth-child(even) .content .description{
-    direction:rtl;
-    text-align: justify;
-}
-
 @keyframes title_color {
 	0% {
 		background-position: 0% 0%;
@@ -113,11 +100,6 @@
         text-align: center !important;
         margin-bottom: 12px !important;
         width: 100% !important;
-    }
-    
-    .items .item:nth-child(even) .content .description{
-        direction:ltr;
-        text-align: justify !important;
     }
     
 }
