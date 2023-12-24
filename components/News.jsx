@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Arrow_down } from "../icons";
 import styles from "../styles/news.module.css";
+import app_css from "../styles/App.module.css";
 // LANGUAGE
 import { useRouter } from 'next/router';
 import lang from "../lang.json"
@@ -209,9 +210,10 @@ function News() {
     return (
         <section className={styles.section}>
             <div className={styles.wrapper}>
-                <div className={styles.title}>
+                <h3 className={app_css.h3}>
                     {t?.ehs_news}
-                </div>
+                </h3>
+                <div className={app_css.line}></div>
                 <div className={styles.description}>
                     {t?.ehs_news_text}
                 </div>
@@ -231,7 +233,7 @@ function News() {
                         {
                             windows.map((window,index)=>{
                                 return (
-                                    <div key={index} className={styles.window} style={{transform: "translateX("+(index-page)*100+"%)",gridTemplateColumns:grid_template_columns_str}}>
+                                    <div key={"window"+index} className={styles.window} style={{transform: "translateX("+(index-page)*100+"%)",gridTemplateColumns:grid_template_columns_str}}>
                                         {
                                             window.map((item,item_index)=>{
                                             return (

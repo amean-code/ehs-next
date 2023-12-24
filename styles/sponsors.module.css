@@ -24,6 +24,23 @@
     width: 100%;
     text-align: left;
     margin-bottom: 10px;
+    background: -webkit-linear-gradient(-30deg,  var(--primary-dark), var(--primary), var(--primary-light), var(--primary), var(--primary-dark),var(--secondary-dark), var(--secondary), var(--secondary-light), var(--secondary), var(--secondary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	animation: title_color 40s ease-in-out infinite;
+	background-size: 400% 400%;
+}
+
+@keyframes title_color {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
 }
 
 .title_2{
@@ -62,11 +79,35 @@
     width: 100%;
 }
 
+.card::before{
+    content: "";
+    position: absolute;
+    min-width:100%;
+    min-height:100%;
+    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, var(--primary-dark),var(--primary),var(--primary-light),var(--primary),var(--primary-dark),var(--secondary-dark),var(--secondary),var(--secondary-light),var(--secondary),var(--secondary-dark));
+    background-size: 2%;
+    z-index: -1;
+	animation: rotating 210s linear infinite;
+    left: calc(-50% - 100vw);
+    right: calc(-50% - 100vw);
+    top: calc(-50% - 100vw);
+    bottom: calc(-50% - 100vw);
+}
+
+
+
+@keyframes rotating {
+    0%{
+        rotate: 0deg;
+    }100%{
+        rotate: -360deg;
+    }
+}
+
 .card{
     flex: 1;
     padding: 20px;
     border-radius: 10px;
-    background-color: var(--primary);
     position: relative;
     overflow: hidden;
     z-index: 10;
@@ -81,6 +122,7 @@
     width: 100px;
     height: 100px;
     background-color: var(--primary-light);
+    opacity: 0.3;
     z-index: 11;
     border-radius: 100%;
 }
@@ -121,7 +163,7 @@
 }
 
 .card .buttons .button{
-    background-color: var(--primary-dark) !important;
+    background-color: var(--primary) !important;
 }
 
 .card .buttons .button:hover{
@@ -147,7 +189,7 @@
 .list .item .icon{
     width: 7.5px !important;
     height: 7.5px !important;
-    fill: var(--primary-dark);
+    fill: white;
     padding-top: 2px;
 }
 

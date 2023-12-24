@@ -1,0 +1,29 @@
+
+
+.fancy_bg::before{
+    content: "";
+    position: absolute;
+    min-width:200vw;
+    min-height:200vw;
+    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, var(--primary-dark),var(--primary),var(--primary-light),var(--primary),var(--primary-dark),var(--secondary-dark),var(--secondary),var(--secondary-light),var(--secondary),var(--secondary-dark));
+    background-size: 3%;
+    z-index: -1;
+	animation: rotating 210s linear infinite;
+    left: calc(-50% - 100vw);
+    right: calc(-50% - 100vw);
+    top: calc(-50% - 100vw);
+    bottom: calc(-50% - 100vw);
+}
+
+@keyframes rotating {
+    0%{
+        rotate: 0deg;
+    }100%{
+        rotate: -360deg;
+    }
+}
+
+.fancy_bg {
+    overflow: hidden;
+    position: relative;
+}

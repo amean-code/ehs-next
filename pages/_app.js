@@ -1,5 +1,5 @@
 import Head from 'next/head'
-// import Cursor from '../components/Cursor'
+import Cursor from '../components/Cursor'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
-      {/* <Cursor /> */}
+      <Cursor />
       <Component {...pageProps} />
     </div>
   )

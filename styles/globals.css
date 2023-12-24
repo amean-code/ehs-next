@@ -123,12 +123,12 @@
   --primary-dark-opac: #442a959e;
   --primary-light: #a065d3;
   --primary-light-opac: #a065d32e;
-  --secondary: #1366a1;
-  --secondary-opac: #1366a12e;
-  --secondary-dark: #0c2c64;
-  --secondary-dark-opac: #0c2c642e;
-  --secondary-light: #4888b5;
-  --secondary-light-opac: #4888b52e;
+  --secondary: #264e93;
+  --secondary-opac: #264e932e;
+  --secondary-dark: #1f417b;
+  --secondary-dark-opac: #1f417b2e;
+  --secondary-light: #4b72b7;
+  --secondary-light-opac: #4b72b72e;
   --third: #48B239;
   --third-opac: #48B2392e;
   --third-dark: #289219;
@@ -256,4 +256,18 @@ body {
   *{
     /* cursor: none !important; */
   }
+}
+
+
+
+@keyframes title_color {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
 }

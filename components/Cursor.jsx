@@ -10,10 +10,10 @@ function Cursor () {
     useEffect(()=>{
         let new_cursors = [];
 
-        let number = 100;
+        let number = 50;
 
         for(let i = 0;i<number; i++){
-            let max_size = 12;
+            let max_size = 8;
             let size = max_size*((i+1)/(number));
 
             let duration = 0.1 * ((max_size-size)/max_size);
