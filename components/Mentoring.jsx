@@ -34,10 +34,10 @@ function Mentoring() {
             </div>
             <div className={styles.content}>
               <div className={styles.title}>
-                Lisans ve Lisansüstü Tez Mentörlüğü
+                {t?.mentoring_title_1}
               </div>
               <div className={styles.description}>
-                Energy Hack Space, lisans ve lisansüstü tez çalışmaları sürecinde öğrencilere yol gösterir. Özellikle enerji alanında inovasyon ve sürdürülebilirlik konularına odaklanan bu mentörlük, öğrencilere tez konularını belirlemeden araştırma metodolojilerini oluşturmaya kadar geniş bir perspektif sunar. Bilimsel literatürün analizi, veri toplama yöntemleri ve sonuçların yorumlanması konularında destek sağlar.
+                {t?.mentoring_text_1}
               </div>
             </div>
           </div>
@@ -47,10 +47,10 @@ function Mentoring() {
             </div>
             <div className={styles.content}>
               <div className={styles.title}>
-                Proje Mentörlüğü
+                {t?.mentoring_title_2}
               </div>
               <div className={styles.description}>
-                Energy Hack Space, enerji sektöründeki projelerde öncü ve yenilikçi fikirlerin hayata geçirilmesi için rehberlik eder. Proje fikrinin oluşumundan uygulamaya kadar olan sürecin her aşamasında, teknik danışmanlığın yanı sıra stratejik ve operasyonel önerilerle projenin başarılı bir şekilde tamamlanmasına katkıda bulunur.
+                {t?.mentoring_text_2}
               </div>
             </div>
           </div>
@@ -60,10 +60,10 @@ function Mentoring() {
             </div>
             <div className={styles.content}>
               <div className={styles.title}>
-                Akademik ve Kariyer Mentörlüğü
+                {t?.mentoring_title_3}
               </div>
               <div className={styles.description}>
-                Energy Hack Space, enerji sektöründe kariyer yapmayı hedefleyen bireyler için akademik ve kariyer yollarını şekillendirme konusunda rehberlik sunar. Eğitim seçimleri, staj ve iş başvuruları, kariyer planlama ve profesyonel gelişim stratejileri gibi konularda deneyimli mentörlerin yönlendirmesiyle bireylerin kariyer hedeflerine ulaşmalarına yardımcı olur.
+                {t?.mentoring_text_3}
               </div>
             </div>
           </div>
@@ -73,10 +73,10 @@ function Mentoring() {
             </div>
             <div className={styles.content}>
               <div className={styles.title}>
-                Girişimcilik Mentörlüğü
+                {t?.mentoring_title_4}
               </div>
               <div className={styles.description}>
-                Energy Hack Space, enerji sektöründe girişimci olmayı düşünen bireyler için vizyon oluşturma, iş modeli geliştirme ve pazar analizi gibi konularda rehberlik eder. Girişimciliğin zorluklarına ve fırsatlarına dair gerçekçi bir perspektif sunarak, girişimcilerin sürdürülebilir ve başarılı işletmeler kurmaları için gereken bilgi ve becerilere erişmelerini sağlar.
+                {t?.mentoring_text_4}
               </div>
             </div>
           </div>
@@ -86,10 +86,10 @@ function Mentoring() {
             </div>
             <div className={styles.content}>
               <div className={styles.title}>
-                Akran Mentörlüğü
+                {t?.mentoring_title_5}
               </div>
               <div className={styles.description}>
-                Energy Hack Space, enerji sektöründeki profesyonellerin yanı sıra üniversite öğrencilerinin de birbirleriyle bilgi ve deneyimlerini paylaşmaları için bir platform sunar. Akran mentörlüğü, deneyimli profesyonellerden yeni başlayanlara, lisans ve lisansüstü öğrencilerinden mezunlara kadar farklı deneyim seviyelerindeki bireylerin kendi deneyimlerini, başarılarını ve zorluklarını paylaşarak birbirlerine ilham vermesini ve rehberlik etmesini teşvik eder. Özellikle üniversite öğrencileri için, sektöre ilk adımlarını atan veya akademik çalışmalarında yön arayan gençler için bu yaklaşım, hem profesyonel hem de akademik gelişimi destekler ve enerji sektöründe işbirliği ve dayanışma ruhunu teşvik eder.
+                {t?.mentoring_text_5}
               </div>
             </div>
           </div>
