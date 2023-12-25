@@ -7,40 +7,55 @@
     justify-content: center;
     align-items: center;
 }
+
+.mentor.section{
+    padding-top: 120px;
+}
+
 .title{
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     justify-content: center;
 }
-.title .h1{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
-    margin-bottom: 0.5rem;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.2;
-    color: inherit;
+
+@keyframes title_color {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
 }
 .container{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
     gap: 10px;
-    max-width: 1100px;
-    padding: 10px 20px;
+    max-width: 1200px;
+    padding: 10px 10px;
+}
+
+.mentor .container{
+    max-width: 1000px;
+
+    grid-template-columns: 1fr 1fr;
+
+
 }
 
 .column{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .card_body{
@@ -52,25 +67,46 @@
     flex-direction: column;
     width: 100%;
     /* min-width: 200px; */
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    
+    box-shadow: var(--primary-opac) 5px 5px 3px;
+    border:2px solid var(--primary-opac);
+    background-color: rgb(255,255,255);
 }
+
+.card_body:hover{
+    box-shadow: var(--primary-dark-opac) 5px 5px 3px;
+    scale: 1.01;
+}
+
 .card_top{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 10px;
     flex-direction: row;
 }
 .photo{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    max-width: 50px;
+    width: 80px;
+}
+
+.photo svg{
+    width: 80px;
+    height: 80px;
 }
 .card_image{
     border-radius: 50px;
 }
-.username{
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-left: 10px;
+}
+
+.info .username{
     font-size: 1rem;
     font-family: Inter-SemiBold;
     color: inherit;
@@ -78,17 +114,24 @@
     letter-spacing: 1px;
     font-weight: 500;
     line-height: 1.2;
+}
 
+.info .department{
+    font-size: 12px;
+    color: gray;
 }
 .comment .p{
-    font-size: 1rem;
-    font-family: Inter-ExtraLight;
+    font-size: 14px;
     color: inherit;
-    color: rgba(0, 0, 0, 0.602);
-    line-height: 1.6875rem;
+    color: rgba(100, 100, 100, 0.9);
+    line-height: 18px;
     margin-bottom: 0!important;
 }
 
+
+.card_body:hover .comment .p{
+    color: black;
+}
 @media screen and (max-width: 1000px) {
     .container{
         grid-template-columns: 1fr 1fr;

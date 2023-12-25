@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Arrow_down } from "../icons";
 import footerStyle from "../styles/footer.module.css";
+import Link from "next/link";
 
 // LANGUAGE
 import { useRouter } from 'next/router';
@@ -21,12 +22,13 @@ function Footer() {
             <div className={footerStyle.footer_container}>
                 <div className={footerStyle.footer_cta} style={{paddingBottom: "2rem",paddingTop: "2rem"}}>
                     <div className={footerStyle.sponsor_row}>
-                        <img className={footerStyle.footer_sponsorImg} src="/images/s1_vareint_logo.webp" alt="" />
+                        {/* <img className={footerStyle.footer_sponsorImg} src="/images/s1_vareint_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s2_smartPulse_logo.webp" alt="" />
-                        <img className={footerStyle.footer_sponsorImg} src="/images/s3_foton_logo.webp" alt="" />
+                        {/* <img className={footerStyle.footer_sponsorImg} src="/images/s3_foton_logo.webp" alt="" /> 
                         <img className={footerStyle.footer_sponsorImg} src="/images/s4_pomega_logo.webp" alt="" />
                         <img className={footerStyle.footer_sponsorImg} src="/images/s5_odyssey_logo.webp" alt="" />
-                        <img className={footerStyle.footer_sponsorImg} src="/images/s8_solarian_logo.webp" alt="" />
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s8_solarian_logo.webp" alt="" /> */}
+                        <img className={footerStyle.footer_sponsorImg} src="/images/s9_amean_danismanlik_logo.png" alt="" />
                     </div>
                 </div>
                 <div className={footerStyle.footer_content} style={{paddingBottom: "3rem",paddingTop: "3rem"}}>
@@ -53,12 +55,12 @@ function Footer() {
                                     <h3 className={footerStyle.h3}>{t?.links}</h3>
                                 </div>
                                 <ul className={footerStyle.ul}>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.about_us}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.events}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.mentoring}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.sponsors}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.blog}</a></li>
-                                    <li className={footerStyle.li}><a className={footerStyle.a} href="#">{t?.contact_us}</a></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#about-us">{t?.about_us}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#events">{t?.events}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#mentoring">{t?.mentoring}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/sponsors">{t?.sponsors}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/blog">{t?.blog}</Link></li>
+                                    <li className={footerStyle.li}><Link className={footerStyle.a} href="/#contact-us">{t?.contact_us}</Link></li>
                                 </ul>
                             </div>
                         </div>

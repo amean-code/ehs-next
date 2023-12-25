@@ -58,7 +58,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 20px;
-    gap: 20px;
+    gap: 13px;
 }
 
 .events_list .item{
@@ -67,11 +67,38 @@
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    background-color: rgb(255,255,255);
+    box-shadow: var(--primary-opac) 5px 5px 3px;
+    border:2px solid var(--primary-opac);
+    padding: 3px 8px;
+    border-radius: 14px;
 }
 
 .events_list .item:hover{
-    scale: 1.02;
-    transform: translateX(2%);
+    scale: 1.01;
+    box-shadow: var(--primary-dark-opac) 5px 5px 3px;
+    transform: translateX(1%);
+}
+
+
+.events_list .item .date::before{
+    content: "";
+    position: absolute;
+    min-width:200px;
+    min-height:200px;
+    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, var(--primary-dark),var(--primary),var(--primary-light),var(--primary),var(--primary-dark),var(--secondary-dark),var(--secondary),var(--secondary-light),var(--secondary),var(--secondary-dark));
+    background-size: 100%;
+    z-index: 0;
+	animation: rotating 60s linear infinite;
+}
+
+
+@keyframes rotating {
+    0%{
+        rotate: 0deg;
+    }100%{
+        rotate: -360deg;
+    }
 }
 
 .events_list .item .date{
@@ -84,11 +111,14 @@
     /* gap: 5px; */
     align-items: center;
     justify-content: center;
-    background-color: var(--primary);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 .events_list .item:hover .date{
-    filter: brightness(1.2)
+    filter: brightness(1.2);
+    z-index: 2;
 }
 
 .events_list .item .date .day{
@@ -96,6 +126,8 @@
     color: white;
     font-family: Inter-Bold;
     margin-bottom: 0px;
+    z-index: 2;
+
 }
 
 .events_list .item .date .month{
@@ -103,6 +135,8 @@
     color: white;
     font-family: Inter-Bold;
     margin-bottom: 0px;
+    z-index: 2;
+
 }
 
 .events_list .item .content{
@@ -113,7 +147,7 @@
 }
 
 .events_list .item .content .name{
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: -0.7px;
     /* font-family: Inter-Bold; */
     color: black;

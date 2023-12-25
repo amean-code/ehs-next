@@ -117,18 +117,18 @@
 }
 
 *:root{
-  --primary: #39B248;
-  --primary-opac: #39B2482e;
-  --primary-dark: #199228;
-  --primary-dark-opac: #1992282e;
-  --primary-light: #69e278;
-  --primary-light-opac: #69e2782e;
-  --secondary: #B23948;
-  --secondary-opac: #B239482e;
-  --secondary-dark: #921928;
-  --secondary-dark-opac: #9219282e;
-  --secondary-light: #e26978;
-  --secondary-light-opac: #e269782e;
+  --primary: #793cb6;
+  --primary-opac: #793cb62e;
+  --primary-dark: #442a95;
+  --primary-dark-opac: #442a959e;
+  --primary-light: #a065d3;
+  --primary-light-opac: #a065d32e;
+  --secondary: #264e93;
+  --secondary-opac: #264e932e;
+  --secondary-dark: #1f417b;
+  --secondary-dark-opac: #1f417b2e;
+  --secondary-light: #4b72b7;
+  --secondary-light-opac: #4b72b72e;
   --third: #48B239;
   --third-opac: #48B2392e;
   --third-dark: #289219;
@@ -256,4 +256,18 @@ body {
   *{
     /* cursor: none !important; */
   }
+}
+
+
+
+@keyframes title_color {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
 }

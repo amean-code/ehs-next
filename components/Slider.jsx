@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Arrow_down } from "../icons";
-import styles from "../styles/App.module.css";
+import styles from "../styles/slider.module.css";
 
 // LANGUAGE
 import { useRouter } from 'next/router';
@@ -18,38 +18,34 @@ function Slider() {
   const [active_button, set_active_button] = useState("who-we-are");
 
   return (
-    <section>
-      <div className={styles.main_container}>
-        <div className={styles.containLeft}>
-          <Image className={styles.slider_imageleft} width={200} height={200} src="/images/containLeft.jpg" alt="" />
-        </div>
-
-        <div className={styles.containRight}>
-          <h4>
-            {t?.ehs}
-          </h4>
-          <h2>{t?.our_services}</h2>
-          <div className={styles.buttons}>
-            <div onClick={() => set_active_button("who-we-are")} className={styles.item + " " + (
-              active_button == "who-we-are" ?
-                styles.active : ""
-            )}>
-              {t?.who_we_are}
+    <section className={styles.section} id="about-us">
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <div className={styles.content}>
+            <h1>
+              {t?.ehs}
+            </h1>
+            <div className={styles.buttons}>
+              <button onClick={() => set_active_button("who-we-are")} className={styles.item + " " + (
+                active_button == "who-we-are" ?
+                  styles.active : ""
+              )}>
+                {t?.who_we_are}
+              </button>
+              <button onClick={() => set_active_button("what-we-do")} className={styles.item + " " + (
+                active_button == "what-we-do" ?
+                  styles.active : ""
+              )}>
+                {t?.what_we_do}
+              </button>
+              <button onClick={() => set_active_button("why-join")} className={styles.item + " " + (
+                active_button == "why-join" ?
+                  styles.active : ""
+              )}>
+                {t?.why_join}
+              </button>
             </div>
-            <div onClick={() => set_active_button("what-we-do")} className={styles.item + " " + (
-              active_button == "what-we-do" ?
-                styles.active : ""
-            )}>
-              {t?.what_we_do}
-            </div>
-            <div onClick={() => set_active_button("why-join")} className={styles.item + " " + (
-              active_button == "why-join" ?
-                styles.active : ""
-            )}>
-              {t?.why_join}
-            </div>
-          </div>
-          {
+            {
             active_button == "who-we-are" ?
               <p>
                 {t?.who_we_are_text}
@@ -64,6 +60,10 @@ function Slider() {
                   </p>
                   : ""
           }
+          </div>
+          <div className={styles.image_container}>
+            <img src="/ills/metaverse.png" />
+          </div>
         </div>
       </div>
     </section>

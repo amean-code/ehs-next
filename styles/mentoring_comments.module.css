@@ -2,20 +2,25 @@
     width: 100%;
     min-height: 600px;
     height: fit-content;
+    padding: 0px 0px;
+    margin-bottom: 100px;
 }
 .container{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .top{
     width: 100%;
     flex: 1;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     margin-top: 70px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     margin-left: 50px;
 }
 .top_title{
@@ -72,21 +77,45 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     flex-direction: row;
     gap: 30px;
 }
 .card{
-    padding: 37px;
+    padding: 30px 20px;
     border-radius: 10px;
-    border: 0.7px solid rgba(128, 128, 128, 0.853);
+    border: 2px solid var(--primary-opac);
     display: flex;
-    gap: 36px;
+    gap: 20px;
+    flex-direction: column;
+    /* min-width: 400px; */
+    max-width: 600px;
+    box-shadow: var(--primary-opac) 5px 5px 3px;
+}
+
+.card:hover{
+    box-shadow: var(--primary-dark-opac) 5px 5px 3px;
+    scale: 1.01;
+}
+
+.card .top_body{
+    display: flex;
+    gap: 10px;
     flex-direction: row;
-    width: 38%;
-    min-width: 400px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card .bottom_body{
+    width: 100%;
+}
+
+.card .bottom_body p{
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(100, 100, 100);
 }
 .card_left{
     display: flex;
@@ -94,17 +123,18 @@
 }
 .card_left img{
     border-radius: 10px;
-    max-height: 200px;
+    max-height: 120px;
+    min-width: 120px;
     width: fit-content;
     object-fit: cover;
+    object-position: center;
 }
 .card_right{
     display: flex;
     flex-direction: column;
-    flex: 2;
+    flex: 3;
 }
 .card_top{
-    height: 25px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -112,6 +142,12 @@
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+}
+.card_top .name{
+    font-size: 24px;
+    line-height: 28px;
+    font-family: Inter-Bold;
+    margin-bottom: 10px;
 }
 .stars{
     display: flex;
@@ -131,9 +167,10 @@
     width: 15px;
 }
 .card_title .h3{
-    font-size: 22px;
-    line-height: 25px;
-    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 17px;
+    margin-bottom: 0px;
+    color: gray;
 }
 
 .card_text .p{

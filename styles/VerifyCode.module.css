@@ -1,13 +1,32 @@
+.wrapper ::before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/backgrounds/space_1.jpg');
+    background-size: cover;
+    filter: brightness(1);
+    opacity: 1;
+    z-index: -1;
+}
+
 .wrapper{
     width: 100vw;
     height: 100vh;
-    background-color: var(--background-color);
+
+    object-fit: contain;
+
+    opacity: 1;
     display: flex;
     justify-content: center;
     align-items: stretch;
     margin: 0;
     padding: 0;
     gap: 0;
+    background-color: rgba(0,0,0,0.655);
 }
 
 .verify_code_container{
@@ -42,6 +61,7 @@
 
 .verify_code_body .logo_container img{
     width: 50%;
+    filter: brightness(2);
 }
 
 .verify_code_body .form{
