@@ -20,7 +20,7 @@ function Team() {
           <div className={styles.cardRight}>
             <figure className={styles.snip1192}>
               <div className={styles.author}>
-                <img src="https://st.ourhtmldemo.com/new/Life_Guide/images/testimonial/1.png" alt="sq-sample1" />
+                <img src="" alt="sq-sample1" />
                 <div className={styles.linkedinArea}>
                 <Link href="#"><i className="fa-brands fa-linkedin fa-xl w-[24px] h-[24px]" style={{ color: "#166bfe" }}></i></Link>
                 {/* <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/turan-güzel-6383aa226/">Turan Mete Güzel</a> */}
