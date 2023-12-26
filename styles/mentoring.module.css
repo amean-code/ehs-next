@@ -40,16 +40,19 @@
 }
 
 .items .item .icon{
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.items .item .icon svg{
+.items .item .icon img{
     width: 100%;
+    height: 100% !important;
+    object-fit: cover;
     height: auto;
+    border-radius: 8px;
 }
 
 .items .item .content{

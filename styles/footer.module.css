@@ -16,7 +16,7 @@
 }
 
 .single_cta i {
-    color: #ff5e14 !important;
+    color: var(--primary) !important;
     font-size: 30px !important;
     float: left !important;
     margin-top: 8px !important;
@@ -124,7 +124,7 @@
     bottom: -15px !important;
     height: 2px !important;
     width: 50px !important;
-    background: #ff5e14 !important;
+    background: var(--primary) !important;
 }
 
 .footer_widget .ul .li {
@@ -135,7 +135,7 @@
 }
 
 .footer_widget .ul .li .a:hover {
-    color: #ff5e14 !important;
+    color: var(--primary) !important;
 }
 
 .footer_widget .ul .li .a {
@@ -163,9 +163,9 @@
 
 .subscribe_form .button {
     position: absolute !important;
-    background: #ff5e14 !important;
+    background: var(--primary) !important;
     padding: 15.1px!important;
-    border: 1px solid #ff5e14 !important;
+    border: 1px solid var(--primary) !important;
     border-radius: 0px 5px 5px 0px;
     top: 0 !important;
 }
@@ -189,7 +189,7 @@
 }
 
 .copyright_text .p .a {
-    color: #ff5e14 !important;
+    color: var(--primary) !important;
 }
 
 .footer_menu .li {
@@ -198,7 +198,7 @@
 }
 
 .footer_menu .li:hover .a {
-    color: #ff5e14 !important;
+    color: var(--primary) !important;
 }
 
 .footer_menu .li .a {
