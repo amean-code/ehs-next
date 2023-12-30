@@ -9,7 +9,7 @@ export default function HackathonPage() {
     <div className={styles.main_body}>
       <Head>
         <title>
-          Energy Hack Space | Blogs
+          Energy Hack Space | Hackaton
         </title>
       </Head>
       <Header />
