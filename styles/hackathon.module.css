@@ -15,10 +15,9 @@
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
-    background: -webkit-linear-gradient(-60deg,  #614ca1, #573778, #7c42ae );
+    background: -webkit-linear-gradient(-60deg,  var(--third), var(--third-dark), var(--third) );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: brightness(2);
 }
 
 .timeline{
@@ -61,18 +60,16 @@
     font-size: 16px;
     margin-bottom: 2px;
     font-family: Inter-Medium;
-    color: rgb(250, 250, 250);
     letter-spacing: -0.2px;
 }
 
 .timeline .date_item:hover .events .event_item{
     font-family: Inter-Bold;
-    color: rgb(255,255,255);
 }
 
 .timeline .date_item .month::before{
     content: "";
-    background: -webkit-linear-gradient(30deg, #a065d3 , #793cb6  , #442a95 100%);
+    background: -webkit-linear-gradient(30deg, var(--third) ,var(--third-dark) 100%);
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -88,11 +85,11 @@
     text-align: center;
     border-radius: 100%;
     position: relative;
-    color: white;
     font-size: 20px;
     font-family: Inter-Bold ;
     line-height: 22px;
     overflow: hidden;
+    color: white;
 }
 
 .timeline .date_item:hover .month::before{
@@ -101,13 +98,13 @@
 }
 
 .timeline .date_item:first-child .month::before{
-	background: -webkit-linear-gradient(30deg, #854bb8 , #4f1a83  , rgb(74, 57, 126));
+	background: -webkit-linear-gradient(30deg, var(--third-light) , var(--third));
 }
 
 .timeline .line{
     width: 2px;
     height: 60px;
-    border: 3px dashed #4f1a83;
+    border: 3px dashed var(--third);
 }
 
 @media screen and (max-width: 700px) {
@@ -161,7 +158,8 @@
 }
 
 .first_banner{
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    margin-top: 100px;
     transform: translateX(-5vw);
     min-height: 500px;
 }
@@ -179,7 +177,7 @@
     line-height: 70px;
     font-family: Inter-Bold;
     letter-spacing: -3px;
-    background: -webkit-linear-gradient(-30deg,  #2d1a64, #5c2d8c, #8753b4 );
+    background: -webkit-linear-gradient(-30deg,  var(--third-dark), var(--third), var(--third-light) );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	background-size: 100% 100%;
@@ -189,7 +187,7 @@
 }
 
 .first_banner .content .time_text{
-    background: -webkit-linear-gradient(-30deg,  #5d4aa4, #8c5dbc, #b783e4);
+    background: -webkit-linear-gradient(-30deg,  var(--third-dark), var(--third), var(--third-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	background-size: 100% 100%;
@@ -219,7 +217,7 @@
     font-size: 19px;
     line-height: 23px;
     letter-spacing: -0.5px;
-    background: -webkit-linear-gradient(-60deg,  #46357a, #533176, #5b3b78 );
+    background: -webkit-linear-gradient(-60deg,  black, gray );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	background-size: 100% 100%;
@@ -240,7 +238,7 @@
     text-align: center;
     font-size: 20px;
     cursor: pointer;
-    background:-webkit-linear-gradient(-60deg,  #2d1a64, #4f1a83, #854bb8 );
+    background:-webkit-linear-gradient(-60deg,  var(--third-dark), var(--third), var(--third-light) );
     color: white;
     transition: all ease-in-out 0.2s;
 }
@@ -251,7 +249,7 @@
     text-align: center;
     font-size: 20px;
     cursor: pointer;
-    background:-webkit-linear-gradient(-50deg,  #4f1a83, #854bb8 );
+    background:-webkit-linear-gradient(-50deg,  var(--third), var(--third-light) );
     color: white;
 }
 
@@ -261,9 +259,9 @@
     position: relative;
 }
 
-.first_banner .image_container img{
+.first_banner .image_container svg{
     width: 70vw;
-    max-width: 1000px;
+    max-width: 800px;
     height: auto;
     position: absolute;
     left: -5%;
@@ -275,11 +273,9 @@
     position: absolute;
     min-width: 500%;
     min-height: 500%;
-    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, #000F29, #000F29, #153159, #12476c,  #000F29);
+    background:  -webkit-linear-gradient(-90deg, var(--third-dark), var(--third-dark), var(--third), var(--third),  var(--third-light));
     background-size: 5%;
     z-index: -1;
-    rotate: 20deg;
-	animation: rotating 240s linear infinite;
 }
 
 @keyframes rotating {
@@ -305,12 +301,12 @@
     align-items: center;
 }
 
-.about_banner .image_container img{
+.about_banner .image_container svg{
     width: 100vw;
-    max-width: 1300px;
+    max-width: 700px;
     height: auto;
     position: absolute;
-    left: -80%;
+    left: -265px;
 }
 
 .about_banner .content{
@@ -326,7 +322,7 @@
     padding: 10px 15px;
     font-size: 14px;
     border-radius: 10px;
-    background:  #000F29;
+    background:  var(--third-dark);
     -webkit-text-fill-color: white;
     width: fit-content;
     z-index: 1;
@@ -353,7 +349,7 @@
     position: absolute;
     width: 1000%;
     height: 1000%;
-    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, #c698ef , #8047ba  , #150939 50%);
+    background: url("/backgrounds/stars/2.png"), -webkit-linear-gradient(-90deg, var(--third-light) , var(--third)  ,var(--third-dark) 50%);
     background-size: 2%;
     z-index: -1;
     rotate: 20deg;
@@ -375,8 +371,7 @@
     justify-content: center;
     align-items: center;
     padding: 30px 30px;
-    overflow: hidden;
-    max-height: 1000px;    
+    overflow: hidden;   
 }
 
 .mission_banner .image_container{
@@ -388,15 +383,14 @@
 }
 
 .mission_banner .image_container svg{
-    width: 1200px;
+    width: 800px;
     height: auto;
     position: absolute;
-    right: -500px;
-    top: -55%;
+    right: -100px
 }
 
 .mission_banner .content{
-    color: white;
+    color: var(--text-color);
     padding-left: 30px;
     text-align: justify;
     display: flex;
@@ -408,11 +402,10 @@
     padding: 10px 15px;
     font-size: 14px;
     border-radius: 10px;
-    background:  #2d1a64;
+    background:  var(--third-dark);
     -webkit-text-fill-color: white;
     width: fit-content;
     z-index: 1;
-    filter: brightness(2);
     margin-bottom: 10px;
 }
 
@@ -428,13 +421,14 @@
 .mission_banner .content .buttons button{
     padding: 10px 15px;
     border-radius: 10px;
-    background:  -webkit-linear-gradient(30deg, #381957  , #2f1e64 50%);
+    color: white;
+    background:  -webkit-linear-gradient(30deg, var(--third)  , var(--third-dark) 50%);
     box-shadow: rgba(255, 255, 255, 0.3) 2.4px 2.4px 3.2px;;
 }
 
 .mission_banner .content .buttons button:hover,
 .mission_banner .content .buttons button.active{
-    filter:brightness(2)
+    filter:brightness(1.2)
 }
 
 
@@ -447,7 +441,7 @@
     align-items: center;
     flex-direction: column;
     padding-top: 50px;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
     gap: 30px;
     position: relative;
     overflow: hidden;
@@ -455,10 +449,9 @@
 .prizes h2{
     font-size: 70px;
     font-family: Inter-Bold;
-    background: -webkit-linear-gradient(-60deg,  #614ca1, #573778, #7c42ae );
+    background: -webkit-linear-gradient(-60deg,  var(--third), var(--third-dark), var(--third) );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: brightness(2);
     letter-spacing: -2px;
     margin-bottom: 0px;
 }
@@ -467,15 +460,16 @@
     width: 30%;
     height: 6px;
     border-radius: 5px;
-    background: -webkit-linear-gradient(-60deg,  #7f67c8, #6e4895, #7744a3 );
+    background: -webkit-linear-gradient(-60deg,  var(--third), var(--third-dark), var(--third) );
     margin-bottom: 50px;
 }
 
 .prizes .prize{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: row;
+    gap: 100px;
     width: 100%;
 }
 
@@ -483,13 +477,13 @@
 
 .prize .item::before{
     content: "";
-    background: url("/backgrounds/stars/17.png"),radial-gradient(circle at center, #53267a,#652f9c, #3e2882);
-    width: 200%;
-    height: 200%;
+    background: url("/backgrounds/stars/17.png"),radial-gradient(circle at center, var(--third-dark),var(--third), var(--third-light));
+    width: 100%;
+    height: 100%;
     background-size: 100%;
     z-index: -1;
     position: absolute;
-	animation: rotating 120s linear infinite;
+	animation: rotating 12s linear infinite;
 }
 
 .prize .item{
@@ -499,11 +493,11 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    border: 3px solid #3e2882;
+    border: 3px solid var(--third);
     border-radius: 100%;
-    width: 250px;
-    height: 250px;
-    padding: 10px;
+    width: 200px;
+    height: 200px;
+    padding: 0px;
 }
 .prize .item .price{
     font-size: 22px;
@@ -517,7 +511,7 @@
     color: white;
 }
 .prize .item img{
-    width: 100px;
+    width: 80px;
 }
 /*PRİZES*/
 
@@ -535,10 +529,9 @@
 .judge .title h2{
     font-size: 70px;
     font-family: Inter-Bold;
-    background: -webkit-linear-gradient(-60deg,  #614ca1, #573778, #7c42ae );
+    background: -webkit-linear-gradient(-60deg,  var(--third), var(--third-dark), var(--third) );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: brightness(2);
     letter-spacing: -2px;
     margin-bottom: 0px;
 }
@@ -547,7 +540,7 @@
     width: 30%;
     height: 6px;
     border-radius: 5px;
-    background: -webkit-linear-gradient(-60deg,  #7f67c8, #6e4895, #7744a3 );
+    background: -webkit-linear-gradient(-60deg,  var(--third), var(--third-dark), var(--third) );
     margin-bottom: 50px;
 }
 .judge .wrapper{
@@ -650,38 +643,37 @@ figure.snip1192 .author {
     margin: 0;
     text-transform: uppercase;
     text-align: center;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 figure.snip1192 .author .h5 {
     opacity: 0.8;
     margin: 0;
     font-weight: 800;
-    color: #fff;
+    color: black;
     font-size: 1rem;
 }
 figure.snip1192 .author .p {
     opacity: 0.8;
     margin: 0;
-    color: #fff;
-    font-size: 12px;
+    color: black;
+    font-size: 16px;
     border-radius: none;
-    border-bottom: 0.5px solid white;
+    border-bottom: 0.5px solid black;
 }
 figure.snip1192 .author .uni {
     opacity: 0.8;
     margin: 0;
-    color: #fff;
-    font-size: 12px;
+    color: black;
+    font-size: 16px;
     border-radius: none;
 }
 
 figure.snip1192 .author .status {
     opacity: 0.8;
     margin: 0;
-    font-family: Inter-ExtraLight;
-    color: #fff;
-    font-size: 12px;
+    color: black;
+    font-size: 14px;
     border-radius: none;
 }
 
@@ -708,6 +700,42 @@ figure.snip1192 .author .h5 .span {
 
 /*JUDGES*/
 
+.sponsors{
+    display: flex;
+    flex-direction: column;
+    flex-direction: flex-start;
+    align-items: flex-start;
+    max-width: 1300px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.sponsors .title{
+    width: 100%;
+    text-align: left;
+    font-size: 30px;
+    font-family: Inter-Bold;
+    background: -webkit-linear-gradient(-30deg,  var(--third-dark), var(--third), var(--third-light) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	background-size: 100% 100%;
+}
+
+.sponsors .line{
+    width: 50px;
+    height: 2px;
+    background: -webkit-linear-gradient(-30deg,  var(--third-dark), var(--third), var(--third-light) );
+}
+
+.sponsors .list{
+    display: flex;
+    gap: 25px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+}
+
 @media screen and (min-width: 1600px) {
     .about_banner{
         padding: 50px 300px;
@@ -717,35 +745,36 @@ figure.snip1192 .author .h5 .span {
         padding: 30px 300px;
     }
 
-    .mission_banner .image_container{
-        flex: 0.6;
+    .mission_banner .image_container svg{
+        right: 0px;
     }
 }
 
 
 @media screen and (max-width: 1400px) {
-    .first_banner .image_container img{
-        left: -50px;
-    }
 
     .first_banner{
         transform: translateX(-0px);
     }
 
-    .about_banner .image_container img{
-        left: -80%;
+    .about_banner .image_container svg{
+        left: -250px;
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
     
-    .about_banner .image_container img{
+    .about_banner .image_container svg{
         max-width: 1000px;
+    }
+
+    .mission_banner .image_container svg{
+        right: -200px;
     }
 }
 
 @media screen and (max-width: 1100px) {
-    .first_banner .image_container img{
+    .first_banner .image_container svg{
         left: 0px;
     }
 
@@ -753,8 +782,13 @@ figure.snip1192 .author .h5 .span {
         transform: translateX(-0px);
     }
     
-    .about_banner .image_container img{
-        left: -80%;
+    .about_banner .image_container svg{
+        left: -130px;
+        width: 600px;
+    }
+
+    .mission_banner .image_container svg{
+        right: -300px;
     }
 }
 
@@ -767,9 +801,7 @@ figure.snip1192 .author .h5 .span {
     .first_banner{
         transform: translateX(-0px);
     }
-}
-
-@media screen and (max-width: 850px) {
+    
     .first_banner {
         flex-direction: column;
         align-items: center;
@@ -785,7 +817,7 @@ figure.snip1192 .author .h5 .span {
         align-items: center;
     }
 
-    .first_banner .image_container img{
+    .first_banner .image_container svg{
         position: relative;
         width: 220%;
         max-width: none;
@@ -801,6 +833,13 @@ figure.snip1192 .author .h5 .span {
         letter-spacing: -1px;
         width: 100%;
         text-align: center;
+        line-height: 50px;
+    }
+
+    .first_banner .content .time_text{
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
     }
 
     .first_banner .content p{
@@ -810,6 +849,8 @@ figure.snip1192 .author .h5 .span {
         text-align: center;
         margin-bottom: 10px;
         padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
     }
 
     .first_banner .content .buttons{
@@ -827,12 +868,12 @@ figure.snip1192 .author .h5 .span {
 
     .about_banner .image_container {
         width: 100%;
-        height: 200px;
+        min-height: 200px;
         flex: none;
         
     }
 
-    .about_banner .image_container img{
+    .about_banner .image_container svg{
         position: relative;
         width: 200vw;
         left: 0px;
@@ -840,17 +881,16 @@ figure.snip1192 .author .h5 .span {
 
     .mission_banner .image_container {
         width: 100%;
-        height: 400px;
+        min-height: 100px;
         flex: none;
-        display: none !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .mission_banner .image_container svg{
-        position: absolute;
-        width: 170vw;
-        left: -0px;
-        top: -100px;
-        display: none !important;
+        width: 80vw;
+        right: auto;
     }
 
     .mission_banner .content{
@@ -858,8 +898,8 @@ figure.snip1192 .author .h5 .span {
     }
 
     .mission_banner{
-        flex-direction: column-reverse;
-        padding: 50px 20px;
+        flex-direction: column;
+        padding: 50px 30px;
     }
 
     .content h2{
@@ -878,7 +918,7 @@ figure.snip1192 .author .h5 .span {
 
     .prize{
         flex-direction: column !important;
-        gap: 20px !important;
+        gap: 10px !important;
     }
 
 
